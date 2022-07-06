@@ -1,1 +1,15 @@
 access site on heroku: https://calm-spire-78454.herokuapp.com/
+--------------------------
+start angular on zenbook:
+	from console: 
+		D:\github-test\spring-boot-demo-heroku\frontend\heroku1>ng serve	
+stop angular on zenbook:
+	from console:
+		exit
+--------------------------
+ng build
+	creates a dist folder for the project. These files are used in deployments by copying the files to a web server.
+--------------------------
+ng test
+	tests the angular code and responds with a UI via Jasmine
+--------------------------
