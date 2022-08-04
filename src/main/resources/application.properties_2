@@ -1,0 +1,3 @@
+
+#server.port=${PORT:8080} not sure if this is correct here.
+#we are already referencing this in Procfile

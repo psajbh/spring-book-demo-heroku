@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="fragments/header :: head">
+	<title id="pageTitle">Word Search Manager</title>
+</head>
+
+<body>
+	<nav th:replace="fragments/header :: navbar"></nav>
+
+	<div class="container-fluid" style="margin-top: 120px">
+		<div id="indexRow" class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h3>Words Page</h3>
+			</div>
+		</div>
+		
+		<div id="commonRow" class="row">
+			<form>
+			<!-- <div class="col-md-8 col-md-offset-2"> -->
+			<div>
+				<label>Dictionary</label>
+				<input type="text" id="common" name="commonType">
+			</div>
+			</form>
+		</div>
+		
+	</div>
+	
+	
+
+	<div class="container" th:replace="fragments/footer :: footer">
+		<p>footer</p>
+	</div>
+</body>
+
+</html>
