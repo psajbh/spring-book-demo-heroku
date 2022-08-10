@@ -10,10 +10,8 @@ import javax.persistence.Table;
 @Table(name="Wordsearch")
 public class Word {
 	
-	public Word() {
-	}
-	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 	
 	private String word;
