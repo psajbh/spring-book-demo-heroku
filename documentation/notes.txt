@@ -1,5 +1,7 @@
 access site on heroku: https://calm-spire-78454.herokuapp.com/
 
+zenbook git alias:  alias demo-heroku=' cd D/github-test/spring-boot-demo-heroku'
+
 
 
 
