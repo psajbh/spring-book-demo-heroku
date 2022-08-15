@@ -1,1 +1,1 @@
-# spring-book-demo-heroku
+# spring-boot-demo-heroku
