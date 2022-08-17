@@ -35,11 +35,9 @@ public class TaskManagerAspect {
 	@Autowired
 	private UserService userService;
 	
-	// read: https://howtodoinjava.com/spring-aop-tutorial/
-	// need to use a @Around advice to change behavior.
 	@Around("execution(* com.jhart.web.rest..*.*(..))")
 	public Object aroundRequest(ProceedingJoinPoint proceedingJoinPoint) throws Throwable{
-		log.trace("aop advice execution(* com.jhart.web..*.*(..)) Allowed execution for {}", proceedingJoinPoint);
+		log.debug("aop advice execution(* com.jhart.web..*.*(..)) Allowed execution for {}", proceedingJoinPoint);
 		long start = System.currentTimeMillis();
 		boolean foundKeyElement = false;
 		HttpServletRequest request = ((ServletRequestAttributes) 
