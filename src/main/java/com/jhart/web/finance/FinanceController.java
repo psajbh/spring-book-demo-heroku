@@ -1,13 +1,13 @@
 package com.jhart.web.finance;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class FinanceController {
-	Logger log = LoggerFactory.getLogger(FinanceController.class);
+	Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping({"/finance/finance"})
 	public String finance() {

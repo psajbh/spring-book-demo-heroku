@@ -5,11 +5,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.jhart.web.user.UserRestController;
 
 @Controller
 public class ContactController {
-	Logger log = LoggerFactory.getLogger(ContactController.class);
+	Logger log = LoggerFactory.getLogger(this.getClass());
 	
 	@GetMapping({"/contacts/contacts"})
 	public String contacts() {

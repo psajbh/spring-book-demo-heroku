@@ -6,27 +6,30 @@ import java.util.Set;
 
 import org.apache.maven.model.Dependency;
 import org.apache.maven.model.Model;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.jhart.util.BuildModel;
 
-//import lombok.extern.slf4j.Slf4j;
 
-//@Slf4j
 @Controller
 public class PomInfoController {
-	
+	Logger log = LoggerFactory.getLogger(this.getClass());
 	private BuildModel buildModel;
 	
 	public PomInfoController(BuildModel buildModel) {
+		log.warn("PomInfoController -");
 		this.buildModel = buildModel;
 	}
 	
 	@GetMapping("pomInfo")
 	public String pomInfo(org.springframework.ui.Model model) {
+		log.warn("pomInfo -");
 		String buildModel = getBuildModel();
-		 model.addAttribute("data", buildModel);
+		log.warn("PomInfoController - buildInfo -" + buildModel);
+		model.addAttribute("data", buildModel);
 		return "about/pomInfo";
 	}
 	
@@ -40,7 +43,7 @@ public class PomInfoController {
 		sb.append("    artifactId: " + model.getArtifactId() + System.lineSeparator());
 		sb.append("    version: " + model.getVersion() + System.lineSeparator());
 		sb.append("    packaging: " + model.getPackaging() + System.lineSeparator());
-		sb.append("    name: " + model.getName() + System.lineSeparator()+ System.lineSeparator());
+		sb.append("   name: " + model.getName() + System.lineSeparator()+ System.lineSeparator());
 		
 		sb.append("Parent Project: " +  System.lineSeparator()) ;
 		sb.append("    " + model.getParent().getArtifactId() + " - " + model.getParent().getVersion() +  System.lineSeparator() +  System.lineSeparator());
