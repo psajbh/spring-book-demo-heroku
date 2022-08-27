@@ -16,9 +16,7 @@ import javax.persistence.Table;
 @Table(name="Todo")
 public class Todo {
 	
-	public Todo() {
-		
-	}
+	public Todo() {}
     
 	public Todo(String taskName, User user) {
 		this.taskName = taskName;

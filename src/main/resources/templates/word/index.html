@@ -11,19 +11,55 @@
 	<div class="container-fluid" style="margin-top: 120px">
 		<div id="indexRow" class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<h3>Words Page</h3>
+				<h3>Select Word Criteria</h3>
 			</div>
 		</div>
 		
-		<div id="commonRow" class="row">
+<!-- 		<form action="#" th:action="@{/register}" method="post" th:object="${user}">
+			<label>Full name:</label>
+			<input type="text" th:field="*{name}" /><br/>
+			
+			<label>E-mail:</label>
+			<input type="text" th:field="*{email}" /><br/>
+					
+			<label>Password:</label>
+			<input type="password" th:field="*{password}" /><br/>
+
+			<label>Birthday (yyyy-mm-dd):</label>
+			<input type="text" th:field="*{birthday}" /><br/>
+			
+			<label>Gender:</label>
+			<input type="radio" th:field="*{gender}" value="Male" />Male
+			<input type="radio" th:field="*{gender}" value="Female" />Female<br/>
+			
+			<label>Profession:</label>
+			<select th:field="*{profession}">
+				<option th:each="p : ${listProfession}" th:value="${p}" th:text="${p}" />
+			</select>
+			<br/>
+		
+			<label>Married?</label>
+			<input type="checkbox" th:field="*{married}" /><br/>
+							
+			<label>Note:</label>
+			<textarea rows="5" cols="25" th:field="*{note}"></textarea>
+			<br/>
+			
+			<button type="submit">Register</button>		
+		</form>
+ -->		
+		
+		
+		
+		<!-- <div id="commonRow" class="row">
 			<form>
-			<!-- <div class="col-md-8 col-md-offset-2"> -->
+			<div class="col-md-8 col-md-offset-2">
 			<div>
 				<label>Dictionary</label>
 				<input type="text" id="common" name="commonType">
 			</div>
 			</form>
-		</div>
+		</div> -->
 		
 	</div>
 	
