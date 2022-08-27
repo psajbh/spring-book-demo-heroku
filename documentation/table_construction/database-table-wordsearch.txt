@@ -1,8 +1,11 @@
 table: wordsearch
 
-drop table if exists wordsearch;
+DROP TABLE IF EXISTS wordsearch;
 
-create table wordsearch (
+SET NAMES utf8 ;
+SET character_set_client = utf8mb4 ;
+
+CREATE TABLE `wordsearch` (
     word VARCHAR(5) not null,
     char1 VARCHAR(1) not null,
     char2 VARCHAR(1) not null,
