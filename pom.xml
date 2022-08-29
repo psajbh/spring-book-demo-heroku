@@ -212,7 +212,8 @@
 					</execution>
 				</executions>
 				<configuration>
-					<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+					<!-- <dotGitDirectory>${project.basedir}/.git</dotGitDirectory> -->
+					<dotGitDirectory>../.git</dotGitDirectory>
 					<prefix>git</prefix>
 					<verbose>false</verbose>
 					<generateGitPropertiesFile>true</generateGitPropertiesFile>
