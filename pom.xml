@@ -199,7 +199,7 @@
 					</execution>
 				</executions>
 			</plugin>
- 			<plugin>
+<!--  			<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
 				<version>2.2.4</version>
@@ -212,9 +212,10 @@
 					</execution>
 				</executions>
 				<configuration>
-					<!-- <dotGitDirectory>${project.basedir}/.git</dotGitDirectory> -->
-					<dotGitDirectory>../.git</dotGitDirectory>
-					<prefix>git</prefix>
+					<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+					-->
+					<!-- <dotGitDirectory>../.git</dotGitDirectory> -->
+					<!--  <prefix>git</prefix>
 					<verbose>false</verbose>
 					<generateGitPropertiesFile>true</generateGitPropertiesFile>
 					<generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
@@ -226,7 +227,7 @@
 					</gitDescribe>
 				</configuration>
 			</plugin>
-			<plugin> <!-- runs integration tests -->
+ -->			<plugin> <!-- runs integration tests -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<version>2.20</version>
