@@ -6,6 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.jhart.domain.Word;
+import com.jhart.dto.WordSupportDto;
+
 
 @Controller
 public class IndexWordController {
@@ -13,6 +16,8 @@ public class IndexWordController {
 	
 	@GetMapping({"/word/index"})
 	public String index(Model model) {
+		WordSupportDto wordSupportDto = new WordSupportDto();
+		model.addAttribute("wordSupportDto", wordSupportDto);
 		log.info("IndexWordController - index");
 		return "word/index";
 	}
