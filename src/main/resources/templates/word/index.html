@@ -2,18 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:include="fragments/header :: head">
-	<meta charset="ISO-8859-1">
-	<title>Word Search Manager</title>
+	<title id="pageTitle">Word Search Manager</title>
 </head>
  
- <!-- 
- <head th:include="fragments/header :: head">
-	<title id="pageTitle">Word Search Manager</title>
-    <meta charset="ISO-8859-1">
-    <title>Word Search Manager</title>
- </head>
- --->
- 
+  
 <body>
 	<nav th:replace="fragments/header :: navbar"></nav>
 
@@ -24,18 +16,18 @@
 			</div>
 		</div>
  	</div>
- 	<div>
-		<form action="#" th:action="@{/word/index}" method="get" th:object="${wordSupportDto}">
+ 	<!-- <div> -->
+		<!-- <form action="#" th:action="@{/word/index}" method="get" th:object="${wordSupportDto}">
         			<label>Word name:</label>
         			<input type="text" th:field="*{wordName}" /><br/>
-    			</form>
-			</div>
- 	
+    	</form> -->
+	<!-- </div> -->
+ 		
 
-<!-- 	<div class="container" th:replace="fragments/footer :: footer">
+	<div class="container" th:replace="fragments/footer :: footer">
 		<p>footer</p>
 	</div>
- -->
- 	</body>
+
+ </body>
 
 </html>
