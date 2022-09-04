@@ -7,7 +7,8 @@
  
   
 <body>
-	<nav th:replace="fragments/header :: navbar"></nav>
+	<!-- <nav th:replace="fragments/header :: navbar"></nav> -->
+	<div th:insert="navbar :: navbar">  </div>
 
 	<div class="container-fluid" style="margin-top: 120px">
 		<div id="indexRow" class="row">
@@ -16,12 +17,12 @@
 			</div>
 		</div>
  	</div>
- 	<!-- <div> -->
-		<!-- <form action="#" th:action="@{/word/index}" method="get" th:object="${wordSupportDto}">
+ 	<div>
+		<form action="#" th:action="@{/word/index}" method="get" th:object="${wordSupportDto}">
         			<label>Word name:</label>
         			<input type="text" th:field="*{wordName}" /><br/>
-    	</form> -->
-	<!-- </div> -->
+    	</form> 
+	</div>
  		
 
 	<div class="container" th:replace="fragments/footer :: footer">

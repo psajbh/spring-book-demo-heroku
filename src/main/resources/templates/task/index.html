@@ -11,9 +11,10 @@
 </head>
 
 <body>
-	<nav th:replace="fragments/header :: navbar">
+	<!-- <nav th:replace="fragments/header :: navbar">
 		<p>header</p>
-	</nav>
+	</nav> -->
+	<div th:insert="navbar :: navbar">  </div>
 	<div class="container-fluid" style="margin-top: 120px">
 		<div id="indexRow" class="row">
 			<div class="col-md-8 col-md-offset-2">
