@@ -31,6 +31,7 @@ hs_err_pid*
 /src/test/javascript/coverage/
 /src/test/javascript/PhantomJS*/
 /src/main/resources/application.properties
+*/application.properties
 ######################
 # Node
 ######################
