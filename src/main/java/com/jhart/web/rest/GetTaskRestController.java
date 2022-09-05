@@ -32,8 +32,8 @@ public class GetTaskRestController {
 	public ResponseEntity<Object> getRestAllTasks() {
 		log.debug("getAllTasks- start");
 		
-		HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
-		UserBackBean ubb = (UserBackBean) request.getAttribute("credentialKey");
+		//HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
+		//UserBackBean ubb = (UserBackBean) request.getAttribute("credentialKey");
 
 		List<TodoBackBean> todoBackBeans = null;
 		boolean success = false;
