@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<title> Word Search Manager</title>
 	
-	<style type="text/css">
+	<!-- <style type="text/css">
 		label {
 			display: inline-block;
 			width: 200px;
@@ -26,28 +26,60 @@
 			padding: 5px;
 			margin: 10px;
 		}
-	</style>
+	</style> -->
 </head>
   
 <body>
-	<div th:insert="navbar :: navbar">  </div>
+	<div th:insert="navbar :: navbar"></div>
 
-	<div class="container-fluid" style="margin-top: 30px">
+	<div class="container-fluid" style="margin-top: 40px">
 		<div id="indexRow" class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<h3>Select Word Criteria</h3>
+				<h3>Wordle Data Search</h3>
 			</div>
 		</div>
  	</div>
  	
  	<div align="center">
-		<h4>Enter characters value:</h4>
-		<form action="#" th:action="@{/word/index}" method="get" th:object="${wordSupportDto}">
-			<label>word name (5 char max):</label>
-			<input type="text" th:field="*{wordName}" /><br/>
-			
+		<h4>Enter 5 character word (include asterisks as wild values) :</h4>
+		<form action="#" th:action="@{/word/get}" method="get" th:object="${wordSupportDto}">
+			<label>word name:</label>
+			<input type="text" minlength="0" maxlength="5" size="7" 
+				th:field="*{wordName}" /><br/><br/>
+			<h4>Enter character values AS existing within the word :</h4>	
+			<label>1</label>
+			<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar1}" />
+			<label>2</label>
+			<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar2}" />
+			<label>3</label>
+			<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar3}" />
+			<label>4</label>
+			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{inChar4}" />
+			<label>5</label>
+			<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar5}" />
 			<br/><br/>
+			<h4>Enter character values NOT existing within the word :</h4>
+			<label>1</label>
+			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar1}" />
+			<label>2</label>
+			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar2}" />
+			<label>3</label>
+			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar3}" />
+			<label>4</label>
+			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar4}" />
+			<label>5</label>
+			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar5}" />
+			<br/><br/>
+			
 			<button type="submit">Submit</button>	
+			<br/><br/>
+			
+			<h4>Matching Words Results:</h4>
+			<br/>
+			<textarea rows="10" cols="100" th:field="*{words}">
+
+			</textarea>
+			
 		</form>
 	</div>
 			
@@ -76,7 +108,11 @@
 			<label>Note:</label>
 			<textarea rows="5" cols="25" th:field="*{note}"></textarea>
 			<br/>
-			
+
+<textarea id="story" name="story"
+          rows="5" cols="33">
+It was a dark and stormy night...
+</textarea>			
 					
  -->		
  		

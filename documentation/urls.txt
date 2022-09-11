@@ -1,0 +1,3 @@
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text#try_it
+https://stackoverflow.com/questions/12114570/how-to-align-texts-inside-of-an-input
+https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
