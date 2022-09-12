@@ -100,14 +100,9 @@ public class WordSupportDto {
 	public String toString() {
 		return "WordSupportDto [wordName=" + wordName + "]";
 	}
-	public String getWords() {
-		return words;
-	}
-	public void setWords(String words) {
-		this.words = words;
-	}
-
 	
-	
+	 public String getWords() { return words; } 
+	 
+	 public void setWords(String words) { this.words = words; }
 	
 }

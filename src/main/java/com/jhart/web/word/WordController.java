@@ -21,13 +21,22 @@ public class WordController {
 	}
 
 	@GetMapping({"/word/get"})
-	public String get(Model model, String wordName, String inChar1, String inChar2, 
+	public String get(Model model, String wordName, String noWordName,
+			String inChar1, String inChar2, 
 			String inChar3, String inChar4, String inChar5,
 			String notInChar1, String notInChar2, String notInChar3, 
 			String notInChar4, String notInChar5) {
 		log.info("WordController - get - start");
 		WordSupportDto wordSupportDto = new WordSupportDto();
+		if(null != wordName) {
+			wordName = wordName.replace(",", "");
+		}
 		wordSupportDto.setWordName(wordName);
+		
+		if (null != noWordName) {
+			noWordName = noWordName.replace(",", "");
+		}
+		
 		wordSupportDto.setInChar1(inChar1);
 		wordSupportDto.setInChar2(inChar2);
 		wordSupportDto.setInChar3(inChar3);
@@ -56,11 +65,15 @@ public class WordController {
 	private boolean process(WordSupportDto wordSupportDto) {
 		log.info("WordController process - ");
 		
-		if (wordSupportDto.getWordName().length() > 3) {
+		if (null != wordSupportDto.getWordName() && 
+				wordSupportDto.getWordName().length() > 0 &&
+				wordSupportDto.getWordName().length() < 6) {
 			return true;
-		}
+		} 
 		
-		if (wordSupportDto.getNonWordName().length() > 3) {
+		if (null != wordSupportDto.getNonWordName() && 
+				wordSupportDto.getNonWordName().length() > 0 &&
+				wordSupportDto.getNonWordName().length() < 22) {
 			return true;
 		}
 		
