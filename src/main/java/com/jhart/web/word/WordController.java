@@ -54,9 +54,13 @@ public class WordController {
 	}
 	
 	private boolean process(WordSupportDto wordSupportDto) {
-		log.info("calling WordController process - ");
+		log.info("WordController process - ");
 		
-		if (!wordSupportDto.getWordName().isEmpty()) {
+		if (wordSupportDto.getWordName().length() > 3) {
+			return true;
+		}
+		
+		if (wordSupportDto.getNonWordName().length() > 3) {
 			return true;
 		}
 		
@@ -92,6 +96,7 @@ public class WordController {
 			return true;
 		}
 		
+		log.info("WordController - process - invalid value submission");
 		return false;
 	}
 	

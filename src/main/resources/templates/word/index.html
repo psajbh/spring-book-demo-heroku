@@ -41,86 +41,48 @@
  	</div>
  	
  	<div align="center">
-		<h4>Enter 5 character word (include asterisks as wild values) :</h4>
 		<form action="#" th:action="@{/word/get}" method="get" th:object="${wordSupportDto}">
-			<label>word name:</label>
-			<input type="text" minlength="0" maxlength="5" size="7" 
-				th:field="*{wordName}" /><br/><br/>
-			<h4>Enter character values AS existing within the word :</h4>	
-			<label>1</label>
-			<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar1}" />
-			<label>2</label>
-			<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar2}" />
-			<label>3</label>
-			<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar3}" />
-			<label>4</label>
-			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{inChar4}" />
-			<label>5</label>
-			<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar5}" />
-			<br/><br/>
-			<h4>Enter character values NOT existing within the word :</h4>
-			<label>1</label>
-			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar1}" />
-			<label>2</label>
-			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar2}" />
-			<label>3</label>
-			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar3}" />
-			<label>4</label>
-			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar4}" />
-			<label>5</label>
-			<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar5}" />
-			<br/><br/>
-			
+			<h4>Enter up to 5 character values that EXIST within a word:</h4>
+				<label>character values:</label>
+				<input type="text" minlength="0" maxlength="5" size="7" 
+					th:field="*{wordName}" /><br/><br/>
+			<h4>Enter up to 22 character values that DO NOT EXIST within a word:</h4>
+				<label>character values:</label>
+				<input type="text" minlength="0" maxlength="22" size="23" 
+					th:field="*{wordName}" /><br/><br/>
+			<h4>Enter character value as EXISTING in a specified character position:</h4>	
+				<label>1:</label>
+				<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar1}" />
+				<label>2:</label>
+				<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar2}" />
+				<label>3:</label>
+				<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar3}" />
+				<label>4:</label>
+				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{inChar4}" />
+				<label>5:</label>
+				<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar5}" />
+				<br/><br/>
+			<h4>Enter character value as NOT EXISTING in a specified character position:</h4>
+				<label>1:</label>
+				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar1}" />
+				<label>2:</label>
+				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar2}" />
+				<label>3:</label>
+				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar3}" />
+				<label>4:</label>
+				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar4}" />
+				<label>5:</label>
+				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar5}" />
+				<br/><br/>
 			<button type="submit">Submit</button>	
 			<br/><br/>
-			
 			<h4>Matching Words Results:</h4>
 			<br/>
 			<textarea rows="10" cols="100" th:field="*{words}">
-
 			</textarea>
-			
 		</form>
 	</div>
 			
-<!-- 			<label>E-mail:</label>
-			<input type="text" th:field="*{email}" /><br/>
-					
-			<label>Password:</label>
-			<input type="password" th:field="*{password}" /><br/>
-
-			<label>Birthday (yyyy-mm-dd):</label>
-			<input type="text" th:field="*{birthday}" /><br/>
-			
-			<label>Gender:</label>
-			<input type="radio" th:field="*{gender}" value="Male" />Male
-			<input type="radio" th:field="*{gender}" value="Female" />Female<br/>
-			
-			<label>Profession:</label>
-			<select th:field="*{profession}">
-				<option th:each="p : ${listProfession}" th:value="${p}" th:text="${p}" />
-			</select>
-			<br/>
-		
-			<label>Married?</label>
-			<input type="checkbox" th:field="*{married}" /><br/>
-							
-			<label>Note:</label>
-			<textarea rows="5" cols="25" th:field="*{note}"></textarea>
-			<br/>
-
-<textarea id="story" name="story"
-          rows="5" cols="33">
-It was a dark and stormy night...
-</textarea>			
-					
- -->		
- 		
-	
-	
-	
- 		
-
 	<div class="container" th:replace="fragments/footer :: footer">
 		<p>footer</p>
 	</div>

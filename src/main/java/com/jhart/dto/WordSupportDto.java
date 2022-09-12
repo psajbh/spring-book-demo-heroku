@@ -2,6 +2,7 @@ package com.jhart.dto;
 
 public class WordSupportDto {
 	private String wordName;
+	private String nonWordName;
 	private String inChar1;
 	private String inChar2;
 	private String inChar3;
@@ -20,6 +21,12 @@ public class WordSupportDto {
 	}
 	public void setWordName(String wordName) {
 		this.wordName = wordName;
+	}
+	public String getNonWordName() {
+		return nonWordName;
+	}
+	public void setNonWordName(String nonWordName) {
+		this.nonWordName = nonWordName;
 	}
 	public String getInChar1() {
 		return inChar1;
