@@ -1,16 +1,27 @@
 package com.jhart.web.word;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.jhart.domain.Word;
 import com.jhart.dto.WordSupportDto;
+import com.jhart.service.word.WordService;
 
 
 @Controller
 public class WordController {
-	Logger log = LoggerFactory.getLogger(this.getClass());
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
+	private final WordService wordService;
+	
+	
+	public WordController(WordService wordService) {
+		this.wordService = wordService;
+	}
 	
 	@GetMapping({"/word/index"})
 	public String index(Model model) {
@@ -58,8 +69,9 @@ public class WordController {
 	}
 	
 	private void executeWordSearch(WordSupportDto wordSupportDto) {
-		log.info("calling WordController executeWordSearch - ");
-		// call service to generate words for WordSupportDto words. 
+		log.info("WordController executeWordSearch - ");
+		List<String> words = wordService.process(wordSupportDto);
+		log.info("WordController process result: " + words.toString());
 	}
 	
 	private boolean process(WordSupportDto wordSupportDto) {

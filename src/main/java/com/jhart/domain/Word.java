@@ -13,7 +13,6 @@ public class Word {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
-	
 	private String word;
 	private String char1;
 	private String char2;
@@ -85,8 +84,5 @@ public class Word {
 	public void setCommon(String common) {
 		this.common = common;
 	}
-	
-	
-
 
 }

@@ -44,35 +44,35 @@
 		<form action="#" th:action="@{/word/get}" method="get" th:object="${wordSupportDto}">
 			<h4>Enter up to 5 character values that EXIST within a word:</h4>
 				<label>character values:</label>
-				<input type="text" minlength="0" maxlength="5" size="7" 
+				<input type="text" maxlength="5" size="7" 
 					th:field="*{wordName}" /><br/><br/>
 			<h4>Enter up to 22 character values that DO NOT EXIST within a word:</h4>
 				<label>character values:</label>
-				<input type="text" minlength="0" maxlength="22" size="23" 
-					th:field="*{wordName}" /><br/><br/>
+				<input type="text" maxlength="22" size="23" 
+					th:field="*{nonWordName}" /><br/><br/>
 			<h4>Enter character value as EXISTING in a specified character position:</h4>	
 				<label>1:</label>
-				<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar1}" />
+				<input type="text" maxlength="1" size="2" th:field="*{inChar1}" />
 				<label>2:</label>
-				<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar2}" />
+				<input type="text" maxlength="1" size="2" th:field="*{inChar2}" />
 				<label>3:</label>
-				<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar3}" />
+				<input type="text" maxlength="1" size="2" th:field="*{inChar3}" />
 				<label>4:</label>
-				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{inChar4}" />
+				<input type="text" maxlength="1" size="2"  th:field="*{inChar4}" />
 				<label>5:</label>
-				<input type="text" minlength="0" maxlength="1" size="2" th:field="*{inChar5}" />
+				<input type="text" maxlength="1" size="2" th:field="*{inChar5}" />
 				<br/><br/>
 			<h4>Enter character value as NOT EXISTING in a specified character position:</h4>
 				<label>1:</label>
-				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar1}" />
+				<input type="text" maxlength="1" size="2"  th:field="*{notInChar1}" />
 				<label>2:</label>
-				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar2}" />
+				<input type="text" maxlength="1" size="2"  th:field="*{notInChar2}" />
 				<label>3:</label>
-				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar3}" />
+				<input type="text" maxlength="1" size="2"  th:field="*{notInChar3}" />
 				<label>4:</label>
-				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar4}" />
+				<input type="text" maxlength="1" size="2"  th:field="*{notInChar4}" />
 				<label>5:</label>
-				<input type="text" minlength="0" maxlength="1" size="2"  th:field="*{notInChar5}" />
+				<input type="text" maxlength="1" size="2"  th:field="*{notInChar5}" />
 				<br/><br/>
 			<button type="submit">Submit</button>	
 			<br/><br/>

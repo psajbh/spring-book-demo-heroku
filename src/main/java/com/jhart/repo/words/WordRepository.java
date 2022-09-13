@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.jhart.domain.Word;
 
-@Repository("wordsRepository")
-public interface WordsRepository extends JpaRepository<Word, Integer>{
+@Repository("wordRepository")
+public interface WordRepository extends JpaRepository<Word, String>{
 
 }
