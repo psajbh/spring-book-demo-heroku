@@ -2,7 +2,7 @@ package com.jhart.dto;
 
 public class WordSupportDto {
 	private String wordName;
-	private String nonWordName;
+	private String noWordName;
 	private String inChar1;
 	private String inChar2;
 	private String inChar3;
@@ -14,6 +14,7 @@ public class WordSupportDto {
 	private String notInChar4;
 	private String notInChar5;
 	private String words;
+	private String wordCount;
 //	private String common;
 	
 	public String getWordName() {
@@ -22,11 +23,11 @@ public class WordSupportDto {
 	public void setWordName(String wordName) {
 		this.wordName = wordName;
 	}
-	public String getNonWordName() {
-		return nonWordName;
+	public String getNoWordName() {
+		return noWordName;
 	}
-	public void setNonWordName(String nonWordName) {
-		this.nonWordName = nonWordName;
+	public void setNoWordName(String nonWordName) {
+		this.noWordName = nonWordName;
 	}
 	public String getInChar1() {
 		return inChar1;
@@ -104,5 +105,13 @@ public class WordSupportDto {
 	 public String getWords() { return words; } 
 	 
 	 public void setWords(String words) { this.words = words; }
+	 
+	 public String getWordCount() {
+			return wordCount;
+	 }
+	 
+	 public void setWordCount(String wordCount) {
+			this.wordCount = wordCount;
+	 }
 	
 }

@@ -6,15 +6,15 @@ SET NAMES utf8 ;
 SET character_set_client = utf8mb4 ;
 
 CREATE TABLE `wordsearch` (
-    word VARCHAR(5) not null,
-    char1 VARCHAR(1) not null,
-    char2 VARCHAR(1) not null,
-    char3 varchar(1) not null,
-    char4 varchar(1) not null,
-    char5 varchar(1) not null,
-    common varchar(1) not null
-); 
-
+	`id` int(20) AUTO_INCREMENT PRIMARY KEY,
+    `word` varchar(5) not null,
+    `char1` char(1) not null,
+    `char2` char(1) not null,
+    `char3` char(1) not null,
+    `char4` char(1) not null,
+    `char5` char(1) not null,
+    `common` varchar(1) not null);
+    
 --master insert
 insert into wordsearch (word, char1, char2, char3, char4, char5, common)
 values

@@ -20,6 +20,7 @@ public class Word {
 	private String char4;
 	private String char5;
 	private String common;
+	private boolean unavailable;
 	
 	public Integer getId() {
 		return id;
@@ -85,4 +86,20 @@ public class Word {
 		this.common = common;
 	}
 
+	
+	@Override
+	public String toString() {
+		return "Word [word=" + word + "]";
+	}
+
+	public boolean isUnavailable() {
+		return unavailable;
+	}
+
+	public void setUnavailable(boolean unavailable) {
+		this.unavailable = unavailable;
+	}
+
+	
+	
 }

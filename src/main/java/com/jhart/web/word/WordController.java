@@ -1,6 +1,8 @@
 package com.jhart.web.word;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,15 +40,20 @@ public class WordController {
 			String notInChar1, String notInChar2, String notInChar3, 
 			String notInChar4, String notInChar5) {
 		log.info("WordController - get - start");
+		
 		WordSupportDto wordSupportDto = new WordSupportDto();
+		
 		if(null != wordName) {
 			wordName = wordName.replace(",", "");
 		}
+		
 		wordSupportDto.setWordName(wordName);
 		
 		if (null != noWordName) {
 			noWordName = noWordName.replace(",", "");
 		}
+		
+		wordSupportDto.setNoWordName(noWordName);
 		
 		wordSupportDto.setInChar1(inChar1);
 		wordSupportDto.setInChar2(inChar2);
@@ -60,7 +67,10 @@ public class WordController {
 		wordSupportDto.setNotInChar5(notInChar5);
 		
 		if (process(wordSupportDto)) {
-			executeWordSearch(wordSupportDto);
+			Map<String, String> response = executeWordSearch(wordSupportDto);
+			
+			wordSupportDto.setWords(response.get("wordNames"));
+			wordSupportDto.setWordCount(response.get("wordCount"));
 		}
 		
 		model.addAttribute("wordSupportDto", wordSupportDto);
@@ -68,10 +78,14 @@ public class WordController {
 		return "word/index";
 	}
 	
-	private void executeWordSearch(WordSupportDto wordSupportDto) {
+	private Map<String, String> executeWordSearch(WordSupportDto wordSupportDto) {
 		log.info("WordController executeWordSearch - ");
-		List<String> words = wordService.process(wordSupportDto);
-		log.info("WordController process result: " + words.toString());
+		//List<String> words = wordService.process(wordSupportDto);
+		Map<String, String> response = wordService.process(wordSupportDto);
+		
+		//String values = wordService.process(wordSupportDto);
+		//log.info("WordController process result: " + values);
+		return response;
 	}
 	
 	private boolean process(WordSupportDto wordSupportDto) {
@@ -83,9 +97,9 @@ public class WordController {
 			return true;
 		} 
 		
-		if (null != wordSupportDto.getNonWordName() && 
-				wordSupportDto.getNonWordName().length() > 0 &&
-				wordSupportDto.getNonWordName().length() < 22) {
+		if (null != wordSupportDto.getNoWordName() && 
+				wordSupportDto.getNoWordName().length() > 0 &&
+				wordSupportDto.getNoWordName().length() < 22) {
 			return true;
 		}
 		
