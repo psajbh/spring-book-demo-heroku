@@ -54,11 +54,6 @@ public class WordController {
 		wordSupportDto.setInChar3(inChar3);
 		wordSupportDto.setInChar4(inChar4);
 		wordSupportDto.setInChar5(inChar5);
-//		wordSupportDto.setNotInChar1(notInChar1);
-//		wordSupportDto.setNotInChar2(notInChar2);
-//		wordSupportDto.setNotInChar3(notInChar3);
-//		wordSupportDto.setNotInChar4(notInChar4);
-//		wordSupportDto.setNotInChar5(notInChar5);
 		
 		if (process(wordSupportDto)) {
 			Map<String, String> response = executeWordSearch(wordSupportDto);
@@ -107,22 +102,6 @@ public class WordController {
 		if (!wordSupportDto.getInChar5().isEmpty()) {
 			return true;
 		}
-		
-//		if (!wordSupportDto.getNotInChar1().isEmpty()) {
-//			return true;
-//		}
-//		if (!wordSupportDto.getNotInChar2().isEmpty()) {
-//			return true;
-//		}
-//		if (!wordSupportDto.getNotInChar3().isEmpty()) {
-//			return true;
-//		}
-//		if (!wordSupportDto.getNotInChar4().isEmpty()) {
-//			return true;
-//		}
-//		if (!wordSupportDto.getNotInChar5().isEmpty()) {
-//			return true;
-//		}
 		
 		log.info("WordController - process - invalid value submission");
 		return false;

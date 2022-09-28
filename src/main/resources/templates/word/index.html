@@ -62,28 +62,16 @@
 				<label>5:</label>
 				<input type="text" maxlength="1" size="2" th:field="*{inChar5}" />
 				<br/><br/>
-			<!-- <h4>Enter character value as NOT EXISTING in a specified character position:</h4>
-				<label>1:</label>
-				<input type="text" maxlength="1" size="2"  th:field="*{notInChar1}" />
-				<label>2:</label>
-				<input type="text" maxlength="1" size="2"  th:field="*{notInChar2}" />
-				<label>3:</label>
-				<input type="text" maxlength="1" size="2"  th:field="*{notInChar3}" />
-				<label>4:</label>
-				<input type="text" maxlength="1" size="2"  th:field="*{notInChar4}" />
-				<label>5:</label>
-				<input type="text" maxlength="1" size="2"  th:field="*{notInChar5}" />
-				<br/><br/> -->
-			<small><b>note:</b> <i>all characters must be lower case</i></small>
+			<small><b>note:</b> <i>all input characters must be lower case</i></small>
 			<br/>
-			<button type="submit">Submit</button>
-			
-			<!-- <button type="clear">Clear</button>	 -->
+	
+			<input type="submit" value="Submit">		
+			<input type="reset" value="Reset">
 			
 			<br/><br/>
 			<h4>Matching Words Results: <input type="text" maxlength="4" size="5" th:field="*{wordCount}" /></h4>
 			<br/>
-			<textarea rows="5" cols="100" th:field="*{words}">
+			<textarea rows="5" cols="80" th:field="*{words}">
 			</textarea>
 		</form>
 	</div>
