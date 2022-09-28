@@ -8,11 +8,11 @@ public class WordSupportDto {
 	private String inChar3;
 	private String inChar4;
 	private String inChar5;
-	private String notInChar1;
-	private String notInChar2;
-	private String notInChar3;
-	private String notInChar4;
-	private String notInChar5;
+//	private String notInChar1;
+//	private String notInChar2;
+//	private String notInChar3;
+//	private String notInChar4;
+//	private String notInChar5;
 	private String words;
 	private String wordCount;
 //	private String common;
@@ -59,36 +59,36 @@ public class WordSupportDto {
 	public void setInChar5(String inChar5) {
 		this.inChar5 = inChar5;
 	}
-	public String getNotInChar1() {
-		return notInChar1;
-	}
-	public void setNotInChar1(String notInChar1) {
-		this.notInChar1 = notInChar1;
-	}
-	public String getNotInChar2() {
-		return notInChar2;
-	}
-	public void setNotInChar2(String notInChar2) {
-		this.notInChar2 = notInChar2;
-	}
-	public String getNotInChar3() {
-		return notInChar3;
-	}
-	public void setNotInChar3(String notInChar3) {
-		this.notInChar3 = notInChar3;
-	}
-	public String getNotInChar4() {
-		return notInChar4;
-	}
-	public void setNotInChar4(String notInChar4) {
-		this.notInChar4 = notInChar4;
-	}
-	public String getNotInChar5() {
-		return notInChar5;
-	}
-	public void setNotInChar5(String notInChar5) {
-		this.notInChar5 = notInChar5;
-	}
+//	public String getNotInChar1() {
+//		return notInChar1;
+//	}
+//	public void setNotInChar1(String notInChar1) {
+//		this.notInChar1 = notInChar1;
+//	}
+//	public String getNotInChar2() {
+//		return notInChar2;
+//	}
+//	public void setNotInChar2(String notInChar2) {
+//		this.notInChar2 = notInChar2;
+//	}
+//	public String getNotInChar3() {
+//		return notInChar3;
+//	}
+//	public void setNotInChar3(String notInChar3) {
+//		this.notInChar3 = notInChar3;
+//	}
+//	public String getNotInChar4() {
+//		return notInChar4;
+//	}
+//	public void setNotInChar4(String notInChar4) {
+//		this.notInChar4 = notInChar4;
+//	}
+//	public String getNotInChar5() {
+//		return notInChar5;
+//	}
+//	public void setNotInChar5(String notInChar5) {
+//		this.notInChar5 = notInChar5;
+//	}
 //	public String getCommon() {
 //		return common;
 //	}

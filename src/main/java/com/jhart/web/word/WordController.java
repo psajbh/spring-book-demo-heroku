@@ -1,7 +1,5 @@
 package com.jhart.web.word;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -10,16 +8,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.jhart.domain.Word;
 import com.jhart.dto.WordSupportDto;
 import com.jhart.service.word.WordService;
-
 
 @Controller
 public class WordController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final WordService wordService;
-	
 	
 	public WordController(WordService wordService) {
 		this.wordService = wordService;
@@ -54,21 +49,19 @@ public class WordController {
 		}
 		
 		wordSupportDto.setNoWordName(noWordName);
-		
 		wordSupportDto.setInChar1(inChar1);
 		wordSupportDto.setInChar2(inChar2);
 		wordSupportDto.setInChar3(inChar3);
 		wordSupportDto.setInChar4(inChar4);
 		wordSupportDto.setInChar5(inChar5);
-		wordSupportDto.setNotInChar1(notInChar1);
-		wordSupportDto.setNotInChar2(notInChar2);
-		wordSupportDto.setNotInChar3(notInChar3);
-		wordSupportDto.setNotInChar4(notInChar4);
-		wordSupportDto.setNotInChar5(notInChar5);
+//		wordSupportDto.setNotInChar1(notInChar1);
+//		wordSupportDto.setNotInChar2(notInChar2);
+//		wordSupportDto.setNotInChar3(notInChar3);
+//		wordSupportDto.setNotInChar4(notInChar4);
+//		wordSupportDto.setNotInChar5(notInChar5);
 		
 		if (process(wordSupportDto)) {
 			Map<String, String> response = executeWordSearch(wordSupportDto);
-			
 			wordSupportDto.setWords(response.get("wordNames"));
 			wordSupportDto.setWordCount(response.get("wordCount"));
 		}
@@ -80,11 +73,7 @@ public class WordController {
 	
 	private Map<String, String> executeWordSearch(WordSupportDto wordSupportDto) {
 		log.info("WordController executeWordSearch - ");
-		//List<String> words = wordService.process(wordSupportDto);
 		Map<String, String> response = wordService.process(wordSupportDto);
-		
-		//String values = wordService.process(wordSupportDto);
-		//log.info("WordController process result: " + values);
 		return response;
 	}
 	
@@ -119,21 +108,21 @@ public class WordController {
 			return true;
 		}
 		
-		if (!wordSupportDto.getNotInChar1().isEmpty()) {
-			return true;
-		}
-		if (!wordSupportDto.getNotInChar2().isEmpty()) {
-			return true;
-		}
-		if (!wordSupportDto.getNotInChar3().isEmpty()) {
-			return true;
-		}
-		if (!wordSupportDto.getNotInChar4().isEmpty()) {
-			return true;
-		}
-		if (!wordSupportDto.getNotInChar5().isEmpty()) {
-			return true;
-		}
+//		if (!wordSupportDto.getNotInChar1().isEmpty()) {
+//			return true;
+//		}
+//		if (!wordSupportDto.getNotInChar2().isEmpty()) {
+//			return true;
+//		}
+//		if (!wordSupportDto.getNotInChar3().isEmpty()) {
+//			return true;
+//		}
+//		if (!wordSupportDto.getNotInChar4().isEmpty()) {
+//			return true;
+//		}
+//		if (!wordSupportDto.getNotInChar5().isEmpty()) {
+//			return true;
+//		}
 		
 		log.info("WordController - process - invalid value submission");
 		return false;

@@ -8,6 +8,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.StringUtils;
 
 import com.jhart.domain.Word;
 import com.jhart.dto.WordSupportDto;
@@ -28,13 +29,13 @@ public class WordServiceImpl implements WordService {
 
 	@Override
 	public Map<String, String> process(WordSupportDto wordSupportDto) {
-		
+		log.info("WordServiceImpl process start");
 		List<Word> originalWords = setOriginalWords(wordSupportDto);
-		List<Word> availablewords; // = new ArrayList<>();
+		if (!wordSupportDto.getInChar1().isEmpty()) {
+			log.info("InChar1: " + wordSupportDto.getInChar1());
+		}
 		
-		//if (wordSupportDto.getNoWordName().length() > 0) {
-			availablewords = processUnavailable(wordSupportDto.getNoWordName(), originalWords);
-		//}
+		List<Word> availablewords = processUnavailable(wordSupportDto.getNoWordName(), originalWords); 
 		
 		if (null != availablewords && availablewords.size() > 0) {
 			availablewords = processChar1Unavailable(wordSupportDto, availablewords);
@@ -57,9 +58,14 @@ public class WordServiceImpl implements WordService {
 				wordCount++;				
 			}
 		}
+		
+		String wordNames = "";
+		if (sb.toString().length() > 6) {
+			wordNames = StringUtils.substring(sb.toString(),0, sb.toString().length()-2);
+		}
 
 		Map<String, String> response = new HashMap<>();
-		response.put("wordNames", sb.toString());
+		response.put("wordNames", wordNames);
 		response.put("wordCount", wordCount.toString());
 		log.info("returnValue: " + response);
 		return response;
