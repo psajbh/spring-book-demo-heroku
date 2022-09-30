@@ -3,9 +3,9 @@
 
 <head th:include="fragments/header :: head">
 	<meta charset="UTF-8">
-	<title> Word Search Manager</title>
+	<title> Wordle Helper/title>
 	
-	<!-- <style type="text/css">
+<!-- 	<style type="text/css">
 		label {
 			display: inline-block;
 			width: 200px;
@@ -40,6 +40,7 @@
 		</div>
  	</div>
  	
+ 	
  	<div align="center">
 		<form action="#" th:action="@{/word/get}" method="get" th:object="${wordSupportDto}">
 			<h4>Enter up to 5 character values that EXIST within a word:</h4>
@@ -61,20 +62,23 @@
 				<input type="text" maxlength="1" size="2"  th:field="*{inChar4}" />
 				<label>5:</label>
 				<input type="text" maxlength="1" size="2" th:field="*{inChar5}" />
-				<br/><br/>
-			<small><b>note:</b> <i>all input characters must be lower case</i></small>
-			<br/>
-	
-			<input type="submit" value="Submit">		
-			<input type="reset" value="Reset">
-			
-			<br/><br/>
+				<br/>
+				<br/>
+				<button>submit</button>
+				<br/>
 			<h4>Matching Words Results: <input type="text" maxlength="4" size="5" th:field="*{wordCount}" /></h4>
 			<br/>
 			<textarea rows="5" cols="80" th:field="*{words}">
 			</textarea>
 		</form>
 	</div>
+	
+	<div align="center">
+ 		<form action="#" th:action="@{/word/index}" method="get" th:object="${wordSupportDto}">
+ 			<br/>
+ 			<button> reset </button>
+ 		</form> 
+ 	</div>
 			
 	<div class="container" th:replace="fragments/footer :: footer">
 		<p>footer</p>

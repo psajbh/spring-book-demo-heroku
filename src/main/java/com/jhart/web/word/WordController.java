@@ -2,16 +2,21 @@ package com.jhart.web.word;
 
 import java.util.Map;
 
+//import java.util.Map;
+
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jhart.dto.WordSupportDto;
 import com.jhart.service.word.WordService;
 
 @Controller
+@RequestMapping({"", "/", "/word"})
 public class WordController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final WordService wordService;
@@ -20,21 +25,27 @@ public class WordController {
 		this.wordService = wordService;
 	}
 	
-	@GetMapping({"/word/index"})
+	@GetMapping({"/index"})
 	public String index(Model model) {
+		log.info("WordController = index");
 		WordSupportDto wordSupportDto = new WordSupportDto();
 		model.addAttribute("wordSupportDto", wordSupportDto);
 		log.info("WordController - index");
 		return "word/index";
 	}
 
-	@GetMapping({"/word/get"})
+	@GetMapping({"/get"})
 	public String get(Model model, String wordName, String noWordName,
 			String inChar1, String inChar2, 
-			String inChar3, String inChar4, String inChar5,
-			String notInChar1, String notInChar2, String notInChar3, 
-			String notInChar4, String notInChar5) {
+			String inChar3, String inChar4, String inChar5) {
 		log.info("WordController - get - start");
+		
+		wordName = wordName.toLowerCase();
+		noWordName = noWordName.toLowerCase();
+		inChar1 = inChar1.toLowerCase();
+		inChar2 = inChar2.toLowerCase();
+		inChar3 = inChar3.toLowerCase();
+		inChar4 = inChar4.toLowerCase();
 		
 		WordSupportDto wordSupportDto = new WordSupportDto();
 		
