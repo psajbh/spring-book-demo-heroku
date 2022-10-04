@@ -1,10 +1,7 @@
 package com.jhart.web.word;
 
 import java.util.Map;
-
-//import java.util.Map;
-
-
+ 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -85,6 +82,7 @@ public class WordController {
 	
 	private boolean process(WordSupportDto wordSupportDto) {
 		log.info("WordController process - ");
+		
 		
 		if (null != wordSupportDto.getWordName() && 
 				wordSupportDto.getWordName().length() > 0 &&

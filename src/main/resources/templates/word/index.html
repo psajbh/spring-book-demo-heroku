@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang='en' xmlns:th='http://www.thymeleaf.org'>
 
-<head th:include="fragments/header :: head">
-	<meta charset="UTF-8">
-	<title> Wordle Helper/title>
+<head th:include='fragments/header :: head'>
+	<meta charset='UTF-8'>
+	<title> Wordle Helper</title>
 	
-<!-- 	<style type="text/css">
+<!-- 	<style type='text/css'>
 		label {
 			display: inline-block;
 			width: 200px;
@@ -30,57 +30,66 @@
 </head>
   
 <body>
-	<div th:insert="navbar :: navbar"></div>
+	<div th:insert='navbar :: navbar'></div>
 
-	<div class="container-fluid" style="margin-top: 40px">
-		<div id="indexRow" class="row">
-			<div class="col-md-8 col-md-offset-2">
+	<div class='container-fluid' style='margin-top: 40px'>
+		<div id='indexRow' class='row'>
+			<div class='col-md-8 col-md-offset-2'>
 				<h3>Wordle Help</h3>
 			</div>
 		</div>
  	</div>
  	
  	
- 	<div align="center">
-		<form action="#" th:action="@{/word/get}" method="get" th:object="${wordSupportDto}">
+ 	<div align='center'>
+		<form action='#' th:action='@{/word/get}' method='get' th:object='${wordSupportDto}'>
 			<h4>Enter up to 5 character values that EXIST within a word:</h4>
 				<label>character values:</label>
-				<input type="text" maxlength="5" size="7" 
-					th:field="*{wordName}" /><br/><br/>
+				<input type='text' maxlength='5' size='7' 
+					th:field='*{wordName}' /><br/><br/>
 			<h4>Enter up to 22 character values that DO NOT EXIST within a word:</h4>
 				<label>character values:</label>
-				<input type="text" maxlength="22" size="23" 
-					th:field="*{noWordName}" /><br/><br/>
+				<input type='text' maxlength='22' size='23' 
+					th:field='*{noWordName}' /><br/><br/>
 			<h4>Enter character value as EXISTING in a specified character position:</h4>	
 				<label>1:</label>
-				<input type="text" maxlength="1" size="2" th:field="*{inChar1}" />
+				<input type='text' maxlength='1' size='2' th:field='*{inChar1}' />
 				<label>2:</label>
-				<input type="text" maxlength="1" size="2" th:field="*{inChar2}" />
+				<input type='text' maxlength='1' size='2' th:field='*{inChar2}' />
 				<label>3:</label>
-				<input type="text" maxlength="1" size="2" th:field="*{inChar3}" />
+				<input type='text' maxlength='1' size='2' th:field='*{inChar3}' />
 				<label>4:</label>
-				<input type="text" maxlength="1" size="2"  th:field="*{inChar4}" />
+				<input type='text' maxlength='1' size='2' th:field='*{inChar4}' />
 				<label>5:</label>
-				<input type="text" maxlength="1" size="2" th:field="*{inChar5}" />
+				<input type='text' maxlength='1' size='2' th:field='*{inChar5}' />
 				<br/>
 				<br/>
-				<button>submit</button>
-				<br/>
-			<h4>Matching Words Results: <input type="text" maxlength="4" size="5" th:field="*{wordCount}" /></h4>
+				<button type='submit'>submit</button>
 			<br/>
-			<textarea rows="5" cols="80" th:field="*{words}">
-			</textarea>
+			<h4>Matching Words Results: <input type='text' maxlength='4' size='5' th:field='*{wordCount}' /></h4>
+			<br/>
+			<textarea id='textarea' rows='5' cols='80' th:field='*{words}'></textarea>
 		</form>
 	</div>
 	
-	<div align="center">
- 		<form action="#" th:action="@{/word/index}" method="get" th:object="${wordSupportDto}">
+	<div align='center'>
+ 		<form action='#' th:action='@{/word/index}' method='get'>
+ 		<!-- <form action='#' th:action='@{/word/index}' method='get' th:object='${wordSupportDto}'> -->
  			<br/>
  			<button> reset </button>
  		</form> 
  	</div>
+ 	
+  	<div align='center'>
+ 		<!-- <form action='#' th:action='@{/word/index}' method='get' th:object='${wordSupportDto}'> -->
+ 			<br/>
+ 			<button id='clearwords'> clear words </button>
+ 			<script>src="word/words.js"</script>
+ 		<!-- </form> --> 
+ 	</div>
+ 	
 			
-	<div class="container" th:replace="fragments/footer :: footer">
+	<div class='container' th:replace='fragments/footer :: footer'>
 		<p>footer</p>
 	</div>
 

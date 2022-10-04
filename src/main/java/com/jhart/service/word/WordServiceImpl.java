@@ -21,7 +21,6 @@ public class WordServiceImpl implements WordService {
 	
 	private List<Word> allWords;
 	private List<Word> wordHolder; 
-	//private Map<String, String> response;
 	
 	public WordServiceImpl(WordRepository wordRepository) {
 		this.wordRepository = wordRepository;
@@ -31,9 +30,9 @@ public class WordServiceImpl implements WordService {
 	public Map<String, String> process(WordSupportDto wordSupportDto) {
 		log.info("WordServiceImpl process start");
 		List<Word> originalWords = setOriginalWords(wordSupportDto);
-		if (!wordSupportDto.getInChar1().isEmpty()) {
-			log.info("InChar1: " + wordSupportDto.getInChar1());
-		}
+//		if (!wordSupportDto.getInChar1().isEmpty()) {
+//			log.info("InChar1: " + wordSupportDto.getInChar1());
+//		}
 		
 		List<Word> availablewords = processUnavailable(wordSupportDto.getNoWordName(), originalWords); 
 		
@@ -67,7 +66,7 @@ public class WordServiceImpl implements WordService {
 		Map<String, String> response = new HashMap<>();
 		response.put("wordNames", wordNames);
 		response.put("wordCount", wordCount.toString());
-		log.info("returnValue: " + response);
+		log.trace("returnValue: " + response);
 		return response;
 	}
 	
@@ -158,7 +157,6 @@ public class WordServiceImpl implements WordService {
 					}
 					continue;
 				}			
-
 			}
 		}
 		return availablewords;
@@ -168,7 +166,6 @@ public class WordServiceImpl implements WordService {
 		
 		for (int i = 0; i < originalWords.size(); i++) { 
 			Word word =  originalWords.get(i);
-			//reset word unavailability to false
 			word.setUnavailable(false);
 			String wordText = word.getWord();
 			
@@ -177,7 +174,6 @@ public class WordServiceImpl implements WordService {
 			for (char ch : chars) {
 				s = Character.toString(ch);
 				if (unavailableChars.contains(s)) {
-					//reset unavailability to true
 					word.setUnavailable(true);
 					break;
 				}
@@ -206,7 +202,6 @@ public class WordServiceImpl implements WordService {
 				Word word = allWords.get(i);
 				if (word.getCommon().equals("1")) {
 					wordHolder.add(word);
-					// log.debug("*** added word " + name.toString() + " - " + common + " to baseline");
 				}
 			}
 		
@@ -214,23 +209,17 @@ public class WordServiceImpl implements WordService {
 			log.info("wordHolder size: " + wordHolder.size() + " elapsed time: " + (finish - start)/1000 + " seconds");
 		}	 
 
-		// now we have a list of words to process.
-		// setup wordNames
 		String wordName = wordSupportDto.getWordName();
-		// char[] wordNameChars = wordName.toCharArray();
 
-		// process words part 1 add all alpha names
 		for (int i = 0; i < wordHolder.size(); i++) {
 			Word word = wordHolder.get(i);
 			String wordText = word.getWord();
-			//log.info("wordText: " + wordText);
 
 			char[] chars = wordText.toCharArray();
 			String s;
 			for (char ch : chars) {
 				s = Character.toString(ch);
 				if (wordName.contains(s)) {
-					//log.debug("adding " + word.toString() + " to wordNames for char " + s);
 					originalWords.add(word);
 					break;
 				}
@@ -238,7 +227,6 @@ public class WordServiceImpl implements WordService {
 		}
 		
 		log.info("originalWords size: " + originalWords.size());
-
 		return originalWords;
 	}
 
