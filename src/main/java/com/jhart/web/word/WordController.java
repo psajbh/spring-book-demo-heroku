@@ -65,8 +65,36 @@ public class WordController {
 		
 		if (process(wordSupportDto)) {
 			Map<String, String> response = executeWordSearch(wordSupportDto);
-			wordSupportDto.setWords(response.get("wordNames"));
-			wordSupportDto.setWordCount(response.get("wordCount"));
+			String wordCount = response.get("wordCount");
+			int i = Integer.parseInt(wordCount);
+			if (i > 1900) {
+				String[] wordArray = response.get("wordNames").split(",");
+				
+				StringBuilder builder = new StringBuilder();
+				int j = 0;
+				for(String str : wordArray) {
+					builder.append(str + ", ");
+					j++;
+					if(j > 1900) {
+						break;
+					}
+				}
+				
+				String displayWords = builder.toString();
+				displayWords = displayWords.substring(0, displayWords.length()-2) + " ...";
+				
+				String note = "Cannot display more than 2000 words "
+						+ "at a time. The display will show a subset "
+						+ "of associated words that include the following: "
+						+ displayWords;
+				
+				wordSupportDto.setWords(note);
+			}
+			else {
+				wordSupportDto.setWords(response.get("wordNames"));
+			}
+			wordSupportDto.setWordCount(wordCount);
+			
 		}
 		
 		model.addAttribute("wordSupportDto", wordSupportDto);
