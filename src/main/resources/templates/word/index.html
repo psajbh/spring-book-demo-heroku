@@ -43,15 +43,15 @@
  	
  	<div align='center'>
 		<form action='#' th:action='@{/word/get}' method='get' th:object='${wordSupportDto}'>
-			<h4>Enter up to 5 character values that EXIST within a word:</h4>
+			<h5>Enter up to 5 character values that <b>ALL EXIST</b> within a word:</h5>
 				<label>character values:</label>
 				<input type='text' maxlength='5' size='7' 
 					th:field='*{wordName}' /><br/><br/>
-			<h4>Enter up to 22 character values that DO NOT EXIST within a word:</h4>
+			<h5>Enter up to 22 character values that <b>DO NOT EXIST</b> within a word:</h5>
 				<label>character values:</label>
 				<input type='text' maxlength='22' size='23' 
 					th:field='*{noWordName}' /><br/><br/>
-			<h4>Enter character value as EXISTING in a specified character position:</h4>	
+			<h5>Enter character value as <b>EXISTING</b> in a specified character position:</h5>	
 				<label>1:</label>
 				<input type='text' maxlength='1' size='2' th:field='*{inChar1}' />
 				<label>2:</label>
@@ -62,8 +62,19 @@
 				<input type='text' maxlength='1' size='2' th:field='*{inChar4}' />
 				<label>5:</label>
 				<input type='text' maxlength='1' size='2' th:field='*{inChar5}' />
-				<br/>
-				<br/>
+				<br/><br/>
+			<h5>Enter character value as <b>NOT EXISTING</b> in a specified character position:</h5>	
+				<label>1:</label>
+				<input type='text' maxlength='1' size='2' th:field='*{notInChar1}' />
+				<label>2:</label>
+				<input type='text' maxlength='1' size='2' th:field='*{notInChar2}' />
+				<label>3:</label>
+				<input type='text' maxlength='1' size='2' th:field='*{notInChar3}' />
+				<label>4:</label>
+				<input type='text' maxlength='1' size='2' th:field='*{notInChar4}' />
+				<label>5:</label>
+				<input type='text' maxlength='1' size='2' th:field='*{notInChar5}' />
+				<br/><br/>
 				<button type='submit'>submit</button>
 			<br/>
 			<h4>Matching Words Results: <input type='text' maxlength='4' size='5' th:field='*{wordCount}' /></h4>
