@@ -86,12 +86,6 @@ public class Word {
 		this.common = common;
 	}
 
-	
-	@Override
-	public String toString() {
-		return "Word [word=" + word + "]";
-	}
-
 	public boolean isUnavailable() {
 		return unavailable;
 	}
@@ -100,6 +94,9 @@ public class Word {
 		this.unavailable = unavailable;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "Word [word=" + word + "]";
+	}
 	
 }

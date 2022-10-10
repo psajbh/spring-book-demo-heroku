@@ -18,10 +18,10 @@ import com.jhart.repo.words.WordRepository;
 public class WordServiceImpl implements WordService {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final WordRepository wordRepository;
-	
+
 	private List<Word> allWords;
-	private List<Word> wordHolder; 
-	
+	private List<Word> wordHolder;
+
 	public WordServiceImpl(WordRepository wordRepository) {
 		this.wordRepository = wordRepository;
 	}
@@ -30,9 +30,9 @@ public class WordServiceImpl implements WordService {
 	public Map<String, String> process(WordSupportDto wordSupportDto) {
 		log.info("WordServiceImpl process start");
 		List<Word> originalWords = setOriginalWords(wordSupportDto);
-		
-		List<Word> availablewords = processUnavailable(wordSupportDto.getNoWordName(), originalWords); 
-		
+
+		List<Word> availablewords = processUnavailable(wordSupportDto.getNoWordName(), originalWords);
+
 		if (null != availablewords && availablewords.size() > 0) {
 			availablewords = processChar1Unavailable(wordSupportDto, availablewords);
 			availablewords = processChar2Unavailable(wordSupportDto, availablewords);
@@ -40,24 +40,23 @@ public class WordServiceImpl implements WordService {
 			availablewords = processChar4Unavailable(wordSupportDto, availablewords);
 			availablewords = processChar5Unavailable(wordSupportDto, availablewords);
 		}
-		
+
 		StringBuilder sb = new StringBuilder();
 		Integer wordCount = 0;
-	
+
 		for (int i = 0; i < availablewords.size(); i++) {
 			Word w = availablewords.get(i);
 			if (w.isUnavailable()) {
 				continue;
-			}
-			else {
+			} else {
 				sb.append(w.getWord() + ", ");
-				wordCount++;				
+				wordCount++;
 			}
 		}
-		
+
 		String wordNames = "";
 		if (sb.toString().length() > 6) {
-			wordNames = StringUtils.substring(sb.toString(),0, sb.toString().length()-2);
+			wordNames = StringUtils.substring(sb.toString(), 0, sb.toString().length() - 2);
 		}
 
 		Map<String, String> response = new HashMap<>();
@@ -66,8 +65,7 @@ public class WordServiceImpl implements WordService {
 		log.trace("returnValue: " + response);
 		return response;
 	}
-	
-	
+
 	private List<Word> processChar1Unavailable(WordSupportDto wordSupportDto, List<Word> availablewords) {
 		if (!wordSupportDto.getInChar1().isEmpty()) {
 			log.info("processing inChar1 - " + wordSupportDto.getInChar1());
@@ -82,16 +80,15 @@ public class WordServiceImpl implements WordService {
 					continue;
 				}
 			}
-		}
-		else {
+		} else {
 			log.info("processing for notInChar1 - values");
 			if (!wordSupportDto.getNotInChar1().isEmpty()) {
 				for (int i = 0; i < availablewords.size(); i++) {
 					Word w = availablewords.get(i);
 					if (!w.isUnavailable()) {
 						if (w.getChar1().equals(wordSupportDto.getNotInChar1())) {
-							log.info("char1 value of " + w.getChar1() + " sets the word: " 
-									+ w.getWord() + " as unavailable");
+							log.info("char1 value of " + w.getChar1() + " sets the word: " + w.getWord()
+									+ " as unavailable");
 							w.setUnavailable(true);
 						}
 					}
@@ -102,33 +99,30 @@ public class WordServiceImpl implements WordService {
 
 		return availablewords;
 	}
-	
-	  
-	  private List<Word> processChar2Unavailable(WordSupportDto wordSupportDto, List<Word> availablewords) {
-		if(!wordSupportDto.getInChar2().isEmpty()) {
-			for (int i = 0; i < availablewords.size(); i++) { 
-				Word w =  availablewords.get(i);
+
+	private List<Word> processChar2Unavailable(WordSupportDto wordSupportDto, List<Word> availablewords) {
+		if (!wordSupportDto.getInChar2().isEmpty()) {
+			for (int i = 0; i < availablewords.size(); i++) {
+				Word w = availablewords.get(i);
 				if (!w.isUnavailable()) {
-					if(w.getChar2().equals(wordSupportDto.getInChar2())){
+					if (w.getChar2().equals(wordSupportDto.getInChar2())) {
 						w.setUnavailable(false);
-					}
-					else {
+					} else {
 						w.setUnavailable(true);
 					}
 					continue;
-				}			
+				}
 			}
-			
-		}
-		else {
+
+		} else {
 			log.info("processing for notInChar2 - values");
 			if (!wordSupportDto.getNotInChar2().isEmpty()) {
 				for (int i = 0; i < availablewords.size(); i++) {
 					Word w = availablewords.get(i);
 					if (!w.isUnavailable()) {
 						if (w.getChar2().equals(wordSupportDto.getNotInChar2())) {
-							log.info("char2 value of " + w.getChar2() + " sets the word: " 
-									+ w.getWord() + " as unavailable");
+							log.info("char2 value of " + w.getChar2() + " sets the word: " + w.getWord()
+									+ " as unavailable");
 							w.setUnavailable(true);
 						}
 					}
@@ -136,35 +130,32 @@ public class WordServiceImpl implements WordService {
 				}
 			}
 		}
-		
+
 		return availablewords;
 	}
 
-
 	private List<Word> processChar3Unavailable(WordSupportDto wordSupportDto, List<Word> availablewords) {
-		if(!wordSupportDto.getInChar3().isEmpty()) {
-			for (int i = 0; i < availablewords.size(); i++) { 
-				Word w =  availablewords.get(i);
+		if (!wordSupportDto.getInChar3().isEmpty()) {
+			for (int i = 0; i < availablewords.size(); i++) {
+				Word w = availablewords.get(i);
 				if (!w.isUnavailable()) {
-					if(w.getChar3().equals(wordSupportDto.getInChar3())){
+					if (w.getChar3().equals(wordSupportDto.getInChar3())) {
 						w.setUnavailable(false);
-					}
-					else {
+					} else {
 						w.setUnavailable(true);
 					}
 					continue;
-				}			
+				}
 			}
-		}
-		else {
+		} else {
 			log.info("processing for notInChar3 - values");
 			if (!wordSupportDto.getNotInChar3().isEmpty()) {
 				for (int i = 0; i < availablewords.size(); i++) {
 					Word w = availablewords.get(i);
 					if (!w.isUnavailable()) {
 						if (w.getChar3().equals(wordSupportDto.getNotInChar3())) {
-							log.info("char3 value of " + w.getChar3() + " sets the word: " 
-									+ w.getWord() + " as unavailable");
+							log.info("char3 value of " + w.getChar3() + " sets the word: " + w.getWord()
+									+ " as unavailable");
 							w.setUnavailable(true);
 						}
 					}
@@ -176,30 +167,28 @@ public class WordServiceImpl implements WordService {
 	}
 
 	private List<Word> processChar4Unavailable(WordSupportDto wordSupportDto, List<Word> availablewords) {
-		if(!wordSupportDto.getInChar4().isEmpty()) {
-			for (int i = 0; i < availablewords.size(); i++) { 
-				Word w =  availablewords.get(i);
+		if (!wordSupportDto.getInChar4().isEmpty()) {
+			for (int i = 0; i < availablewords.size(); i++) {
+				Word w = availablewords.get(i);
 				if (!w.isUnavailable()) {
-					if(w.getChar4().equals(wordSupportDto.getInChar4())){
+					if (w.getChar4().equals(wordSupportDto.getInChar4())) {
 						w.setUnavailable(false);
-					}
-					else {
+					} else {
 						w.setUnavailable(true);
 					}
 					continue;
-				}			
+				}
 
 			}
-		}
-		else {
+		} else {
 			log.info("processing for notInChar4 - values");
 			if (!wordSupportDto.getNotInChar4().isEmpty()) {
 				for (int i = 0; i < availablewords.size(); i++) {
 					Word w = availablewords.get(i);
 					if (!w.isUnavailable()) {
 						if (w.getChar4().equals(wordSupportDto.getNotInChar4())) {
-							log.info("char4 value of " + w.getChar4() + " sets the word: " 
-									+ w.getWord() + " as unavailable");
+							log.info("char4 value of " + w.getChar4() + " sets the word: " + w.getWord()
+									+ " as unavailable");
 							w.setUnavailable(true);
 						}
 					}
@@ -209,31 +198,29 @@ public class WordServiceImpl implements WordService {
 		}
 		return availablewords;
 	}
-	
+
 	private List<Word> processChar5Unavailable(WordSupportDto wordSupportDto, List<Word> availablewords) {
-		if(!wordSupportDto.getInChar5().isEmpty()) {
-			for (int i = 0; i < availablewords.size(); i++) { 
-				Word w =  availablewords.get(i);
+		if (!wordSupportDto.getInChar5().isEmpty()) {
+			for (int i = 0; i < availablewords.size(); i++) {
+				Word w = availablewords.get(i);
 				if (!w.isUnavailable()) {
-					if(w.getChar5().equals(wordSupportDto.getInChar5())){
+					if (w.getChar5().equals(wordSupportDto.getInChar5())) {
 						w.setUnavailable(false);
-					}
-					else {
+					} else {
 						w.setUnavailable(true);
 					}
 					continue;
-				}			
+				}
 			}
-		}
-		else {
+		} else {
 			log.info("processing for notInChar5 - values");
 			if (!wordSupportDto.getNotInChar5().isEmpty()) {
 				for (int i = 0; i < availablewords.size(); i++) {
 					Word w = availablewords.get(i);
 					if (!w.isUnavailable()) {
 						if (w.getChar5().equals(wordSupportDto.getNotInChar5())) {
-							log.info("char5 value of " + w.getChar5() + " sets the word: " 
-									+ w.getWord() + " as unavailable");
+							log.info("char5 value of " + w.getChar5() + " sets the word: " + w.getWord()
+									+ " as unavailable");
 							w.setUnavailable(true);
 						}
 					}
@@ -243,14 +230,14 @@ public class WordServiceImpl implements WordService {
 		}
 		return availablewords;
 	}
-	
+
 	private List<Word> processUnavailable(String unavailableChars, List<Word> originalWords) {
-		
-		for (int i = 0; i < originalWords.size(); i++) { 
-			Word word =  originalWords.get(i);
+
+		for (int i = 0; i < originalWords.size(); i++) {
+			Word word = originalWords.get(i);
 			word.setUnavailable(false);
 			String wordText = word.getWord();
-			
+
 			char[] chars = wordText.toCharArray();
 			String s;
 			for (char ch : chars) {
@@ -264,7 +251,7 @@ public class WordServiceImpl implements WordService {
 
 		return originalWords;
 	}
-	
+
 	private List<Word> setOriginalWords(WordSupportDto wordSupportDto) {
 		log.info("setOriginalWords - start");
 		List<Word> originalWords = new ArrayList<>();
@@ -275,48 +262,47 @@ public class WordServiceImpl implements WordService {
 			int size = allWords.size();
 			if (null != wordHolder) {
 				wordHolder.clear();
-			}
-			else {
+			} else {
 				wordHolder = new ArrayList<Word>();
 			}
-		
+
 			for (int i = 0; i < size; i++) {
 				Word word = allWords.get(i);
 				if (word.getCommon().equals("1")) {
 					wordHolder.add(word);
 				}
 			}
-		
+
 			long finish = System.currentTimeMillis();
-			log.info("wordHolder size: " + wordHolder.size() + " elapsed time: " + (finish - start)/1000 + " seconds");
-		}	 
+			log.info(
+					"wordHolder size: " + wordHolder.size() + " elapsed time: " + (finish - start) / 1000 + " seconds");
+		}
 
 		String wordName = wordSupportDto.getWordName();
 
 		for (int i = 0; i < wordHolder.size(); i++) {
 			Word word = wordHolder.get(i);
 			String wordText = word.getWord();
-			
+
 			String s;
 			boolean match = false;
-			
+
 			char[] chars = wordName.toCharArray();
 			for (char ch : chars) {
 				s = Character.toString(ch);
-				if(wordText.contains(s)) {
+				if (wordText.contains(s)) {
 					match = true;
-				}
-				else {
+				} else {
 					match = false;
 					break;
 				}
 			}
-			
-			if(match) {
+
+			if (match) {
 				originalWords.add(word);
 			}
 		}
-		
+
 		log.info("originalWords size: " + originalWords.size());
 		return originalWords;
 	}
