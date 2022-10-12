@@ -3,7 +3,7 @@
 
 <head th:include='fragments/header :: head'>
 	<meta charset='UTF-8'>
-	<title> Wordle Helper</title>
+	<title> Word Helper</title>
 	
 <!-- 	<style type='text/css'>
 		label {
@@ -35,7 +35,7 @@
 	<div class='container-fluid' style='margin-top: 40px'>
 		<div id='indexRow' class='row'>
 			<div class='col-md-8 col-md-offset-2'>
-				<h3>Wordle Help</h3>
+				<h3>Word(le) Help</h3>
 			</div>
 		</div>
  	</div>
@@ -76,20 +76,20 @@
 				<input type='text' maxlength='1' size='2' th:field='*{notInChar5}' />
 				<br/><br/>
 				<button type='submit'>submit</button>
-			<br/>
+				<br/>
 			<h4>Matching Words Results: <input type='text' maxlength='4' size='5' th:field='*{wordCount}' /></h4>
 			<br/>
 			<textarea id='textarea' rows='5' cols='80' th:field='*{words}'></textarea>
 		</form>
 	</div>
 	
-	<div align='center'>
+<!-- 	<div align='center'>
  		<br/>
  		<form action='#' th:action='@{/word/index}' method='get'>
  			<button> reset </button>
  		</form> 
  	</div>
- 	
+ --> 	
 			
 	<div class='container' th:replace='fragments/footer :: footer'>
 		<p>footer</p>

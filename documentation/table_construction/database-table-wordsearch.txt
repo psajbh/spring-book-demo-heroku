@@ -1704,6 +1704,7 @@ insert into wordsearch (word, char1, char2, char3, char4, char5, common)
 ('gayer', 'g', 'a', 'y', 'e', 'r','1'),
 ('gayly', 'g', 'a', 'y', 'l', 'y','1'),
 ('gazer', 'g', 'a', 'z', 'e', 'r','1'),
+('gazed', 'g', 'a', 'z', 'e', 'd','1'),
 ('gears', 'g', 'e', 'a', 'r', 's','1'),
 ('gecko', 'g', 'e', 'c', 'k', 'o','1'),
 ('geeky', 'g', 'e', 'e', 'k', 'y','1'),
