@@ -11,10 +11,11 @@
 </head>
 
 <body>
+	<div th:insert="navbar :: navbar">  </div>
 	<!-- <nav th:replace="fragments/header :: navbar">
 		<p>header</p>
 	</nav> -->
-	<div th:insert="navbar :: navbar">  </div>
+	<!-- <div th:insert="navbar :: navbar">  </div> -->
 	<div class="container-fluid" style="margin-top: 120px">
 		<div id="indexRow" class="row">
 			<div class="col-md-8 col-md-offset-2">
@@ -39,8 +40,10 @@
 							</thead>
 						</table>
 						<div>
-							<a href="#" th:href="@{'/todo/add'}"><button type="submit">Add
-									New Task</button></a>
+							<!-- a href="#" th:href="@{'/todo/add'}"> -->
+							<a href="#" th:href="@{'/task/add'}">
+								<button type="submit">Add New Task</button>
+							</a>
 						</div>
 
 					</div>

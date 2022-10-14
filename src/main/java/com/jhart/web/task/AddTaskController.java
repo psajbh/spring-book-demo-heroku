@@ -25,7 +25,7 @@ public class AddTaskController {
 		this.conductor = conductor;
 	}
 	
-	@GetMapping("todo/add")
+	@GetMapping("task/add")
 	public String addNewTodo(Model model) {
 		//log.debug("addNewTodo- start");
 		model.addAttribute("users", userService.listAll());
