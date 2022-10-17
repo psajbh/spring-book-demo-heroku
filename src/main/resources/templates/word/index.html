@@ -4,52 +4,7 @@
 <head th:include='fragments/header :: head'>
 	<meta charset='UTF-8'>
 	<title id="pageTitle">Word Helper</title>
-	<!-- <title> Word Helper</title> -->
-	
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 50px;
-  width: 50%; /* Full width */
-  height: 60%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-</style>	
-	
+	<link rel="stylesheet" href="https://unpkg.com/mvp.css">
 </head>
   
 <body>
@@ -61,14 +16,30 @@ body {font-family: Arial, Helvetica, sans-serif;}
 				<h3>Word Helper</h3>
 			</div>
 		</div>
+		<div class="container" align='center' style='margin-top: -40px'>
+			<button id="show_button" align="right">Application Info</button>
+			<dialog id="my_dialog">
+        		<form method='dialog'>
+            		<div>
+                		<h4>Word Helper notes:</h4>
+                		<p>Word Helper can be used in connection with word gaming websites such as<br/>
+                		New York Times Wordle <strong>https://www.nytimes.com/games/wordle/index.html</strong><br/>
+                		or WordPlay <strong>https://wordplay.com</strong>.<br/><br/>
+                		Word Helper only supports 5 character words<br/>
+                		Word Helper suggests best first word entries as "ADIEU", "AUDIO" or "SOARE".<br/>
+                		What does your word score say about you? read: <br/>
+                		<strong>https://chambleeblueandgold.com/11679/featured-posts/what-your-wordle-score-says-about-you/</strong>
+                		
+                		</p>
+                		<button>Close</button>
+            		</div>
+        		</form>
+    		</dialog>
+    		<script>
+        		show_button.addEventListener('click', () => my_dialog.showModal());
+    		</script>
+		</div>
  	</div>
- 	
- 	<!-- Trigger/Open The Modal -->
-	<!--  <button id="myBtn">Open Modal</button>-->
- 	
- 	
- 	
- 	
  	
  	<div align='center'>
 		<form action='#' th:action='@{/word/get}' method='get' th:object='${wordSupportDto}'>
@@ -104,67 +75,48 @@ body {font-family: Arial, Helvetica, sans-serif;}
 				<label>5:</label>
 				<input type='text' maxlength='1' size='2' th:field='*{notInChar5}' />
 				<br/><br/>
-				<button type='submit'>submit</button>
+				<button type='submit'>Submit</button>
 				<br/>
 			<h4>Matching Words Results: <input type='text' maxlength='4' size='5' th:field='*{wordCount}' /></h4>
-			<br/>
+			<!-- <br/> -->
 			<textarea id='textarea' rows='5' cols='80' th:field='*{words}'></textarea>
 		</form>
 	</div>
 	
- 	<div align='center'>
+  	<div class="container" align='center'>
  		<br/>
  		<form action='#' th:action='@{/word/index}' method='get'>
- 			<button> reset </button>
+ 			<button> Reset </button>
  		</form> 
- 	</div>
-	 	
-	<!-- <h2>Modal Example</h2> -->
-	<!-- Trigger/Open The Modal -->
-	<!--  <button id="myBtn">Open Modal</button> -->
-
-	<!-- The Modal -->
-	<!-- <div id="myModal" class="modal"> -->
-
-  		<!-- Modal content -->
-  		<!-- <div class="modal-content"> -->
-    			<!-- <span class="close">&times;</span> -->
-    			<!-- <p>Some text in the Modal..</p> -->
-  			<!-- </div> -->
-	<!-- </div> -->	
-		
+ 		<br/>
+ 		<!-- source for this dialog: https://www.scottohara.me/blog/2019/03/05/open-dialog.html -->
+  	<!-- 	<button id="show_button">Application Info</button>
+    	<dialog id="my_dialog">
+        	<form method='dialog'>
+            	<div>
+                	<h4>Word Helper notes:</h4>
+                	<p>Word Helper can be used in connection with word gaming websites such as<br/>
+                	New York Times Wordle <strong>https://www.nytimes.com/games/wordle/index.html</strong><br/>
+                	or WordPlay <strong>https://wordplay.com</strong>.<br/><br/>
+                	Word Helper only supports 5 character words<br/>
+                	Word Helper suggests best first word entries as "ADIEU" or "AUDIO".
+                	</p>
+                	<button>Close</button>
+            	</div>
+        	</form>
+    	</dialog>
+    	<script>
+        	show_button.addEventListener('click', () => my_dialog.showModal());
+    	</script>
+ 	 --></div>
+ 		
 	<div class='container' th:replace='fragments/footer :: footer'>
 		<p>footer</p>
 	</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-</script>
-
- </body>
-
+ 
+ 
+ 	
+    
+    </body>
 </html>
+
