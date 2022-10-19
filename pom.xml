@@ -233,10 +233,10 @@
 					</execution>
 				</executions>
 			</plugin>
-<!--   			<plugin>
+			<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
-				<version>2.2.4</version>
+				<!-- <version>2.2.4</version> -->
 				<executions>
 					<execution>
 						<id>get-the-git-infos</id>
@@ -258,8 +258,9 @@
 						<always>false</always>
 						<dirty>-dirty</dirty>
 					</gitDescribe>
+					<failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
 				</configuration>
-			</plugin> -->
+			</plugin>
   			<!-- <plugin> runs integration tests
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>

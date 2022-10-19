@@ -2,11 +2,11 @@
 <html lang='en' xmlns:th='http://www.thymeleaf.org'>
 
 <head th:include='fragments/header :: head'>
-	<meta charset='UTF-8'>
-	<title id="pageTitle">Word Helper</title>
-	<link rel="stylesheet" href="https://unpkg.com/mvp.css">
+<meta charset='UTF-8'>
+<title id="pageTitle">Word Helper</title>
+<link rel="stylesheet" href="https://unpkg.com/mvp.css">
 </head>
-  
+
 <body>
 	<div th:insert='navbar :: navbar'></div>
 
@@ -19,84 +19,88 @@
 		<div class="container" align='center' style='margin-top: -40px'>
 			<button id="show_button" align="right">Application Info</button>
 			<dialog id="my_dialog">
-        		<form method="dialog">
-            		<div>
-                		<h4>Word Helper notes:</h4>
-                		<p>Word Helper can be used in connection with word gaming web sites, such as<br/>
-                		New York Times Wordle <strong>https://www.nytimes.com/games/wordle/index.html</strong><br/>
-                		or WordPlay <strong>https://wordplay.com</strong>.<br/><br/>
-                		Word Helper only supports 5 character words<br/>
-                		Word Helper suggests best first word entries as "ADIEU", "AUDIO" or "SOARE".<br/>
-                		What does your word score say about you? read: <br/>
-                		<strong>https://chambleeblueandgold.com/11679/featured-posts/what-your-wordle-score-says-about-you/</strong>
-                		</p>
-                		<button>Close</button>
-            		</div>
-        		</form>
-    		</dialog>
-    		<script>
+			<form method="dialog">
+				<div>
+					<h4>Word Helper notes:</h4>
+					<p>
+						Word Helper can be used in connection with word gaming web sites,
+						such as<br /> New York Times Wordle <strong>https://www.nytimes.com/games/wordle/index.html</strong><br />
+						or WordPlay <strong>https://wordplay.com</strong>.<br />
+						<br /> Word Helper only supports 5 character words<br /> Word
+						Helper suggests best first word entries as "ADIEU", "AUDIO" or
+						"SOARE".<br /> What does your word score say about you? read: <br />
+						<strong>https://chambleeblueandgold.com/11679/featured-posts/what-your-wordle-score-says-about-you/</strong>
+					</p>
+					<button>Close</button>
+				</div>
+			</form>
+			</dialog>
+			<script>
         		show_button.addEventListener('click', () => my_dialog.showModal());
     		</script>
 		</div>
- 	</div>
- 	
- 	<div align='center'>
-		<form action='#' th:action='@{/word/get}' method='get' th:object='${wordSupportDto}'>
-			<h5>Enter up to 5 character values that <b>ALL EXIST</b> within a word:</h5>
-				<label>character values:</label>
-				<input type='text' maxlength='5' size='7' 
-					th:field='*{wordName}' /><br/><br/>
-			<h5>Enter up to 22 character values that <b>DO NOT EXIST</b> within a word:</h5>
-				<label>character values:</label>
-				<input type='text' maxlength='22' size='23' 
-					th:field='*{noWordName}' /><br/><br/>
-			<h5>Enter character value as <b>EXISTING</b> in a specified character position:</h5>	
-				<label>1:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{inChar1}' />
-				<label>2:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{inChar2}' />
-				<label>3:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{inChar3}' />
-				<label>4:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{inChar4}' />
-				<label>5:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{inChar5}' />
-				<br/><br/>
-			<h5>Enter character value as <b>NOT EXISTING</b> in a specified character position:</h5>	
-				<label>1:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{notInChar1}' />
-				<label>2:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{notInChar2}' />
-				<label>3:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{notInChar3}' />
-				<label>4:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{notInChar4}' />
-				<label>5:</label>
-				<input type='text' maxlength='1' size='2' th:field='*{notInChar5}' />
-				<br/><br/>
-				<button type='submit'>Submit</button>
-				<br/>
-			<h4>Matching Words Results: <input type='text' maxlength='4' size='5' th:field='*{wordCount}' /></h4>
-			<!-- <br/> -->
+	</div>
+
+	<div align='center'>
+		<form action='#' th:action='@{/word/get}' method='get'
+			th:object='${wordSupportDto}'>
+			<h5>
+				Enter up to 5 character values that <b>ALL EXIST</b> within a word:
+			</h5>
+			<label>character values:</label> <input type='text' maxlength='5'
+				size='7' th:field='*{wordName}' /><br />
+			<br />
+			<h5>
+				Enter up to 22 character values that <b>DO NOT EXIST</b> within a
+				word:
+			</h5>
+			<label>character values:</label> <input type='text' maxlength='22'
+				size='23' th:field='*{noWordName}' /><br />
+			<br />
+			<h5>
+				Enter character value as <b>EXISTING</b> in a specified character
+				position:
+			</h5>
+			<label>1:</label> <input type='text' maxlength='1' size='2'
+				th:field='*{inChar1}' /> <label>2:</label> <input type='text'
+				maxlength='1' size='2' th:field='*{inChar2}' /> <label>3:</label> <input
+				type='text' maxlength='1' size='2' th:field='*{inChar3}' /> <label>4:</label>
+			<input type='text' maxlength='1' size='2' th:field='*{inChar4}' /> <label>5:</label>
+			<input type='text' maxlength='1' size='2' th:field='*{inChar5}' /> <br />
+			<br />
+			<h5>
+				Enter character value as <b>NOT EXISTING</b> in a specified
+				character position:
+			</h5>
+			<label>1:</label> <input type='text' maxlength='1' size='2'
+				th:field='*{notInChar1}' /> <label>2:</label> <input type='text'
+				maxlength='1' size='2' th:field='*{notInChar2}' /> <label>3:</label>
+			<input type='text' maxlength='1' size='2' th:field='*{notInChar3}' />
+			<label>4:</label> <input type='text' maxlength='1' size='2'
+				th:field='*{notInChar4}' /> <label>5:</label> <input type='text'
+				maxlength='1' size='2' th:field='*{notInChar5}' /> <br />
+			<br />
+			<button type='submit'>Submit</button>
+			<br />
+			<h4>
+				Matching Words Results: <input type='text' maxlength='4' size='5'
+					th:field='*{wordCount}' />
+			</h4>
 			<textarea id='textarea' rows='5' cols='80' th:field='*{words}'></textarea>
 		</form>
 	</div>
-	
-  	<div class="container" align='center'>
- 		<br/>
- 		<form action='#' th:action='@{/word/index}' method='get'>
- 			<button> Reset </button>
- 		</form> 
- 		<br/>
- 	 </div>
- 		
+
+	<div class="container" align='center'>
+		<br />
+		<form action='#' th:action='@{/word/index}' method='get'>
+			<button>Reset</button>
+		</form>
+		<br />
+	</div>
+
 	<div class='container' th:replace='fragments/footer :: footer'>
 		<p>footer</p>
 	</div>
- 
- 
- 	
-    
-    </body>
+</body>
 </html>
 
