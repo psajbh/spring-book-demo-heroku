@@ -45,6 +45,7 @@ public class WordController {
 		inChar2 = inChar2.toLowerCase();
 		inChar3 = inChar3.toLowerCase();
 		inChar4 = inChar4.toLowerCase();
+		inChar5 = inChar5.toLowerCase();
 		notInChar1 = notInChar1.toLowerCase();
 		notInChar2 = notInChar2.toLowerCase();
 		notInChar3 = notInChar3.toLowerCase();

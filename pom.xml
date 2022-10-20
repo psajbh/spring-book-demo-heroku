@@ -213,6 +213,11 @@
                     </execution>
                 </executions>
  -->			</plugin>
+ 			<plugin>
+    			<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-jar-plugin</artifactId>
+    			<version>3.0.2</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -233,7 +238,7 @@
 					</execution>
 				</executions>
 			</plugin>
-<!--   			<plugin>
+			<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
 				<version>2.2.4</version>
@@ -258,8 +263,9 @@
 						<always>false</always>
 						<dirty>-dirty</dirty>
 					</gitDescribe>
+					<!-- <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>-->
 				</configuration>
-			</plugin> -->
+			</plugin>
   			<!-- <plugin> runs integration tests
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
