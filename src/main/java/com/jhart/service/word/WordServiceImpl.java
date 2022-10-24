@@ -86,11 +86,36 @@ public class WordServiceImpl implements WordService {
 				for (int i = 0; i < availablewords.size(); i++) {
 					Word w = availablewords.get(i);
 					if (!w.isUnavailable()) {
-						if (w.getChar1().equals(wordSupportDto.getNotInChar1())) {
-							log.info("char1 value of " + w.getChar1() + " sets the word: " + w.getWord()
-									+ " as unavailable");
-							w.setUnavailable(true);
+						
+						if (1 == wordSupportDto.getNotInChar1().length()) {
+							if (w.getChar1().equals(wordSupportDto.getNotInChar1())) {
+								log.info("char1 value of " + w.getChar1() + " sets the word: " + w.getWord()
+										+ " as unavailable");
+								w.setUnavailable(true);
+							}
+							
 						}
+						else {
+							int n = 1;
+							String[] results = wordSupportDto.getNotInChar1().split("(?<=\\G.{" + n + "})");
+							for (String s: results) {           
+							   if (w.getChar1().contains(s)){
+								   w.setUnavailable(true);
+								   break;
+							   }
+							    //System.out.println(s); 
+							}
+							
+							
+						}
+						
+						//if(wordSupportDto.getNotInChar1().length() = 1) {
+						//}
+//						if (w.getChar1().equals(wordSupportDto.getNotInChar1())) {
+//							log.info("char1 value of " + w.getChar1() + " sets the word: " + w.getWord()
+//									+ " as unavailable");
+//							w.setUnavailable(true);
+//						}
 					}
 					continue;
 				}
