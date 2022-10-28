@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang='en' xmlns:th='http://www.thymeleaf.org'>
+
+<head th:include='fragments/header :: head'>
+	<meta charset='UTF-8'>
+	<title id="pageTitle">3-13</title>
+	<!--link rel="stylesheet" href="https://unpkg.com/mvp.css"-->
+	<style>
+		.grid-container {
+  			display: grid;
+  			column-gap: 50px;
+  			row-gap: 20px;
+		}
+		.grid-item {
+			grid-column-start: 1;
+  			grid-column-end: 3;
+  			grid-row-start: 1;
+  			grid-row-end: 3;
+		}
+	</style>
+</head>
+
+<body style="background-color:lightblue">
+	
+	
+	<div th:insert='navbar :: navbar'></div><div class='container-fluid' style='margin-top: 40px'>
+		<div id='indexRow' class='row'>
+			<div class='col-md-8 col-md-offset-2'>
+				<h3>Three Thirteen (3-13)</h3>
+			</div>
+		</div>
+	</div>
+	<div class="grid-container">
+  		<div class="grid-item">1</div>
+  		<div class="grid-item">2</div>
+  		<div class="grid-item">3</div>
+  		<div class="grid-item">4</div>
+  		<div class="grid-item">5</div>
+  		<div class="grid-item">6</div>
+  		<div class="grid-item">7</div>
+  		<div class="grid-item">8</div>
+  		<div class="grid-item">9</div>
+	</div> 
+	
+	
+	<div class='container' th:replace='fragments/footer :: footer'>
+		<p>footer</p>
+	</div>
+</body>
+
