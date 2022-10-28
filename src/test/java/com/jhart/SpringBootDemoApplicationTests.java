@@ -20,17 +20,14 @@ class SpringBootDemoApplicationTests {
 		log.info("running contextLoads");
 	}
 	
-	@Test
-	void contextLoads(ApplicationContext context) {
-		assertThat(context).isNotNull();
-		log.info("successfully executed context assertions");
-	}
-	
-	@Test
-	void loadTaskManagerAspect(ApplicationContext context) {
-		assertThat(context.getBean(TaskManagerAspect.class)).isNotNull();
-		log.info("successfully validated TaskManagerAspect is created");
-	}
-
+	/*
+	 * @Test void contextLoads(ApplicationContext context) {
+	 * assertThat(context).isNotNull();
+	 * log.info("successfully executed context assertions"); }
+	 * 
+	 * @Test void loadTaskManagerAspect(ApplicationContext context) {
+	 * assertThat(context.getBean(TaskManagerAspect.class)).isNotNull();
+	 * log.info("successfully validated TaskManagerAspect is created"); }
+	 */
 
 }
