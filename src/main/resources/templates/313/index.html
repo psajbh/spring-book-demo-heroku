@@ -12,13 +12,19 @@
 	<div class="container-fluid" style="margin-top: 40px">
 		<div id="indexRow" class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<h3>Three-Thirteen</h3>
+				<h3>Play Three-Thirteen</h3>
 			</div>
 			
 			<div class="grid-container-element">
-    			<div class="grid-child-element" id="current_date">Grid Column 1</div>
-   				 <div class="grid-child-element" id="gameId">Grid Column 2</div>
-			</div>
+    			<div class="grid-child-element"><strong>Date:</strong>
+    				<input class="game" id="current_date" size="8"
+ 					maxlength="10" readonly type="text"/>
+    			</div>
+    			<div class="grid-child-element"><strong>Id:</strong>
+    				<input class="game" id="gameId" size="5"
+					maxlength="6" readonly type="text"/>
+    			</div>
+    		</div>
 		</div>
 
 		<div class="wrapper1">
@@ -514,7 +520,7 @@
 			<div class="name">
 				<input onkeypress="return onlyNumberKey(event)"
 					onblur="findTotalForUser7()" id="user_7_13" type="text"
-					name="user_7" size="1" />
+					name="user_7" maxlength="3" size="2" />
 			</div>
 
 			<div class="name">
@@ -572,11 +578,16 @@
     hours = date.getHours();
     minutes = date.getMinutes();
     
-    document.getElementById("current_date").innerHTML = 
-    	"<strong>Date: </strong>" +month + "/" + day + "/" + year;
+    /* document.getElementById("current_date").innerHTML = 
+    	"<strong>Date: </strong>" +month + "/" + day + "/" + year; */
+    	
+    document.getElementById("current_date").value = 
+        	month + "/" + day + "/" + year;
     
-    document.getElementById("gameId").innerHTML = 
-        "<strong>Id: </strong>" + hours + "-" + minutes; 
+    /* document.getElementById("gameId").innerHTML = 
+        "<strong>Id: </strong>" + hours + "-" + minutes;  */
+        
+    document.getElementById("gameId").value = hours + "-" + minutes; 
         
 	function findTotalForUser1(){
         var arr = document.getElementsByName('user_1');
@@ -709,7 +720,7 @@ strong {
 }
 
 .grid-child-element {
-	margin: 20px;
+	margin: 10px;
 	border: 1px solid white;
 }
 
@@ -719,9 +730,20 @@ strong {
 	grid-gap: 10px;
 	border: 1px solid white;
 	text-align: center;
-	width: 40%;
+	width: 35%;
 }
 
+input.game {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+  /* background-color: #eee; */
+}
+
+/* .no-outline:focus {
+  outline: none;
+} */
 
 </style>
 
