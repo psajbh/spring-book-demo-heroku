@@ -61,25 +61,42 @@
 				Enter character value as <b>EXISTING</b> in a specified character
 				position:
 			</h5>
-			<label>1:</label> <input type='text' maxlength='1' size='2'
-				th:field='*{inChar1}' /> <label>2:</label> <input type='text'
-				maxlength='1' size='2' th:field='*{inChar2}' /> <label>3:</label> <input
-				type='text' maxlength='1' size='2' th:field='*{inChar3}' /> <label>4:</label>
-			<input type='text' maxlength='1' size='2' th:field='*{inChar4}' /> <label>5:</label>
-			<input type='text' maxlength='1' size='2' th:field='*{inChar5}' /> <br />
+			<label>1:</label> 
+			<input type='text' maxlength='1' size='2' th:field='*{inChar1}' />
+			
+			 <label>2:</label> 
+			 <input type='text' maxlength='1' size='2' th:field='*{inChar2}' /> 
+			 
+			 <label>3:</label> 
+			 <input type='text' maxlength='1' size='2' th:field='*{inChar3}' /> 
+			 
+			 <label>4:</label>
+			 <input type='text' maxlength='1' size='2' th:field='*{inChar4}' /> 
+			
+			<label>5:</label>
+			<input type='text' maxlength ='1' size='2' th:field='*{inChar5}' /> 
+			<br />
 			<br />
 			<h5>
-				Enter character value as <b>NOT EXISTING</b> in a specified
+				Enter character values (max 5) as <b>NOT EXISTING</b> in a specified
 				character position:
 			</h5>
-			<label>1:</label> <input type='text' maxlength='1' size='2'
-				th:field='*{notInChar1}' /> <label>2:</label> <input type='text'
-				maxlength='1' size='2' th:field='*{notInChar2}' /> <label>3:</label>
-			<input type='text' maxlength='1' size='2' th:field='*{notInChar3}' />
-			<label>4:</label> <input type='text' maxlength='1' size='2'
-				th:field='*{notInChar4}' /> <label>5:</label> <input type='text'
-				maxlength='1' size='2' th:field='*{notInChar5}' /> <br />
-			<br />
+			<label>1:</label> 
+			<input type='text' maxlength='5' size='3' th:field='*{notInChar1}' />
+			 
+			<label>2:</label> 
+			<input type='text' maxlength='5' size='3' th:field='*{notInChar2}' />
+			 
+			<label>3:</label>
+			<input type='text' maxlength='5' size='3' th:field='*{notInChar3}' />
+			
+			<label>4:</label> 
+			<input type='text' maxlength='5' size='3' th:field='*{notInChar4}' /> 
+			
+			<label>5:</label> 
+			<input type='text' 	maxlength='5' size='3' th:field='*{notInChar5}' />
+			 
+			<br /><br />
 			<button type='submit'>Submit</button>
 			<br />
 			<h4>
