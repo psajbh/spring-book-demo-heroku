@@ -1,0 +1,63 @@
+   <style>
+	
+	  div.container-fluid {
+	  	background-color:white;
+	  }
+	  
+      div.name {
+        text-align: center;
+        background-color:white;
+      }
+
+      input{
+        text-align: center;
+        background-color:white;
+      }
+
+      strong {
+        background-color: white;
+      }
+
+      .wrapper1 * {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1px;
+        margin-right: 1px;
+        background: white;
+      }
+
+      .wrapper1 {
+        display: grid;
+        grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+        grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+        grid-gap: 5px;
+        height: 100px;
+        text-align: center;
+        background: white;
+      }
+      
+/* 	.grid-container-element { 
+    	display: grid; 
+    	grid-template-columns: 1fr 1fr; 
+    	grid-gap: 10px; 
+    	border: 1px solid black; 
+    	text-align: center; 
+    	width: 50%; 
+	} 
+ */
+ 	.grid-child-element { 
+    	margin: 20px; 
+    	border: 1px solid white; 
+	}      
+       
+ 	.grid-container-element { 
+    	display: grid; 
+    	grid-template-columns: 1fr 1fr; 
+    	grid-gap: 20px; 
+    	border: 1px solid white; 
+    	width: 50%; 
+	} 
+	
+ </style>
+ 
