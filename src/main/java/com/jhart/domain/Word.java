@@ -20,7 +20,7 @@ public class Word {
 	private String char4;
 	private String char5;
 	private String common;
-	private boolean unavailable;
+	private boolean unavailable;  //consider removing this field. value never persisted
 	
 	public Integer getId() {
 		return id;

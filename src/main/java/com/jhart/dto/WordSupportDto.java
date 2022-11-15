@@ -13,7 +13,6 @@ public class WordSupportDto {
 	private String notInChar3;
 	private String notInChar4;
 	private String notInChar5;
-
 	private String words;
 	private String wordCount;
 
