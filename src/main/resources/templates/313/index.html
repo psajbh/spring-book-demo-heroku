@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang='en' xmlns:th='http://www.thymeleaf.org'>
+
+<head th:include='fragments/header :: head'>
+<meta charset='UTF-8'>
+<title id="pageTitle">3-13</title>
+<link href="css/three-thirteen/three-thirteen.css" rel="stylesheet">
+</head>
+
+<body>
+	<div th:insert="navbar :: navbar"></div>
+
+	<div class="container-fluid" style="margin-top: 40px">
+		<div id="indexRow" class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h3>Three-Thirteen</h3>
+			</div>
+			
+			<div class="grid-container-element">
+    			<div class="grid-child-element" id="current_date">Grid Column 1</div>
+   				 <div class="grid-child-element" id="gameId">Grid Column 2</div>
+			</div>
+		</div>
+			
+	
+<!-- 			<div class="grid-container-element">
+				<div class="grid-child-element" id="currentDate"></div>
+				<input id="current_date" type="text" maxlength='5' size='7' th:field='*{currentDate}' />
+					
+				</div>
+				<div class="grid-child-element" id="gameId"></div>
+			</div> -->
+		<!-- </div> -->
+
+		<div class="wrapper1">
+			<div>&nbsp;</div>
+			<div class="name">
+				<strong>player 1</strong>
+			</div>
+			<div class="name">
+				<strong>player 2</strong>
+			</div>
+			<div class="name">
+				<strong>player 3</strong>
+			</div>
+			<div class="name">
+				<strong>player 4</strong>
+			</div>
+			<div class="name">
+				<strong>player 5</strong>
+			</div>
+			<div class="name">
+				<strong>player 6</strong>
+			</div>
+			<div class="name">
+				<strong>player 7</strong>
+			</div>
+
+			<div class="name">
+				<strong>Player Name:</strong>
+			</div>
+			<div class="name">
+				<input type="text" maxlength="10" size="6" />
+			</div>
+			<div class="name">
+				<input type="text" maxlength="10" size="6" />
+			</div>
+			<div class="name">
+				<input type="text" maxlength="10" size="6" />
+			</div>
+			<div class="name">
+				<input type="text" maxlength="10" size="6" />
+			</div>
+			<div class="name">
+				<input type="text" maxlength="10" size="6" />
+			</div>
+			<div class="name">
+				<input type="text" maxlength="10" size="6" />
+			</div>
+			<div class="name">
+				<input type="text" maxlength="10" size="6" />
+			</div>
+
+			<div class="name">
+				<strong>round-3:&nbsp;&nbsp;</strong> <input type="image"
+					id="image3" width="35" height="40"
+					src="../images/313/3_of_spades.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_3" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_3" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_3" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_3" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_3" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_3" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_3" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round-4:&nbsp;&nbsp;</strong> <input type="image"
+					id="image4" width="35" height="40"
+					src="../images/313/4_of_hearts.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_4" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_4" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_4" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_4" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_4" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_4" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_4" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round-5:&nbsp;&nbsp;</strong> <input type="image"
+					id="image5" width="35" height="40"
+					src="../images/313/5_of_diamonds.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_5" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_5" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_5" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_5" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_5" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_5" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_5" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round-6:&nbsp;&nbsp;</strong> <input type="image"
+					id="image6" width="35" height="40"
+					src="../images/313/6_of_clubs.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_6" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_6" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_6" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_6" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_6" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_6" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_6" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round-7:&nbsp;&nbsp;</strong> <input type="image"
+					id="image7" width="35" height="40"
+					src="../images/313/7_of_spades.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_7" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_7" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_7" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_7" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_7" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_7" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_7" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round-8:&nbsp;&nbsp;</strong> <input type="image"
+					id="image8" width="35" height="40"
+					src="../images/313/8_of_hearts.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_8" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_8" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_8" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_8" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_8" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_8" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_8" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round-9:&nbsp;&nbsp;</strong> <input type="image"
+					id="image9" width="35" height="40"
+					src="../images/313/9_of_diamonds.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_9" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_9" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_9" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_9" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_9" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_9" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_9" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round-10:&nbsp;</strong> <input type="image" id="image10"
+					width="35" height="40" src="../images/313/10_of_clubs.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_10" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_10" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_10" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_10" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_10" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_10" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_10" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round 11:&nbsp;</strong> <input type="image" id="image11"
+					width="35" height="40" src="../images/313/jack_of_spades2.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_11" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_11" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_11" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_11" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_11" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_11" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_11" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round 12:&nbsp;</strong> <input type="image" id="image12"
+					width="35" height="40" src="../images/313/queen_of_hearts2.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_12" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_12" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_12" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_12" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_12" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_12" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_12" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>round 13:&nbsp;</strong> <input type="image" id="image13"
+					width="35" height="40" src="../images/313/king_of_diamonds2.png">
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser1()" id="user_1_13" type="text"
+					name="user_1" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser2()" id="user_2_13" type="text"
+					name="user_2" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser3()" id="user_3_13" type="text"
+					name="user_3" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser4()" id="user_4_13" type="text"
+					name="user_4" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser5()" id="user_5_13" type="text"
+					name="user_5" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser6()" id="user_6_13" type="text"
+					name="user_6" size="1" />
+			</div>
+			<div class="name">
+				<input onblur="findTotalForUser7()" id="user_7_13" type="text"
+					name="user_7" size="1" />
+			</div>
+
+			<div class="name">
+				<strong>Total Score:</strong>
+			</div>
+			<div class="name">
+				<strong> <input type="text" id="user_1_tot" size="5"
+					maxlength="4" readonly />
+				</strong>
+			</div>
+			<div class="name">
+				<strong> <input type="text" id="user_2_tot" size="5"
+					maxlength="4" readonly />
+				</strong>
+			</div>
+			<div class="name">
+				<strong> <input type="text" id="user_3_tot" size="5"
+					maxlength="4" readonly />
+				</strong>
+			</div>
+			<div class="name">
+				<strong> <input type="text" id="user_4_tot" size="5"
+					maxlength="4" readonly />
+				</strong>
+			</div>
+			<div class="name">
+				<strong> <input type="text" id="user_5_tot" size="5"
+					maxlength="4" readonly />
+				</strong>
+			</div>
+			<div class="name">
+				<strong> <input type="text" id="user_6_tot" size="5"
+					maxlength="4" readonly />
+				</strong>
+			</div>
+			<div class="name">
+				<strong> <input type="text" id="user_7_tot" size="5"
+					maxlength="4" readonly />
+				</strong>
+			</div>
+		</div>
+	</div>
+
+	<div class='container' th:replace='fragments/footer :: footer'>
+		<p>footer</p>
+	</div>
+
+
+	<script type="text/javascript">
+ 	
+    const date = new Date();
+    year = date.getFullYear();
+    month = date.getMonth() + 1;
+    day = date.getDate();
+    hours = date.getHours();
+    minutes = date.getMinutes();
+    //seconds = date.getSeconds();
+    
+    document.getElementById("current_date").innerHTML = 
+    	"<strong>Current Date: </strong>" +month + "/" + day + "/" + year;
+    
+    document.getElementById("gameId").innerHTML = 
+        "<strong>Game ID: </strong>" + hours + "." + minutes; 
+        
+	function findTotalForUser1(){
+        // alert("howdy from findTotalForUser1")
+        var arr = document.getElementsByName('user_1');
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value)){
+              tot += parseInt(arr[i].value);
+          }
+        }
+          document.getElementById('user_1_tot').value = tot;
+      }
+
+    function findTotalForUser2(){
+        // alert("howdy from findTotalForUser2")
+        var arr = document.getElementsByName('user_2');
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value)){
+              tot += parseInt(arr[i].value);
+          }
+        }
+          document.getElementById('user_2_tot').value = tot;
+      }
+
+      function findTotalForUser3(){
+        // alert("howdy from findTotalForUser2")
+        var arr = document.getElementsByName('user_3');
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value)){
+              tot += parseInt(arr[i].value);
+          }
+        }
+          document.getElementById('user_3_tot').value = tot;
+      }
+
+      function findTotalForUser4(){
+        // alert("howdy from findTotalForUser2")
+        var arr = document.getElementsByName('user_4');
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value)){
+              tot += parseInt(arr[i].value);
+          }
+        }
+          document.getElementById('user_4_tot').value = tot;
+      }
+
+      function findTotalForUser5(){
+        // alert("howdy from findTotalForUser2")
+        var arr = document.getElementsByName('user_5');
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value)){
+              tot += parseInt(arr[i].value);
+          }
+        }
+          document.getElementById('user_5_tot').value = tot;
+      }
+
+      function findTotalForUser6(){
+        // alert("howdy from findTotalForUser2")
+        var arr = document.getElementsByName('user_6');
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value)){
+              tot += parseInt(arr[i].value);
+          }
+        }
+          document.getElementById('user_6_tot').value = tot;
+      }
+
+      function findTotalForUser7(){
+        var arr = document.getElementsByName('user_7');
+        var tot=0;
+        for(var i=0;i<arr.length;i++){
+          if(parseInt(arr[i].value)){
+              tot += parseInt(arr[i].value);
+          }
+        }
+          document.getElementById('user_7_tot').value = tot;
+      }
+    
+    </script>
+
+<style>
+div.container-fluid {
+	background-color: white;
+}
+
+div.name {
+	text-align: center;
+	background-color: white;
+}
+
+input {
+	text-align: center;
+	background-color: white;
+}
+
+strong {
+	background-color: white;
+}
+
+ .wrapper1 * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1px;
+	margin-right: 1px;
+	background: white;
+}
+
+.wrapper1 {
+	display: grid;
+	grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+	grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+	grid-gap: 5px;
+	height: 100px;
+	text-align: center;
+	background: white;
+}
+
+/* 	.grid-container-element { 
+    	display: grid; 
+    	grid-template-columns: 1fr 1fr; 
+    	grid-gap: 10px; 
+    	border: 1px solid black; 
+    	text-align: center; 
+    	width: 50%; 
+	} 
+ */
+.grid-child-element {
+	margin: 20px;
+	border: 1px solid white;
+}
+
+.grid-container-element {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 10px;
+	border: 1px solid white;
+	text-align: center;
+	width: 40%;
+}
+
+</style>
+
+</body>
+</html>
+
+<!-- gray = #e7e6e6; -->
