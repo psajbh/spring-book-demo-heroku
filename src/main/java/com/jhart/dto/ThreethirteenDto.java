@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class ThreethirteenDto {
 	
-	private String currentDate;
+	private String playDate;
 	private String gameId;
 	private String player1;
 	private String player2;
@@ -21,11 +21,11 @@ public class ThreethirteenDto {
 	private int score6;
 	private int score7;
 	
-	public String getCurrentDate() {
-		return currentDate;
+	public String getPlayDate() {
+		return playDate;
 	}
-	public void setCurrentDate(String currentDate) {
-		this.currentDate = currentDate;
+	public void setPlayDate(String playDate) {
+		this.playDate = playDate;
 	}
 	public String getGameId() {
 		return gameId;
@@ -121,7 +121,7 @@ public class ThreethirteenDto {
 	
 	@Override
 	public String toString() {
-		return "ThreethirteenDto [currentDate=" + currentDate + ", gameId=" + gameId + ", player1=" + player1
+		return "ThreethirteenDto [playDate=" + playDate + ", gameId=" + gameId + ", player1=" + player1
 				+ ", player2=" + player2 + ", player3=" + player3 + ", player4=" + player4 + ", player5=" + player5
 				+ ", player6=" + player6 + ", player7=" + player7 + ", score1=" + score1 + ", score2=" + score2
 				+ ", score3=" + score3 + ", score4=" + score4 + ", score5=" + score5 + ", score6=" + score6
@@ -129,7 +129,7 @@ public class ThreethirteenDto {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(currentDate, gameId, player1, player2, player3, player4, player5, player6, player7, score1,
+		return Objects.hash(playDate, gameId, player1, player2, player3, player4, player5, player6, player7, score1,
 				score2, score3, score4, score5, score6, score7);
 	}
 	@Override
@@ -141,7 +141,7 @@ public class ThreethirteenDto {
 		if (getClass() != obj.getClass())
 			return false;
 		ThreethirteenDto other = (ThreethirteenDto) obj;
-		return Objects.equals(currentDate, other.currentDate) && Objects.equals(gameId, other.gameId)
+		return Objects.equals(playDate, other.playDate) && Objects.equals(gameId, other.gameId)
 				&& Objects.equals(player1, other.player1) && Objects.equals(player2, other.player2)
 				&& Objects.equals(player3, other.player3) && Objects.equals(player4, other.player4)
 				&& Objects.equals(player5, other.player5) && Objects.equals(player6, other.player6)

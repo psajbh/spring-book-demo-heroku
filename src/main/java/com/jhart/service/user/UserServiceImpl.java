@@ -1,19 +1,12 @@
 package com.jhart.service.user;
 
-//import java.util.Iterator;
-//import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-//import com.jhart.domain.Todo;
 import com.jhart.domain.User;
 import com.jhart.repo.user.UserRepository;
 
-//import javassist.NotFoundException;
-//import lombok.extern.slf4j.Slf4j;
-
-//@Slf4j
 @Service
 public class UserServiceImpl implements UserService{
 	
