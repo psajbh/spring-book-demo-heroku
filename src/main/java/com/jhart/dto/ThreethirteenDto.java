@@ -20,6 +20,8 @@ public class ThreethirteenDto {
 	private int score5;
 	private int score6;
 	private int score7;
+	//private String winningPlayer;
+	//private int winningScore;
 	
 	public String getPlayDate() {
 		return playDate;
@@ -117,8 +119,7 @@ public class ThreethirteenDto {
 	public void setScore7(int score7) {
 		this.score7 = score7;
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "ThreethirteenDto [playDate=" + playDate + ", gameId=" + gameId + ", player1=" + player1
@@ -132,6 +133,7 @@ public class ThreethirteenDto {
 		return Objects.hash(playDate, gameId, player1, player2, player3, player4, player5, player6, player7, score1,
 				score2, score3, score4, score5, score6, score7);
 	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

@@ -1,51 +1,86 @@
 package com.jhart.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
-@Table(name="Threethirteen")
-public class Threethirteen {
+@Table(name = "Threethirteen")
+public class Threethirteen implements IEntity, Serializable {
+	private static final long serialVersionUID = -1094433604961461682L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Integer id;
 	
-	private String playDate;
+	@Column(name = "play_date", nullable = false, columnDefinition = "varchar(10)")
+	private String playDate; 
+	
+	@Column(name = "game_id", nullable = false, columnDefinition = "varchar(5)")
 	private String gameId;
 	
+	@Column(name = "player_1", nullable = true, columnDefinition = "varchar(15)")
 	private String player1;
+	
+	@Column(name = "score_1", nullable = false, columnDefinition = "int(4)")
 	private int score1;
 	
+	@Column(name = "player_2", nullable = true, columnDefinition = "varchar(15)")
 	private String player2;
+	
+	@Column(name = "score_2", nullable = false, columnDefinition = "int(4)")
 	private int score2;
 	
+	@Column(name = "player_3", nullable = true, columnDefinition = "varchar(15)")
 	private String player3;
+	
+	@Column(name = "score_3", nullable = false, columnDefinition = "int(4)")
 	private int score3;
 	
+	@Column(name = "player_4", nullable = true, columnDefinition = "varchar(15)")
 	private String player4;
+	
+	@Column(name = "score_4", nullable = false, columnDefinition = "int(4)")
 	private int score4;
 	
+	@Column(name = "player_5", nullable = true, columnDefinition = "varchar(15)")
 	private String player5;
+	
+	@Column(name = "score_5", nullable = false, columnDefinition = "int(4)")
 	private int score5;
 	
+	@Column(name = "player_6", nullable = true, columnDefinition = "varchar(15)")
 	private String player6;
+	
+	@Column(name = "score_6", nullable = false, columnDefinition = "int(4)")
 	private int score6;
 	
+	@Column(name = "player_7", nullable = true, columnDefinition = "varchar(15)")
 	private String player7;
+	
+	@Column(name = "score_7", nullable = false, columnDefinition = "int(4)")
 	private int score7;
 	
+	@Column(name = "finish_date", nullable = false, columnDefinition = "varchar(100)")
+	private String finishDate;
 	
-	public Long getId() {
+	@Column(name = "winner", nullable = false, columnDefinition = "varchar(15)")
+	private String winner;
+	
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getPlayDate() {
@@ -145,6 +180,22 @@ public class Threethirteen {
 		this.score7 = score7;
 	}
 	
+	public String getFinishDate() {
+		return finishDate;
+	}
+
+	public void setFinishDate(String finishDate) {
+		this.finishDate = finishDate;
+	}
+	
+	public String getWinner() {
+		return winner;
+	}
+
+	public void setWinner(String winner) {
+		this.winner = winner;
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(playDate, gameId, id, player1, player2, player3, player4, player5, player6, player7,
