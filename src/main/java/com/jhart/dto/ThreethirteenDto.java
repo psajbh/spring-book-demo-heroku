@@ -1,11 +1,13 @@
 package com.jhart.dto;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Objects;
 
 public class ThreethirteenDto {
 	
 	private String playDate;
-	private String gameId;
+	//private String gameId;
 	private String player1;
 	private String player2;
 	private String player3;
@@ -20,6 +22,7 @@ public class ThreethirteenDto {
 	private int score5;
 	private int score6;
 	private int score7;
+	private LocalDateTime startDate;
 	//private String winningPlayer;
 	//private int winningScore;
 	
@@ -28,12 +31,6 @@ public class ThreethirteenDto {
 	}
 	public void setPlayDate(String playDate) {
 		this.playDate = playDate;
-	}
-	public String getGameId() {
-		return gameId;
-	}
-	public void setGameId(String gameId) {
-		this.gameId = gameId;
 	}
 	public String getPlayer1() {
 		return player1;
@@ -120,9 +117,17 @@ public class ThreethirteenDto {
 		this.score7 = score7;
 	}
 
+	public LocalDateTime getStartDate() {
+		return startDate;
+	}
+	
+	public void setStartDate(LocalDateTime startDate) {
+		this.startDate = startDate;
+	}
+	
 	@Override
 	public String toString() {
-		return "ThreethirteenDto [playDate=" + playDate + ", gameId=" + gameId + ", player1=" + player1
+		return "ThreethirteenDto [playDate=" + playDate + ", player1=" + player1
 				+ ", player2=" + player2 + ", player3=" + player3 + ", player4=" + player4 + ", player5=" + player5
 				+ ", player6=" + player6 + ", player7=" + player7 + ", score1=" + score1 + ", score2=" + score2
 				+ ", score3=" + score3 + ", score4=" + score4 + ", score5=" + score5 + ", score6=" + score6
@@ -130,7 +135,7 @@ public class ThreethirteenDto {
 	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(playDate, gameId, player1, player2, player3, player4, player5, player6, player7, score1,
+		return Objects.hash(playDate, player1, player2, player3, player4, player5, player6, player7, score1,
 				score2, score3, score4, score5, score6, score7);
 	}
 	
@@ -143,7 +148,7 @@ public class ThreethirteenDto {
 		if (getClass() != obj.getClass())
 			return false;
 		ThreethirteenDto other = (ThreethirteenDto) obj;
-		return Objects.equals(playDate, other.playDate) && Objects.equals(gameId, other.gameId)
+		return Objects.equals(playDate, other.playDate) 
 				&& Objects.equals(player1, other.player1) && Objects.equals(player2, other.player2)
 				&& Objects.equals(player3, other.player3) && Objects.equals(player4, other.player4)
 				&& Objects.equals(player5, other.player5) && Objects.equals(player6, other.player6)

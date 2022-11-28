@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include='fragments/header :: head'>
+	<meta charset='UTF-8'>
+	<title id="pageTitle">3-13 Save Status</title>
+	<link rel="stylesheet" href="https://unpkg.com/mvp.css">
+</head>
+
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid" style="margin-top: 35px">
+		<h3>Three-Thirteen Save Status</h3>
+		
+		<br/>
+		<br/>
+		<div class="wrapper1">
+		
+		
+			<div class="name">
+				<strong>Game Id:</strong> 
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' />
+			</div>
+		
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+		
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+		
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+		
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+		
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+			
+<!-- 			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' />
+			</div>
+ -->			
+			<div class="name">
+				<strong>Game Start:</strong> 
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" maxlength="15" size="15" 
+					th:field='*{threethirteen.playDate}' />
+			</div>
+			
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+		
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+		
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+		
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+		
+			<div class="name">
+				<!-- <input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' /> -->
+			</div>
+<!-- 			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.id}' />
+			</div>
+ -->		
+			<div class="name">
+				<strong>Players:</strong> 
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.player1}' />
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.player2}' />
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.player3}' />
+			</div>
+			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.player4}' />
+			</div>
+			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.player5}'/>
+			</div>
+			
+<!-- 			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.player6}' />
+			</div>
+ -->
+			<div class="name">
+				<input class="user-name" type="text" maxlength="10" size="6" 
+					th:field='*{threethirteen.player7}' />
+			</div>
+			
+			<div class="name">
+				<strong>Scores:</strong> 
+			</div>
+			
+			<div class="name">
+				<strong><input class="score" type="text" id="user_1_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score1}' /></strong>
+			</div>
+			<div class="name">
+				<strong><input class="score" type="text" id="user_2_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score2}' /></strong>
+			</div>
+			<div class="name">
+				<strong><input class="score" type="text" id="user_3_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score3}' /></strong>
+			</div>
+			<div class="name">
+				<strong><input class="score" type="text" id="user_4_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score4}' /></strong>
+			</div>
+			<div class="name">
+				<strong><input class="score" type="text" id="user_5_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score5}' /></strong>
+			</div>
+			
+ 			<!-- <div class="name">
+				<strong><input class="score" type="text" id="user_6_tot" size="5"
+					maxlength="4" readonly /></strong>
+			</div> -->
+		<!-- th:field='*{threethirteen.score6}' -->
+		
+			<div class="name">
+				<strong><input class="score" type="text" id="user_7_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score7}' /></strong>
+			</div>
+	
+			<div class="name">
+				<strong>Winner:</strong> 
+			</div>
+			
+			<div class="name">
+				<strong><input class="score" type="text" id="user_winner" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.winner}' /></strong>
+			</div>
+			
+			<div class="name">
+				<!-- <strong><input class="score" type="text" id="user_2_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score2}' /></strong> -->
+			</div>
+			<div class="name">
+				<!-- <strong><input class="score" type="text" id="user_3_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score3}' /></strong> -->
+			</div>
+			<div class="name">
+				<!-- <strong><input class="score" type="text" id="user_4_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score4}' /></strong> -->
+			</div>
+			<div class="name">
+				<!-- <strong><input class="score" type="text" id="user_5_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score5}' /></strong> -->
+			</div>
+			<div class="name">
+				<!-- <strong><input class="score" type="text" id="user_6_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score6}' /></strong> -->
+			</div>
+		<!-- 	<div class="name">
+				<strong><input class="score" type="text" id="user_7_tot" size="5"
+					maxlength="4" readonly th:field='*{threethirteen.score7}' /></strong>
+			</div>
+	 -->
+			
+			
+		
+		</div>
+	</div>
+	
+	
+
+	<div class='container' th:replace='fragments/footer :: footer'>
+		<p>footer</p>
+	</div>
+
+</body>
+
+<style>
+
+	body {
+		background-color: #eaeded;
+	} 
+	
+	div.container-fluid {
+		background-color:  #eaeded;
+	}
+	
+	input.score {background-color: #eaeded;}
+	input.user-name {background-color: #eaeded;}
+	
+ 	.wrapper1 * {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 1px;
+		margin-right: 1px;
+		/* background: white; */
+		background-color: #eaeded;
+	}
+ 	
+	.wrapper1 {
+		display: grid;
+		/* grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+		grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr; */
+		
+		grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 2fr;
+		grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr 2fr;
+		grid-gap: 5px;
+		height: 10px;
+		text-align: center;
+		/* background: white; */
+		background-color: #eaeded;
+	}
+	
+	input {
+  		border-top-style: hidden;
+ 		border-right-style: hidden;
+  		border-left-style: hidden;
+  		border-bottom-style: hidden;
+  		/* background-color: #eee; */
+	}
+
+	.no-outline:focus {
+  		outline: none;
+	}
+	
+	
+
+</style>
+
+</html>
+

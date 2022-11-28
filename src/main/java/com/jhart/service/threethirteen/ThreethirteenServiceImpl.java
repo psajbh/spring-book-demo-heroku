@@ -26,7 +26,7 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 	}
 	
 	@Override
-	public boolean process(ThreethirteenDto threethirteenDto) {
+	public Threethirteen process(ThreethirteenDto threethirteenDto) {
 		
 		Threethirteen threethirteen = setupDate(threethirteenDto);
 		String winningPlayer = null;
@@ -34,10 +34,10 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 		
 		if (null == threethirteen) {
 			log.error("ThreethirteenService - process date failure");
-			return false;
+			return null;
 		}
 		
-		threethirteen.setGameId(threethirteenDto.getGameId());
+		//threethirteen.setGameId(threethirteenDto.getGameId());
 		
 		if(null != threethirteenDto.getPlayer1() && threethirteenDto.getScore1() > 0) {
 			threethirteen.setPlayer1(threethirteenDto.getPlayer1());
@@ -121,16 +121,12 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 		}
 		
 		threethirteen.setWinner(winningPlayer);
-		Date date = new Date();
-		//LocalDate date = LocalDate.now();
-		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-		//String dateText = date.format(formatter);
-		String strDate = date.toString();
-		threethirteen.setFinishDate(strDate);
+		threethirteen.setStartDate(threethirteenDto.getStartDate());
+		threethirteen.setFinishDate(LocalDateTime.now());
 		
 		Threethirteen saved = threethirteenRepository.save(threethirteen);
 		log.info("ThreethirteenService - save: " + saved);
-		return true;
+		return saved;
 		
 	}
 	
