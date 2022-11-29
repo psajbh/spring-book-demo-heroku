@@ -40,11 +40,9 @@ public class Three13Controller {
 		//2022/11/15 16:36:33
 		String date = dateInfo.substring(0,10);
 		String hrMin = dateInfo.substring(11,19);
-		String modGameId = hrMin.replace(':', '.');
-		String playDate = date + " " + modGameId;
+		String playDate = date + " " + hrMin.replace(':', '.');
 		
 		threethirteenDto.setPlayDate(playDate);
-		//threethirteenDto.setStartDate(now);
 		startDates.put(playDate, now);
 		model.addAttribute("threethirteenDto", threethirteenDto);
 		log.info("Three13Controller - index");
@@ -64,10 +62,12 @@ public class Three13Controller {
 		threethirteenDto.setStartDate(startDate);
 		
 		Threethirteen threethirteen = threethirteenService.process(threethirteenDto);
+		//LocalDateTime finishDate = threethirteen.getFinishDate();
+		//log.debug(finishDate.toString());
+		
 		
 		if (null == threethirteen) {
 			log.warn("saveNewThreethirteen - failure processing 313 data");
-			// do something
 		}
 		else {
 			log.info("saveNewThreethirteen - success");

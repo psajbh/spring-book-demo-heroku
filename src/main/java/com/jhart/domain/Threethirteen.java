@@ -60,7 +60,7 @@ public class Threethirteen implements IEntity, Serializable {
 	private String player6;
 	
 	@Column(name = "score_6", nullable = false, columnDefinition = "int(4)")
-	private int score6;
+	private Integer score6;
 	
 	@Column(name = "player_7", nullable = true, columnDefinition = "varchar(15)")
 	private String player7;

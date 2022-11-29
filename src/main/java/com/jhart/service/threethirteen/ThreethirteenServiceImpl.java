@@ -37,8 +37,6 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 			return null;
 		}
 		
-		//threethirteen.setGameId(threethirteenDto.getGameId());
-		
 		if(null != threethirteenDto.getPlayer1() && threethirteenDto.getScore1() > 0) {
 			threethirteen.setPlayer1(threethirteenDto.getPlayer1());
 			threethirteen.setScore1(threethirteenDto.getScore1());
@@ -115,7 +113,7 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 				winningPlayer = threethirteenDto.getPlayer7();
 				winningScore = threethirteenDto.getScore7();
 			}
-			else if (threethirteenDto.getScore6() == winningScore) {
+			else if (threethirteenDto.getScore7() == winningScore) {
 				winningPlayer = winningPlayer + ", " + threethirteenDto.getPlayer7();
 			}
 		}

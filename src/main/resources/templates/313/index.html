@@ -4,7 +4,7 @@
 <head th:include='fragments/header :: head'>
 	<meta charset='UTF-8'>
 	<title id="pageTitle">3-13</title>
-	<link rel="stylesheet" href="https://unpkg.com/mvp.css">
+	<!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
 </head>
 
 <body>
@@ -20,12 +20,6 @@
 					size="20" maxlength="35" 
 					readonly type="text" th:field='*{playDate}'/>
 			</div>
-			<!-- <div class="grid-child-element">
-				<strong>Id:</strong> 
-				<input class="game" id="gameId" size="5"
-					maxlength="6" readonly type="text" 
-					th:field='*{gameId}' />
-			</div> -->
 			<div class="grid-child-element">
 				<button class="save" type="submit" name="submit">Save Total Scores</button>
 			</div> 
