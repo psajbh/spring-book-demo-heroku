@@ -3,6 +3,7 @@ package com.jhart.web.three13;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.HashMap;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +28,8 @@ public class Three13Controller {
 		this.threethirteenService = threethirteenService;		
 	}
 	
+	HashMap<String, LocalDateTime> startDates = new HashMap<>();
+	
 	@GetMapping("313/index")
 	public String index(Model model) {
 		ThreethirteenDto threethirteenDto = new ThreethirteenDto();
@@ -41,7 +44,8 @@ public class Three13Controller {
 		String playDate = date + " " + modGameId;
 		
 		threethirteenDto.setPlayDate(playDate);
-		threethirteenDto.setStartDate(now);
+		//threethirteenDto.setStartDate(now);
+		startDates.put(playDate, now);
 		model.addAttribute("threethirteenDto", threethirteenDto);
 		log.info("Three13Controller - index");
 		return "313/index";
@@ -54,6 +58,10 @@ public class Three13Controller {
 			log.warn("saveNewUser - failed to process, no playDate");
 			return "redirect:/313/index";
 		}
+		
+		String playDate = threethirteenDto.getPlayDate();
+		LocalDateTime startDate = startDates.get(playDate);
+		threethirteenDto.setStartDate(startDate);
 		
 		Threethirteen threethirteen = threethirteenService.process(threethirteenDto);
 		
