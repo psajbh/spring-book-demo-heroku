@@ -62,6 +62,11 @@ public class Three13Controller {
 		threethirteenDto.setStartDate(startDate);
 		
 		Threethirteen threethirteen = threethirteenService.process(threethirteenDto);
+		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+		LocalDateTime now = LocalDateTime.now();
+		
+		
 		//LocalDateTime finishDate = threethirteen.getFinishDate();
 		//log.debug(finishDate.toString());
 		

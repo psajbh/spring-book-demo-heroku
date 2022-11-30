@@ -2,10 +2,19 @@ package com.jhart.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class DateComparer {
+	
+	public String findDifference(LocalDateTime start_date, LocalDateTime end_date) {
+		//long difference_In_Time = end_date.getTime() - d1.getTime();
+		Date date = new Date();
+		System.out.println(date);
+		//start_date.atZone();
+		return null;
+	}
 
 	public String findDifference(String start_date, String end_date) {
 
