@@ -2,7 +2,6 @@ package com.jhart.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
@@ -26,28 +25,28 @@ public class DateComparer {
 			long difference_In_Seconds = TimeUnit.MILLISECONDS.toSeconds(difference_In_Time) % 60;
 			long difference_In_Minutes = TimeUnit.MILLISECONDS.toMinutes(difference_In_Time) % 60;
 			long difference_In_Hours = TimeUnit.MILLISECONDS.toHours(difference_In_Time) % 24;
-			long difference_In_Days = TimeUnit.MILLISECONDS.toDays(difference_In_Time) % 365;
-			long difference_In_Years = TimeUnit.MILLISECONDS.toDays(difference_In_Time) / 365l;
+			//long difference_In_Days = TimeUnit.MILLISECONDS.toDays(difference_In_Time) % 365;
+			//long difference_In_Years = TimeUnit.MILLISECONDS.toDays(difference_In_Time) / 365l;
 
 			StringBuilder sb = new StringBuilder();
 			
-			if (difference_In_Years > 0) {
-				sb.append(" y: " + difference_In_Years);
-			}
+//			if (difference_In_Years > 0) {
+//				sb.append(" y: " + difference_In_Years);
+//			}
 			
-			if (difference_In_Days > 0) {
-				sb.append(" d: " + difference_In_Days);
-			}
+//			if (difference_In_Days > 0) {
+//				sb.append(" d: " + difference_In_Days);
+//			}
 			
-			if (difference_In_Hours > 0) {
-				sb.append(" hr: " + difference_In_Hours);
+			if (difference_In_Hours >=  0) {
+				sb.append(difference_In_Hours + " : ");
 			}
 			
 			if (difference_In_Minutes > 0) {
-				sb.append(" min: " + difference_In_Minutes);
+				sb.append( difference_In_Minutes + " : ");
 			}
 			
-			sb.append(" sec: " + difference_In_Seconds);
+			sb.append(difference_In_Seconds);
 			
 			result = sb.toString();
 			log.debug("getElapsedTime - elapsed time: " + result);

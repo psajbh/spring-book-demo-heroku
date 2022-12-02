@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 //import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.jhart.domain.Threethirteen;
 import com.jhart.dto.ThreethirteenDto;
@@ -33,9 +34,20 @@ public class Three13Controller {
 	private HashMap<String, LocalDateTime> startDates = new HashMap<>();
 	private HashMap<String, String> startStrings = new HashMap<>();
 	
+//	@PutMapping("313/index")
+//	public String update(Model model, ThreethirteenDto threethirteenDto) {
+//	    return "313/index";
+//	}
+	
 	@GetMapping("313/index")
-	public String index(Model model) {
-		ThreethirteenDto threethirteenDto = new ThreethirteenDto();
+	public String index(Model model, ThreethirteenDto threethirteenDto) {
+	    if (null == threethirteenDto) {
+	        threethirteenDto = new ThreethirteenDto();
+	    }
+	    else {
+	        
+	    }
+		//ThreethirteenDto threethirteenDto = new ThreethirteenDto();
 		LocalDateTime now = LocalDateTime.now();
 		String dateInfo = dtf.format(now);
 		String date = dateInfo.substring(0,10);
@@ -74,14 +86,10 @@ public class Three13Controller {
 		String endDateStr = date + " " + hrMin;
 		
 		DateComparer dateComparer = new DateComparer();
-		String elapsedTime = dateComparer.findDifference(startDateStr, endDateStr);
+		String elapsedTime = dateComparer.getElapsedTime(startDateStr, endDateStr);
 		threethirteenDto.setElapsedTime(elapsedTime);
 		System.out.println("elapsed time: " + elapsedTime);
 		Threethirteen threethirteen = threethirteenService.process(threethirteenDto);
-
-		//convert startDate into a string
-		//convert endDate into a string
-		//see: https://stackoverflow.com/questions/19431234/converting-between-java-time-localdatetime-and-java-util-date
 		
 		if (null == threethirteen) {
 			log.warn("saveNewThreethirteen - failure processing 313 data");
@@ -90,7 +98,6 @@ public class Three13Controller {
 			log.info("saveNewThreethirteen - success");
 			model.addAttribute("threethirteen", threethirteen);
 		}
-		
 		
 		return "/313/save";
 	}

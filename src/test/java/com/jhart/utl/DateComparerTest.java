@@ -32,7 +32,7 @@ public class DateComparerTest {
     	// then
     	DateComparer comparer = new DateComparer();
     	
-    	String result = comparer.findDifference(start_date, end_date);
+    	String result = comparer.getElapsedTime(start_date, end_date);
     	System.out.println("result: " + result);
     	assertNotNull(result);
     	
