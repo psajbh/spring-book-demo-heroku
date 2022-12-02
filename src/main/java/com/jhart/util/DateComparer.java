@@ -6,19 +6,15 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class DateComparer {
-	
-	public String findDifference(LocalDateTime start_date, LocalDateTime end_date) {
-		//long difference_In_Time = end_date.getTime() - d1.getTime();
-		Date date = new Date();
-		System.out.println(date);
-		//start_date.atZone();
-		return null;
-	}
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-	public String findDifference(String start_date, String end_date) {
-
-		SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+	public String getElapsedTime(String start_date, String end_date) {
+		log.debug("getElapsedTime start: " + start_date + " end: " + end_date);
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		String result = null;
 
 		try {
@@ -36,26 +32,29 @@ public class DateComparer {
 			StringBuilder sb = new StringBuilder();
 			
 			if (difference_In_Years > 0) {
-				sb.append(difference_In_Years + " years, ");
+				sb.append(" y: " + difference_In_Years);
 			}
 			
 			if (difference_In_Days > 0) {
-				sb.append(difference_In_Days + " days, ");
+				sb.append(" d: " + difference_In_Days);
 			}
 			
 			if (difference_In_Hours > 0) {
-				sb.append(difference_In_Hours +	 " hours, ");
+				sb.append(" hr: " + difference_In_Hours);
 			}
 			
 			if (difference_In_Minutes > 0) {
-				sb.append(difference_In_Minutes + " minutes, ");
+				sb.append(" min: " + difference_In_Minutes);
 			}
 			
-			sb.append(difference_In_Seconds + " seconds");
+			sb.append(" sec: " + difference_In_Seconds);
+			
 			result = sb.toString();
+			log.debug("getElapsedTime - elapsed time: " + result);
 
 		} catch (ParseException e) {
 			e.printStackTrace();
+			//log.error(result)
 		}
 		
 		return result;

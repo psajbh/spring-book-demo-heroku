@@ -120,7 +120,9 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 		
 		threethirteen.setWinner(winningPlayer);
 		threethirteen.setStartDate(threethirteenDto.getStartDate());
-		threethirteen.setFinishDate(LocalDateTime.now());
+		threethirteen.setFinishDate(threethirteenDto.getStartDate());
+		threethirteen.setGameTime(threethirteenDto.getElapsedTime());
+		
 		
 		Threethirteen saved = threethirteenRepository.save(threethirteen);
 		log.info("ThreethirteenService - save: " + saved);

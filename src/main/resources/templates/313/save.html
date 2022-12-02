@@ -22,7 +22,7 @@
 			
 			<div class="name">
 				<input class="user-name" type="text" maxlength="10" size="6" 
-					th:field='*{threethirteen.id}' />
+					th:field='*{threethirteen.id}'/>
 			</div>
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
@@ -35,7 +35,7 @@
 				<strong>Game Start:</strong> 
 			</div>
 			<div class="name">
-				<input class="user-name" type="text" maxlength="20" size="20" 
+				<input class="user-name" type="text" maxlength="20" size="20"
 					th:field='*{threethirteen.playDate}' />
 			</div>
 			<div class="name">&nbsp;</div>
@@ -138,6 +138,22 @@
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
+			
+			<div class="name">
+				<strong>Elapsed Time:</strong> 
+			</div>
+			
+			<div class="name">
+				<strong><input class="score" type="text" id="game_time" size="15"
+					maxlength="100" readonly th:field='*{threethirteen.gameTime}' /></strong>
+			</div>
+			
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
 		
 		</div>
 	</div>
@@ -162,6 +178,7 @@
 	
 	input.score {background-color: #eaeded;}
 	input.user-name {background-color: #eaeded;}
+	
 	
  	.wrapper1 * {
 		display: flex;

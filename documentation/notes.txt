@@ -14,6 +14,10 @@ subject modal:
 
 
 
+game rules:
+must have at least 2 players to play a game
+all game stages must be complete before saving
+elapsed time: hr: xx min: yy sec: zz
 
 
 

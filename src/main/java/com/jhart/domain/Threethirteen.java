@@ -77,6 +77,9 @@ public class Threethirteen implements IEntity, Serializable {
 	@Column(name = "winner", nullable = false, columnDefinition = "varchar(15)")
 	private String winner;
 	
+	@Column(name = "game_time", nullable = false, columnDefinition = "varchar(75)")
+	private String gameTime;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -225,6 +228,14 @@ public class Threethirteen implements IEntity, Serializable {
 
 	public void setWinner(String winner) {
 		this.winner = winner;
+	}
+	
+	public String getGameTime() {
+		return gameTime;
+	}
+
+	public void setGameTime(String gameTime) {
+		this.gameTime = gameTime;
 	}
 
 	@Override

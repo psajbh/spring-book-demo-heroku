@@ -23,7 +23,9 @@ public class ThreethirteenDto {
 	private int score6;
 	private int score7;
 	private LocalDateTime startDate;
+	private LocalDateTime endDate;
 	//private String winningPlayer;
+	private String elapsedTime;
 	//private int winningScore;
 	
 	public String getPlayDate() {
@@ -120,11 +122,21 @@ public class ThreethirteenDto {
 	public LocalDateTime getStartDate() {
 		return startDate;
 	}
-	
 	public void setStartDate(LocalDateTime startDate) {
 		this.startDate = startDate;
 	}
-	
+	public LocalDateTime getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(LocalDateTime endDate) {
+		this.endDate = endDate;
+	}
+	public String getElapsedTime() {
+		return elapsedTime;
+	}
+	public void setElapsedTime(String elapsedTime) {
+		this.elapsedTime = elapsedTime;
+	}
 	@Override
 	public String toString() {
 		return "ThreethirteenDto [playDate=" + playDate + ", player1=" + player1
