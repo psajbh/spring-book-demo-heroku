@@ -2,8 +2,11 @@ package com.jhart.web.three13;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 //import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,21 +36,13 @@ public class Three13Controller {
 	
 	private HashMap<String, LocalDateTime> startDates = new HashMap<>();
 	private HashMap<String, String> startStrings = new HashMap<>();
+	//private List<String> playersList= new ArrayList<>();
+	private Map<String, String> playersMap = new HashMap<>();
 	
-//	@PutMapping("313/index")
-//	public String update(Model model, ThreethirteenDto threethirteenDto) {
-//	    return "313/index";
-//	}
 	
 	@GetMapping("313/index")
-	public String index(Model model, ThreethirteenDto threethirteenDto) {
-	    if (null == threethirteenDto) {
-	        threethirteenDto = new ThreethirteenDto();
-	    }
-	    else {
-	        
-	    }
-		//ThreethirteenDto threethirteenDto = new ThreethirteenDto();
+	public String index(Model model) {
+		ThreethirteenDto threethirteenDto = new ThreethirteenDto();
 		LocalDateTime now = LocalDateTime.now();
 		String dateInfo = dtf.format(now);
 		String date = dateInfo.substring(0,10);
@@ -55,6 +50,16 @@ public class Three13Controller {
 		String playStartText = date + " " + hrMin;
 		String playDate = date + " " + hrMin.replace(':', '.');
 		threethirteenDto.setPlayDate(playDate);
+		
+		if(playersMap.size() > 0) {
+			threethirteenDto.setPlayer1(playersMap.get("player1"));
+			threethirteenDto.setPlayer2(playersMap.get("player2"));
+			threethirteenDto.setPlayer3(playersMap.get("player3"));
+			threethirteenDto.setPlayer4(playersMap.get("player4"));
+			threethirteenDto.setPlayer5(playersMap.get("player5"));
+			threethirteenDto.setPlayer6(playersMap.get("player6"));
+			threethirteenDto.setPlayer7(playersMap.get("player7"));
+		}
 		
 		startDates.put(playDate, now);
 		startStrings.put(playDate, playStartText);
@@ -64,6 +69,11 @@ public class Three13Controller {
 		return "313/index";
 	}
 	
+	
+//	 @GetMapping("313/replay") public String indexWithPlayers() { 
+//		 return null; 
+//	 }
+	 	
 	@PostMapping("/313/save")
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
 		log.info("saveNewThreethirteen - start");
@@ -95,7 +105,43 @@ public class Three13Controller {
 			log.warn("saveNewThreethirteen - failure processing 313 data");
 		}
 		else {
+			playersMap.clear();
 			log.info("saveNewThreethirteen - success");
+			String player1 = threethirteen.getPlayer1();
+			if (null != player1) {
+				playersMap.put("player1", player1);
+			}
+		
+			String player2 = threethirteen.getPlayer2();
+			if (null != player2) {
+				playersMap.put("player2", player2);
+			}
+			
+			String player3 = threethirteen.getPlayer3();
+			if (null != player3) {
+				playersMap.put("player3", player3);
+			}
+
+			String player4 = threethirteen.getPlayer4();
+			if (null != player4) {
+				playersMap.put("player4", player4);
+			}
+			
+			String player5 = threethirteen.getPlayer5();
+			if (null != player5) {
+				playersMap.put("player5", player5);
+			}
+			
+			String player6 = threethirteen.getPlayer6();
+			if (null != player6) {
+				playersMap.put("player6", player6);
+			}
+			
+			String player7 = threethirteen.getPlayer7();
+			if (null != player7) {
+				playersMap.put("player7", player7);
+			}
+			
 			model.addAttribute("threethirteen", threethirteen);
 		}
 		
