@@ -146,7 +146,7 @@ public class Three13Controller {
 			model.addAttribute("threethirteen", threethirteen);
 		}
 		
-		return "/313/save";
+		return "313/save";
 	}
 	
 }
