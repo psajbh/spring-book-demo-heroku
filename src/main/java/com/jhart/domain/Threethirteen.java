@@ -32,11 +32,18 @@ public class Threethirteen implements IEntity, Serializable {
 	@Column(name = "score_1", nullable = false, columnDefinition = "int(4)")
 	private Integer score1;
 	
+	@Column(name = "rv_1", nullable = false, columnDefinition = "int(2)")
+	private Integer roundWins1;
+		
 	@Column(name = "player_2", nullable = true, columnDefinition = "varchar(15)")
 	private String player2;
 	
 	@Column(name = "score_2", nullable = false, columnDefinition = "int(4)")
 	private Integer score2;
+	
+	@Column(name = "rv_2", nullable = false, columnDefinition = "int(2)")
+	private Integer roundWins2;
+
 	
 	@Column(name = "player_3", nullable = true, columnDefinition = "varchar(15)")
 	private String player3;
@@ -44,11 +51,19 @@ public class Threethirteen implements IEntity, Serializable {
 	@Column(name = "score_3", nullable = false, columnDefinition = "int(4)")
 	private Integer score3;
 	
+	@Column(name = "rv_3", nullable = false, columnDefinition = "int(2)")
+	private Integer roundWins3;
+
+	
 	@Column(name = "player_4", nullable = true, columnDefinition = "varchar(15)")
 	private String player4;
 	
 	@Column(name = "score_4", nullable = false, columnDefinition = "int(4)")
 	private Integer score4;
+	
+	@Column(name = "rv_4", nullable = false, columnDefinition = "int(2)")
+	private Integer roundWins4;
+
 	
 	@Column(name = "player_5", nullable = true, columnDefinition = "varchar(15)")
 	private String player5;
@@ -56,17 +71,29 @@ public class Threethirteen implements IEntity, Serializable {
 	@Column(name = "score_5", nullable = false, columnDefinition = "int(4)")
 	private Integer score5;
 	
+	@Column(name = "rv_5", nullable = false, columnDefinition = "int(2)")
+	private Integer roundWins5;
+
+	
 	@Column(name = "player_6", nullable = true, columnDefinition = "varchar(15)")
 	private String player6;
 	
 	@Column(name = "score_6", nullable = false, columnDefinition = "int(4)")
 	private Integer score6;
 	
+	@Column(name = "rv_6", nullable = false, columnDefinition = "int(2)")
+	private Integer roundWins6;
+
+	
 	@Column(name = "player_7", nullable = true, columnDefinition = "varchar(15)")
 	private String player7;
 	
 	@Column(name = "score_7", nullable = false, columnDefinition = "int(4)")
 	private Integer score7;
+	
+	@Column(name = "rv_7", nullable = false, columnDefinition = "int(2)")
+	private Integer roundWins7;
+
 	
 	@Column(name = "start_date", nullable = false, columnDefinition = "DATE")
 	private LocalDateTime startDate;
@@ -236,6 +263,66 @@ public class Threethirteen implements IEntity, Serializable {
 
 	public void setGameTime(String gameTime) {
 		this.gameTime = gameTime;
+	}
+	
+	public Integer getRoundWins1() {
+		return roundWins1;
+	}
+
+	public void setRoundWins1(Integer roundWins1) {
+		this.roundWins1 = roundWins1;
+	}
+
+	public Integer getRoundWins2() {
+		return roundWins2;
+	}
+
+	public void setRoundWins2(Integer roundWins2) {
+		this.roundWins2 = roundWins2;
+	}
+
+	public Integer getRoundWins3() {
+		return roundWins3;
+	}
+
+	public void setRoundWins3(Integer roundWins3) {
+		this.roundWins3 = roundWins3;
+	}
+
+	public Integer getRoundWins4() {
+		return roundWins4;
+	}
+
+	public void setRoundWins4(Integer roundWins4) {
+		this.roundWins4 = roundWins4;
+	}
+
+	public Integer getRoundWins5() {
+		return roundWins5;
+	}
+
+	public void setRoundWins5(Integer roundWins5) {
+		this.roundWins5 = roundWins5;
+	}
+
+	public Integer getRoundWins6() {
+		return roundWins6;
+	}
+
+	public void setRoundWins6(Integer roundWins6) {
+		this.roundWins6 = roundWins6;
+	}
+
+	public Integer getRoundWins7() {
+		return roundWins7;
+	}
+
+	public void setRoundWins7(Integer roundWins7) {
+		this.roundWins7 = roundWins7;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 
 	@Override

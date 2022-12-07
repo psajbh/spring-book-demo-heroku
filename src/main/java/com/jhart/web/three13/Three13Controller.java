@@ -59,6 +59,7 @@ public class Three13Controller {
 			threethirteenDto.setPlayer5(playersMap.get("player5"));
 			threethirteenDto.setPlayer6(playersMap.get("player6"));
 			threethirteenDto.setPlayer7(playersMap.get("player7"));
+			playersMap.clear();
 		}
 		
 		startDates.put(playDate, now);

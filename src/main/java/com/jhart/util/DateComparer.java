@@ -30,30 +30,33 @@ public class DateComparer {
 
 			StringBuilder sb = new StringBuilder();
 			
-//			if (difference_In_Years > 0) {
-//				sb.append(" y: " + difference_In_Years);
-//			}
 			
-//			if (difference_In_Days > 0) {
-//				sb.append(" d: " + difference_In_Days);
-//			}
+			String hrs = "0";
+			String min = "0";
+			String sec = "0";
 			
-			if (difference_In_Hours >=  0) {
-				sb.append(difference_In_Hours + " : ");
+			if (difference_In_Hours >  0) {
+				hrs = String.valueOf(difference_In_Hours);
 			}
 			
 			if (difference_In_Minutes > 0) {
-				sb.append( difference_In_Minutes + " : ");
+				min = String.valueOf(difference_In_Minutes);
 			}
 			
-			sb.append(difference_In_Seconds);
+			if (difference_In_Seconds > 0) {
+				sec = String.valueOf(difference_In_Seconds);
+			}
+
+			sb.append(hrs + ":");
+			sb.append(min + ":");
+			sb.append(sec);
 			
 			result = sb.toString();
 			log.debug("getElapsedTime - elapsed time: " + result);
 
-		} catch (ParseException e) {
+		} 
+		catch (ParseException e) {
 			e.printStackTrace();
-			//log.error(result)
 		}
 		
 		return result;

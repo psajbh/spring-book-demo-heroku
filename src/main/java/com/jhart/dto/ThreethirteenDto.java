@@ -22,6 +22,15 @@ public class ThreethirteenDto {
 	private int score5;
 	private int score6;
 	private int score7;
+	private int rv1;
+	private int rv2;
+	private int rv3;
+	private int rv4;
+	private int rv5;
+	private int rv6;
+	private int rv7;
+	
+	
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
 	//private String winningPlayer;
@@ -136,6 +145,49 @@ public class ThreethirteenDto {
 	}
 	public void setElapsedTime(String elapsedTime) {
 		this.elapsedTime = elapsedTime;
+	}
+	
+	public int getRv1() {
+		return rv1;
+	}
+	public void setRv1(int rv1) {
+		this.rv1 = rv1;
+	}
+	public int getRv2() {
+		return rv2;
+	}
+	public void setRv2(int rv2) {
+		this.rv2 = rv2;
+	}
+	public int getRv3() {
+		return rv3;
+	}
+	public void setRv3(int rv3) {
+		this.rv3 = rv3;
+	}
+	public int getRv4() {
+		return rv4;
+	}
+	public void setRv4(int rv4) {
+		this.rv4 = rv4;
+	}
+	public int getRv5() {
+		return rv5;
+	}
+	public void setRv5(int rv5) {
+		this.rv5 = rv5;
+	}
+	public int getRv6() {
+		return rv6;
+	}
+	public void setRv6(int rv6) {
+		this.rv6 = rv6;
+	}
+	public int getRv7() {
+		return rv7;
+	}
+	public void setRv7(int rv7) {
+		this.rv7 = rv7;
 	}
 	@Override
 	public String toString() {
