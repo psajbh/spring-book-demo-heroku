@@ -75,7 +75,7 @@ public class Three13Controller {
 //		 return null; 
 //	 }
 	 	
-	@PostMapping("/313/save")
+	@PostMapping("313/save")
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
 		log.info("saveNewThreethirteen - start");
 		if(StringUtils.isEmpty(threethirteenDto.getPlayDate())) {
