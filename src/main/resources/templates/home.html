@@ -2,26 +2,28 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:include="fragments/header :: head">
-<title id="pageTitle">Home</title>
+	<meta charset='UTF-8'>
+	<title id="pageTitle">Home</title>
 </head>
 
 <body>
-	<!-- <nav th:replace="fragments/header :: navbar"></nav> -->
 	<div th:insert="navbar :: navbar">  </div>
-	
 
-	<div class="container-fluid" style="margin-top: 120px">
-		<div id="indexRow" class="row">
-			<div class="col-md-8 col-md-offset-2">
-				<h3>Home Page</h3>
-				
-			</div>
-		</div>
+	<div class="container-fluid" style="margin-top: 35px">
+		<h3>Home</h3>
 	</div>
 
 	<div class="container" th:replace="fragments/footer :: footer">
 		<p>footer</p>
 	</div>
 </body>
+
+<style>
+
+	body {
+		background-color: #eaeded;
+	} 
+
+</style>
 
 </html>

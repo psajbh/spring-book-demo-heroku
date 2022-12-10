@@ -29,15 +29,6 @@
 		<br />
 
 		<div class="wrapper1">
-		<!-- 	<div class="name">&nbsp;</div>
-			<div class="name">&nbsp;</div>
-			<div class="name">&nbsp;</div>
-			<div class="name">&nbsp;</div>
-			<div class="name">&nbsp;</div>
-			<div class="name">&nbsp;</div>
-			<div class="name">&nbsp;</div>
-			<div class="name">&nbsp;</div>
- -->
 			<div class="name">&nbsp;</div>
 			<div class="name">
 				<strong>player 1</strong>
@@ -48,7 +39,7 @@
 			<div class="name">
 				<strong>player 3</strong>
 			</div>
-			<div class="name">
+			<div class="name" id="p4">
 				<strong>player 4</strong>
 			</div>
 			<div class="name">
@@ -847,6 +838,10 @@
     
     document.getElementById("save_total_scores").style.visibility = 'hidden';
         
+    function sayHello(){
+    	alert("Howdy");	
+    }
+    
 	function findTotalForUser1(){
         var arr = document.getElementsByName('user_1');
         var tot=0;
@@ -987,7 +982,7 @@
       	  element = document.querySelector('.save');
     	  element.style.visibility = 'hidden';
    	  }
-      
+    	  
     </script>
     
 <style>
@@ -1000,10 +995,8 @@ div.container-fluid {
 	background-color:  #eaeded;
 }
 
-
 div.name {
 	text-align: center;
-	/* background-color: white; */
 }
 
 input {

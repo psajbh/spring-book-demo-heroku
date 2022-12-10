@@ -4,20 +4,21 @@
 <head th:include='fragments/header :: head'>
 	<meta charset='UTF-8'>
 	<title id="pageTitle">Word Helper</title>
-	<link rel="stylesheet" href="https://unpkg.com/mvp.css">
 </head>
 
 <body>
 	<div th:insert='navbar :: navbar'></div>
 
-	<div class='container-fluid' style='margin-top: 40px'>
-		<div id='indexRow' class='row'>
-			<div class='col-md-8 col-md-offset-2'>
-				<h3>Word Helper</h3>
-			</div>
-		</div>
+	<div class='container-fluid' style='margin-top: 35px'>
+		<h3>Word Helper</h3>
+		<br/>
+		<div class="container" align='right'>
+		<!-- <div style='align:right width:500px'> -->
+			<button id="show_button">Notes</button>
+ 		</div>
+		<br/>
 		<div class="container" align='center' style='margin-top: -40px'>
-			<button id="show_button" align="right">Application Info</button>
+			<!-- <button id="show_button" style="align: right">Application Info</button> -->
 			<dialog id="my_dialog">
 			<form method="dialog">
 				<div>
@@ -112,6 +113,9 @@
 		<form action='#' th:action='@{/word/index}' method='get'>
 			<button>Reset</button>
 		</form>
+		<!-- <div style='align:right'>
+ 			<button id="show_button">Notes</button>
+ 		</div> -->
 		<br />
 	</div>
 
@@ -119,5 +123,15 @@
 		<p>footer</p>
 	</div>
 </body>
+
+<style>
+
+	body {
+		background-color: #eaeded;
+	} 
+
+</style>
+
+
 </html>
 
