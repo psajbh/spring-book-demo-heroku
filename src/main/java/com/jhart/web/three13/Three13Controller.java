@@ -2,10 +2,7 @@ package com.jhart.web.three13;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-//import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -15,9 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import com.jhart.domain.Threethirteen;
 import com.jhart.dto.ThreethirteenDto;
@@ -36,7 +30,6 @@ public class Three13Controller {
 	
 	private HashMap<String, LocalDateTime> startDates = new HashMap<>();
 	private HashMap<String, String> startStrings = new HashMap<>();
-	//private List<String> playersList= new ArrayList<>();
 	private Map<String, String> playersMap = new HashMap<>();
 	
 	
@@ -69,11 +62,6 @@ public class Three13Controller {
 		log.info("Three13Controller - index");
 		return "313/index";
 	}
-	
-	
-//	 @GetMapping("313/replay") public String indexWithPlayers() { 
-//		 return null; 
-//	 }
 	 	
 	@PostMapping("313/save")
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
