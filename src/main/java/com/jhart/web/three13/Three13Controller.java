@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.jhart.domain.Threethirteen;
 import com.jhart.dto.ThreethirteenDto;
 import com.jhart.service.threethirteen.ThreethirteenService;
+import com.jhart.transform.ThreethirteenTransformer;
 import com.jhart.util.DateComparer;
 
 @Controller
@@ -23,9 +24,12 @@ public class Three13Controller {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 	private ThreethirteenService threethirteenService;
+	private ThreethirteenTransformer threethirteenTransformer;
 
-	public Three13Controller(ThreethirteenService threethirteenService) {
-		this.threethirteenService = threethirteenService;		
+	public Three13Controller(ThreethirteenService threethirteenService, 
+			ThreethirteenTransformer threethirteenTransformer) {
+		this.threethirteenService = threethirteenService;	
+		this.threethirteenTransformer = threethirteenTransformer;
 	}
 	
 	private HashMap<String, LocalDateTime> startDates = new HashMap<>();
@@ -65,12 +69,12 @@ public class Three13Controller {
 	 	
 	@PostMapping("313/save")
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
-		log.info("saveNewThreethirteen - start");
+		log.info("Three12Controller : saveNewThreethirteen - start");
 		if(StringUtils.isEmpty(threethirteenDto.getPlayDate())) {
-			log.warn("saveNewUser - failed to process, no playDate");
+			log.warn("Three12Controller : saveNewThreethirteen - failed to process, no playDate");
 			return "redirect:/313/index";
 		}
-		
+		ThreethirteenDto transformedDto;
 		String playDate = threethirteenDto.getPlayDate();
 		LocalDateTime startDate = startDates.get(playDate);
 		threethirteenDto.setStartDate(startDate);
@@ -87,51 +91,52 @@ public class Three13Controller {
 		DateComparer dateComparer = new DateComparer();
 		String elapsedTime = dateComparer.getElapsedTime(startDateStr, endDateStr);
 		threethirteenDto.setElapsedTime(elapsedTime);
-		System.out.println("elapsed time: " + elapsedTime);
+		log.debug("elapsed time: " + elapsedTime);
 		Threethirteen threethirteen = threethirteenService.process(threethirteenDto);
 		
 		if (null == threethirteen) {
 			log.warn("saveNewThreethirteen - failure processing 313 data");
 		}
 		else {
+			transformedDto = threethirteenTransformer.transformEntity(threethirteen);
 			playersMap.clear();
 			log.info("saveNewThreethirteen - success");
-			String player1 = threethirteen.getPlayer1();
+			String player1 = transformedDto.getPlayer1();
 			if (null != player1) {
 				playersMap.put("player1", player1);
 			}
 		
-			String player2 = threethirteen.getPlayer2();
+			String player2 = transformedDto.getPlayer2();
 			if (null != player2) {
 				playersMap.put("player2", player2);
 			}
 			
-			String player3 = threethirteen.getPlayer3();
+			String player3 = transformedDto.getPlayer3();
 			if (null != player3) {
 				playersMap.put("player3", player3);
 			}
 
-			String player4 = threethirteen.getPlayer4();
+			String player4 = transformedDto.getPlayer4();
 			if (null != player4) {
 				playersMap.put("player4", player4);
 			}
 			
-			String player5 = threethirteen.getPlayer5();
+			String player5 = transformedDto.getPlayer5();
 			if (null != player5) {
 				playersMap.put("player5", player5);
 			}
 			
-			String player6 = threethirteen.getPlayer6();
+			String player6 = transformedDto.getPlayer6();
 			if (null != player6) {
 				playersMap.put("player6", player6);
 			}
 			
-			String player7 = threethirteen.getPlayer7();
+			String player7 = transformedDto.getPlayer7();
 			if (null != player7) {
 				playersMap.put("player7", player7);
 			}
 			
-			model.addAttribute("threethirteen", threethirteen);
+			model.addAttribute("threethirteen", transformedDto);
 		}
 		
 		return "313/save";
