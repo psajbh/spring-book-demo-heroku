@@ -23,6 +23,18 @@ public class Threethirteen implements IEntity, Serializable {
 	@Column(name = "play_date", nullable = false, columnDefinition = "varchar(22)")
 	private String playDate; 
 	
+    @Column(name = "start_date", nullable = false, columnDefinition = "DATE")
+    private LocalDateTime startDate;
+    
+    @Column(name = "finish_date", nullable = false, columnDefinition = "DATE")
+    private LocalDateTime finishDate;
+    
+    @Column(name = "winner", nullable = false, columnDefinition = "varchar(15)")
+    private String winner;
+    
+    @Column(name = "game_time", nullable = false, columnDefinition = "varchar(75)")
+    private String gameTime;
+	
 	@Column(name = "player_1", nullable = true, columnDefinition = "varchar(15)")
 	private String player1;
 	
@@ -50,7 +62,6 @@ public class Threethirteen implements IEntity, Serializable {
 	
 	@Column(name = "rv_3", nullable = true, columnDefinition = "int(2)")
 	private Integer roundWins3;
-
 	
 	@Column(name = "player_4", nullable = true, columnDefinition = "varchar(15)")
 	private String player4;
@@ -88,18 +99,6 @@ public class Threethirteen implements IEntity, Serializable {
 	@Column(name = "rv_7", nullable = true, columnDefinition = "int(2)")
 	private Integer roundWins7;
 	
-	@Column(name = "start_date", nullable = false, columnDefinition = "DATE")
-	private LocalDateTime startDate;
-	
-	@Column(name = "finish_date", nullable = false, columnDefinition = "DATE")
-	private LocalDateTime finishDate;
-	
-	@Column(name = "winner", nullable = false, columnDefinition = "varchar(15)")
-	private String winner;
-	
-	@Column(name = "game_time", nullable = false, columnDefinition = "varchar(75)")
-	private String gameTime;
-	
 	public Integer getId() {
 		return id;
 	}
@@ -116,9 +115,35 @@ public class Threethirteen implements IEntity, Serializable {
 		this.playDate = playDate;
 	}
 	
+    public LocalDateTime getFinishDate() {
+        return finishDate;
+    }
+
+    public void setFinishDate(LocalDateTime finishDate) {
+        this.finishDate = finishDate;
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
+    
+    public String getGameTime() {
+        return gameTime;
+    }
+
+    public void setGameTime(String gameTime) {
+        this.gameTime = gameTime;
+    }
+	
+	
 	public String getPlayer1() {
 		if (null == player1) {
 			setScore1(null);
+			setRoundWins1(null);
 		}
 		return player1;
 	}
@@ -135,9 +160,18 @@ public class Threethirteen implements IEntity, Serializable {
 		this.score1 = score1;
 	}
 	
+    public Integer getRoundWins1() {
+        return roundWins1;
+    }
+
+    public void setRoundWins1(Integer roundWins1) {
+        this.roundWins1 = roundWins1;
+    }
+	
 	public String getPlayer2() {
 		if (null == player2) {
 			setScore2(null);
+			setRoundWins2(null);
 		}
 		return player2;
 	}
@@ -153,10 +187,19 @@ public class Threethirteen implements IEntity, Serializable {
 	public void setScore2(Integer score2) {
 		this.score2 = score2;
 	}
+	   
+	public Integer getRoundWins2() {
+	        return roundWins2;
+	}
+	
+	public void setRoundWins2(Integer roundWins2) {
+	    this.roundWins2 = roundWins2;
+	}
 	
 	public String getPlayer3() {
 		if (null == player3) {
-		     setScore1(null);
+		     setScore3(null);
+		     setRoundWins3(null);
 		}
 		return player3;
 	}
@@ -173,9 +216,18 @@ public class Threethirteen implements IEntity, Serializable {
 		this.score3 = score3;
 	}
 	
+    public Integer getRoundWins3() {
+        return roundWins3;
+    }
+
+    public void setRoundWins3(Integer roundWins3) {
+        this.roundWins3 = roundWins3;
+    }
+	
 	public String getPlayer4() {
 		if (null == player4) {
 		     setScore4(null);
+		     setRoundWins4(null);
 		}
 		return player4;
 	}
@@ -192,9 +244,19 @@ public class Threethirteen implements IEntity, Serializable {
 		this.score4 = score4;
 	}
 	
+    public Integer getRoundWins4() {
+        return roundWins4;
+    }
+
+    public void setRoundWins4(Integer roundWins4) {
+        this.roundWins4 = roundWins4;
+    }
+	
+	
 	public String getPlayer5() {
 		if (null == player5) {
 		     setScore5(null);
+		     setRoundWins5(null);
 		}
 		return player5;
 	}
@@ -211,9 +273,18 @@ public class Threethirteen implements IEntity, Serializable {
 		this.score5 = score5;
 	}
 	
+    public Integer getRoundWins5() {
+        return roundWins5;
+    }
+
+    public void setRoundWins5(Integer roundWins5) {
+        this.roundWins5 = roundWins5;
+    }
+	
 	public String getPlayer6() {
 		if (null == player6) {
 		     setScore6(null);
+		     setRoundWins6(null);
 		}
 		return player6;
 	}
@@ -230,9 +301,18 @@ public class Threethirteen implements IEntity, Serializable {
 		this.score6 = score6;
 	}
 	
+    public Integer getRoundWins6() {
+        return roundWins6;
+    }
+
+    public void setRoundWins6(Integer roundWins6) {
+        this.roundWins6 = roundWins6;
+    }
+	
 	public String getPlayer7() {
 		if (null == player7) {
 		     setScore7(null);
+		     setRoundWins7(null);
 		}
 		return player7;
 	}
@@ -256,86 +336,23 @@ public class Threethirteen implements IEntity, Serializable {
 	public void setStartDate(LocalDateTime startDate) {
 		this.startDate = startDate;
 	}
-
-	public LocalDateTime getFinishDate() {
-		return finishDate;
-	}
-
-	public void setFinishDate(LocalDateTime finishDate) {
-		this.finishDate = finishDate;
-	}
-
-	public String getWinner() {
-		return winner;
-	}
-
-	public void setWinner(String winner) {
-		this.winner = winner;
-	}
 	
-	public String getGameTime() {
-		return gameTime;
-	}
+    public Integer getRoundWins7() {
+        return roundWins7;
+    }
 
-	public void setGameTime(String gameTime) {
-		this.gameTime = gameTime;
-	}
+    public void setRoundWins7(Integer roundWins7) {
+        this.roundWins7 = roundWins7;
+    }
 	
-	public Integer getRoundWins1() {
-		return roundWins1;
-	}
 
-	public void setRoundWins1(Integer roundWins1) {
-		this.roundWins1 = roundWins1;
-	}
+	
 
-	public Integer getRoundWins2() {
-		return roundWins2;
-	}
 
-	public void setRoundWins2(Integer roundWins2) {
-		this.roundWins2 = roundWins2;
-	}
 
-	public Integer getRoundWins3() {
-		return roundWins3;
-	}
 
-	public void setRoundWins3(Integer roundWins3) {
-		this.roundWins3 = roundWins3;
-	}
 
-	public Integer getRoundWins4() {
-		return roundWins4;
-	}
 
-	public void setRoundWins4(Integer roundWins4) {
-		this.roundWins4 = roundWins4;
-	}
-
-	public Integer getRoundWins5() {
-		return roundWins5;
-	}
-
-	public void setRoundWins5(Integer roundWins5) {
-		this.roundWins5 = roundWins5;
-	}
-
-	public Integer getRoundWins6() {
-		return roundWins6;
-	}
-
-	public void setRoundWins6(Integer roundWins6) {
-		this.roundWins6 = roundWins6;
-	}
-
-	public Integer getRoundWins7() {
-		return roundWins7;
-	}
-
-	public void setRoundWins7(Integer roundWins7) {
-		this.roundWins7 = roundWins7;
-	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

@@ -98,45 +98,45 @@ public class Three13Controller {
 			log.warn("saveNewThreethirteen - failure processing 313 data");
 		}
 		else {
-			transformedDto = threethirteenTransformer.transformEntity(threethirteen);
+			threethirteenDto  = threethirteenTransformer.transformEntity(threethirteen);
 			playersMap.clear();
 			log.info("saveNewThreethirteen - success");
-			String player1 = transformedDto.getPlayer1();
+			String player1 = threethirteenDto.getPlayer1();
 			if (null != player1) {
 				playersMap.put("player1", player1);
 			}
 		
-			String player2 = transformedDto.getPlayer2();
+			String player2 = threethirteenDto.getPlayer2();
 			if (null != player2) {
 				playersMap.put("player2", player2);
 			}
 			
-			String player3 = transformedDto.getPlayer3();
+			String player3 = threethirteenDto.getPlayer3();
 			if (null != player3) {
 				playersMap.put("player3", player3);
 			}
 
-			String player4 = transformedDto.getPlayer4();
+			String player4 = threethirteenDto.getPlayer4();
 			if (null != player4) {
 				playersMap.put("player4", player4);
 			}
 			
-			String player5 = transformedDto.getPlayer5();
+			String player5 = threethirteenDto.getPlayer5();
 			if (null != player5) {
 				playersMap.put("player5", player5);
 			}
 			
-			String player6 = transformedDto.getPlayer6();
+			String player6 = threethirteenDto.getPlayer6();
 			if (null != player6) {
 				playersMap.put("player6", player6);
 			}
 			
-			String player7 = transformedDto.getPlayer7();
+			String player7 = threethirteenDto.getPlayer7();
 			if (null != player7) {
 				playersMap.put("player7", player7);
 			}
 			
-			model.addAttribute("threethirteen", transformedDto);
+			model.addAttribute("threethirteenDto", threethirteenDto);
 		}
 		
 		return "313/save";

@@ -69,23 +69,12 @@ public class ThreethirteenTransformerImpl implements ThreethirteenTransformer {
 		threethirteenDto.setScore7(threethirteen.getScore7());
 		
 		threethirteenDto.setRv1(threethirteen.getRoundWins1());
-		threethirteenDto.setRv1(threethirteen.getRoundWins1());
-		threethirteenDto.setRv1(threethirteen.getRoundWins1());
-		threethirteenDto.setRv1(threethirteen.getRoundWins1());
-		threethirteenDto.setRv1(threethirteen.getRoundWins1());
-		threethirteenDto.setRv1(threethirteen.getRoundWins1());
-		threethirteenDto.setRv1(threethirteen.getRoundWins1());
-		threethirteenDto.setRv1(threethirteen.getRoundWins1());
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		threethirteenDto.setRv2(threethirteen.getRoundWins2());
+		threethirteenDto.setRv3(threethirteen.getRoundWins3());
+		threethirteenDto.setRv4(threethirteen.getRoundWins4());
+		threethirteenDto.setRv5(threethirteen.getRoundWins5());
+		threethirteenDto.setRv6(threethirteen.getRoundWins6());
+		threethirteenDto.setRv7(threethirteen.getRoundWins7());
 		
 		return threethirteenDto;
 	}

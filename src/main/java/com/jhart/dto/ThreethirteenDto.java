@@ -6,7 +6,7 @@ import java.util.Objects;
 
 public class ThreethirteenDto {
 	
-	private int id;
+	private Integer id;
 	private String playDate;
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
@@ -19,25 +19,25 @@ public class ThreethirteenDto {
 	private String player5;
 	private String player6;
 	private String player7;
-	private int score1;
-	private int score2;
-	private int score3;
-	private int score4;
-	private int score5;
-	private int score6;
-	private int score7;
-	private int rv1;
-	private int rv2;
-	private int rv3;
-	private int rv4;
-	private int rv5;
-	private int rv6;
-	private int rv7;
+	private Integer score1;
+	private Integer score2;
+	private Integer score3;
+	private Integer score4;
+	private Integer score5;
+	private Integer score6;
+	private Integer score7;
+	private Integer rv1;
+	private Integer rv2;
+	private Integer rv3;
+	private Integer rv4;
+	private Integer rv5;
+	private Integer rv6;
+	private Integer rv7;
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -113,59 +113,59 @@ public class ThreethirteenDto {
 		this.player7 = player7;
 	}
 	
-	public int getScore1() {
+	public Integer getScore1() {
 		return score1;
 	}
 	
-	public void setScore1(int score1) {
+	public void setScore1(Integer score1) {
 		this.score1 = score1;
 	}
 	
-	public int getScore2() {
+	public Integer getScore2() {
 		return score2;
 	}
 	
-	public void setScore2(int score2) {
+	public void setScore2(Integer score2) {
 		this.score2 = score2;
 	}
 	
-	public int getScore3() {
+	public Integer getScore3() {
 		return score3;
 	}
 	
-	public void setScore3(int score3) {
+	public void setScore3(Integer score3) {
 		this.score3 = score3;
 	}
 	
-	public int getScore4() {
+	public Integer getScore4() {
 		return score4;
 	}
 	
-	public void setScore4(int score4) {
+	public void setScore4(Integer score4) {
 		this.score4 = score4;
 	}
 	
-	public int getScore5() {
+	public Integer getScore5() {
 		return score5;
 	}
 	
-	public void setScore5(int score5) {
+	public void setScore5(Integer score5) {
 		this.score5 = score5;
 	}
 	
-	public int getScore6() {
+	public Integer getScore6() {
 		return score6;
 	}
 	
-	public void setScore6(int score6) {
+	public void setScore6(Integer score6) {
 		this.score6 = score6;
 	}
 	
-	public int getScore7() {
+	public Integer getScore7() {
 		return score7;
 	}
 	
-	public void setScore7(int score7) {
+	public void setScore7(Integer score7) {
 		this.score7 = score7;
 	}
 
@@ -193,59 +193,59 @@ public class ThreethirteenDto {
 		this.elapsedTime = elapsedTime;
 	}
 	
-	public int getRv1() {
+	public Integer getRv1() {
 		return rv1;
 	}
 	
-	public void setRv1(int rv1) {
+	public void setRv1(Integer rv1) {
 		this.rv1 = rv1;
 	}
 	
-	public int getRv2() {
+	public Integer getRv2() {
 		return rv2;
 	}
 	
-	public void setRv2(int rv2) {
+	public void setRv2(Integer rv2) {
 		this.rv2 = rv2;
 	}
 	
-	public int getRv3() {
+	public Integer getRv3() {
 		return rv3;
 	}
 	
-	public void setRv3(int rv3) {
+	public void setRv3(Integer rv3) {
 		this.rv3 = rv3;
 	}
 	
-	public int getRv4() {
+	public Integer getRv4() {
 		return rv4;
 	}
 	
-	public void setRv4(int rv4) {
+	public void setRv4(Integer rv4) {
 		this.rv4 = rv4;
 	}
 	
-	public int getRv5() {
+	public Integer getRv5() {
 		return rv5;
 	}
 	
-	public void setRv5(int rv5) {
+	public void setRv5(Integer rv5) {
 		this.rv5 = rv5;
 	}
 	
-	public int getRv6() {
+	public Integer getRv6() {
 		return rv6;
 	}
 	
-	public void setRv6(int rv6) {
+	public void setRv6(Integer rv6) {
 		this.rv6 = rv6;
 	}
 	
-	public int getRv7() {
+	public Integer getRv7() {
 		return rv7;
 	}
 	
-	public void setRv7(int rv7) {
+	public void setRv7(Integer rv7) {
 		this.rv7 = rv7;
 	}
 	

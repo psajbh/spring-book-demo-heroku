@@ -181,8 +181,8 @@
 			</div>
 			
 			<div class="name">
-				<input class="score" type="text" id="game_time" style="align: center" size="10"
-					maxlength="10" readonly th:field='*{threethirteen.gameTime}' />
+				<input class="score" type="text" id="elapsed_time" style="align: center" size="10"
+					maxlength="10" readonly th:field='*{threethirteenDto.elapsedTime}' />
 			</div>
 			
 			<div class="name">&nbsp;</div>
@@ -207,7 +207,7 @@
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
 			<div class="name">
-				<form action='#' th:action='@{/313/index}'  method='get'  th:object='${threethirteen}'>
+				<form action='#' th:action='@{/313/index}'  method='get'  th:object='${threethirteenDto}'>
 		    		<button class="name" type="submit" name="submit">Play Again</button>
 				</form>
 			</div>
@@ -220,9 +220,6 @@
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
-			
-			
-			
 		</div>
 	</div>
 	
