@@ -45,7 +45,7 @@ public class Three13Controller {
 		String date = dateInfo.substring(0,10);
 		String hrMin = dateInfo.substring(11,19);
 		String playStartText = date + " " + hrMin;
-		String playDate = date + " " + hrMin.replace(':', '.');
+		String playDate = "Date: " + date + " " + hrMin.replace(':', '.');
 		threethirteenDto.setPlayDate(playDate);
 		
 		if(playersMap.size() > 0) {
