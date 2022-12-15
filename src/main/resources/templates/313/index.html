@@ -14,13 +14,11 @@
 		<h3>Three-Thirteen Score Sheet</h3>
 		<div class="grid-container-element">
 			<div class="grid-child-element">
-				<!-- <label for="playdate"><strong>Date:</strong> -->
 				<strong>
 				<input class="game" id="playDate"
 					size="35" maxlength="35" 
 					readonly type="text" th:field='*{playDate}'/>
 				</strong>
-				<!-- </label> -->
 			</div>
 			<div class="grid-child-element">
 				<button class="save" type="submit" name="submit">Save Total Scores</button>
@@ -838,10 +836,6 @@
     
     document.getElementById("save_total_scores").style.visibility = 'hidden';
         
-    function sayHello(){
-    	alert("Howdy");	
-    }
-    
 	function findTotalForUser1(){
         var arr = document.getElementsByName('user_1');
         var tot=0;
@@ -1047,10 +1041,10 @@ strong {
 	height: 36px;
 }
 
-. {
+ button.save {
 	visibility: hidden;
    }
-
+ 
 input.game {
   align-self: left;
   border-top-style: hidden;
