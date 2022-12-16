@@ -7,6 +7,7 @@ import java.util.Objects;
 public class ThreethirteenDto {
 	
 	private Integer id;
+	private String displayDate;
 	private String playDate;
 	private LocalDateTime startDate;
 	private LocalDateTime endDate;
@@ -248,6 +249,15 @@ public class ThreethirteenDto {
 	public void setRv7(Integer rv7) {
 		this.rv7 = rv7;
 	}
+
+	public String getDisplayDate() {
+		return displayDate;
+	}
+	
+	public void setDisplayDate(String displayDate) {
+		this.displayDate = displayDate;
+	}
+	
 	
 	@Override
 	public String toString() {

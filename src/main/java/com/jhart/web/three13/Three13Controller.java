@@ -45,8 +45,10 @@ public class Three13Controller {
 		String date = dateInfo.substring(0,10);
 		String hrMin = dateInfo.substring(11,19);
 		String playStartText = date + " " + hrMin;
-		String playDate = "Date: " + date + " " + hrMin.replace(':', '.');
+		String playDate = date + " " + hrMin.replace(':', '.');
+		String displayDate = "Date: " + playDate;
 		threethirteenDto.setPlayDate(playDate);
+		threethirteenDto.setDisplayDate(displayDate);
 		
 		if(playersMap.size() > 0) {
 			threethirteenDto.setPlayer1(playersMap.get("player1"));
@@ -70,12 +72,11 @@ public class Three13Controller {
 	@PostMapping("313/save")
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
 		log.info("Three12Controller : saveNewThreethirteen - start");
-		if(StringUtils.isEmpty(threethirteenDto.getPlayDate())) {
+		if(StringUtils.isEmpty(threethirteenDto.getDisplayDate())) {
 			log.warn("Three12Controller : saveNewThreethirteen - failed to process, no playDate");
 			return "redirect:/313/index";
 		}
-		ThreethirteenDto transformedDto;
-		String playDate = threethirteenDto.getPlayDate();
+		String playDate = threethirteenDto.getDisplayDate().substring(6);
 		LocalDateTime startDate = startDates.get(playDate);
 		threethirteenDto.setStartDate(startDate);
 		String startDateStr = startStrings.get(playDate);

@@ -127,10 +127,10 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 		
 		threethirteen.setWinner(winningPlayer);
 		threethirteen.setStartDate(threethirteenDto.getStartDate());
-		threethirteen.setFinishDate(threethirteenDto.getStartDate());
+		threethirteen.setFinishDate(threethirteenDto.getEndDate());
 		threethirteen.setGameTime(threethirteenDto.getElapsedTime());
 		
-		
+		//try/catch this repo call
 		Threethirteen saved = threethirteenRepository.save(threethirteen);
 		log.info("ThreethirteenService - save: " + saved);
 		return saved;
@@ -141,7 +141,7 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 		Threethirteen threethirteen = new Threethirteen();
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
-		String strDate = threethirteenDto.getPlayDate();
+		String strDate = threethirteenDto.getDisplayDate().substring(6);
 		
 		try {
 			Date date = formatter.parse(strDate);
