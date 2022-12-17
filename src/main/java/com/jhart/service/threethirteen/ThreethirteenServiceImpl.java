@@ -129,12 +129,18 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 		threethirteen.setStartDate(threethirteenDto.getStartDate());
 		threethirteen.setFinishDate(threethirteenDto.getEndDate());
 		threethirteen.setGameTime(threethirteenDto.getElapsedTime());
+		Threethirteen saved;
 		
-		//try/catch this repo call
-		Threethirteen saved = threethirteenRepository.save(threethirteen);
-		log.info("ThreethirteenService - save: " + saved);
-		return saved;
+		try {
+			saved = threethirteenRepository.save(threethirteen);
+			log.info("ThreethirteenService - save: " + saved);
+			return saved;
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
 		
+		return null;
 	}
 	
 	private Threethirteen setupDate(ThreethirteenDto threethirteenDto) {
