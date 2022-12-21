@@ -27,7 +27,7 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 	
 	@Override
 	public Threethirteen process(ThreethirteenDto threethirteenDto) {
-		
+		String logReport = new String();
 		Threethirteen threethirteen = setupDate(threethirteenDto);
 		String winningPlayer = null;
 		int winningScore = 300;
@@ -131,13 +131,14 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 		threethirteen.setGameTime(threethirteenDto.getElapsedTime());
 		Threethirteen saved;
 		
+		log.info("ThreethirteenService - save attempt on: " + threethirteen.toString());
 		try {
 			saved = threethirteenRepository.save(threethirteen);
 			log.info("ThreethirteenService - save: " + saved);
 			return saved;
 		}
 		catch(Exception e) {
-			System.out.println(e);
+			log.error(e.getMessage());
 		}
 		
 		return null;

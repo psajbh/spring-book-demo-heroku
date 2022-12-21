@@ -139,7 +139,6 @@ public class Threethirteen implements IEntity, Serializable {
         this.gameTime = gameTime;
     }
 	
-	
 	public String getPlayer1() {
 		if (null == player1) {
 			setScore1(null);
@@ -344,15 +343,6 @@ public class Threethirteen implements IEntity, Serializable {
     public void setRoundWins7(Integer roundWins7) {
         this.roundWins7 = roundWins7;
     }
-	
-
-	
-
-
-
-
-
-
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
@@ -360,11 +350,18 @@ public class Threethirteen implements IEntity, Serializable {
 
 	@Override
 	public String toString() {
-		return "Threethirteen [id=" + id + ", playDate=" + playDate + ", player1=" + player1 + ", score1=" + score1
-				+ ", player2=" + player2 + ", score2=" + score2 + ", player3=" + player3 + ", score3=" + score3
-				+ ", player4=" + player4 + ", score4=" + score4 + ", player5=" + player5 + ", score5=" + score5
-				+ ", player6=" + player6 + ", score6=" + score6 + ", player7=" + player7 + ", score7=" + score7
-				+ ", finishDate=" + finishDate + ", winner=" + winner + "]";
+		return "Threethirteen [id=" + id + ", playDate=" + playDate 
+				+ ", player1=" + player1 + ", score1=" + score1 + ", roundWins1=" + roundWins1
+				+ ", player2=" + player2 + ", score2=" + score2 + ", roundWins2=" + roundWins2
+				+ ", player3=" + player3 + ", score3=" + score3 + ", roundWins3=" + roundWins3
+				+ ", player4=" + player4 + ", score4=" + score4 + ", roundWins4=" + roundWins4
+				+ ", player5=" + player5 + ", score5=" + score5 + ", roundWins5=" + roundWins5
+				+ ", player6=" + player6 + ", score6=" + score6 + ", roundWins6=" + roundWins6
+				+ ", player7=" + player7 + ", score7=" + score7 + ", roundWins7=" + roundWins7
+				+ ", startDate=" + startDate
+				+ ", finishDate=" + finishDate 
+				+ ", gameTime=" + gameTime
+				+  ", winner=" + winner + "]";
 	}
 
 	@Override

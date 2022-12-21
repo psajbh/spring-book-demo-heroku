@@ -10,807 +10,759 @@
 	<div th:insert="navbar :: navbar"></div>
 
 	<div class="container-fluid" style="margin-top: 35px">
-		<form action='#' th:action='@{/313/save}' method='post' th:object='${threethirteenDto}'>
-		<h3>Three-Thirteen Score Sheet</h3>
-		<div class="grid-container-element">
-			<div class="grid-child-element">
-				<strong>
-				<input class="game" id="playDate"
-					size="35" maxlength="35" 
-					readonly type="text" th:field='*{displayDate}'/>
-				</strong>
-			</div>
-			<div class="grid-child-element">
-				<button class="save" type="submit" name="submit">Save Total Scores</button>
-			</div> 
-			
-		</div>
-		<br />
+		<form action='#' th:action='@{/313/save}' method='post'
+			th:object='${threethirteenDto}'>
+			<h3>Three-Thirteen Score Sheet</h3>
+			<div class="grid-container-element">
+				<div class="grid-child-element">
+					<strong> <input class="game" id="playDate" size="35"
+						maxlength="35" readonly type="text" th:field='*{displayDate}' />
+					</strong>
+				</div>
+				<div class="grid-child-element">
+					<button class="save" type="submit" name="submit">Save
+						Total Scores</button>
+				</div>
 
-		<div class="wrapper1">
-			<div class="name">&nbsp;</div>
-			<div class="name">
-				<strong>player 1</strong>
 			</div>
-			<div class="name">
-				<strong>player 2</strong>
-			</div>
-			<div class="name">
-				<strong>player 3</strong>
-			</div>
-			<div class="name" id="p4">
-				<strong>player 4</strong>
-			</div>
-			<div class="name">
-				<strong>player 5</strong>
-			</div>
-			<div class="name">
-				<strong>player 6</strong>
-			</div>
-			<div class="name">
-				<strong>player 7</strong>
-			</div>
-			<div class="name">
-				<strong>dealer</strong>
-			</div>
+			<br />
 
-			<div class="name">
-				<strong>Player Name:</strong> <input type="image" id="image_2"
-					width="35" height="40" src="../images/313/gray.png" />
-			</div>
-
-			<div class="name">
-				<input class="user-name" type="text" maxlength="10" size="10"
-					onclick="hideElement()" th:field='*{player1}' />
-			</div>
-			<div class="name">
-				<input class="user-name" type="text" maxlength="10" size="10" 
-					onclick="hideElement()" th:field='*{player2}' />
-			</div>
-			<div class="name">
-				<input class="user-name" type="text" maxlength="10" size="10" 
-					onclick="hideElement()" th:field='*{player3}' />
-			</div>
-			<div class="name">
-				<input class="user-name" type="text" maxlength="10" size="10" 
-					onclick="hideElement()" th:field='*{player4}' />
-			</div>
-			<div class="name">
-				<input class="user-name" type="text" maxlength="10" size="10" 
-					onclick="hideElement()" th:field='*{player5}'/>
-			</div>
-			<div class="name">
-				<input class="user-name" type="text" maxlength="10" size="10" 
-					onclick="hideElement()" th:field='*{player6}' />
-			</div>
-			<div class="name">
-				<input class="user-name" type="text" maxlength="10" size="10" 
-					onclick="hideElement()" th:field='*{player7}' />
-			</div>
-			<div class="name">
-				<!-- <input id="dealer_13" class="edit" type="number"	min="1" max="7"	/> -->	
-			</div>
-			
-
-			<div class="name">
-				<strong>round-3:&nbsp;&nbsp;</strong> <input type="image"
-					id="image3" width="35" height="40"
-					src="../images/313/3_of_spades.png" />
-			</div>
-
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="hideElement()"
-					id="user_1_3" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_3" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_3" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_3" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_3" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_3" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_3" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_3" class="edit" type="text" maxlength="1" size="1"/>	
-			</div>
-	
-			<div class="name">
-				<strong>round-4:&nbsp;&nbsp;</strong> <input type="image"
-					id="image4" width="35" height="40"
-					src="../images/313/4_of_hearts.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="hideElement()"
-					id="user_1_4" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_4" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_4" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_4" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_4" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_4" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_4" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_4" class="edit" type="text" maxlength="1" size="1"	/>	
-			</div>
-	
-			<div class="name">
-				<strong>round-5:&nbsp;&nbsp;</strong> <input type="image"
-					id="image5" width="35" height="40"
-					src="../images/313/5_of_diamonds.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="hideElement()"
-					id="user_1_5" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_5" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_5" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_5" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_5" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_5" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_5" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_5" class="edit" type="text" maxlength="1" size="1" />	
-			</div>
-
-			<div class="name">
-				<strong>round-6:&nbsp;&nbsp;</strong> <input type="image"
-					id="image6" width="35" height="40"
-					src="../images/313/6_of_clubs.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="hideElement()"
-					id="user_1_6" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_6" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_6" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_6" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_6" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_6" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_6" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_6" class="edit" type="text" maxlength="1" size="1"/>	
-			</div>
-
-			<div class="name">
-				<strong>round-7:&nbsp;&nbsp;</strong> <input type="image"
-					id="image7" width="35" height="40"
-					src="../images/313/7_of_spades.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="hideElement()"
-					id="user_1_7" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_7" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_7" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_7" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_7" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_7" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_7" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_7" class="edit" type="text" maxlength="1" size="1"/>	
-			</div>
-
-			<div class="name">
-				<strong>round-8:&nbsp;&nbsp;</strong> <input type="image"
-					id="image8" width="35" height="40"
-					src="../images/313/8_of_hearts.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="hideElement()"
-					id="user_1_8" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_8" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_8" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_8" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_8" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_8" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_8" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
+			<div class="wrapper1">
+				<div class="name">&nbsp;</div>
 				<div class="name">
-				<input id="dealer_8" class="edit" type="text" maxlength="1" size="1"/>	
-			</div>
-			
+					<strong>dealer</strong>
+				</div>
+				<div class="name">
+					<strong>player 1</strong>
+				</div>
+				<div class="name">
+					<strong>player 2</strong>
+				</div>
+				<div class="name">
+					<strong>player 3</strong>
+				</div>
+				<div class="name" id="p4">
+					<strong>player 4</strong>
+				</div>
+				<div class="name">
+					<strong>player 5</strong>
+				</div>
+				<div class="name">
+					<strong>player 6</strong>
+				</div>
+				<div class="name">
+					<strong>player 7</strong>
+				</div>
+<!-- 				<div class="name">
+					<strong>dealer</strong>
+				</div>
+ -->
+				<div class="name">
+					<strong>Player Name:</strong> <input type="image" id="image_2"
+						width="35" height="40" src="../images/313/gray.png" />
+				</div>
+				
+				<div class="name" >
+					&nbsp;&nbsp;&nbsp;
+				</div>
+				<div class="name">
+					<input class="user-name" type="text" maxlength="10" size="10"
+						onclick="hideElement()" th:field='*{player1}' />
+				</div>
+				<div class="name">
+					<input class="user-name" type="text" maxlength="10" size="10"
+						onclick="hideElement()" th:field='*{player2}' />
+				</div>
+				<div class="name">
+					<input class="user-name" type="text" maxlength="10" size="10"
+						onclick="hideElement()" th:field='*{player3}' />
+				</div>
+				<div class="name">
+					<input class="user-name" type="text" maxlength="10" size="10"
+						onclick="hideElement()" th:field='*{player4}' />
+				</div>
+				<div class="name">
+					<input class="user-name" type="text" maxlength="10" size="10"
+						onclick="hideElement()" th:field='*{player5}' />
+				</div>
+				<div class="name">
+					<input class="user-name" type="text" maxlength="10" size="10"
+						onclick="hideElement()" th:field='*{player6}' />
+				</div>
+				<div class="name">
+					<input class="user-name" type="text" maxlength="10" size="10"
+						onclick="hideElement()" th:field='*{player7}' />
+				</div>
+				
+				<!-- <div class="name">
+					<input id="dealer_1" class="edit" type="number"	min="1" max="1"	/>
+				</div> -->
+ 
 
-			<div class="name">
-				<strong>round-9:&nbsp;&nbsp;</strong> <input type="image"
-					id="image9" width="35" height="40"
-					src="../images/313/9_of_diamonds.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" id="user_1_9" 
-					onclick="hideElement()"
-					type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_9" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_9" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_9" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_9" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_9" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_9" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_9" class="edit" type="text" maxlength="1" size="1" />	
-			</div>
-			
+				<div class="name">
+					<strong>round-3:&nbsp;&nbsp;</strong> <input type="image"
+						id="image3" width="35" height="40"
+						src="../images/313/3_of_spades.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_3" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="hideElement()" id="user_1_3"
+						type="text" name="user_1" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()" id="user_2_3"
+						type="text" name="user_2" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()" id="user_3_3"
+						type="text" name="user_3" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()" id="user_4_3"
+						type="text" name="user_4" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()" id="user_5_3"
+						type="text" name="user_5" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()" id="user_6_3"
+						type="text" name="user_6" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()" id="user_7_3"
+						type="text" name="user_7" class="edit" maxlength="3" size="3" />
+				</div>
+<!-- 				<div class="name">
+					<input id="dealer_3" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+ -->
+				<div class="name">
+					<strong>round-4:&nbsp;&nbsp;</strong> <input type="image"
+						id="image4" width="35" height="40"
+						src="../images/313/4_of_hearts.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_4" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="hideElement()" id="user_1_4"
+						type="text" name="user_1" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()" id="user_2_4"
+						type="text" name="user_2" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()" id="user_3_4"
+						type="text" name="user_3" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()" id="user_4_4"
+						type="text" name="user_4" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()" id="user_5_4"
+						type="text" name="user_5" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()" id="user_6_4"
+						type="text" name="user_6" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()" id="user_7_4"
+						type="text" name="user_7" class="edit" maxlength="3" size="3" />
+				</div>
+<!-- 				<div class="name">
+					<input id="dealer_4" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+ -->
+				<div class="name">
+					<strong>round-5:&nbsp;&nbsp;</strong> <input type="image"
+						id="image5" width="35" height="40"
+						src="../images/313/5_of_diamonds.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_5" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="hideElement()" id="user_1_5"
+						type="text" name="user_1" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()" id="user_2_5"
+						type="text" name="user_2" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()" id="user_3_5"
+						type="text" name="user_3" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()" id="user_4_5"
+						type="text" name="user_4" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()" id="user_5_5"
+						type="text" name="user_5" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()" id="user_6_5"
+						type="text" name="user_6" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()" id="user_7_5"
+						type="text" name="user_7" class="edit" maxlength="3" size="3" />
+				</div>
+				
+<!-- 				<div class="name">
+					<input id="dealer_5" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+ -->
+				<div class="name">
+					<strong>round-6:&nbsp;&nbsp;</strong> <input type="image"
+						id="image6" width="35" height="40"
+						src="../images/313/6_of_clubs.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_6" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="hideElement()" id="user_1_6"
+						type="text" name="user_1" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()" id="user_2_6"
+						type="text" name="user_2" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()" id="user_3_6"
+						type="text" name="user_3" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()" id="user_4_6"
+						type="text" name="user_4" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()" id="user_5_6"
+						type="text" name="user_5" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()" id="user_6_6"
+						type="text" name="user_6" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()" id="user_7_6"
+						type="text" name="user_7" class="edit" maxlength="3" size="3" />
+				</div>
+<!-- 				<div class="name">
+					<input id="dealer_6" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+ -->
+				<div class="name">
+					<strong>round-7:&nbsp;&nbsp;</strong> <input type="image"
+						id="image7" width="35" height="40"
+						src="../images/313/7_of_spades.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_7" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="hideElement()" id="user_1_7"
+						type="text" name="user_1" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()" id="user_2_7"
+						type="text" name="user_2" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()" id="user_3_7"
+						type="text" name="user_3" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()" id="user_4_7"
+						type="text" name="user_4" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()" id="user_5_7"
+						type="text" name="user_5" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()" id="user_6_7"
+						type="text" name="user_6" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()" id="user_7_7"
+						type="text" name="user_7" class="edit" maxlength="3" size="3" />
+				</div>
+ 				<!-- <div class="name">
+					<input id="dealer_7" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div> -->
 
-			<div class="name">
-				<strong>round-10:&nbsp;</strong> <input type="image" id="image10"
-					width="35" height="40" src="../images/313/10_of_clubs.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="hideElement()"
-					id="user_1_10" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_10" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_10" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_10" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_10" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_10" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_10" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_10" class="edit" type="text" maxlength="1" size="1"/>	
+				<div class="name">
+					<strong>round-8:&nbsp;&nbsp;</strong> <input type="image"
+						id="image8" width="35" height="40"
+						src="../images/313/8_of_hearts.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_8" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="hideElement()" id="user_1_8"
+						type="text" name="user_1" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()" id="user_2_8"
+						type="text" name="user_2" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()" id="user_3_8"
+						type="text" name="user_3" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()" id="user_4_8"
+						type="text" name="user_4" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()" id="user_5_8"
+						type="text" name="user_5" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()" id="user_6_8"
+						type="text" name="user_6" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()" id="user_7_8"
+						type="text" name="user_7" class="edit" maxlength="3" size="3" />
+				</div>
+				<!-- <div class="name">
+					<input id="dealer_8" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+ -->
+
+				<div class="name">
+					<strong>round-9:&nbsp;&nbsp;</strong> <input type="image"
+						id="image9" width="35" height="40"
+						src="../images/313/9_of_diamonds.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_9" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" id="user_1_9" onclick="hideElement()"
+						type="text" name="user_1" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()" id="user_2_9"
+						type="text" name="user_2" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()" id="user_3_9"
+						type="text" name="user_3" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()" id="user_4_9"
+						type="text" name="user_4" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()" id="user_5_9"
+						type="text" name="user_5" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()" id="user_6_9"
+						type="text" name="user_6" class="edit" maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()" id="user_7_9"
+						type="text" name="user_7" class="edit" maxlength="3" size="3" />
+				</div>
+				<!-- <div class="name">
+					<input id="dealer_9" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+ -->
+
+				<div class="name">
+					<strong>round-10:&nbsp;</strong> <input type="image" id="image10"
+						width="35" height="40" src="../images/313/10_of_clubs.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_10" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="hideElement()"
+						id="user_1_10" type="text" name="user_1" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()"
+						id="user_2_10" type="text" name="user_2" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()"
+						id="user_3_10" type="text" name="user_3" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()"
+						id="user_4_10" type="text" name="user_4" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()"
+						id="user_5_10" type="text" name="user_5" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()"
+						id="user_6_10" type="text" name="user_6" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()"
+						id="user_7_10" type="text" name="user_7" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<!-- <div class="name">
+					<input id="dealer_10" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div> -->
+
+				<div class="name">
+					<strong>round 11:&nbsp;</strong> <input type="image" id="image11"
+						width="35" height="40" src="../images/313/jack_of_spades2.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_11" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="hideElement()"
+						id="user_1_11" type="text" name="user_1" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()"
+						id="user_2_11" type="text" name="user_2" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()"
+						id="user_3_11" type="text" name="user_3" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()"
+						id="user_4_11" type="text" name="user_4" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()"
+						id="user_5_11" type="text" name="user_5" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()"
+						id="user_6_11" type="text" name="user_6" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()"
+						id="user_7_11" type="text" name="user_7" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<!-- <div class="name">
+					<input id="dealer_11" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div> -->
+
+				<div class="name">
+					<strong>round 12:&nbsp;</strong> <input type="image" id="image12"
+						width="35" height="40" src="../images/313/queen_of_hearts2.png" />
+				</div>
+				<div class="name">
+					<input id="dealer_12" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="hideElement()"
+						id="user_1_12" type="text" name="user_1" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="hideElement()"
+						id="user_2_12" type="text" name="user_2" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="hideElement()"
+						id="user_3_12" type="text" name="user_3" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="hideElement()"
+						id="user_4_12" type="text" name="user_4" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="hideElement()"
+						id="user_5_12" type="text" name="user_5" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="hideElement()"
+						id="user_6_12" type="text" name="user_6" class="edit"
+						maxlength="3" size="3" />
+				</div>
+
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="hideElement()"
+						id="user_7_12" type="text" name="user_7" class="edit"
+						maxlength="3" size="3" />
+				</div>
+			<!-- 	<div class="name">
+					<input id="dealer_12" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+ -->
+				<div class="name">
+					<strong>round 13:&nbsp;</strong> <input type="image" id="image13"
+						width="35" height="40" src="../images/313/king_of_diamonds2.png" />
+				</div>
+				
+				<div class="name">
+					<input id="dealer_13" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div>
+				
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" onclick="showElement()"
+						id="user_1_13" type="text" name="user_1" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser2()" onclick="showElement()"
+						id="user_2_13" type="text" name="user_2" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser3()" onclick="showElement()"
+						id="user_3_13" type="text" name="user_3" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser4()" onclick="showElement()"
+						id="user_4_13" type="text" name="user_4" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser5()" onclick="showElement()"
+						id="user_5_13" type="text" name="user_5" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser6()" onclick="showElement()"
+						id="user_6_13" type="text" name="user_6" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<div class="name">
+					<input onkeypress="return onlyNumberKey(event)"
+						onblur="findTotalForUser7()" onclick="showElement()"
+						id="user_7_13" type="text" name="user_7" class="edit"
+						maxlength="3" size="3" />
+				</div>
+				<!-- <div class="name">
+					<input id="dealer_13" class="edit" type="text" maxlength="1"
+						size="1" />
+				</div> -->
+
+				<div class="name">
+					<strong>Total Scores:&nbsp;</strong> <input type="image"
+						id="image_14" width="35" height="40" src="../images/313/gray.png" />
+				</div>
+				<div class="name">
+					<!-- <input id="dealer_13" class="edit" type="number"	min="1" max="7"	/> -->
+				</div>
+				
+
+				<div class="name">
+					<strong><input class="score" type="text" id="user_1_tot"
+						size="5" maxlength="4" readonly th:field='*{score1}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="user_2_tot"
+						size="5" maxlength="4" readonly th:field='*{score2}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="user_3_tot"
+						size="5" maxlength="4" readonly th:field='*{score3}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="user_4_tot"
+						size="5" maxlength="4" readonly th:field='*{score4}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="user_5_tot"
+						size="5" maxlength="4" readonly th:field='*{score5}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="user_6_tot"
+						size="5" maxlength="4" readonly th:field='*{score6}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="user_7_tot"
+						size="5" maxlength="4" readonly th:field='*{score7}' /></strong>
+				</div>
+
+				<!-- <div class="name">
+					<input id="dealer_13" class="edit" type="number"	min="1" max="7"	/>
+				</div>
+ -->
+
+				<div class="name">
+					<strong>Round Wins:&nbsp;</strong> <input type="image"
+						id="image_14" width="35" height="40" src="../images/313/gray.png" />
+				</div>
+				<div class="name">
+					<!-- <input id="dealer_13" class="edit" type="number"	min="1" max="7"	/> -->
+				</div>
+				
+				<div class="name">
+					<strong><input class="score" type="text" id="rv_1_tot"
+						size="5" maxlength="4" readonly th:field='*{rv1}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="rv_2_tot"
+						size="5" maxlength="4" readonly th:field='*{rv2}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="rv_3_tot"
+						size="5" maxlength="4" readonly th:field='*{rv3}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="rv_4_tot"
+						size="5" maxlength="4" readonly th:field='*{rv4}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="rv_5_tot"
+						size="5" maxlength="4" readonly th:field='*{rv5}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="rv_6_tot"
+						size="5" maxlength="4" readonly th:field='*{rv6}' /></strong>
+				</div>
+				<div class="name">
+					<strong><input class="score" type="text" id="rv_7_tot"
+						size="5" maxlength="4" readonly th:field='*{rv7}' /></strong>
+				</div>
+				<!-- <div class="name">
+					<input id="dealer_13" class="edit" type="number"	min="1" max="7"	/>
+				</div> -->
+
+
 			</div>
 
-			<div class="name">
-				<strong>round 11:&nbsp;</strong> <input type="image" id="image11"
-					width="35" height="40" src="../images/313/jack_of_spades2.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="hideElement()"
-					id="user_1_11" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_11" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_11" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_11" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_11" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_11" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_11" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_11" class="edit" type="text" maxlength="1" size="1"/>	
-			</div>
-			
-			<div class="name">
-				<strong>round 12:&nbsp;</strong> <input type="image" id="image12"
-					width="35" height="40" src="../images/313/queen_of_hearts2.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="hideElement()"
-					id="user_1_12" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="hideElement()"
-					id="user_2_12" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="hideElement()"
-					id="user_3_12" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="hideElement()"
-					id="user_4_12" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="hideElement()"
-					id="user_5_12" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="hideElement()"
-					id="user_6_12" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="hideElement()"
-					id="user_7_12" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_12" class="edit" type="text" maxlength="1" size="1"/>	 
-			</div>
-
-			<div class="name">
-				<strong>round 13:&nbsp;</strong> <input type="image" id="image13"
-					width="35" height="40" src="../images/313/king_of_diamonds2.png" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser1()" 
-					onclick="showElement()"
-					id="user_1_13" type="text"
-					name="user_1" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser2()" 
-					onclick="showElement()"
-					id="user_2_13" type="text"
-					name="user_2" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser3()" 
-					onclick="showElement()"
-					id="user_3_13" type="text"
-					name="user_3" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser4()" 
-					onclick="showElement()"
-					id="user_4_13" type="text"
-					name="user_4" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser5()" 
-					onclick="showElement()"
-					id="user_5_13" type="text"
-					name="user_5" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser6()" 
-					onclick="showElement()"
-					id="user_6_13" type="text"
-					name="user_6" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input onkeypress="return onlyNumberKey(event)"
-					onblur="findTotalForUser7()" 
-					onclick="showElement()"
-					id="user_7_13" type="text"
-					name="user_7" class="edit" maxlength="3" size="3" />
-			</div>
-			<div class="name">
-				<input id="dealer_13" class="edit" type="text" maxlength="1" size="1"/>	
-			</div>
-
-			<div class="name">
-				<strong>Total Scores:&nbsp;</strong> <input type="image"
-					id="image_14" width="35" height="40" 
-					src="../images/313/gray.png" />
-			</div>
-
-			<div class="name">
-				<strong><input class="score" type="text" id="user_1_tot" size="5"
-					maxlength="4" readonly th:field='*{score1}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="user_2_tot" size="5"
-					maxlength="4" readonly th:field='*{score2}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="user_3_tot" size="5"
-					maxlength="4" readonly th:field='*{score3}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="user_4_tot" size="5"
-					maxlength="4" readonly th:field='*{score4}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="user_5_tot" size="5"
-					maxlength="4" readonly th:field='*{score5}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="user_6_tot" size="5"
-					maxlength="4" readonly th:field='*{score6}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="user_7_tot" size="5"
-					maxlength="4" readonly th:field='*{score7}' /></strong>
-			</div>
-			
-			<div class="name">
-				<!-- <input id="dealer_13" class="edit" type="number"	min="1" max="7"	/> -->	
-			</div>
-			
-			
-			<div class="name">
-				<strong>Round Wins:&nbsp;</strong> <input type="image"
-					id="image_14" width="35" height="40" 
-					src="../images/313/gray.png" />
-			</div>
-
-			<div class="name">
-				<strong><input class="score" type="text" id="rv_1_tot" size="5"
-					maxlength="4" readonly th:field='*{rv1}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="rv_2_tot" size="5"
-					maxlength="4" readonly th:field='*{rv2}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="rv_3_tot" size="5"
-					maxlength="4" readonly th:field='*{rv3}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="rv_4_tot" size="5"
-					maxlength="4" readonly th:field='*{rv4}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="rv_5_tot" size="5"
-					maxlength="4" readonly th:field='*{rv5}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="rv_6_tot" size="5"
-					maxlength="4" readonly th:field='*{rv6}' /></strong>
-			</div>
-			<div class="name">
-				<strong><input class="score" type="text" id="rv_7_tot" size="5"
-					maxlength="4" readonly th:field='*{rv7}' /></strong>
-			</div>
-			<div class="name">
-				<!-- <input id="dealer_13" class="edit" type="number"	min="1" max="7"	/> -->	
-			</div>
-			
-			
-		</div>
-		
 		</form>
 	</div>
 
@@ -1014,7 +966,7 @@ strong {
 
 .wrapper1 {
 	display: grid;
-	grid-template-columns: 2fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1fr;
+	grid-template-columns: 2fr 1fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
 	grid-template-rows: 2fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1fr;
 	grid-gap: 5px;
 	height: 10px;
