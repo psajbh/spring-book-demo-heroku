@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.jhart.domain.Threethirteen;
 import com.jhart.dto.ThreethirteenDto;
+import com.jhart.exception.threethirteen.ThreethirteenSaveGameException;
 import com.jhart.repo.threethirteen.ThreethirteenRepository;
 
 @Service
@@ -136,6 +137,9 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 			saved = threethirteenRepository.save(threethirteen);
 			log.info("ThreethirteenService - save: " + saved);
 			return saved;
+		}
+		catch(ThreethirteenSaveGameException threethirteenGameException) {
+			log.error(threethirteenGameException.getMessage());
 		}
 		catch(Exception e) {
 			log.error(e.getMessage());
