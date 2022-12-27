@@ -2,7 +2,9 @@ package com.jhart.web.three13;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -72,6 +74,12 @@ public class Three13Controller {
 	@PostMapping("313/save")
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
 		log.info("Three12Controller : saveNewThreethirteen - start");
+		
+		if(!validate(threethirteenDto)) {
+			log.warn("Three12Controller : saveNewThreethirteen - players validation failure");
+			return "redirect:/313/index";
+		}
+		
 		if(StringUtils.isEmpty(threethirteenDto.getDisplayDate())) {
 			log.warn("Three12Controller : saveNewThreethirteen - failed to process, no playDate");
 			return "redirect:/313/index";
@@ -142,5 +150,114 @@ public class Three13Controller {
 		
 		return "313/save";
 	}
+	
+	private boolean validate(ThreethirteenDto threethirteenDto) {
+		Map<String, String> uniquePlayerNames = new HashMap<>(); 
+		String player1 = threethirteenDto.getPlayer1();
+		if (null != player1 && !player1.isEmpty()) {
+			uniquePlayerNames.put(player1, player1);
+		}
+		else {
+			return false;
+		}
+		
+		String player2 = threethirteenDto.getPlayer2();
+		if (null != player2 && !player2.isEmpty()) {
+			if (null == uniquePlayerNames.get(player2)) {
+				uniquePlayerNames.put(player2, player2);
+			}
+			else {
+				// duplicate name
+				return false;
+			}
+		}
+		
+		String player3 = threethirteenDto.getPlayer3();
+		if (null != player3 && !player3.isEmpty()) {
+			if (null == uniquePlayerNames.get(player3)) {
+				uniquePlayerNames.put(player3, player3);
+			}
+		}
+				
+		String player4 = threethirteenDto.getPlayer4();
+		if (null != player4 && !player4.isEmpty()) {
+			if (null == uniquePlayerNames.get(player4)) {
+				uniquePlayerNames.put(player4, player4);
+			}
+		}
+		
+		String player5 = threethirteenDto.getPlayer5();
+		if (null != player5 && !player5.isEmpty()) {
+			if (null == uniquePlayerNames.get(player5)) {
+				uniquePlayerNames.put(player5, player5);
+			}
+		}
+
+		String player6 = threethirteenDto.getPlayer6();
+		if (null != player6 && !player6.isEmpty()) {
+			if (null == uniquePlayerNames.get(player6)) {
+				uniquePlayerNames.put(player6, player6);
+			}
+		}
+
+		String player7 = threethirteenDto.getPlayer7();
+		if (null != player7 && !player7.isEmpty()) {
+			if (null == uniquePlayerNames.get(player7)) {
+				uniquePlayerNames.put(player7, player7);
+			}
+		}
+
+		
+		
+		
+		
+		boolean notOk = false;
+		boolean ok = true;
+		
+		if (player1.isEmpty() || player1 == null) {
+			return notOk;
+		}
+		else {
+			if (player2.isEmpty() || player2 == null) {
+				if (player3 != null ||
+					player4 != null ||
+					player5 != null ||
+					player6 != null ||
+					player7 != null) {
+					return notOk;
+				}
+			}
+			
+			if (player3.isEmpty() || player3 == null) {
+				if (player4 != null ||
+					player5 != null ||
+					player6 != null ||
+					player7 != null) { 
+					return notOk;
+				}
+			}
+			if (player4.isEmpty() || player4 == null) {
+				if (player5 != null ||
+					player6 != null ||
+					player7 != null) { 
+					return notOk;
+				}
+			}
+			if (player5.isEmpty() || player5 == null) {
+				if (player6 != null ||
+					player7 != null) { 
+					return notOk;
+				}
+			}
+			if (player6.isEmpty() || player6 == null) {
+				if (player7 != null) {
+					return notOk;
+				}
+			}
+			
+		return ok;
+		
+	}
+}
 	
 }
