@@ -36,30 +36,30 @@ CREATE TABLE `threethirteen` (
 create view player_stats as 
 select id, play_date, player_1 as player, 
 	score_1 as score, rv_1 as rv, if(winner = player_1, 'W', 'L') as result
-	from tacmot0.threethirteen
+	from heroku_ee18cb5543a28ce.threethirteen
 	where player_1 is not null
 union all	
 select id, play_date, player_2, score_2, rv_2 , if(winner = player_2, 'W', 'L') 
-	from tacmot0.threethirteen
+	from heroku_ee18cb5543a28ce.threethirteen
 	where player_2 is not null
 union all	
 select id, play_date, player_3, score_3, rv_3, if(winner = player_3, 'W', 'L') 
-	from tacmot0.threethirteen
+	from heroku_ee18cb5543a28ce.threethirteen
 	where player_3 is not null
 union all	
 select id, play_date, player_4, score_4, rv_4, if(winner = player_4, 'W', 'L') 
-	from tacmot0.threethirteen
+	from heroku_ee18cb5543a28ce.threethirteen
 	where player_4 is not null    
 union all	
 select id, play_date, player_5, score_5, rv_5, if(winner = player_5, 'W', 'L') 
-	from tacmot0.threethirteen
+	from heroku_ee18cb5543a28ce.threethirteen
 	where player_5 is not null
 union all	
 select id, play_date, player_6, score_6, rv_6, if(winner = player_6, 'W', 'L') 
-	from tacmot0.threethirteen
+	from heroku_ee18cb5543a28ce.threethirteen
 	where player_6 is not null
  union all	
 select id, play_date, player_7, score_7, rv_7, if(winner = player_7, 'W', 'L') 
-	from tacmot0.threethirteen
+	from heroku_ee18cb5543a28ce.threethirteen
 	where player_7 is not null 
  order by play_date;
