@@ -73,7 +73,7 @@ public class Three13Controller {
 	 	
 	@PostMapping("313/save")
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
-		log.info("Three12Controller : saveNewThreethirteen - start");
+		log.info("Three13Controller : saveNewThreethirteen - start");
 		
 		if(!validate(threethirteenDto)) {
 			log.warn("Three12Controller : saveNewThreethirteen - players validation failure");
