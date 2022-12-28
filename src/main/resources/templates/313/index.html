@@ -65,89 +65,103 @@
 				<div class="name" >
 					&nbsp;&nbsp;&nbsp;
 				</div>
+				<!--  players start -->  
 				<div class="name">
 					<input class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" th:field='*{player1}' />
+						onclick="hideElement()" 
+						onkeypress="return event.keyCode != 13;" th:field='*{player1}' />
 				</div>
 				<div class="name">
 					<input class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" th:field='*{player2}' />
+						onclick="hideElement()" 
+						onkeypress="return event.keyCode != 13;" th:field='*{player2}' />
 				</div>
 				<div class="name">
 					<input class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" th:field='*{player3}' />
+						onclick="hideElement()" 
+						onkeypress="return event.keyCode != 13;" th:field='*{player3}' />
 				</div>
 				<div class="name">
 					<input class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" th:field='*{player4}' />
+						onclick="hideElement()" 
+						onkeypress="return event.keyCode != 13;" th:field='*{player4}' />
 				</div>
 				<div class="name">
 					<input class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" th:field='*{player5}' />
+						onclick="hideElement()" 
+						onkeypress="return event.keyCode != 13;" th:field='*{player5}' />
 				</div>
 				<div class="name">
 					<input class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" th:field='*{player6}' />
+						onclick="hideElement()" 
+						onkeypress="return event.keyCode != 13;" th:field='*{player6}' />
 				</div>
 				<div class="name">
 					<input class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" th:field='*{player7}' />
+						onclick="hideElement()" 
+						onkeypress="return event.keyCode != 13;" th:field='*{player7}' />
 				</div>
+				<!--  players finish -->
 				
-				<!-- <div class="name">
-					<input id="dealer_1" class="edit" type="number"	min="1" max="1"	/>
-				</div> -->
- 
 
 				<div class="name">
 					<strong>round-3:&nbsp;&nbsp;</strong> <input type="image"
 						id="image3" width="35" height="40"
 						src="../images/313/3_of_spades.png" />
 				</div>
+				<!-- dealer 1  start -->
 				<div class="name">
 					<input id="dealer_3" class="edit" type="text" maxlength="1"
-						size="1" />
+						onkeypress="return event.keyCode != 13;" size="1" />
+				</div>
+				<!-- dealer 1  stop -->
+				<!-- onkeypress="return onlyNumberKey(event)" -->
+				<div class="name">
+					<input 
+						onkeydown="return event.keyCode != 13;"
+						onkeyup="return onlyNumberKey(event)"
+						onblur="findTotalForUser1()" 
+						onclick="hideElement()" 
+						id="user_1_3" type="text" name="user_1" 
+						class="edit" maxlength="3" size="3" />
 				</div>
 				<div class="name">
 					<input onkeypress="return onlyNumberKey(event)"
-						onblur="findTotalForUser1()" onclick="hideElement()" id="user_1_3"
-						type="text" name="user_1" class="edit" maxlength="3" size="3" />
+						onblur="findTotalForUser2()" onclick="hideElement()" 
+						id="user_2_3" type="text" name="user_2" 
+						class="edit" maxlength="3" size="3" />
 				</div>
 				<div class="name">
 					<input onkeypress="return onlyNumberKey(event)"
-						onblur="findTotalForUser2()" onclick="hideElement()" id="user_2_3"
-						type="text" name="user_2" class="edit" maxlength="3" size="3" />
+						onblur="findTotalForUser3()" onclick="hideElement()" 
+						id="user_3_3" type="text" name="user_3" 
+						class="edit" maxlength="3" size="3" />
 				</div>
 				<div class="name">
 					<input onkeypress="return onlyNumberKey(event)"
-						onblur="findTotalForUser3()" onclick="hideElement()" id="user_3_3"
-						type="text" name="user_3" class="edit" maxlength="3" size="3" />
+						onblur="findTotalForUser4()" onclick="hideElement()" 
+						id="user_4_3" type="text" name="user_4" 
+						class="edit" maxlength="3" size="3" />
 				</div>
 				<div class="name">
 					<input onkeypress="return onlyNumberKey(event)"
-						onblur="findTotalForUser4()" onclick="hideElement()" id="user_4_3"
-						type="text" name="user_4" class="edit" maxlength="3" size="3" />
+						onblur="findTotalForUser5()" onclick="hideElement()" 
+						id="user_5_3" type="text" name="user_5" 
+						class="edit" maxlength="3" size="3" />
 				</div>
 				<div class="name">
 					<input onkeypress="return onlyNumberKey(event)"
-						onblur="findTotalForUser5()" onclick="hideElement()" id="user_5_3"
-						type="text" name="user_5" class="edit" maxlength="3" size="3" />
+						onblur="findTotalForUser6()" onclick="hideElement()" 
+						id="user_6_3" type="text" name="user_6" 
+						class="edit" maxlength="3" size="3" />
 				</div>
 				<div class="name">
 					<input onkeypress="return onlyNumberKey(event)"
-						onblur="findTotalForUser6()" onclick="hideElement()" id="user_6_3"
-						type="text" name="user_6" class="edit" maxlength="3" size="3" />
+						onblur="findTotalForUser7()" onclick="hideElement()" 
+						id="user_7_3" type="text" name="user_7" 
+						class="edit" maxlength="3" size="3" />
 				</div>
-				<div class="name">
-					<input onkeypress="return onlyNumberKey(event)"
-						onblur="findTotalForUser7()" onclick="hideElement()" id="user_7_3"
-						type="text" name="user_7" class="edit" maxlength="3" size="3" />
-				</div>
-<!-- 				<div class="name">
-					<input id="dealer_3" class="edit" type="text" maxlength="1"
-						size="1" />
-				</div>
- -->
+				
 				<div class="name">
 					<strong>round-4:&nbsp;&nbsp;</strong> <input type="image"
 						id="image4" width="35" height="40"

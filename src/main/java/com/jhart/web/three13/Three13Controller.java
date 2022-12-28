@@ -111,37 +111,37 @@ public class Three13Controller {
 			playersMap.clear();
 			log.info("saveNewThreethirteen - success");
 			String player1 = threethirteenDto.getPlayer1();
-			if (null != player1) {
+			if (isNotNullOrEmpty(player1)) {
 				playersMap.put("player1", player1);
 			}
 		
 			String player2 = threethirteenDto.getPlayer2();
-			if (null != player2) {
+			if (isNotNullOrEmpty(player2)) {
 				playersMap.put("player2", player2);
 			}
 			
 			String player3 = threethirteenDto.getPlayer3();
-			if (null != player3) {
+			if (isNotNullOrEmpty(player3)) {
 				playersMap.put("player3", player3);
 			}
 
 			String player4 = threethirteenDto.getPlayer4();
-			if (null != player4) {
+			if (isNotNullOrEmpty(player4)) {
 				playersMap.put("player4", player4);
 			}
 			
 			String player5 = threethirteenDto.getPlayer5();
-			if (null != player5) {
+			if (isNotNullOrEmpty(player5)) {
 				playersMap.put("player5", player5);
 			}
 			
 			String player6 = threethirteenDto.getPlayer6();
-			if (null != player6) {
+			if (isNotNullOrEmpty(player6)) {
 				playersMap.put("player6", player6);
 			}
 			
 			String player7 = threethirteenDto.getPlayer7();
-			if (null != player7) {
+			if (isNotNullOrEmpty(player7)) {
 				playersMap.put("player7", player7);
 			}
 			
@@ -154,110 +154,99 @@ public class Three13Controller {
 	private boolean validate(ThreethirteenDto threethirteenDto) {
 		Map<String, String> uniquePlayerNames = new HashMap<>(); 
 		String player1 = threethirteenDto.getPlayer1();
-		if (null != player1 && !player1.isEmpty()) {
+		if(isNotNullOrEmpty(player1)) {
 			uniquePlayerNames.put(player1, player1);
 		}
 		else {
+			log.info("Three13Controller : saveNewThreethirteen - Player1 is invalid");
 			return false;
 		}
 		
 		String player2 = threethirteenDto.getPlayer2();
-		if (null != player2 && !player2.isEmpty()) {
+		if(isNotNullOrEmpty(player2)) {
 			if (null == uniquePlayerNames.get(player2)) {
 				uniquePlayerNames.put(player2, player2);
 			}
 			else {
-				// duplicate name
 				return false;
 			}
 		}
 		
 		String player3 = threethirteenDto.getPlayer3();
-		if (null != player3 && !player3.isEmpty()) {
-			if (null == uniquePlayerNames.get(player3)) {
-				uniquePlayerNames.put(player3, player3);
+		if(isNotNullOrEmpty(player3)) {
+			if(isNotNullOrEmpty(player2)) {
+				if (null == uniquePlayerNames.get(player3)) {
+					uniquePlayerNames.put(player3, player3);
+				}
+			}
+			else {
+				log.info("Three13Controller : saveNewThreethirteen - Player2 is invalid");
+				return false;
 			}
 		}
 				
 		String player4 = threethirteenDto.getPlayer4();
-		if (null != player4 && !player4.isEmpty()) {
-			if (null == uniquePlayerNames.get(player4)) {
-				uniquePlayerNames.put(player4, player4);
+		if(isNotNullOrEmpty(player4)) {
+			if(isNotNullOrEmpty(player3)) {
+				if (null == uniquePlayerNames.get(player4)) {
+					uniquePlayerNames.put(player4, player4);
+				}
+			}
+			else {
+				log.info("Three13Controller : saveNewThreethirteen - Player3 is invalid");
+				return false;
 			}
 		}
 		
 		String player5 = threethirteenDto.getPlayer5();
-		if (null != player5 && !player5.isEmpty()) {
-			if (null == uniquePlayerNames.get(player5)) {
-				uniquePlayerNames.put(player5, player5);
+		if(isNotNullOrEmpty(player5)) {
+			if(isNotNullOrEmpty(player4)) {
+				if (null == uniquePlayerNames.get(player5)) {
+					uniquePlayerNames.put(player5, player5);
+				}
+			}
+			else {
+				log.info("Three13Controller : saveNewThreethirteen - Player4 is invalid");
+				return false;
 			}
 		}
 
 		String player6 = threethirteenDto.getPlayer6();
-		if (null != player6 && !player6.isEmpty()) {
-			if (null == uniquePlayerNames.get(player6)) {
-				uniquePlayerNames.put(player6, player6);
+		if(isNotNullOrEmpty(player6)) {
+			if(isNotNullOrEmpty(player5)) {
+				if (null == uniquePlayerNames.get(player6)) {
+					uniquePlayerNames.put(player6, player6);
+				}
+			}
+			else {
+				log.info("Three13Controller : saveNewThreethirteen - Player5 is invalid");
+				return false;
 			}
 		}
 
 		String player7 = threethirteenDto.getPlayer7();
-		if (null != player7 && !player7.isEmpty()) {
-			if (null == uniquePlayerNames.get(player7)) {
-				uniquePlayerNames.put(player7, player7);
+		if(isNotNullOrEmpty(player7)) {
+			if (isNotNullOrEmpty(player6)) {
+				if (null == uniquePlayerNames.get(player7)) {
+					uniquePlayerNames.put(player7, player7);
+				}
+			}
+			else {
+				log.info("Three13Controller : saveNewThreethirteen - Player6 is invalid");
+				return false;
 			}
 		}
-
 		
+		return true;
 		
-		
-		
-		boolean notOk = false;
-		boolean ok = true;
-		
-		if (player1.isEmpty() || player1 == null) {
-			return notOk;
+	}
+	
+	private boolean isNotNullOrEmpty(String string) {
+		if (string != null && !string.isEmpty()) {
+			return true;
 		}
-		else {
-			if (player2.isEmpty() || player2 == null) {
-				if (player3 != null ||
-					player4 != null ||
-					player5 != null ||
-					player6 != null ||
-					player7 != null) {
-					return notOk;
-				}
-			}
-			
-			if (player3.isEmpty() || player3 == null) {
-				if (player4 != null ||
-					player5 != null ||
-					player6 != null ||
-					player7 != null) { 
-					return notOk;
-				}
-			}
-			if (player4.isEmpty() || player4 == null) {
-				if (player5 != null ||
-					player6 != null ||
-					player7 != null) { 
-					return notOk;
-				}
-			}
-			if (player5.isEmpty() || player5 == null) {
-				if (player6 != null ||
-					player7 != null) { 
-					return notOk;
-				}
-			}
-			if (player6.isEmpty() || player6 == null) {
-				if (player7 != null) {
-					return notOk;
-				}
-			}
-			
-		return ok;
-		
+		return false;
 	}
 }
 	
-}
+
