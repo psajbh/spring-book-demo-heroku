@@ -119,11 +119,10 @@
 				<div class="name">
 					<input 
 						onkeydown="return event.keyCode != 13;"
-						onkeyup="return onlyNumberKey(event)"
 						onblur="findTotalForUser1()" 
 						onclick="hideElement()" 
-						id="user_1_3" type="text" name="user_1" 
-						class="edit" maxlength="3" size="3" />
+						id="user_1_3" type="number" min="-5" max="39" 
+						name="user_1" class="edit" maxlength="3" size="3" />
 				</div>
 				<div class="name">
 					<input onkeypress="return onlyNumberKey(event)"
