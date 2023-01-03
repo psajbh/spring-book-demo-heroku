@@ -1,11 +1,9 @@
-/* <style> */
-
 body {
 	background-color: #eaeded;
-} 
+}
 
 div.container-fluid {
-	background-color:  #eaeded;
+	background-color: #eaeded;
 }
 
 div.name {
@@ -46,7 +44,6 @@ strong {
 	border: 1px solid #eaeded;
 	background-color: #eaeded;
 	white-space: nowrap;
-	
 }
 
 .grid-container-element {
@@ -60,37 +57,27 @@ strong {
 	height: 36px;
 }
 
- button.save {
+button.save {
 	visibility: hidden;
-   }
- 
+}
+
 input.game {
-  align-self: left;
-  border-top-style: hidden;
-  border-right-style: hidden;
-  border-left-style: hidden;
-  border-bottom-style: hidden;
-  background-color: #eaeded;
-} 
+	align-self: left;
+	border-top-style: hidden;
+	border-right-style: hidden;
+	border-left-style: hidden;
+	border-bottom-style: hidden;
+	background-color: #eaeded;
+}
 
-input.score {background-color: #eaeded;}
-input.user-name {background-color: #eaeded;}
-/* input.game { background-color: #d5dbdb;} */ 
-input.edit { background-color:  #ffffff} 
+input.score {
+	background-color: #eaeded;
+}
 
+input.user-name {
+	background-color: #eaeded;
+}
 
-
-/* .button.submit {
- 	border: none;
-  	color: white;
-  	padding: 15px 32px;
- 	text-align: center;
-  	text-decoration: none;
-  	display: inline-block;
-  	font-size: 10px;
- 	margin: 4px 2px;
- 	cursor: pointer;
-}  */
-
-
-/* </style> */
+input.edit {
+	background-color: #ffffff
+}
