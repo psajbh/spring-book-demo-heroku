@@ -3,16 +3,16 @@
 
 <head th:include='fragments/header :: head'>
 	<meta charset='UTF-8'>
-	<title id="pageTitle">3-13</title>
+	<title id="pageTitle">Spinners</title>
 </head>
 
 <body onload="hideElement()">
 	<div th:insert="navbar :: navbar"></div>
 
 	<div class="container-fluid" style="margin-top: 35px">
-		<form action='#' th:action='@{/313/save}' method='post'
-			th:object='${threethirteenDto}'>
-			<h3>Three-Thirteen Score Sheet</h3>
+		<form action='#' th:action='@{/spinners/save}' method='post'
+			th:object='${spinnerDto}'>
+			<h3>Spinners Score Sheet</h3>
 			<div class="grid-container-element">
 				<div class="grid-child-element">
 					<strong> <input class="game" id="playDate" size="35"
@@ -29,7 +29,7 @@
 			<div class="wrapper1">
 				<div class="name">&nbsp;</div>
 				<div class="name">
-					<strong>dealer</strong>
+					<strong>starter</strong>
 				</div>
 				<div class="name">
 					<strong>player 1</strong>

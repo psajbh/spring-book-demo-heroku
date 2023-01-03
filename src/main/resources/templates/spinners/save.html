@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:include='fragments/header :: head'>
+	<meta charset='UTF-8'>
+	<title id="pageTitle">Spinner Save Status</title>
+</head>
+
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid" style="margin-top: 35px">
+		<h3>Spinner Save Status</h3>
+		<br/>
+		<br/>
+		<div class="wrapper1">
+			<div class="name">
+				<strong>Game Id:</strong> 
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" style="align: left" maxlength="6" size="6" 
+					th:field='*{threethirteenDto.id}'/>
+			</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			
+			<div class="name">
+				<strong>Game Start:</strong> 
+			</div>
+			<div class="name">
+				<input class="user-name" type="text" style="align: left" maxlength="20" size="20"
+					th:field='*{threethirteenDto.playDate}' />
+			</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			
+			<div class="name">
+				<strong>Players:</strong> 
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
+					th:field='*{threethirteenDto.player1}' />
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" style="align: right"  maxlength="10" size="6" 
+					th:field='*{threethirteenDto.player2}' />
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
+					th:field='*{threethirteenDto.player3}' />
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
+					th:field='*{threethirteenDto.player4}' />
+			</div>
+			
+			<div class="name">
+				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
+					th:field='*{threethirteenDto.player5}'/>
+			</div>
+			
+ 			<div class="name">
+				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
+					th:field='*{threethirteenDto.player6}' />
+			</div>
+
+			<div class="name">
+				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
+					th:field='*{threethirteenDto.player7}' />
+			</div>
+			
+			<div class="name">
+				<strong>Scores:</strong> 
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_1_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.score1}' />
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_2_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.score2}' />
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_3_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.score3}' />
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_4_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.score4}' />
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_5_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.score5}' />
+			</div>
+			
+ 			<div class="name">
+				<input class="score" type="text" id="user_6_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.score6}'/>
+			</div>
+		
+			<div class="name">
+				<input class="score" type="text" id="user_7_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.score7}' />
+			</div>
+			
+			<div class="name">
+				<strong>Round Wins:</strong> 
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_1_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.rv1}' />
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_2_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.rv2}' />
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_3_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.rv3}' />
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_4_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.rv4}' />
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="user_5_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.rv5}' />
+			</div>
+			
+ 			<div class="name">
+				<input class="score" type="text" id="user_6_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.rv6}'/>
+			</div>
+		
+			<div class="name">
+				<input class="score" type="text" id="user_7_tot" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.rv7}' />
+			</div>
+	
+			<div class="name">
+				<strong>Winner:</strong> 
+			</div>
+			
+			<div class="name">
+				<strong><input class="score" type="text" id="user_winner" style="align: center" size="5"
+					maxlength="4" readonly th:field='*{threethirteenDto.winner}' /></strong>
+			</div>
+			
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			
+			<div class="name">
+				<strong>Elapsed Time (h:m:s):</strong> 
+			</div>
+			
+			<div class="name">
+				<input class="score" type="text" id="elapsed_time" style="align: center" size="10"
+					maxlength="10" readonly th:field='*{threethirteenDto.elapsedTime}' />
+			</div>
+			
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			
+			<!--  blank row  -->
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<!--  end blank row  -->
+			
+			
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">
+				<form action='#' th:action='@{/313/index}'  method='get'  th:object='${threethirteenDto}'>
+		    		<button class="name" type="submit" name="submit">Play Again</button>
+				</form>
+			</div>
+			<div class="name">
+				<form action='#' th:action='@{../home}'  method='get'>
+		    		<button class="name" type="submit" name="submit">Go Home</button>
+				</form>
+			</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+			<div class="name">&nbsp;</div>
+		</div>
+	</div>
+	
+	<div class='container' th:replace='fragments/footer :: footer'>
+		<p>footer</p>
+	</div>
+
+</body>
+
+<style>
+
+	body {
+		background-color: #eaeded;
+	} 
+	
+	div.container-fluid {
+		background-color:  #eaeded;
+	}
+	
+	input.score {background-color: #eaeded;}
+	input.user-name {background-color: #eaeded;}
+	
+	
+ 	.wrapper1 * {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 1px;
+		margin-right: 1px;
+		/* background: white; */
+		background-color: #eaeded;
+	}
+ 	
+	.wrapper1 {
+		display: grid;
+		grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr; 
+		grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
+		/* grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 2fr; */
+		/* grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr 2fr; */
+		grid-gap: 5px;
+		height: 10px;
+		text-align: center;
+		/* background: white; */
+		background-color: #eaeded;
+	}
+	
+	input {
+  		border-top-style: hidden;
+ 		border-right-style: hidden;
+  		border-left-style: hidden;
+  		border-bottom-style: hidden;
+  		/* background-color: #eee; */
+	}
+
+	.no-outline:focus {
+  		outline: none;
+	}
+	
+	
+
+</style>
+
+</html>
+
