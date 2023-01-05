@@ -166,6 +166,7 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 			}
 		}
 		catch(ParseException pe) {
+			
 			log.warn("failure processing date - " + pe.getMessage());
 			return null;
 		}

@@ -8,6 +8,7 @@ import com.jhart.dto.ThreethirteenDto;
 @Component
 public class ThreethirteenTransformerImpl implements ThreethirteenTransformer {
 	
+	@Override
 	public Threethirteen transformDto(ThreethirteenDto threethirteenDto) {
 		Threethirteen threethirteen = new Threethirteen();
 		threethirteen.setId(threethirteenDto.getId());
@@ -43,6 +44,7 @@ public class ThreethirteenTransformerImpl implements ThreethirteenTransformer {
 		return threethirteen;
 	}
 	
+	@Override
 	public ThreethirteenDto transformEntity(Threethirteen threethirteen) {
 		ThreethirteenDto threethirteenDto = new ThreethirteenDto();
 		threethirteenDto.setId(threethirteen.getId());

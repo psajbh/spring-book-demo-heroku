@@ -11,7 +11,7 @@
 
 	<div class="container-fluid" style="margin-top: 35px">
 		<form action='#' th:action='@{/spinners/save}' method='post'
-			th:object='${spinnerDto}'>
+			th:object='${spinnersDto}'>
 			<h3>Spinners Score Sheet</h3>
 			<div class="grid-container-element">
 				<div class="grid-child-element">
@@ -100,9 +100,9 @@
 				
 				<!--  round 3 start -->
 				<div class="name">
-					<strong>round-3:&nbsp;&nbsp;</strong> <input type="image"
-						id="image3" width="35" height="40"
-						src="../images/313/3_of_spades.png" />
+					<strong>round-9:&nbsp;&nbsp;&nbsp;</strong> <input type="image"
+						id="image3" width="50" height="30"
+						src="../images/spinners/domino-white-9-9.png" />
 				</div>
 				
 				<!-- dealer 1 start -->
@@ -168,9 +168,9 @@
 				
 				<!-- round 4 start -->
 				<div class="name">
-					<strong>round-4:&nbsp;&nbsp;</strong> <input type="image"
-						id="image4" width="35" height="40"
-						src="../images/313/4_of_hearts.png" />
+					<strong>round-8:&nbsp;&nbsp;&nbsp;</strong> <input type="image"
+						id="image4" width="50" height="30"
+						src="../images/spinners/domino-white-8-8.png" />
 				</div>
 				
 				<!-- dealer 2 start -->
@@ -238,9 +238,9 @@
 				</div>
 								
 				<div class="name">
-					<strong>round-5:&nbsp;&nbsp;</strong> <input type="image"
-						id="image5" width="35" height="40"
-						src="../images/313/5_of_diamonds.png" />
+					<strong>round-5:&nbsp;&nbsp;&nbsp;</strong> 
+						<input type="image" id="image5" width="50" height="30"
+						src="../images/spinners/domino-white-7-7.png" />
 				</div>
 				
 				<div class="name">
@@ -305,9 +305,9 @@
 				</div>
 				
 				<div class="name">
-					<strong>round-6:&nbsp;&nbsp;</strong> <input type="image"
-						id="image6" width="35" height="40"
-						src="../images/313/6_of_clubs.png" />
+					<strong>round-6:&nbsp;&nbsp;&nbsp;</strong> <input type="image"
+						id="image6" width="50" height="30"
+						src="../images/spinners/domino-white-6-6.png" />
 				</div>
 				
 				<div class="name">
@@ -372,9 +372,9 @@
 				</div>
 				
 				<div class="name">
-					<strong>round-7:&nbsp;&nbsp;</strong> <input type="image"
-						id="image7" width="35" height="40"
-						src="../images/313/7_of_spades.png" />
+					<strong>round-7:&nbsp;&nbsp;&nbsp;</strong> <input type="image"
+						id="image7" width="50" height="30"
+						src="../images/spinners/domino-white-5-5.png" />
 				</div>
 				
 				<div class="name">
@@ -440,8 +440,8 @@
 
 				<div class="name">
 					<strong>round-8:&nbsp;&nbsp;</strong> <input type="image"
-						id="image8" width="35" height="40"
-						src="../images/313/8_of_hearts.png" />
+						id="image8" width="50" height="30"
+						src="../images/spinners/domino-white-4-4.png" />
 				</div>
 
 				<div class="name">
@@ -506,9 +506,9 @@
 				</div>
 
 				<div class="name">
-					<strong>round-9:&nbsp;&nbsp;</strong> <input type="image"
-						id="image9" width="35" height="40"
-						src="../images/313/9_of_diamonds.png" />
+					<strong>round-9:&nbsp;&nbsp;&nbsp;</strong> <input type="image"
+						id="image9" width="50" height="30"
+						src="../images/spinners/domino-white-3-3.png" />
 				</div>
 				
 				<div class="name">
@@ -573,8 +573,10 @@
 				</div>
 
 				<div class="name">
-					<strong>round-10:&nbsp;</strong> <input type="image" id="image10"
-						width="35" height="40" src="../images/313/10_of_clubs.png" />
+					<strong>round-10:&nbsp;&nbsp;&nbsp;</strong> 
+						<input type="image" id="image10"
+						width="35" height="40" 
+						src=../images/spinners/domino-white-3-3.png" />
 				</div>
 				
 				<div class="name">
@@ -638,9 +640,12 @@
 						onclick="hideElement()"/>
 				</div>
 
+				<!-- 
 				<div class="name">
-					<strong>round 11:&nbsp;</strong> <input type="image" id="image11"
-						width="35" height="40" src="../images/313/jack_of_spades2.png" />
+					<strong>round 11:&nbsp;&nbsp;&nbsp;</strong>
+					<input type="image" id="image11" 					
+						width="50" height="30" 
+						src="../images/spinners/domino-white-1-1.png" />
 				</div>
 				
 				<div class="name">
@@ -703,7 +708,8 @@
 						onblur="findTotalForUser7()" 
 						onclick="hideElement()" />
 				</div>
-
+				-->
+				<!--  
 				<div class="name">
 					<strong>round 12:&nbsp;</strong> <input type="image" id="image12"
 						width="35" height="40" src="../images/313/queen_of_hearts2.png" />
@@ -769,7 +775,9 @@
 						onblur="findTotalForUser7()" 
 						onclick="hideElement()"/>
 				</div>
-
+				-->
+				
+				<!-- 
 				<div class="name">
 					<strong>round 13:&nbsp;</strong> <input type="image" id="image13"
 						width="35" height="40" src="../images/313/king_of_diamonds2.png" />
@@ -835,6 +843,8 @@
 						onblur="findTotalForUser7()" 
 						onclick="showElement()" />
 				</div>
+				
+				-->
 
 				<div class="name">
 					<strong>Total Scores:&nbsp;</strong> <input type="image"
