@@ -19,8 +19,9 @@
 			</div>
 			
 			<div class="name">
-				<input class="user-name" type="text" style="align: left" maxlength="6" size="6" 
-					th:field='*{threethirteenDto.id}'/>
+				<input class="user-name" type="text" style="align: left" 
+					maxlength="6" size="6" 
+					th:field='*{spinnersDto.id}'/>
 			</div>
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
@@ -33,8 +34,9 @@
 				<strong>Game Start:</strong> 
 			</div>
 			<div class="name">
-				<input class="user-name" type="text" style="align: left" maxlength="20" size="20"
-					th:field='*{threethirteenDto.playDate}' />
+				<input class="user-name" type="text" style="align: left" 
+					maxlength="20" size="20"
+					th:field='*{spinnersDto.playDate}' />
 			</div>
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
@@ -49,37 +51,37 @@
 			
 			<div class="name">
 				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
-					th:field='*{threethirteenDto.player1}' />
+					th:field='*{spinnersDto.player1}' />
 			</div>
 			
 			<div class="name">
 				<input class="user-name" type="text" style="align: right"  maxlength="10" size="6" 
-					th:field='*{threethirteenDto.player2}' />
+					th:field='*{spinnersDto.player2}' />
 			</div>
 			
 			<div class="name">
 				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
-					th:field='*{threethirteenDto.player3}' />
+					th:field='*{spinnersDto.player3}' />
 			</div>
 			
 			<div class="name">
 				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
-					th:field='*{threethirteenDto.player4}' />
+					th:field='*{spinnersDto.player4}' />
 			</div>
 			
 			<div class="name">
 				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
-					th:field='*{threethirteenDto.player5}'/>
+					th:field='*{spinnersDto.player5}'/>
 			</div>
 			
  			<div class="name">
 				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
-					th:field='*{threethirteenDto.player6}' />
+					th:field='*{spinnersDto.player6}' />
 			</div>
 
 			<div class="name">
 				<input class="user-name" type="text" style="align: right" maxlength="10" size="6" 
-					th:field='*{threethirteenDto.player7}' />
+					th:field='*{spinnersDto.player7}' />
 			</div>
 			
 			<div class="name">
@@ -88,40 +90,40 @@
 			
 			<div class="name">
 				<input class="score" type="text" id="user_1_tot" style="align: center" size="5"
-					maxlength="4" readonly th:field='*{threethirteenDto.score1}' />
+					maxlength="4" readonly th:field='*{spinnersDto.score1}' />
 			</div>
 			
 			<div class="name">
 				<input class="score" type="text" id="user_2_tot" style="align: center" size="5"
-					maxlength="4" readonly th:field='*{threethirteenDto.score2}' />
+					maxlength="4" readonly th:field='*{spinnersDto.score2}' />
 			</div>
 			
 			<div class="name">
 				<input class="score" type="text" id="user_3_tot" style="align: center" size="5"
-					maxlength="4" readonly th:field='*{threethirteenDto.score3}' />
+					maxlength="4" readonly th:field='*{spinnersDto.score3}' />
 			</div>
 			
 			<div class="name">
 				<input class="score" type="text" id="user_4_tot" style="align: center" size="5"
-					maxlength="4" readonly th:field='*{threethirteenDto.score4}' />
+					maxlength="4" readonly th:field='*{spinnersDto.score4}' />
 			</div>
 			
 			<div class="name">
 				<input class="score" type="text" id="user_5_tot" style="align: center" size="5"
-					maxlength="4" readonly th:field='*{threethirteenDto.score5}' />
+					maxlength="4" readonly th:field='*{spinnersDto.score5}' />
 			</div>
 			
  			<div class="name">
 				<input class="score" type="text" id="user_6_tot" style="align: center" size="5"
-					maxlength="4" readonly th:field='*{threethirteenDto.score6}'/>
+					maxlength="4" readonly th:field='*{spinnersDto.score6}'/>
 			</div>
 		
 			<div class="name">
 				<input class="score" type="text" id="user_7_tot" style="align: center" size="5"
-					maxlength="4" readonly th:field='*{threethirteenDto.score7}' />
+					maxlength="4" readonly th:field='*{spinnersDto.score7}' />
 			</div>
 			
-			<div class="name">
+<!-- 			<div class="name">
 				<strong>Round Wins:</strong> 
 			</div>
 			
@@ -159,14 +161,15 @@
 				<input class="score" type="text" id="user_7_tot" style="align: center" size="5"
 					maxlength="4" readonly th:field='*{threethirteenDto.rv7}' />
 			</div>
-	
+	 -->
 			<div class="name">
 				<strong>Winner:</strong> 
 			</div>
 			
 			<div class="name">
-				<strong><input class="score" type="text" id="user_winner" style="align: center" size="5"
-					maxlength="4" readonly th:field='*{threethirteenDto.winner}' /></strong>
+				<strong><input class="score" type="text" id="user_winner" 
+					style="align: center" size="5" maxlength="4" 
+					readonly th:field='*{spinnersDto.winner}' /></strong>
 			</div>
 			
 			<div class="name">&nbsp;</div>
@@ -182,7 +185,7 @@
 			
 			<div class="name">
 				<input class="score" type="text" id="elapsed_time" style="align: center" size="10"
-					maxlength="10" readonly th:field='*{threethirteenDto.elapsedTime}' />
+					maxlength="10" readonly th:field='*{spinnersDto.elapsedTime}' />
 			</div>
 			
 			<div class="name">&nbsp;</div>
@@ -207,7 +210,8 @@
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
 			<div class="name">
-				<form action='#' th:action='@{/313/index}'  method='get'  th:object='${threethirteenDto}'>
+				<form action='#' th:action='@{/spinners/index}'  method='get'  
+					th:object='${spinnersDto}'>
 		    		<button class="name" type="submit" name="submit">Play Again</button>
 				</form>
 			</div>

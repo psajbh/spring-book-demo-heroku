@@ -9,9 +9,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.jhart.domain.Spinners;
-import com.jhart.domain.Threethirteen;
+//import com.jhart.domain.Threethirteen;
 import com.jhart.dto.SpinnersDto;
-import com.jhart.dto.ThreethirteenDto;
+//import com.jhart.dto.ThreethirteenDto;
 import com.jhart.exception.threethirteen.ThreethirteenSaveGameException;
 import com.jhart.repo.spinners.SpinnersRepository;
 
@@ -130,10 +130,10 @@ public class SpinnersServiceImpl implements SpinnersService{
 		spinners.setGameTime(spinnersDto.getElapsedTime());
 		Spinners saved;
 		
-		log.info("ThreethirteenService - save attempt on: " + spinners.toString());
+		log.info("SpinnersService - save attempt on: " + spinners.toString());
 		try {
 			saved = spinnersRepository.save(spinners);
-			log.info("ThreethirteenService - save: " + saved);
+			log.info("SpinnersService - save: " + saved);
 			return saved;
 		}
 		catch(ThreethirteenSaveGameException threethirteenGameException) {

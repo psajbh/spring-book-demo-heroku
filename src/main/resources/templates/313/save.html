@@ -19,7 +19,8 @@
 			</div>
 			
 			<div class="name">
-				<input class="user-name" type="text" style="align: left" maxlength="6" size="6" 
+				<input class="user-name" type="text" style="align: left"
+					maxlength="6" size="6" 
 					th:field='*{threethirteenDto.id}'/>
 			</div>
 			<div class="name">&nbsp;</div>
@@ -33,7 +34,8 @@
 				<strong>Game Start:</strong> 
 			</div>
 			<div class="name">
-				<input class="user-name" type="text" style="align: left" maxlength="20" size="20"
+				<input class="user-name" type="text" style="align: left" 
+					maxlength="20" size="20"
 					th:field='*{threethirteenDto.playDate}' />
 			</div>
 			<div class="name">&nbsp;</div>
@@ -165,8 +167,9 @@
 			</div>
 			
 			<div class="name">
-				<strong><input class="score" type="text" id="user_winner" style="align: center" size="5"
-					maxlength="4" readonly th:field='*{threethirteenDto.winner}' /></strong>
+				<strong><input class="score" type="text" id="user_winner" 
+					style="align: center" size="5" maxlength="4" 
+					readonly th:field='*{threethirteenDto.winner}' /></strong>
 			</div>
 			
 			<div class="name">&nbsp;</div>
@@ -207,7 +210,8 @@
 			<div class="name">&nbsp;</div>
 			<div class="name">&nbsp;</div>
 			<div class="name">
-				<form action='#' th:action='@{/313/index}'  method='get'  th:object='${threethirteenDto}'>
+				<form action='#' th:action='@{/313/index}'  method='get' 
+					th:object='${threethirteenDto}'>
 		    		<button class="name" type="submit" name="submit">Play Again</button>
 				</form>
 			</div>
