@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include='fragments/header :: head'>
-	<meta charset='UTF-8'>
-	<title id="pageTitle">3-13 Save Status</title>
+
+<head>
+	<th:block th:replace='fragments/header :: head'>
+		<meta charset='UTF-8'>
+		<title id="pageTitle">3-13 Save Status</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/threethirteen_save.css">
 </head>
+
 
 <body>
 	<div th:insert="navbar :: navbar"></div>
@@ -233,58 +238,25 @@
 
 </body>
 
-<style>
-
-	body {
-		background-color: #eaeded;
-	} 
-	
-	div.container-fluid {
-		background-color:  #eaeded;
-	}
-	
-	input.score {background-color: #eaeded;}
-	input.user-name {background-color: #eaeded;}
-	
-	
- 	.wrapper1 * {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-bottom: 1px;
-		margin-right: 1px;
-		/* background: white; */
-		background-color: #eaeded;
-	}
- 	
-	.wrapper1 {
-		display: grid;
-		grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr; 
-		grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr 2fr 2fr;
-		/* grid-template-columns: 3fr 2fr 2fr 2fr 2fr 2fr 2fr; */
-		/* grid-template-rows: 3fr 2fr 2fr 2fr 2fr 2fr 2fr; */
-		grid-gap: 5px;
-		height: 10px;
-		text-align: center;
-		/* background: white; */
-		background-color: #eaeded;
-	}
-	
-	input {
-  		border-top-style: hidden;
- 		border-right-style: hidden;
-  		border-left-style: hidden;
-  		border-bottom-style: hidden;
-  		/* background-color: #eee; */
-	}
-
-	.no-outline:focus {
-  		outline: none;
-	}
-	
-	
-
-</style>
-
 </html>
 
+ 		<!-- not being used currently, conflicts with Enter key
+ 		
+       function onlyNumberKey(evt) {
+    	  alert("caller is " + onlyNumberKey.caller);
+    	  var hyphen = 0;
+          var ASCIICode = (evt.which) ? evt.which : evt.keyCode;
+          
+          if (ASCIICode == 45){
+        	  hyphen++;
+          }
+          else if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
+        	  return false; 
+          }
+          
+          if (hyphen > 1){
+        	  return false;
+          }
+          return true;
+      }
+ -->
