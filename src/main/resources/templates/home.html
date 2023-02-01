@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="fragments/header :: head">
-	<meta charset='UTF-8'>
-	<title id="pageTitle">Home</title>
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Home</title>
+	</th:block>
+	
+	<link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
@@ -17,13 +21,5 @@
 		<p>footer</p>
 	</div>
 </body>
-
-<style>
-
-	body {
-		background-color: #eaeded;
-	} 
-
-</style>
 
 </html>
