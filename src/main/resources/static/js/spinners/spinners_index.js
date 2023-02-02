@@ -1,10 +1,9 @@
-   
-    const date = new Date();
-    year = date.getFullYear();
-    month = date.getMonth() + 1;
-    day = date.getDate();
-    hours = date.getHours();
-    minutes = date.getMinutes();
+const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
     
     document.getElementById("current_date").value = 
         	month + "/" + day + "/" + year;
@@ -15,7 +14,7 @@
         
 	function findTotalForUser1(){
  		var element = document.getElementById("player1");
-		if (typeof element !== "undefined" && element.value == '') {
+ 		if (typeof element !== "undefined" && element.value == '') {
 			return; 
  		}
 		
@@ -23,6 +22,7 @@
         var tot=0;
         var rvTot = 0;
         for(var i=0;i<arr.length;i++){
+        	
           if(parseInt(arr[i].value)){
               tot += parseInt(arr[i].value);
               if (-5 == parseInt(arr[i].value)){
@@ -160,7 +160,26 @@
         document.getElementById('rv_7_tot').value = rvTot;
 
       }
-      
+    
+      //not being used currently, conflicts with Enter key
+/*       function onlyNumberKey(evt) {
+    	  alert("caller is " + onlyNumberKey.caller);
+    	  var hyphen = 0;
+          var ASCIICode = (evt.which) ? evt.which : evt.keyCode;
+          
+          if (ASCIICode == 45){
+        	  hyphen++;
+          }
+          else if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)){
+        	  return false; 
+          }
+          
+          if (hyphen > 1){
+        	  return false;
+          }
+          return true;
+      }
+ */      
       function showElement() {
     	  element = document.querySelector('.save');
     	  element.style.visibility = 'visible';
@@ -170,4 +189,3 @@
       	  element = document.querySelector('.save');
     	  element.style.visibility = 'hidden';
    	  }
-   

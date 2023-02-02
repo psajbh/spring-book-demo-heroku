@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang='en' xmlns:th='http://www.thymeleaf.org'>
 
-<head th:include='fragments/header :: head'>
-	<meta charset='UTF-8'>
-	<title id="pageTitle">Word Helper</title>
+<head>
+	<th:block th:replace='fragments/header :: head'>
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Word Helper</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/word_index.css">
 </head>
 
 <body>
@@ -123,15 +126,6 @@
 		<p>footer</p>
 	</div>
 </body>
-
-<style>
-
-	body {
-		background-color: #eaeded;
-	} 
-
-</style>
-
 
 </html>
 
