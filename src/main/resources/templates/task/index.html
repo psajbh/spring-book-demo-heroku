@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="fragments/header :: head">
-<title id="pageTitle">Task Manager</title>
-</head>
-
 <head>
-<!--  TODO figure out how to selectivly add script element fragments -->
-<script src="../js/task/task.js"></script>
+	<th:block th:replace='fragments/header :: head'>
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Task Manager</title>
+	</th:block>
+	<script type="text/javascript" src="../js/task/task.js" /></script>
 </head>
 
 <body>
 	<div th:insert="navbar :: navbar">  </div>
-	<!-- <nav th:replace="fragments/header :: navbar">
-		<p>header</p>
-	</nav> -->
-	<!-- <div th:insert="navbar :: navbar">  </div> -->
 	<div class="container-fluid" style="margin-top: 120px">
 		<div id="indexRow" class="row">
 			<div class="col-md-8 col-md-offset-2">
