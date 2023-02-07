@@ -25,7 +25,7 @@ const date = new Date();
         	
           if(parseInt(arr[i].value)){
               tot += parseInt(arr[i].value);
-              if (-5 == parseInt(arr[i].value)){
+              if (-1 == parseInt(arr[i].value)){
             	 rvTot += 1;
               }
           }
@@ -46,7 +46,7 @@ const date = new Date();
         for(var i=0;i<arr.length;i++){
           if(parseInt(arr[i].value)){
               tot += parseInt(arr[i].value);
-              if (-5 == parseInt(arr[i].value)){
+              if (-1 == parseInt(arr[i].value)){
              	 rvTot += 1;
                }
           }
@@ -67,7 +67,7 @@ const date = new Date();
         for(var i=0;i<arr.length;i++){
           if(parseInt(arr[i].value)){
               tot += parseInt(arr[i].value);
-              if (-5 == parseInt(arr[i].value)){
+              if (-1 == parseInt(arr[i].value)){
               	 rvTot += 1;
               }
           }
@@ -88,7 +88,7 @@ const date = new Date();
         for(var i=0;i<arr.length;i++){
           if(parseInt(arr[i].value)){
               tot += parseInt(arr[i].value);
-              if (-5 == parseInt(arr[i].value)){
+              if (-1 == parseInt(arr[i].value)){
                	 rvTot += 1;
                }
           }
@@ -109,7 +109,7 @@ const date = new Date();
         for(var i=0;i<arr.length;i++){
           if(parseInt(arr[i].value)){
               tot += parseInt(arr[i].value);
-              if (-5 == parseInt(arr[i].value)){
+              if (-1 == parseInt(arr[i].value)){
                  rvTot += 1;
               }
           }
@@ -130,7 +130,7 @@ const date = new Date();
         for(var i=0;i<arr.length;i++){
           if(parseInt(arr[i].value)){
               tot += parseInt(arr[i].value);
-              if (-5 == parseInt(arr[i].value)){
+              if (-1 == parseInt(arr[i].value)){
                   rvTot += 1;
                }
           }
@@ -151,7 +151,7 @@ const date = new Date();
         for(var i=0;i<arr.length;i++){
           if(parseInt(arr[i].value)){
               tot += parseInt(arr[i].value);
-              if (-5 == parseInt(arr[i].value)){
+              if (-1 == parseInt(arr[i].value)){
                   rvTot += 1;
                }
           }
