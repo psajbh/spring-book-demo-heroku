@@ -37,10 +37,10 @@ public class PomInfoController {
 	public String getBuildModel() {
 		Model model = buildModel.getModel();
 		StringBuilder sb = new StringBuilder();
-		sb.append(System.lineSeparator());
-		sb.append("Latest Commit Date:  " + "Wed Dec 7 15:07:23 2022 -0500");
-		sb.append(System.lineSeparator());
-		sb.append("Latest Commit Value: " + "51741ce70781e58e5c2672b3f19303d3b2aa90a4");
+		//sb.append(System.lineSeparator());
+		//sb.append("Latest Commit Date:  " + "Wed Dec 7 15:07:23 2022 -0500");
+		//sb.append(System.lineSeparator());
+		//sb.append("Latest Commit Value: " + "51741ce70781e58e5c2672b3f19303d3b2aa90a4");
 		sb.append(System.lineSeparator());
 		sb.append(System.lineSeparator());
 		sb.append("Project Data:" + System.lineSeparator());
