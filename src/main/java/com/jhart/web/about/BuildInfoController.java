@@ -31,25 +31,24 @@ public class BuildInfoController {
 	private BuildModel buildModel;
 
 	private final static String GIT_BRANCH = "git.branch";
-	private final static String GIT_BUILD_HOST = "git.build.host";
-	private final static String GIT_BUILD_TIME = "git.build.time";
-	private final static String GIT_BUILD_VER = "git.build.version";
-	private final static String GIT_COMMIT_ID = "git.commit.id";
-	private final static String GIT_COMMIT_ID_ABRV = "git.commit.id.abbrev";
-	private final static String GIT_COMMIT_MSG_FULL = "git.commit.message.full";
-
-	// private final static String GIT_FILE = "git.properties";
-
-	private final static String ERROR_MSG = "Build information could not be retrieved";
-	private final static String ERROR_TYPE = "ERROR: "; // private final static String EOL = "\n"; //private
-	final static String INIT_DATATABLE = "setupDatatable();";
 	private final static String BRANCH = "BRANCH: ";
+	private final static String GIT_BUILD_HOST = "git.build.host";
 	private final static String HOST = "HOST: ";
+	private final static String GIT_BUILD_VER = "git.build.version";
 	private final static String VERSION = "VERSION: ";
-	private final static String TIME = "TIME: ";
-	private final static String COMMIT_ID = "COMMIT_ID: ";
-	private final static String COMMIT_ID_SHORT = "COMMIT_ID (Short): ";
-	private final static String COMMIT_ID_MSG = "COMMIT MSG:";
+	private final static String GIT_BUILD_TIME = "git.build.time";
+	private final static String BUILD_TIME = "BUILD TIME: ";
+	private final static String GIT_COMMIT_ID_ABRV = "git.commit.id.abbrev";
+	private final static String COMMIT_ID_SHORT = "COMMIT ID (Short): ";
+	private final static String GIT_COMMIT_MSG_SHORT = "git.commit.message.short";
+	private final static String COMMIT_MSG_SHORT = "COMMIT MSG (Short): ";
+	private final static String GIT_COMMIT_TIME = "git.commit.time";
+	private final static String COMMIT_TIME = "COMMIT TIME: ";
+	private final static String GIT_REMOTE_ORIGIN_URL = "git.remote.origin.url";
+	private final static String ORIGIN_URL = "REMOTE ORIGIN URL: ";
+	
+	private final static String ERROR_MSG = "Build information could not be retrieved";
+	private final static String ERROR_TYPE = "ERROR: "; 
 	private final static String NO_BUILD_DATA = "No Build Data available";
 
 	public BuildInfoController(BuildModel buildModel) {
@@ -61,8 +60,9 @@ public class BuildInfoController {
 	public String buildInfo(org.springframework.ui.Model model) {
 		String buildModel = getBuildModel();
 		log.warn("BuildInfoController - buildInfo -" + buildModel);
+		
+		
 		model.addAttribute("data", buildModel);
-		// model.addAttribute("data", "this is a test");
 		log.warn("BuildInfoController - buildInfo -");
 		return "about/buildInfo";
 	}
@@ -80,20 +80,21 @@ public class BuildInfoController {
 
 		if (json.equals(BuildInfoController.ERROR_MSG)) {
 			buildItems.add(createBuildItem(BuildInfoController.ERROR_TYPE, BuildInfoController.ERROR_MSG));
-		} else {
+		} 
+		else {
 			Gson gson = new Gson();
-			Type StringMap = new TypeToken<Map<String, String>>() {
-			}.getType();
-			Map<String, String> map = gson.fromJson(json, StringMap);
+			Type stringMap = new TypeToken<Map<String, String>>() {}.getType();
+			
+			Map<String, String> map = gson.fromJson(json, stringMap);
 			buildItems.add(createBuildItem(BuildInfoController.BRANCH, map.get(BuildInfoController.GIT_BRANCH)));
 			buildItems.add(createBuildItem(BuildInfoController.HOST, map.get(BuildInfoController.GIT_BUILD_HOST)));
 			buildItems.add(createBuildItem(BuildInfoController.VERSION, map.get(BuildInfoController.GIT_BUILD_VER)));
-			buildItems.add(createBuildItem(BuildInfoController.TIME, map.get(BuildInfoController.GIT_BUILD_TIME)));
-			buildItems.add(createBuildItem(BuildInfoController.COMMIT_ID, map.get(BuildInfoController.GIT_COMMIT_ID)));
-			buildItems.add(createBuildItem(BuildInfoController.COMMIT_ID_SHORT,
-					map.get(BuildInfoController.GIT_COMMIT_ID_ABRV)));
-			buildItems.add(createBuildItem(BuildInfoController.COMMIT_ID_MSG,
-					map.get(BuildInfoController.GIT_COMMIT_MSG_FULL)));
+			buildItems.add(createBuildItem(BuildInfoController.BUILD_TIME, map.get(BuildInfoController.GIT_BUILD_TIME)));
+			
+			buildItems.add(createBuildItem(BuildInfoController.COMMIT_ID_SHORT,	map.get(BuildInfoController.GIT_COMMIT_ID_ABRV)));
+			buildItems.add(createBuildItem(BuildInfoController.COMMIT_MSG_SHORT, map.get(BuildInfoController.GIT_COMMIT_MSG_SHORT)));
+			buildItems.add(createBuildItem(BuildInfoController.COMMIT_TIME, map.get(BuildInfoController.GIT_COMMIT_TIME)));
+			buildItems.add(createBuildItem(BuildInfoController.ORIGIN_URL, map.get(BuildInfoController.GIT_REMOTE_ORIGIN_URL)));
 		}
 
 		StringBuilder sb = new StringBuilder();
@@ -105,7 +106,6 @@ public class BuildInfoController {
 			sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
 		}
 		
-		//call a repository to save the data:
 
 		return sb.toString();
 
