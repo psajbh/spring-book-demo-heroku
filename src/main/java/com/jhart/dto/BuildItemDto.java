@@ -1,26 +1,13 @@
 package com.jhart.dto;
 
 
-//import lombok.AllArgsConstructor;
-//import lombok.Getter;
-//import lombok.NoArgsConstructor;
-//import lombok.Setter;
-//import lombok.ToString;
-
-//@ToString
-//@NoArgsConstructor
-//@AllArgsConstructor
-//@Setter
-//@Getter
-public class BuildItemDTO {
+public class BuildItemDto {
 	private String type;
 	private String value;
 	
-	public BuildItemDTO() {
-		
-	}
+	public BuildItemDto() {}
 	
-	public BuildItemDTO(String type, String value) {
+	public BuildItemDto(String type, String value) {
 		this.type = type;
 		this.value = value;
 	}

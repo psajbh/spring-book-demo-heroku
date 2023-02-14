@@ -11,7 +11,6 @@ import com.jhart.repo.spinners.SpinnersRepository;
 @Service
 public class BuildInfoServiceImpl implements BuildInfoService{
 	Logger log = LoggerFactory.getLogger(this.getClass());
-	//private final SpinnersRepository spinnersRepository;
 	private final BuildInfoRepository buildInfoRepository;
 	
 	public BuildInfoServiceImpl(BuildInfoRepository buildInfoRepository) {

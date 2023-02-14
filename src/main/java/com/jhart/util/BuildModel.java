@@ -5,9 +5,7 @@ import org.apache.maven.model.Model;
 public class BuildModel {
 	private Model model;
 	
-//	public BuildModel() {
-//		
-//	}
+	public BuildModel() {}
 
 	public Model getModel() {
 		return model;

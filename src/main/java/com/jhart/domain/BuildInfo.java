@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "build_info")
+@Table(name = "git_info")
 public class BuildInfo implements IEntity, Serializable{
 
 	private static final long serialVersionUID = -5948181498794633533L;

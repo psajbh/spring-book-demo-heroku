@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.jhart.dto.BuildItemDTO;
+import com.jhart.domain.BuildInfo;
+import com.jhart.dto.BuildItemDto;
+import com.jhart.service.buildinfo.BuildInfoService;
 import com.jhart.util.BuildModel;
 
 @Controller
@@ -49,19 +51,18 @@ public class BuildInfoController {
 	
 	private final static String ERROR_MSG = "Build information could not be retrieved";
 	private final static String ERROR_TYPE = "ERROR: "; 
-	private final static String NO_BUILD_DATA = "No Build Data available";
-
-	public BuildInfoController(BuildModel buildModel) {
-		log.warn("BuildInfoController -");
-		this.buildModel = buildModel;
+	private final static String NO_BUILD_DATA = "No build data available";
+	
+	private BuildInfoService buildInfoService;
+	
+	public BuildInfoController(BuildInfoService buildInfoService) {
+		this.buildInfoService = buildInfoService;
 	}
 
 	@GetMapping("buildInfo")
 	public String buildInfo(org.springframework.ui.Model model) {
 		String buildModel = getBuildModel();
 		log.warn("BuildInfoController - buildInfo -" + buildModel);
-		
-		
 		model.addAttribute("data", buildModel);
 		log.warn("BuildInfoController - buildInfo -");
 		return "about/buildInfo";
@@ -69,19 +70,54 @@ public class BuildInfoController {
 
 	public String getBuildModel() {
 		log.warn("BuildInfoController - getBuildModel");
-		List<BuildItemDTO> buildItems = new ArrayList<>();
+		List<BuildItemDto> buildItems = new ArrayList<>();
 		String json = readGitProperties();
-
 		log.warn("BuildInfoController - getBuildModel: json value: " + json);
+		
+		
+		json =  NO_BUILD_DATA;  // remove this line before pushing to production
+		
+		// get build data from the database
 		if (json.contentEquals(NO_BUILD_DATA)) {
-			log.warn("BuildInfoController - getBuildModel - returning no build data");
-			return BuildInfoController.ERROR_MSG;
+			log.warn("BuildInfoController - getBuildModel - no build data available");
+			BuildInfo buildInfo = buildInfoService.getLatestBuildInfo();
+			
+			
+			if (null != buildInfo) {
+			    buildItems.add(createBuildItem(BuildInfoController.BRANCH, buildInfo.getBranch()));
+			    buildItems.add(createBuildItem(BuildInfoController.HOST, buildInfo.getHost()));
+			    buildItems.add(createBuildItem(BuildInfoController.VERSION, buildInfo.getVersion()));
+			    buildItems.add(createBuildItem(BuildInfoController.BUILD_TIME, buildInfo.getBuildTime()));
+			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_ID_SHORT, buildInfo.getCommitId()));
+			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_MSG_SHORT, buildInfo.getCommitMsg()));
+			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_TIME, buildInfo.getCommitTime()));
+			    buildItems.add(createBuildItem(BuildInfoController.ORIGIN_URL, buildInfo.getOriginUrl()));
+			    
+			     StringBuilder sb = new StringBuilder();
+			     sb.append(System.lineSeparator());
+			     sb.append("Build Information: " + System.lineSeparator());
+			     ListIterator<BuildItemDto> buildItemData = buildItems.listIterator();
+			     while (buildItemData.hasNext()) {
+			         BuildItemDto buildItemDto = buildItemData.next();
+			         sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
+			      }
+			      return sb.toString();
+			}
+			else {
+			    buildItems.add(createBuildItem(BuildInfoController.ERROR_TYPE, BuildInfoController.ERROR_MSG));
+	            StringBuilder sb = new StringBuilder();
+	            sb.append(System.lineSeparator());
+	            sb.append("Build Information: " + System.lineSeparator());
+	            ListIterator<BuildItemDto> buildItemData = buildItems.listIterator();
+	                 while (buildItemData.hasNext()) {
+	                     BuildItemDto buildItemDto = buildItemData.next();
+	                     sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
+	                  }
+	                  return sb.toString();
+			}
 		}
-
-		if (json.equals(BuildInfoController.ERROR_MSG)) {
-			buildItems.add(createBuildItem(BuildInfoController.ERROR_TYPE, BuildInfoController.ERROR_MSG));
-		} 
 		else {
+		    log.warn("BuildInfoController - getBuildModel - returning git.properties information");
 			Gson gson = new Gson();
 			Type stringMap = new TypeToken<Map<String, String>>() {}.getType();
 			
@@ -95,25 +131,24 @@ public class BuildInfoController {
 			buildItems.add(createBuildItem(BuildInfoController.COMMIT_MSG_SHORT, map.get(BuildInfoController.GIT_COMMIT_MSG_SHORT)));
 			buildItems.add(createBuildItem(BuildInfoController.COMMIT_TIME, map.get(BuildInfoController.GIT_COMMIT_TIME)));
 			buildItems.add(createBuildItem(BuildInfoController.ORIGIN_URL, map.get(BuildInfoController.GIT_REMOTE_ORIGIN_URL)));
-		}
 
-		StringBuilder sb = new StringBuilder();
-		sb.append(System.lineSeparator());
-		sb.append("Build Information: " + System.lineSeparator());
-		ListIterator<BuildItemDTO> buildItemData = buildItems.listIterator();
-		while (buildItemData.hasNext()) {
-			BuildItemDTO buildItemDto = buildItemData.next();
-			sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
-		}
+			StringBuilder sb = new StringBuilder();
+			sb.append(System.lineSeparator());
+			sb.append("Build Information: " + System.lineSeparator());
+			ListIterator<BuildItemDto> buildItemData = buildItems.listIterator();
 		
-
-		return sb.toString();
-
+			while (buildItemData.hasNext()) {
+			    BuildItemDto buildItemDto = buildItemData.next();
+			    sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
+			}
+			
+			return sb.toString();
+		}
 	}
 
-	private BuildItemDTO createBuildItem(String type, String value) {
+	private BuildItemDto createBuildItem(String type, String value) {
 		log.warn("BuildInfoController - createBuildItem - type: " + type + " value: " + value);
-		BuildItemDTO buildItem = new BuildItemDTO(type, value);
+		BuildItemDto buildItem = new BuildItemDto(type, value);
 		log.warn("BuildInfoController - createBuildItem - buildItem: " + buildItem.toString());
 		return buildItem;
 	}
