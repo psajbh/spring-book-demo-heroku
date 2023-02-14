@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Spinners")
+@Table(name = "spinners")
 public class Spinners implements IEntity, Serializable{
 
 	private static final long serialVersionUID = 4761717180850881103L;
