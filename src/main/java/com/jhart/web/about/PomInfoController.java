@@ -11,36 +11,33 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.jhart.util.BuildModel;
+import com.jhart.util.BuildModelDto;
 
 
 @Controller
 public class PomInfoController {
 	Logger log = LoggerFactory.getLogger(this.getClass());
-	private BuildModel buildModel;
+	private BuildModelDto buildModel;
 	
-	public PomInfoController(BuildModel buildModel) {
-		log.warn("PomInfoController -");
+	public PomInfoController(BuildModelDto buildModel) {
+		log.info("PomInfoController - constructor ");
 		this.buildModel = buildModel;
 	}
 	
 	@GetMapping("pomInfo")
 	public String pomInfo(org.springframework.ui.Model model) {
-		log.warn("pomInfo -");
+		log.info("PomInfoController - pomInfo()");
 		String buildModel = getBuildModel();
-		log.warn("PomInfoController - buildInfo -" + buildModel);
+		log.warn("PomInfoController - buildInfo  = " + buildModel);
 		model.addAttribute("data", buildModel);
 		return "about/pomInfo";
 	}
 	
-	// move this to a service
+	// move this to a service!
 	public String getBuildModel() {
+	    log.info("PomInfoController - getBuildModel()");
 		Model model = buildModel.getModel();
 		StringBuilder sb = new StringBuilder();
-		//sb.append(System.lineSeparator());
-		//sb.append("Latest Commit Date:  " + "Wed Dec 7 15:07:23 2022 -0500");
-		//sb.append(System.lineSeparator());
-		//sb.append("Latest Commit Value: " + "51741ce70781e58e5c2672b3f19303d3b2aa90a4");
 		sb.append(System.lineSeparator());
 		sb.append(System.lineSeparator());
 		sb.append("Project Data:" + System.lineSeparator());
@@ -73,18 +70,19 @@ public class PomInfoController {
 			
 		}
 		
-		//log.debug(sb.toString());
-		return sb.toString();
+		String response = sb.toString();
+		log.debug("PomInfoController - getBuildModel() response: " + response);
+		return response;
 	}
 	
 	private String getDependencyVersion(String version) {
+	    log.debug("PomInfoController - getDependencyVersion() response: " + version);
 		if (version == null) {
 			return "";
 		}
 		else {
 			return " - " + version;
 		}
-		
 	}
 
 }

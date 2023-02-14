@@ -14,7 +14,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-//import org.springframework.ui.Model;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.RestController;
 
@@ -23,15 +23,14 @@ import com.google.gson.reflect.TypeToken;
 import com.jhart.domain.BuildInfo;
 import com.jhart.dto.BuildItemDto;
 import com.jhart.service.buildinfo.BuildInfoService;
-import com.jhart.util.BuildModel;
+import com.jhart.util.BuildModelDto;
 
 @Controller
 public class BuildInfoController {
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@SuppressWarnings("unused")
-	private BuildModel buildModel;
-
+	private BuildModelDto buildModel;
 	private final static String GIT_BRANCH = "git.branch";
 	private final static String BRANCH = "BRANCH: ";
 	private final static String GIT_BUILD_HOST = "git.build.host";
@@ -48,7 +47,6 @@ public class BuildInfoController {
 	private final static String COMMIT_TIME = "COMMIT TIME: ";
 	private final static String GIT_REMOTE_ORIGIN_URL = "git.remote.origin.url";
 	private final static String ORIGIN_URL = "REMOTE ORIGIN URL: ";
-	
 	private final static String ERROR_MSG = "Build information could not be retrieved";
 	private final static String ERROR_TYPE = "ERROR: "; 
 	private final static String NO_BUILD_DATA = "No build data available";
@@ -56,34 +54,38 @@ public class BuildInfoController {
 	private BuildInfoService buildInfoService;
 	
 	public BuildInfoController(BuildInfoService buildInfoService) {
+	    log.info("BuildInfoController - constructor ");
 		this.buildInfoService = buildInfoService;
 	}
 
 	@GetMapping("buildInfo")
-	public String buildInfo(org.springframework.ui.Model model) {
+	public String buildInfo(Model model) {
+	    log.info("BuildInfoController - buildInfo()");
 		String buildModel = getBuildModel();
-		log.warn("BuildInfoController - buildInfo -" + buildModel);
+		log.debug("BuildInfoController - buildInfo -" + buildModel);
 		model.addAttribute("data", buildModel);
-		log.warn("BuildInfoController - buildInfo -");
 		return "about/buildInfo";
 	}
 
 	public String getBuildModel() {
-		log.warn("BuildInfoController - getBuildModel");
+		log.info("BuildInfoController - getBuildModel()");
 		List<BuildItemDto> buildItems = new ArrayList<>();
+		StringBuilder sb = new StringBuilder();
+		String response = null;
+		
 		String json = readGitProperties();
-		log.warn("BuildInfoController - getBuildModel: json value: " + json);
+		log.debug("BuildInfoController - getBuildModel() - json: " + json);
 		
-		
-		json =  NO_BUILD_DATA;  // remove this line before pushing to production
-		
-		// get build data from the database
+		// for test purposes, unmarked below line of code, i.e. json =  NO_BUILD_DATA; 
+		json =  NO_BUILD_DATA;  
+		// insure the above line is marked before pushing to production
 		if (json.contentEquals(NO_BUILD_DATA)) {
-			log.warn("BuildInfoController - getBuildModel - no build data available");
+			log.info("BuildInfoController - getBuildModel() - no build data available - "
+			        + "using buildInfoService as workaround");
 			BuildInfo buildInfo = buildInfoService.getLatestBuildInfo();
 			
-			
 			if (null != buildInfo) {
+			    log.info("BuildInfoController - getBuildModel() - buildInfo is NOT null");
 			    buildItems.add(createBuildItem(BuildInfoController.BRANCH, buildInfo.getBranch()));
 			    buildItems.add(createBuildItem(BuildInfoController.HOST, buildInfo.getHost()));
 			    buildItems.add(createBuildItem(BuildInfoController.VERSION, buildInfo.getVersion()));
@@ -92,8 +94,7 @@ public class BuildInfoController {
 			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_MSG_SHORT, buildInfo.getCommitMsg()));
 			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_TIME, buildInfo.getCommitTime()));
 			    buildItems.add(createBuildItem(BuildInfoController.ORIGIN_URL, buildInfo.getOriginUrl()));
-			    
-			     StringBuilder sb = new StringBuilder();
+			     
 			     sb.append(System.lineSeparator());
 			     sb.append("Build Information: " + System.lineSeparator());
 			     ListIterator<BuildItemDto> buildItemData = buildItems.listIterator();
@@ -101,38 +102,36 @@ public class BuildInfoController {
 			         BuildItemDto buildItemDto = buildItemData.next();
 			         sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
 			      }
-			      return sb.toString();
+			      response = sb.toString();
 			}
 			else {
+			    log.info("BuildInfoController - getBuildModel() - buildInfo is NULL");
 			    buildItems.add(createBuildItem(BuildInfoController.ERROR_TYPE, BuildInfoController.ERROR_MSG));
-	            StringBuilder sb = new StringBuilder();
 	            sb.append(System.lineSeparator());
 	            sb.append("Build Information: " + System.lineSeparator());
 	            ListIterator<BuildItemDto> buildItemData = buildItems.listIterator();
-	                 while (buildItemData.hasNext()) {
-	                     BuildItemDto buildItemDto = buildItemData.next();
-	                     sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
-	                  }
-	                  return sb.toString();
+	            while (buildItemData.hasNext()) {
+	                BuildItemDto buildItemDto = buildItemData.next();
+	                sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
+	            }
+	            response = sb.toString();
 			}
+			return response;
 		}
 		else {
-		    log.warn("BuildInfoController - getBuildModel - returning git.properties information");
+		    log.info("BuildInfoController - getBuildModel() - returning git.properties information");
 			Gson gson = new Gson();
 			Type stringMap = new TypeToken<Map<String, String>>() {}.getType();
-			
 			Map<String, String> map = gson.fromJson(json, stringMap);
 			buildItems.add(createBuildItem(BuildInfoController.BRANCH, map.get(BuildInfoController.GIT_BRANCH)));
 			buildItems.add(createBuildItem(BuildInfoController.HOST, map.get(BuildInfoController.GIT_BUILD_HOST)));
 			buildItems.add(createBuildItem(BuildInfoController.VERSION, map.get(BuildInfoController.GIT_BUILD_VER)));
 			buildItems.add(createBuildItem(BuildInfoController.BUILD_TIME, map.get(BuildInfoController.GIT_BUILD_TIME)));
-			
 			buildItems.add(createBuildItem(BuildInfoController.COMMIT_ID_SHORT,	map.get(BuildInfoController.GIT_COMMIT_ID_ABRV)));
 			buildItems.add(createBuildItem(BuildInfoController.COMMIT_MSG_SHORT, map.get(BuildInfoController.GIT_COMMIT_MSG_SHORT)));
 			buildItems.add(createBuildItem(BuildInfoController.COMMIT_TIME, map.get(BuildInfoController.GIT_COMMIT_TIME)));
 			buildItems.add(createBuildItem(BuildInfoController.ORIGIN_URL, map.get(BuildInfoController.GIT_REMOTE_ORIGIN_URL)));
-
-			StringBuilder sb = new StringBuilder();
+			
 			sb.append(System.lineSeparator());
 			sb.append("Build Information: " + System.lineSeparator());
 			ListIterator<BuildItemDto> buildItemData = buildItems.listIterator();
@@ -141,37 +140,39 @@ public class BuildInfoController {
 			    BuildItemDto buildItemDto = buildItemData.next();
 			    sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
 			}
-			
-			return sb.toString();
+			response = sb.toString(); 
 		}
+		
+		log.info("BuildInfoController - getBuildModel() - returning: " + response);
+		return response;
 	}
 
 	private BuildItemDto createBuildItem(String type, String value) {
-		log.warn("BuildInfoController - createBuildItem - type: " + type + " value: " + value);
+		log.debug("BuildInfoController - createBuildItem() - type: " + type + " value: " + value);
 		BuildItemDto buildItem = new BuildItemDto(type, value);
-		log.warn("BuildInfoController - createBuildItem - buildItem: " + buildItem.toString());
+		log.debug("BuildInfoController - createBuildItem() - buildItem: " + buildItem.toString());
 		return buildItem;
 	}
 
 	private String readGitProperties() {
-		log.warn("BuildInfoController - readGitProperties - ");
+		log.debug("BuildInfoController - readGitProperties - ");
 		ClassLoader classLoader = getClass().getClassLoader();
-		log.warn("BuildInfoController - readGitProperties - classLoader: " + classLoader);
+		log.debug("BuildInfoController - readGitProperties - classLoader: " + classLoader);
 		InputStream inputStream = classLoader.getResourceAsStream("git.properties");
-		log.warn("BuildInfoController - readGitProperties - inputStream: " + inputStream);
+		log.debug("BuildInfoController - readGitProperties - inputStream: " + inputStream);
 		if (inputStream == null) {
-			log.warn("BuildInfoController - readGitProperties - inputStream is null -> returning null");
-			return NO_BUILD_DATA; // return null; }
+			log.debug("BuildInfoController - readGitProperties - inputStream is null -> returning null");
+			return NO_BUILD_DATA; 
 		}
 
 		try {
 			String input = readFromInputStream(inputStream);
-			log.warn("BuildInfoController - readGitProperties - input: " + input);
+			log.debug("BuildInfoController - readGitProperties - input: " + input);
 			return input;
 		} catch (IOException e) {
 			log.error("BuildInfoController - readGitProperties - input exception: " + e.getMessage());
 			e.printStackTrace();
-			return "Version information could not be retrieved";
+			return NO_BUILD_DATA;
 		}
 	}
 

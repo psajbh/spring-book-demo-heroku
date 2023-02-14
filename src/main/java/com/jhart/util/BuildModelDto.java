@@ -2,10 +2,10 @@ package com.jhart.util;
 
 import org.apache.maven.model.Model;
 
-public class BuildModel {
+public class BuildModelDto {
 	private Model model;
 	
-	public BuildModel() {}
+	public BuildModelDto() {}
 
 	public Model getModel() {
 		return model;
@@ -14,7 +14,10 @@ public class BuildModel {
 	public void setModel(Model model) {
 		this.model = model;
 	}
-	
-	
+
+    @Override
+    public String toString() {
+        return "BuildModel [model=" + model + "]";
+    }
 	
 }

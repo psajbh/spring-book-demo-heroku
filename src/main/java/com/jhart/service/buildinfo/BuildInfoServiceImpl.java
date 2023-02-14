@@ -1,5 +1,7 @@
 package com.jhart.service.buildinfo;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,9 @@ public class BuildInfoServiceImpl implements BuildInfoService{
 		
 		int mostCurrentId = 0;
 		BuildInfo mostCurrentBuildInfo = null;
+		
+		List<BuildInfo>  list  = buildInfoRepository.findAll();
+		System.out.println("list: " + list);
 		
 		for (BuildInfo buildInfo : buildInfoRepository.findAll()) {
 			if (buildInfo.getId() > mostCurrentId) {
