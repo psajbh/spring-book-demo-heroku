@@ -74,10 +74,10 @@ public class BuildInfoController {
 		String response = null;
 		
 		String json = readGitProperties();
-		log.debug("BuildInfoController - getBuildModel() - json: " + json);
+		log.trace("BuildInfoController - getBuildModel() - json: " + json);
 		
 		// for test purposes, unmarked below line of code, i.e. json =  NO_BUILD_DATA; 
-		json =  NO_BUILD_DATA;  
+		//json =  NO_BUILD_DATA;  
 		// insure the above line is marked before pushing to production
 		if (json.contentEquals(NO_BUILD_DATA)) {
 			log.info("BuildInfoController - getBuildModel() - no build data available - "
@@ -143,23 +143,25 @@ public class BuildInfoController {
 			response = sb.toString(); 
 		}
 		
-		log.info("BuildInfoController - getBuildModel() - returning: " + response);
+		
+		
+		log.trace("BuildInfoController - getBuildModel() - returning: " + response);
 		return response;
 	}
 
 	private BuildItemDto createBuildItem(String type, String value) {
-		log.debug("BuildInfoController - createBuildItem() - type: " + type + " value: " + value);
+		log.trace("BuildInfoController - createBuildItem() - type: " + type + " value: " + value);
 		BuildItemDto buildItem = new BuildItemDto(type, value);
-		log.debug("BuildInfoController - createBuildItem() - buildItem: " + buildItem.toString());
+		log.trace("BuildInfoController - createBuildItem() - buildItem: " + buildItem.toString());
 		return buildItem;
 	}
 
 	private String readGitProperties() {
 		log.debug("BuildInfoController - readGitProperties - ");
 		ClassLoader classLoader = getClass().getClassLoader();
-		log.debug("BuildInfoController - readGitProperties - classLoader: " + classLoader);
+		log.trace("BuildInfoController - readGitProperties - classLoader: " + classLoader);
 		InputStream inputStream = classLoader.getResourceAsStream("git.properties");
-		log.debug("BuildInfoController - readGitProperties - inputStream: " + inputStream);
+		log.trace("BuildInfoController - readGitProperties - inputStream: " + inputStream);
 		if (inputStream == null) {
 			log.debug("BuildInfoController - readGitProperties - inputStream is null -> returning null");
 			return NO_BUILD_DATA; 
@@ -167,7 +169,7 @@ public class BuildInfoController {
 
 		try {
 			String input = readFromInputStream(inputStream);
-			log.debug("BuildInfoController - readGitProperties - input: " + input);
+			log.trace("BuildInfoController - readGitProperties - input: " + input);
 			return input;
 		} catch (IOException e) {
 			log.error("BuildInfoController - readGitProperties - input exception: " + e.getMessage());
