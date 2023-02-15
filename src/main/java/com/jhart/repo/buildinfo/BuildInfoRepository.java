@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.jhart.domain.BuildInfo;
 
-@Repository("BuildInfoRepository")
-public interface BuildInfoRepository extends JpaRepository<BuildInfo, Integer>{
+@Repository("buildInfoRepository")
+public interface BuildInfoRepository extends JpaRepository<BuildInfo, Long>{
 
 }

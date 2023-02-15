@@ -1,9 +1,9 @@
 USE tacmot0;
 
-DROP TABLE IF EXISTS `git_info`;
+DROP TABLE IF EXISTS `build_info`;
 
-CREATE TABLE IF NOT EXISTS `git_info` (
-	`id` INT AUTO_INCREMENT PRIMARY KEY,		-- id
+CREATE TABLE IF NOT EXISTS `build_info` (
+	`id` int(11) AUTO_INCREMENT,		-- id
 	`branch` VARCHAR(20),  			-- git.branch
 	`build_host` VARCHAR(50),			-- git.build.host 
     	`build_version` VARCHAR(20),			-- git.build.version
@@ -11,9 +11,11 @@ CREATE TABLE IF NOT EXISTS `git_info` (
     	`commit_id_short` VARCHAR(10),		-- git.commit.id.abbrev
 	`commit_msg_short` VARCHAR(150), 		-- git.commit.message.short
 	`commit_time` VARCHAR(25),			-- git.commit.time
-	`remote_origin_url` VARCHAR(150)		-- git.remote.origin.url
-) 
-ENGINE=INNODB DEFAULT CHARSET=UTF8MB4 COLLATE=UTF8MB4_0900_AI_CI;
+	`remote_origin_url` VARCHAR(150),	-- git.remote.origin.url
+    PRIMARY KEY (id)
+); 
+
+-- ENGINE=INNODB DEFAULT CHARSET=UTF8MB4 COLLATE=UTF8MB4_0900_AI_CI;
 
 select * from build_info;
 
@@ -22,6 +24,17 @@ insert into `build_info` (`branch`, `build_host`, `build_version`, `build_time`,
 	values ('appInfo','DESKTOP-C44K8NO','0.0.1-SNAPSHOT','2023-02-12T14:48:42-0500', 
 		'ec227ea', 'zen appinfo enabled git-commit-id-plugin', '2023-02-10T18:16:17-0500',
         'git@github.com:psajbh/spring-book-demo-heroku.git');
+
+insert into `build_info` (`branch`, `build_host`, `build_version`, `build_time`, 
+		`commit_id_short`, `commit_msg_short`, `commit_time`, `remote_origin_url`) 
+	values ('appInfo2',
+			'DESKTOP-C44K8NO',
+			'0.0.1-SNAPSHOT',
+			'2023-02-14T16:36:42-0500', 
+			'7473a07', 
+			'appInfo2 enabled capability to retrieve build info from database',
+            '2023-02-14T13:21:23-0500',
+			'git@github.com:psajbh/spring-book-demo-heroku.git');
 
 
   -- BRANCH:  : appInfo
@@ -33,5 +46,5 @@ insert into `build_info` (`branch`, `build_host`, `build_version`, `build_time`,
   -- COMMIT TIME:  : 2023-02-10T18:16:17-0500
   -- REMOTE ORIGIN URL:  : git@github.com:psajbh/spring-book-demo-heroku.git
 
-
-  
+    
+    

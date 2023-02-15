@@ -22,7 +22,7 @@ public class BuildInfoServiceImpl implements BuildInfoService{
 	@Override
 	public BuildInfo getLatestBuildInfo() {
 		
-		int mostCurrentId = 0;
+		Long mostCurrentId = 0L;
 		BuildInfo mostCurrentBuildInfo = null;
 		
 		List<BuildInfo>  list  = buildInfoRepository.findAll();

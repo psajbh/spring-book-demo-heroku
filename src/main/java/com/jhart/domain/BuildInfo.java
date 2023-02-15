@@ -10,14 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "git_info")
+@Table(name = "build_info")
 public class BuildInfo implements IEntity, Serializable{
 
 	private static final long serialVersionUID = -5948181498794633533L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
 	
 	@Column(name = "branch", nullable = false, columnDefinition = "varchar(20)")
 	private String branch;
@@ -43,11 +43,11 @@ public class BuildInfo implements IEntity, Serializable{
 	@Column(name = "remote_origin_url", nullable = false, columnDefinition = "varchar(150)")
 	private String originUrl;
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
