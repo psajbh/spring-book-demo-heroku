@@ -27,18 +27,18 @@ public class BuildInfo implements IEntity, Serializable{
 	
 	@Column(name = "build_version", nullable = false, columnDefinition = "varchar(20)")
 	private String version;
+	
+	@Column(name = "commit_time", nullable = false, columnDefinition = "varchar(25)")
+	private String commitTime;
 
-	@Column(name = "build_time", nullable = false, columnDefinition = "varchar(25)")
-	private String buildTime;
-
-	@Column(name = "commit_id_short", nullable = false, columnDefinition = "varchar(50)")
-	private String commitId;
+	@Column(name = "commit_id_short", nullable = false, columnDefinition = "varchar(10)")
+	private String commitIdShort;
+	
+	@Column(name = "commit_id_long", nullable = false, columnDefinition = "varchar(42)")
+	private String commitIdLong;
 
 	@Column(name = "commit_msg_short", nullable = false, columnDefinition = "varchar(150)")
 	private String commitMsg;
-
-	@Column(name = "commit_time", nullable = false, columnDefinition = "varchar(25)")
-	private String commitTime;
 
 	@Column(name = "remote_origin_url", nullable = false, columnDefinition = "varchar(150)")
 	private String originUrl;
@@ -75,21 +75,7 @@ public class BuildInfo implements IEntity, Serializable{
 		this.version = version;
 	}
 
-	public String getBuildTime() {
-		return buildTime;
-	}
 
-	public void setBuildTime(String buildTime) {
-		this.buildTime = buildTime;
-	}
-
-	public String getCommitId() {
-		return commitId;
-	}
-
-	public void setCommitId(String commitId) {
-		this.commitId = commitId;
-	}
 
 	public String getCommitMsg() {
 		return commitMsg;
@@ -115,13 +101,27 @@ public class BuildInfo implements IEntity, Serializable{
 		this.originUrl = originUrl;
 	}
 
+	public String getCommitIdShort() {
+		return commitIdShort;
+	}
+
+	public void setCommitIdShort(String commitIdShort) {
+		this.commitIdShort = commitIdShort;
+	}
+
+	public String getCommitIdLong() {
+		return commitIdLong;
+	}
+
+	public void setCommitIdLong(String commitIdLong) {
+		this.commitIdLong = commitIdLong;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((branch == null) ? 0 : branch.hashCode());
-		result = prime * result + ((buildTime == null) ? 0 : buildTime.hashCode());
-		result = prime * result + ((commitId == null) ? 0 : commitId.hashCode());
 		result = prime * result + ((commitMsg == null) ? 0 : commitMsg.hashCode());
 		result = prime * result + ((commitTime == null) ? 0 : commitTime.hashCode());
 		result = prime * result + ((host == null) ? 0 : host.hashCode());
@@ -143,16 +143,6 @@ public class BuildInfo implements IEntity, Serializable{
 			if (other.branch != null)
 				return false;
 		} else if (!branch.equals(other.branch))
-			return false;
-		if (buildTime == null) {
-			if (other.buildTime != null)
-				return false;
-		} else if (!buildTime.equals(other.buildTime))
-			return false;
-		if (commitId == null) {
-			if (other.commitId != null)
-				return false;
-		} else if (!commitId.equals(other.commitId))
 			return false;
 		if (commitMsg == null) {
 			if (other.commitMsg != null)
@@ -182,11 +172,5 @@ public class BuildInfo implements IEntity, Serializable{
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "BuildInfo [id=" + id + ", branch=" + branch + ", host=" + host + ", version=" + version + ", buildTime="
-				+ buildTime + ", commitId=" + commitId + ", commitMsg=" + commitMsg + ", commitTime=" + commitTime
-				+ ", originUrl=" + originUrl + "]";
-	}
 
 }

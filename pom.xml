@@ -186,6 +186,7 @@
                 </executions>
             </plugin>
             <!-- pl.project13.maven - will not work within heroku -->
+            <!-- 
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
@@ -213,6 +214,7 @@
                     <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
                 </configuration>
             </plugin>
+             -->
             <!-- <plugin> runs integration tests
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>

@@ -41,6 +41,7 @@ public class BuildInfoController {
 	private final static String BUILD_TIME = "BUILD TIME: ";
 	private final static String GIT_COMMIT_ID_ABRV = "git.commit.id.abbrev";
 	private final static String COMMIT_ID_SHORT = "COMMIT ID (Short): ";
+	private final static String COMMIT_ID_LONG = "COMMIT ID (Long): ";
 	private final static String GIT_COMMIT_MSG_SHORT = "git.commit.message.short";
 	private final static String COMMIT_MSG_SHORT = "COMMIT MSG (Short): ";
 	private final static String GIT_COMMIT_TIME = "git.commit.time";
@@ -89,10 +90,10 @@ public class BuildInfoController {
 			    buildItems.add(createBuildItem(BuildInfoController.BRANCH, buildInfo.getBranch()));
 			    buildItems.add(createBuildItem(BuildInfoController.HOST, buildInfo.getHost()));
 			    buildItems.add(createBuildItem(BuildInfoController.VERSION, buildInfo.getVersion()));
-			    buildItems.add(createBuildItem(BuildInfoController.BUILD_TIME, buildInfo.getBuildTime()));
-			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_ID_SHORT, buildInfo.getCommitId()));
-			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_MSG_SHORT, buildInfo.getCommitMsg()));
 			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_TIME, buildInfo.getCommitTime()));
+			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_ID_SHORT, buildInfo.getCommitIdShort()));
+			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_ID_LONG, buildInfo.getCommitIdLong()));
+			    buildItems.add(createBuildItem(BuildInfoController.COMMIT_MSG_SHORT, buildInfo.getCommitMsg()));
 			    buildItems.add(createBuildItem(BuildInfoController.ORIGIN_URL, buildInfo.getOriginUrl()));
 			     
 			     sb.append(System.lineSeparator());
