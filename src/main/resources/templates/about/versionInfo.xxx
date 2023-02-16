@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:include="fragments/header :: head">
 <title id="pageTitle">Version Info</title>
@@ -24,4 +24,4 @@
 	</div>
 </body>
 
-</html>
+</html> -->
