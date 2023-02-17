@@ -3,16 +3,17 @@
 
 <head th:include="fragments/header :: head">
 	<meta charset='UTF-8'>
-	<title id="pageTitle">Build Info</title>
+	<title id="pageTitle">Key Properties</title>
 </head>
 
 <body>
+
 	<div th:insert="navbar :: navbar">  </div>
 
 	<div class="container-fluid" style="margin-top: 120px">
 		<div id="indexRow" class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<h3>Build Information (Git)</h3>
+				<h3>Key Properties</h3>
 				<textarea rows="10" cols="85" spellcheck="false" th:text="${data}">
 					placeholder message
 				</textarea>
@@ -21,8 +22,11 @@
 		</div>
 	</div>
 
-	<div class="container" th:replace="fragments/footer :: footer">
-		<p>footer</p>
-	</div>
+
+
+<div class="container" th:replace="fragments/footer :: footer">
+	<p>footer</p>
+</div>
+
 </body>
 </html>
