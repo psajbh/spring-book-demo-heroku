@@ -10,8 +10,13 @@ public class KeyPropertyController {
 	
 	public KeyPropertyController() {}
 	
-	public void getKeyProperties() {
+	public String getKeyProperties() {
+		log.info("KeyPropertyController - getKeyProperties()");
 		String runtimeVersion = System.getProperty("java.runtime.version");
+		
+		
+		
+		return null;
 	}
 	
 	

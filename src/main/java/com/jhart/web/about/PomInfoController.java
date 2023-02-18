@@ -11,32 +11,38 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.jhart.util.BuildModelDto;
+//import com.jhart.util.BuildModelDto;
 
 
 @Controller
 public class PomInfoController {
 	Logger log = LoggerFactory.getLogger(this.getClass());
-	private BuildModelDto buildModel;
+	private Model model;
 	
-	public PomInfoController(BuildModelDto buildModel) {
-		log.info("PomInfoController - constructor ");
-		this.buildModel = buildModel;
+	//private BuildModelDto buildModel;
+	
+//	public PomInfoController(BuildModelDto buildModel) {
+//		log.info("PomInfoController - constructor ");
+//		this.buildModel = buildModel;
+//	}
+	
+	public PomInfoController() {
+	    model = new Model();
 	}
 	
 	@GetMapping("pomInfo")
 	public String pomInfo(org.springframework.ui.Model model) {
 		log.info("PomInfoController - pomInfo()");
-		String buildModel = getBuildModel();
-		log.warn("PomInfoController - buildInfo  = " + buildModel);
-		model.addAttribute("data", buildModel);
+		//String buildModel = getBuildModel();
+		//log.warn("PomInfoController - buildInfo  = " + buildModel);
+		model.addAttribute("data", getBuildModel());
 		return "about/pomInfo";
 	}
 	
 	// move this to a service!
 	public String getBuildModel() {
 	    log.info("PomInfoController - getBuildModel()");
-		Model model = buildModel.getModel();
+		//Model model = buildModel.getModel();
 		StringBuilder sb = new StringBuilder();
 		sb.append(System.lineSeparator());
 		sb.append(System.lineSeparator());
@@ -48,6 +54,7 @@ public class PomInfoController {
 		sb.append("    name: " + model.getName() + System.lineSeparator()+ System.lineSeparator());
 		
 		sb.append("Parent Project: " +  System.lineSeparator()) ;
+		
 		sb.append("    " + model.getParent().getArtifactId() + " - " + model.getParent().getVersion() +  System.lineSeparator() +  System.lineSeparator());
 		
 		sb.append("Properties: " + System.lineSeparator());

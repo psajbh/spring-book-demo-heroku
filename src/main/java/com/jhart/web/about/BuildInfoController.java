@@ -22,14 +22,14 @@ import com.google.gson.reflect.TypeToken;
 import com.jhart.domain.BuildInfo;
 import com.jhart.dto.BuildItemDto;
 import com.jhart.service.buildinfo.BuildInfoService;
-import com.jhart.util.BuildModelDto;
+//import com.jhart.util.BuildModelDto;
 
 @Controller
 public class BuildInfoController {
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@SuppressWarnings("unused")
-	private BuildModelDto buildModel;
+	//@SuppressWarnings("unused")
+	//private BuildModelDto buildModel;
 	private final static String GIT_BRANCH = "git.branch";
 	private final static String BRANCH = "BRANCH: ";
 	private final static String GIT_BUILD_HOST = "git.build.host";
