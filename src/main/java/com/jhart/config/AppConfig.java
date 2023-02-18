@@ -9,17 +9,17 @@ import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.jhart.util.BuildModelDto;
+import com.jhart.util.BuildModelUtil;
 
 @Configuration
 public class AppConfig {
 	
 	//supports PomInfoController
 	@Bean
-	public BuildModelDto buildModel() throws IOException, XmlPullParserException{
+	public BuildModelUtil buildModel() throws IOException, XmlPullParserException{
     	MavenXpp3Reader reader = new MavenXpp3Reader();
         Model model = reader.read(new FileReader("pom.xml"));
-        BuildModelDto buildModel = new BuildModelDto();
+        BuildModelUtil buildModel = new BuildModelUtil();
         buildModel.setModel(model);
         return buildModel;
 	}

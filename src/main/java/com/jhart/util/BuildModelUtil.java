@@ -2,10 +2,10 @@ package com.jhart.util;
 
 import org.apache.maven.model.Model;
 
-public class BuildModelDto {
+public class BuildModelUtil {
 	private Model model;
 	
-	public BuildModelDto() {}
+	public BuildModelUtil() {}
 
 	public Model getModel() {
 		return model;
