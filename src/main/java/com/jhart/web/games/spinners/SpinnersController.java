@@ -1,4 +1,4 @@
-package com.jhart.web.spinners;
+package com.jhart.web.games.spinners;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
