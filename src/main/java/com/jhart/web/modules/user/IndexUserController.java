@@ -1,4 +1,4 @@
-package com.jhart.web.user;
+package com.jhart.web.modules.user;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

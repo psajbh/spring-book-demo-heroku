@@ -1,4 +1,4 @@
-package com.jhart.web.word;
+package com.jhart.web.games.word;
 
 import java.util.Map;
  
