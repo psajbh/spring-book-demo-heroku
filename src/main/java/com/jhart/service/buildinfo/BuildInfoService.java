@@ -4,4 +4,5 @@ import com.jhart.domain.BuildInfo;
 
 public interface BuildInfoService {
 	BuildInfo getLatestBuildInfo();
+	String getBuildModel();
 }

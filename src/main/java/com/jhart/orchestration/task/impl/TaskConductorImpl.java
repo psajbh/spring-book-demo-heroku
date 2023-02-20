@@ -22,7 +22,7 @@ import com.jhart.service.task.TodoService;
 import com.jhart.service.user.UserService;
 import com.jhart.transform.TodoTransformer;
 import com.jhart.transform.UserTransformer;
-import com.jhart.web.task.UpdateTaskController;
+import com.jhart.web.modules.task.UpdateTaskController;
 
 @Qualifier("TaskConductor")
 @Component

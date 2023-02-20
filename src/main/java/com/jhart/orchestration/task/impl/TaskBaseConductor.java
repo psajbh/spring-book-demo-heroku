@@ -15,7 +15,7 @@ import com.jhart.service.user.UserService;
 import com.jhart.transform.TodoTransformer;
 import com.jhart.transform.UserTransformer;
 import com.jhart.util.DateFormatter;
-import com.jhart.web.task.UpdateTaskController;
+import com.jhart.web.modules.task.UpdateTaskController;
 
 abstract class TaskBaseConductor {
 	Logger log = LoggerFactory.getLogger(TaskBaseConductor.class);

@@ -1,4 +1,4 @@
-package com.jhart.web.finance;
+package com.jhart.web.modules.finance;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

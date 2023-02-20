@@ -1,4 +1,4 @@
-package com.jhart.web.contacts;
+package com.jhart.web.modules.contacts;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
