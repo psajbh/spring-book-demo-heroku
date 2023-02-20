@@ -19,6 +19,9 @@ public class PomInfoController {
 	@GetMapping("pomInfo")
 	public String pomInfo(org.springframework.ui.Model model) {
 		log.info("PomInfoController - pomInfo()");
+		String buildModel = pomInfoService.getBuildModel();
+		log.warn("PomInfoController - buildInfo = " + buildModel);
+		model.addAttribute("data", buildModel);
 		return "about/pomInfo";
 	}
 	

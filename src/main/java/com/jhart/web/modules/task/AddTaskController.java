@@ -1,19 +1,17 @@
 package com.jhart.web.modules.task;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.jhart.domain.Todo;
 import com.jhart.orchestration.task.TaskConductor;
 import com.jhart.service.user.UserService;
 
-//import lombok.extern.slf4j.Slf4j;
-
-//@Slf4j
 @Controller
 public class AddTaskController {
 	
