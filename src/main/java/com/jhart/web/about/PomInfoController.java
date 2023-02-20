@@ -19,13 +19,6 @@ public class PomInfoController {
 	Logger log = LoggerFactory.getLogger(this.getClass());
 	private Model model;
 	
-	//private BuildModelDto buildModel;
-	
-//	public PomInfoController(BuildModelDto buildModel) {
-//		log.info("PomInfoController - constructor ");
-//		this.buildModel = buildModel;
-//	}
-	
 	public PomInfoController() {
 	    model = new Model();
 	}
@@ -33,8 +26,6 @@ public class PomInfoController {
 	@GetMapping("pomInfo")
 	public String pomInfo(org.springframework.ui.Model model) {
 		log.info("PomInfoController - pomInfo()");
-		//String buildModel = getBuildModel();
-		//log.warn("PomInfoController - buildInfo  = " + buildModel);
 		model.addAttribute("data", getBuildModel());
 		return "about/pomInfo";
 	}
