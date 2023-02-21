@@ -1,9 +1,5 @@
 package com.jhart;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -13,15 +9,15 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 public class SpringBootDemoApplication extends SpringBootServletInitializer {
 	
 	public static void main(String[] args) {
-		System.out.print("current runtime version: ");
-		System.out.println(System.getProperty("java.runtime.version"));
-		
-		List<String> names = new ArrayList<>();
-		Set<String> propNames = System.getProperties().stringPropertyNames();
-		propNames.forEach(propertyName -> {
-			System.out.println(propertyName + "=" + System.getProperty(propertyName));
-		});
-		System.out.println(names);
+//		System.out.print("current runtime version: ");
+//		System.out.println(System.getProperty("java.runtime.version"));
+//		
+//		List<String> names = new ArrayList<>();
+//		Set<String> propNames = System.getProperties().stringPropertyNames();
+//		propNames.forEach(propertyName -> {
+//			System.out.println(propertyName + "=" + System.getProperty(propertyName));
+//		});
+//		System.out.println(names);
 		SpringApplication.run(SpringBootDemoApplication.class, args);
 	}
 	
