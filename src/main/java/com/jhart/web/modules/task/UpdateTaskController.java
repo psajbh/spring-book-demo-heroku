@@ -17,9 +17,6 @@ import com.jhart.dto.TodoBackBean;
 import com.jhart.orchestration.task.TaskConductor;
 import com.jhart.service.user.UserService;
 
-//import lombok.extern.slf4j.Slf4j;
-
-//@Slf4j
 @Controller
 public class UpdateTaskController {
 	private static final String SELECTED_OPTION = "<option value=%s selected>%s</option>";
