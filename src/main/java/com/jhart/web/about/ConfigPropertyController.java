@@ -17,11 +17,11 @@ public class ConfigPropertyController {
 		this.configPropertyBuilder = configPropertyBuilder;
 	}
 	
-	@GetMapping("keyProps")
+	@GetMapping("keyprops")
 	public String getKeyProperties(Model model) {
 		log.info("ConfigPropertyController - getKeyProperties()");
 		model.addAttribute("data", configPropertyBuilder.getConfigProperties());
-		return "about/keyProps";
+		return "about/keyprops";
 	}
 
 }
