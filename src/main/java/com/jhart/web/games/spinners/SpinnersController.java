@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jhart.domain.Spinners;
 import com.jhart.dto.SpinnersDto;
@@ -20,6 +21,7 @@ import com.jhart.transform.SpinnersTransformer;
 import com.jhart.util.DateComparer;
 
 @Controller
+@RequestMapping({"", "/", "/games/spinners"})
 public class SpinnersController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
@@ -37,7 +39,7 @@ public class SpinnersController {
 	private Map<String, String> playersMap = new HashMap<>();
 	
 	
-	@GetMapping("spinners/index")
+	@GetMapping("/index")
 	public String index(Model model) {
 		SpinnersDto spinnersDto = new SpinnersDto();
 		LocalDateTime now = LocalDateTime.now();
@@ -66,10 +68,10 @@ public class SpinnersController {
 		
 		model.addAttribute("spinnersDto", spinnersDto);
 		log.info("SpinnersController - index");
-		return "spinners/index";
+		return "games/spinners/index";
 	}
 	 	
-	@PostMapping("spinners/save")
+	@PostMapping("/save")
 	public String saveSpinners(Model model, SpinnersDto spinnersDto) {
 		log.info("SpinnersController : saveSpinners - start");
 		
@@ -146,7 +148,7 @@ public class SpinnersController {
 			model.addAttribute("spinnersDto", spinnersDto);
 		}
 		
-		return "spinners/save";
+		return "games/spinners/save";
 	}
 	
 	private boolean validate(SpinnersDto spinnersDto) {

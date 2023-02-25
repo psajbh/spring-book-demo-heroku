@@ -13,7 +13,7 @@ import com.jhart.dto.WordSupportDto;
 import com.jhart.service.word.WordService;
 
 @Controller
-@RequestMapping({"", "/", "/word"})
+@RequestMapping({"", "/", "/games/word"})
 public class WordController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final WordService wordService;
@@ -28,7 +28,7 @@ public class WordController {
 		WordSupportDto wordSupportDto = new WordSupportDto();
 		model.addAttribute("wordSupportDto", wordSupportDto);
 		log.info("WordController - index");
-		return "word/index";
+		return "games/word/index";
 	}
 
 	@GetMapping({"/get"})
@@ -112,7 +112,7 @@ public class WordController {
 		
 		model.addAttribute("wordSupportDto", wordSupportDto);
 		log.info("WordController - get - complete");
-		return "word/index";
+		return "games/word/index";
 	}
 	
 	private Map<String, String> executeWordSearch(WordSupportDto wordSupportDto) {
