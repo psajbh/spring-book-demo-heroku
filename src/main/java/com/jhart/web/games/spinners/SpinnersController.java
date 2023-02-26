@@ -148,7 +148,7 @@ public class SpinnersController {
 			model.addAttribute("spinnersDto", spinnersDto);
 		}
 		
-		return "games/spinners/save";
+		return "/games/spinners/save";
 	}
 	
 	private boolean validate(SpinnersDto spinnersDto) {

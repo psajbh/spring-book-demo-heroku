@@ -150,7 +150,7 @@ public class Three13Controller {
 			model.addAttribute("threethirteenDto", threethirteenDto);
 		}
 		
-		return "313/save";
+		return "/games/313/save";
 	}
 	
 	private boolean validate(ThreethirteenDto threethirteenDto) {
