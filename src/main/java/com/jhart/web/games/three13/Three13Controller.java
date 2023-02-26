@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.jhart.domain.Threethirteen;
 import com.jhart.dto.ThreethirteenDto;
@@ -22,6 +23,7 @@ import com.jhart.transform.ThreethirteenTransformer;
 import com.jhart.util.DateComparer;
 
 @Controller
+@RequestMapping({"", "/", "/games/313"})
 public class Three13Controller {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
@@ -39,7 +41,7 @@ public class Three13Controller {
 	private Map<String, String> playersMap = new HashMap<>();
 	
 	
-	@GetMapping("313/index")
+	@GetMapping("/index")
 	public String index(Model model) {
 		ThreethirteenDto threethirteenDto = new ThreethirteenDto();
 		LocalDateTime now = LocalDateTime.now();
@@ -68,21 +70,21 @@ public class Three13Controller {
 		
 		model.addAttribute("threethirteenDto", threethirteenDto);
 		log.info("Three13Controller - index");
-		return "313/index";
+		return "games/313/index";
 	}
 	 	
-	@PostMapping("313/save")
+	@PostMapping("/save")
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
 		log.info("Three13Controller : saveNewThreethirteen - start");
 		
 		if(!validate(threethirteenDto)) {
 			log.warn("Three12Controller : saveNewThreethirteen - players validation failure");
-			return "redirect:/313/index";
+			return "redirect:/games/313/index";
 		}
 		
 		if(StringUtils.isEmpty(threethirteenDto.getDisplayDate())) {
 			log.warn("Three12Controller : saveNewThreethirteen - failed to process, no playDate");
-			return "redirect:/313/index";
+			return "redirect:/games/313/index";
 		}
 		String playDate = threethirteenDto.getDisplayDate().substring(6);
 		LocalDateTime startDate = startDates.get(playDate);
@@ -148,7 +150,7 @@ public class Three13Controller {
 			model.addAttribute("threethirteenDto", threethirteenDto);
 		}
 		
-		return "313/save";
+		return "/games/313/save";
 	}
 	
 	private boolean validate(ThreethirteenDto threethirteenDto) {
