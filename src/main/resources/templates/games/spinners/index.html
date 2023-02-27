@@ -7,14 +7,14 @@
 		<title id="pageTitle">Spinners</title>
 	</th:block>
 	<link rel="stylesheet" href="/css/spinners_index.css">
-	<script type="text/javascript" src="../js/spinners/spinners_index.js" /></script>
+	<script type="text/javascript" src="../../js/spinners/spinners_index.js" /></script>
 </head> 
 
 <body onload="hideElement()">
 	<div th:insert="navbar :: navbar"></div>
 
 	<div class="container-fluid" style="margin-top: 35px">
-		<form action='#' th:action='@{/spinners/save}' method='post'
+		<form action='#' th:action='@{/games/spinners/save}' method='post'
 			th:object='${spinnersDto}'>
 			<h3>Spinners Score Sheet</h3>
 			<div class="grid-container-element">
@@ -724,7 +724,7 @@
 					<strong><input class="score" type="text" id="rv_7_tot"
 						size="5" maxlength="4" readonly th:field='*{rv7}' /></strong>
 				</div>
-
+			</div>
 		</form>
 	</div>
 
