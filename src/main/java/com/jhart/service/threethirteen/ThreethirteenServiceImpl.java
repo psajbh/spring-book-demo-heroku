@@ -3,7 +3,6 @@ package com.jhart.service.threethirteen;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -20,15 +19,15 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 	
 	public ThreethirteenServiceImpl(ThreethirteenRepository threethirteenRepository) {
 		this.threethirteenRepository = threethirteenRepository;
-		
 	}
 	
+	@SuppressWarnings("unused")
 	@Override
 	public Threethirteen process(ThreethirteenDto threethirteenDto) {
 		Threethirteen threethirteen = setupDate(threethirteenDto);
 		String winningPlayer = null;
 		int winningScore = 300;
-		
+
 		if (null == threethirteen) {
 			log.error("ThreethirteenService - process date failure");
 			return null;
