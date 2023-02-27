@@ -26,7 +26,6 @@ public class SpinnersServiceImpl implements SpinnersService{
 	
 	@Override
 	public Spinners process(SpinnersDto spinnersDto) {
-		String logReport = new String();
 		Spinners spinners = setupDate(spinnersDto);
 		String winningPlayer = null;
 		int winningScore = 300;

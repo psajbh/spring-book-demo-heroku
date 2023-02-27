@@ -2,9 +2,6 @@ package com.jhart.service.threethirteen;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.slf4j.Logger;
@@ -28,7 +25,6 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 	
 	@Override
 	public Threethirteen process(ThreethirteenDto threethirteenDto) {
-		String logReport = new String();
 		Threethirteen threethirteen = setupDate(threethirteenDto);
 		String winningPlayer = null;
 		int winningScore = 300;
