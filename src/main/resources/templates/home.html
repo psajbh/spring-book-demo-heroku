@@ -6,23 +6,19 @@
 		<meta charset='UTF-8'>
 		<title id="pageTitle">Home</title>
 	</th:block>
-	
-	<link rel="stylesheet" href="/css/home.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
 	<div th:insert="navbar :: navbar">  </div>
-
-	<div class="container-fluid" 
-		style="margin-top: 45px">
-		<br/><br/><br/>
-		<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to our website!</h3>
-		<br/><br/><br/>
-		<div align="center">
-			<input type="image" width="520" height="475"
-				src="../../images/home/jbhnbd.png" />
-		</div>	
-	</div>
+ 
+  <div  class="welcome">
+        <h3>Welcome to Nancy's Family Web Site!</h3>
+  </div>
+  <br/>
+	<img src="../../images/home/jbhnbd.png"  alt="Home"  style="width:50%">
+	<p class="center">Please use the email address below for any questions, issues or recommendations.</p>
 
 	<div class="container" th:replace="fragments/footer :: footer">
 		<p>footer</p>

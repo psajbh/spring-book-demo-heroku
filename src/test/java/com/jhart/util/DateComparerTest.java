@@ -20,15 +20,16 @@ public class DateComparerTest {
 
     @Test
     @DisplayName("DateComparer - test difference between dates")
-    void testConvertToDatabaseColumn() throws Exception {
+    void getElapsedTimeTest() throws Exception {
         // given
-    	String start_date = "2023/01/30 17:53:20";
+    	String start_date = "2023/01/30 16:53:20";
     	String end_date = "2023/01/30 17:59:40";
+    	String diff = "1:6:20";
     	
     	// then
     	String result = dateComparer.getElapsedTime(start_date, end_date);
     	assertNotNull(result);
-    	
+    	assert(result.contentEquals(diff));
     }
     
     @Test
