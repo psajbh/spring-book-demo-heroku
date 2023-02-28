@@ -21,7 +21,6 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 		this.threethirteenRepository = threethirteenRepository;
 	}
 	
-	@SuppressWarnings("unused")
 	@Override
 	public Threethirteen process(ThreethirteenDto threethirteenDto) {
 		Threethirteen threethirteen = setupDate(threethirteenDto);

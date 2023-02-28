@@ -144,11 +144,14 @@ public class Three13Controller {
 			if (isNotNullOrEmpty(player7)) {
 				playersMap.put("player7", player7);
 			}
+		
+			log.info("saveNewThreethirteen - players successfully created");
 			
 			model.addAttribute("threethirteenDto", threethirteenDto);
 		}
 		
-		return "/games/313/save";
+		log.info("Three13Controller : saveNewThreethirteen - complete -> redirecting to games/313/save");
+		return "games/313/save";
 	}
 	
 	private boolean validate(ThreethirteenDto threethirteenDto) {
