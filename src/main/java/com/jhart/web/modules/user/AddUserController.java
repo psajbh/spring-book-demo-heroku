@@ -32,12 +32,6 @@ public class AddUserController {
 		return "users/newuser";
 	}
 	
-	/*
-	 * @RequestMapping(value="/user/add",params="cancel",method=RequestMethod.POST)
-	 * public String cancelNewUser(User user) {
-	 * log.debug("cancelNewUser -> redirect:/index"); return
-	 * "redirect:/users/index"; }
-	 */	//TODO: look at pushing most of this coded to a single conductor call.
 	@RequestMapping(value="/user/add", params="submit", method=RequestMethod.POST)
 	public String saveNewUser(User user) {
 		log.debug("saveNewUser - start");
