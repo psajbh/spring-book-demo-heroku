@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.jhart.domain.Todo;
 import com.jhart.domain.User;
-import com.jhart.dto.MyResponse;
+import com.jhart.dto.GenericResponseDto;
 import com.jhart.dto.UserBackBean;
 import com.jhart.orchestration.user.UserConductor;
 import com.jhart.service.task.TodoService;
@@ -111,7 +111,7 @@ public class UserConductorImpl extends UserBaseConductor implements UserConducto
 	
 	@Transactional
 	@Override
-	public MyResponse<List<UserBackBean>> updateUser(UserBackBean userBackBean) {
+	public GenericResponseDto<List<UserBackBean>> updateUser(UserBackBean userBackBean) {
 		//log.debug("updateUser- start");
 		User user = userService.findById(userBackBean.getId());
 
@@ -121,7 +121,7 @@ public class UserConductorImpl extends UserBaseConductor implements UserConducto
 			try {
 				userService.save(transformedUser);
 				//log.debug("updateUser- user updated and persisted");
-				return new MyResponse<>("success", getUserList());
+				return new GenericResponseDto<>("success", getUserList());
 			}
 			catch(Exception e) {
 				if (e.getCause().getMessage().contains("Unique index or primary key violation")) {
@@ -132,11 +132,11 @@ public class UserConductorImpl extends UserBaseConductor implements UserConducto
 				}
 			}
 			//log.debug("updateUser- returning failure");
-			return new MyResponse<>("failure", getUserList());
+			return new GenericResponseDto<>("failure", getUserList());
 		}
 		else {
 			//log.debug("updateUser- user not found in database");
-			return new MyResponse<>("failure", getUserList());
+			return new GenericResponseDto<>("failure", getUserList());
 		}
 	}
 	

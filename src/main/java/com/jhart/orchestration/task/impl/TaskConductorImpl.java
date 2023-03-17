@@ -15,7 +15,7 @@ import org.springframework.util.StringUtils;
 
 import com.jhart.domain.Todo;
 import com.jhart.domain.User;
-import com.jhart.dto.MyResponse;
+import com.jhart.dto.GenericResponseDto;
 import com.jhart.dto.TodoBackBean;
 import com.jhart.orchestration.task.TaskConductor;
 import com.jhart.service.task.TodoService;
@@ -62,9 +62,9 @@ public class TaskConductorImpl extends TaskBaseConductor implements TaskConducto
 
 	@Transactional
 	@Override
-	public MyResponse<List<TodoBackBean>> updateTodo(TodoBackBean todoBackBean) {
+	public GenericResponseDto<List<TodoBackBean>> updateTodo(TodoBackBean todoBackBean) {
 		log.debug("updateTodo- start");
-		MyResponse<List<TodoBackBean>> response = null;
+		GenericResponseDto<List<TodoBackBean>> response = null;
 
 		try {
 			Todo todo = todoService.findById(todoBackBean.getId());
@@ -94,7 +94,7 @@ public class TaskConductorImpl extends TaskBaseConductor implements TaskConducto
 			}
 
 			todoService.save(todo);
-			response = new MyResponse<>("success", super.getTodoList());
+			response = new GenericResponseDto<>("success", super.getTodoList());
 		} catch (Exception e) {
 			log.error("updateTodo- exception: " + e.getMessage(), e);
 
