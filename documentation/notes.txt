@@ -4,7 +4,7 @@ zenbook git alias:  alias demo-heroku=' cd D/github-test/spring-boot-demo-heroku
 
 references:
 
-subject modal:
+subject modal: note: update table dev_refs with these urls.
 	https://www.w3schools.com/howto/howto_css_modals.asp
 	https://sabe.io/tutorials/how-to-create-modal-popup-box
 	https://dzone.com/articles/4-ways-to-create-a-modal-popup-box-with-html-css-a

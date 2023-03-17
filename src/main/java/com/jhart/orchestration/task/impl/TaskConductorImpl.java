@@ -94,7 +94,7 @@ public class TaskConductorImpl extends TaskBaseConductor implements TaskConducto
 			}
 
 			todoService.save(todo);
-			return new MyResponse<>("success", super.getTodoList());
+			response = new MyResponse<>("success", super.getTodoList());
 		} catch (Exception e) {
 			log.error("updateTodo- exception: " + e.getMessage(), e);
 
