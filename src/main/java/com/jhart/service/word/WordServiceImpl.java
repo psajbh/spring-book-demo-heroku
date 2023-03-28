@@ -62,8 +62,27 @@ public class WordServiceImpl implements WordService {
 		Map<String, String> response = new HashMap<>();
 		response.put("wordNames", wordNames);
 		response.put("wordCount", wordCount.toString());
+		String abc = wordNamesAnalysis(wordNames);
+		System.out.println("abc: " + abc);
+		
 		log.trace("returnValue: " + response);
 		return response;
+	}
+	
+	private String wordNamesAnalysis(String words) {
+		System.out.println("executing wordNames Analysis");
+		String[] wordArray = words.split(", ");
+		System.out.println(wordArray);
+		
+		
+//		Map<String, Integer> wordstat = new HashMap<>();
+//		
+//		for (int i = 0;  i < words.size(); i++) {
+//			System.out.println("proccessing word: " + i);
+//		}
+			
+			
+		return null;
 	}
 
 	private List<Word> processChar1Unavailable(WordSupportDto wordSupportDto, List<Word> availablewords) {
