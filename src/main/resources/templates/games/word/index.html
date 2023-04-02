@@ -19,6 +19,13 @@
 		<!-- <div style='align:right width:500px'> -->
 			<button id="show_button">Notes</button>
  		</div>
+ 		<br/>
+ 		<div class="container" align='center'>
+			<form action='#' th:action='@{/games/word/index}' method='get'>
+				<button>Reset</button>
+			</form>
+			<br/><br/>
+		</div>
 		<br/>
 		<div class="container" align='center' style='margin-top: -40px'>
 			<!-- <button id="show_button" style="align: right">Application Info</button> -->
@@ -107,21 +114,26 @@
 				Matching Words Results: <input type='text' maxlength='4' size='5'
 					th:field='*{wordCount}' />
 			</h4>
-			<textarea id='textarea' rows='5' cols='80' th:field='*{words}'></textarea>
+			<textarea id='textarea' rows='8' cols='80' th:field='*{words}'></textarea>
+			<br />
+			 
+			<br />
+			<h4>Character Analytics</h4>
+			<textarea id='textarea' rows='10' cols='80' th:field='*{wordAnalysis}'></textarea>
+			<br /> 
 		</form>
 	</div>
+	
 
-	<div class="container" align='center'>
+<!-- 	<div class="container" align='center'>
 		<br />
 		<form action='#' th:action='@{/games/word/index}' method='get'>
 			<button>Reset</button>
 		</form>
-		<!-- <div style='align:right'>
- 			<button id="show_button">Notes</button>
- 		</div> -->
 		<br />
 	</div>
-
+ -->	
+	
 	<div class='container' th:replace='fragments/footer :: footer'>
 		<p>footer</p>
 	</div>

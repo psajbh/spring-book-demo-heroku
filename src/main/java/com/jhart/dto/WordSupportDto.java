@@ -15,6 +15,7 @@ public class WordSupportDto {
 	private String notInChar5;
 	private String words;
 	private String wordCount;
+	private String wordAnalysis;
 
 	public String getWordName() {
 		return wordName;
@@ -86,6 +87,14 @@ public class WordSupportDto {
 
 	public void setWordCount(String wordCount) {
 		this.wordCount = wordCount;
+	}
+	
+	public String getWordAnalysis() {
+		return wordAnalysis;
+	}
+	
+	public void setWordAnalysis(String wordAnalysis) {
+		this.wordAnalysis = wordAnalysis;
 	}
 
 	public String getNotInChar1() {

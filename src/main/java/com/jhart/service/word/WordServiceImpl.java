@@ -13,17 +13,23 @@ import org.thymeleaf.util.StringUtils;
 import com.jhart.domain.Word;
 import com.jhart.dto.WordSupportDto;
 import com.jhart.repo.words.WordRepository;
+import com.jhart.util.word.CharDisplay;
+import com.jhart.util.word.CharDisplayBuilder;
+import com.jhart.util.word.Evaluator;
 
 @Service
 public class WordServiceImpl implements WordService {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final WordRepository wordRepository;
+	private final CharDisplayBuilder charDisplayBuilder;
 
 	private List<Word> allWords;
 	private List<Word> wordHolder;
+	private Map<Integer, ArrayList<CharDisplay>> charDisplayMap = new HashMap<>();
 
-	public WordServiceImpl(WordRepository wordRepository) {
+	public WordServiceImpl(WordRepository wordRepository, CharDisplayBuilder charDisplayBuilder) {
 		this.wordRepository = wordRepository;
+		this.charDisplayBuilder = charDisplayBuilder;
 	}
 
 	@Override
@@ -62,27 +68,68 @@ public class WordServiceImpl implements WordService {
 		Map<String, String> response = new HashMap<>();
 		response.put("wordNames", wordNames);
 		response.put("wordCount", wordCount.toString());
-		String abc = wordNamesAnalysis(wordNames);
-		System.out.println("abc: " + abc);
+		
+		Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis = 
+				wordNamesAnalysis(wordNames, wordCount);
+		String charAnalysis = charDisplayBuilder.buildCharDisplay(charDisplayAnalysis);
+		response.put("wordAnalysis", charAnalysis);
 		
 		log.trace("returnValue: " + response);
 		return response;
 	}
 	
-	private String wordNamesAnalysis(String words) {
+	private Map<Integer, ArrayList<CharDisplay>> wordNamesAnalysis(String words, Integer wordCount) {
 		System.out.println("executing wordNames Analysis");
+		List<CharDisplay> level1CharDisplay = new ArrayList<>();
+		List<CharDisplay> level2CharDisplay = new ArrayList<>();
+		List<CharDisplay> level3CharDisplay = new ArrayList<>();
+		List<CharDisplay> level4CharDisplay = new ArrayList<>();
+		List<CharDisplay> level5CharDisplay = new ArrayList<>();
+
 		String[] wordArray = words.split(", ");
-		System.out.println(wordArray);
+		Evaluator evaluator = new Evaluator();
+		evaluator.evaluate(wordArray);
 		
+		Map<String, Integer> wordMap = evaluator.getWordAnalysis();
 		
-//		Map<String, Integer> wordstat = new HashMap<>();
-//		
-//		for (int i = 0;  i < words.size(); i++) {
-//			System.out.println("proccessing word: " + i);
-//		}
+		for(Map.Entry<String, Integer> entry : wordMap.entrySet()) {
+			System.out.println(entry.getKey() + " : " + entry.getValue());
+			CharDisplay cd = new CharDisplay(entry.getKey());
+			cd.setValue(entry.getValue().toString());
 			
+			if (cd.getLevel().equals("1")) {
+				level1CharDisplay.add(cd);
+			}
+			if (cd.getLevel().equals("2")) {
+				level2CharDisplay.add(cd);
+			}
+			if (cd.getLevel().equals("3")) {
+				level3CharDisplay.add(cd);
+			}
+			if (cd.getLevel().equals("4")) {
+				level4CharDisplay.add(cd);
+			}
+			if (cd.getLevel().equals("5")) {
+				level5CharDisplay.add(cd);
+			}
+		}
+		
+		if (level1CharDisplay.size() > 0
+			&& level2CharDisplay.size() > 0
+			&& level3CharDisplay.size() > 0
+			&& level4CharDisplay.size() > 0
+			&& level5CharDisplay.size() > 0) {
+			charDisplayMap.put(1, (ArrayList<CharDisplay>)level1CharDisplay);
 			
-		return null;
+			charDisplayMap.put(2, (ArrayList<CharDisplay>)level2CharDisplay);
+			charDisplayMap.put(3, (ArrayList<CharDisplay>)level3CharDisplay);
+			charDisplayMap.put(4, (ArrayList<CharDisplay>)level4CharDisplay);
+			charDisplayMap.put(5, (ArrayList<CharDisplay>)level5CharDisplay);
+			return charDisplayMap;
+		}
+		else {
+			return null;
+		}
 	}
 
 	private List<Word> processChar1Unavailable(WordSupportDto wordSupportDto, List<Word> availablewords) {
@@ -394,5 +441,6 @@ public class WordServiceImpl implements WordService {
 		log.info("originalWords size: " + originalWords.size());
 		return originalWords;
 	}
+	
 
 }
