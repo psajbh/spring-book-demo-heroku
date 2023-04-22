@@ -30,7 +30,6 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	private static final String LINE_SEP = "line.separator";
 
 	public String buildCharDisplay1(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
-		log.info("CharDisplayBuilderImpl - buildCharDisplay1");
 		StringBuilder sb = new StringBuilder();
 		List<CharDisplay> charDisplay1;
 		
