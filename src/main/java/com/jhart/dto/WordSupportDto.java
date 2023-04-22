@@ -20,8 +20,6 @@ public class WordSupportDto {
 	private String wordAnalysis_3;
 	private String wordAnalysis_4;
 	private String wordAnalysis_5;
-	
-	 
 
 	public String getWordName() {
 		return wordName;

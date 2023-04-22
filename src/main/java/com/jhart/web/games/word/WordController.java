@@ -80,6 +80,13 @@ public class WordController {
 			Map<String, String> response = executeWordSearch(wordSupportDto);
 			String wordCount = response.get("wordCount");
 			String charAnalysis1 = response.get("charAnalysis1");
+			String charAnalysis2 = response.get("charAnalysis2");
+			String charAnalysis3 = response.get("charAnalysis3");
+			String charAnalysis4 = response.get("charAnalysis4");
+			String charAnalysis5 = response.get("charAnalysis5");
+			
+			
+			
 			int i = Integer.parseInt(wordCount);
 			if (i > 400) {
 				String[] wordArray = response.get("wordNames").split(",");
@@ -109,6 +116,10 @@ public class WordController {
 			}
 			wordSupportDto.setWordCount(wordCount);
 			wordSupportDto.setWordAnalysis_1(charAnalysis1);
+			wordSupportDto.setWordAnalysis_2(charAnalysis2);
+			wordSupportDto.setWordAnalysis_3(charAnalysis3);
+			wordSupportDto.setWordAnalysis_4(charAnalysis4);
+			wordSupportDto.setWordAnalysis_5(charAnalysis5);
 		}
 		
 		model.addAttribute("wordSupportDto", wordSupportDto);

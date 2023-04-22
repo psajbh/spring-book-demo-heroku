@@ -114,16 +114,7 @@
 			<textarea id='textarea' rows='8' cols='80' th:field='*{words}'></textarea>
 			<br />
 			 
-			<br />
 			<h4>Character Analytics</h4>
-			
-			<!-- <div>  experimental use of ul list in progress
-				<ul>
-    				<th:block th:each="v : ${wordAnalysis_1}">
-    					<li th:text = "${v.getCharTypegetSurName()} + ' '+ ${v.getFirstName()}" th:with ="" >
-    				</th:block>
-       			 </ul>
-    		</div> -->
 			
 		 	<div>
 				<textarea id='ca1' rows='20' cols='7' th:field='*{wordAnalysis_1}'></textarea>
@@ -132,12 +123,6 @@
 				<textarea id='ca4' rows='20' cols='7' th:field='*{wordAnalysis_4}'></textarea>
 				<textarea id='ca5' rows='20' cols='7' th:field='*{wordAnalysis_5}'></textarea>
 			</div>
-			
-			<!--  
-			https://stackoverflow.com/questions/47980523/render-combined-list-with-ol-and-li-elements-in-thymeleaf
-			-->
-			
-			<!-- <div id="char1Analysis" th:field='*{wordAnalysis_1}'></div> -->
 			
 			<br /> 
 		</form>

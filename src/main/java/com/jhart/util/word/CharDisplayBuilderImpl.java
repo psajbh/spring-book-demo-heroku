@@ -8,52 +8,40 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.jhart.dto.CharDisplayDto;
-
 @Component
 public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
-
-	public List<CharDisplayDto> buildCharDisplayDto1(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
-		log.info("CharDisplayBuilderImpl - buildCharDisplayDto1");
-		List<CharDisplayDto> response = new ArrayList<>();
-		List<CharDisplay> charDisplay1 = charDisplayAnalysis.get(1);
-
-		int totalDisplay1Chars = 0;
-
-		for (int i = 0; i < charDisplay1.size(); i++) {
-			totalDisplay1Chars += charDisplay1.get(i).getIntValue();
-		}
-
-		for (int i = 0; i < charDisplay1.size(); i++) {
-			CharDisplay charDisplay = charDisplay1.get(i);
-			charDisplay.setTotalDisplayChars(totalDisplay1Chars);
-			log.info("percent: " + charDisplay.getPercent());
-		}
-
-		charDisplay1.forEach(charDisplay -> {
-			CharDisplayDto charDisplayDto = new CharDisplayDto();
-			String charType = charDisplay.getCharType() + " -   ";
-			charDisplayDto.setCharacter(charType);
-
-			String percent = String.format("%.2f", charDisplay.getPercent()) + "% ";
-			if (percent.length() == 5) {
-				percent = " " + percent;
-			}
-
-			charDisplayDto.setPercent(percent);
-			response.add(charDisplayDto);
-		});
-
-		return response;
-	}
+	
+	private static final String THREE_SPACER = "---";
+	private static final String FOUR_SPACER = "----";
+	private static final String FIVE_SPACER = "-----";
+	private static final String SIX_SPACER = "------";
+	private static final String SEVEN_SPACER = "-------";
+	
+	private static final int PERCENT_LENGTH_6 = 6;
+	private static final int PERCENT_LENGTH_7 = 7;
+	
+	private static final String CHAR1 = " Char 1";
+	private static final String CHAR2 = " Char 2";
+	private static final String CHAR3 = " Char 3";
+	private static final String CHAR4 = " Char 4";
+	private static final String CHAR5 = " Char 5";
+	
+	private static final String LINE_SEP = "line.separator";
 
 	public String buildCharDisplay1(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
 		log.info("CharDisplayBuilderImpl - buildCharDisplay1");
 		StringBuilder sb = new StringBuilder();
-		List<CharDisplay> charDisplay1 = charDisplayAnalysis.get(1);
+		List<CharDisplay> charDisplay1;
+		
+		try {
+			charDisplay1 = charDisplayAnalysis.get(1);
+		}
+		catch(Exception e) {
+			sb.append("Invalid submission. No charactor 1 data matches to submission data");
+			return sb.toString();
+		}
 
-		log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay1");
 		int totalDisplay1Chars = 0;
 
 		for (int i = 0; i < charDisplay1.size(); i++) {
@@ -63,25 +51,32 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 		for (int i = 0; i < charDisplay1.size(); i++) {
 			CharDisplay charDisplay = charDisplay1.get(i);
 			charDisplay.setTotalDisplayChars(totalDisplay1Chars);
-			log.info("percent: " + charDisplay.getPercent());
 		}
+		
+		sb.append(CHAR1 + System.getProperty(LINE_SEP));
 
-		// https://stackoverflow.com/questions/67551784/printing-an-unordered-list-that-is-in-a-ordered-list-by-using-a-for-each-loop-in
 		charDisplay1.forEach(charDisplay -> {
-			String charType = charDisplay.getCharType() + " -   ";
+			String charType = charDisplay.getCharType(); 
 			String percent = String.format("%.2f", charDisplay.getPercent()) + "% ";
-			sb.append(charType + percent + System.getProperty("line.separator"));
+			String formmatedCharType = formatCharTypePercent(charType, percent);
+			sb.append(formmatedCharType);
 		});
-
+		
 		return sb.toString();
 	}
 
 	public String buildCharDisplay2(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
-		log.info("CharDisplayBuilderImpl - buildCharDisplay");
 		StringBuilder sb = new StringBuilder();
-		List<CharDisplay> charDisplay2 = charDisplayAnalysis.get(2);
+		List<CharDisplay> charDisplay2; 
+		
+		try {
+			charDisplay2 = charDisplayAnalysis.get(2);
+		}
+		catch(Exception e) {
+			sb.append("Invalid submission. No charactor 2 data matches to submission data");
+			return sb.toString();
+		}
 
-		log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay2");
 		int totalDisplay2Chars = 0;
 
 		for (int i = 0; i < charDisplay2.size(); i++) {
@@ -91,27 +86,32 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 		for (int i = 0; i < charDisplay2.size(); i++) {
 			CharDisplay charDisplay = charDisplay2.get(i);
 			charDisplay.setTotalDisplayChars(totalDisplay2Chars);
-			log.info("percent: " + charDisplay.getPercent());
 		}
 
+		sb.append(CHAR2 + System.getProperty(LINE_SEP));
+		
 		charDisplay2.forEach(charDisplay -> {
-			// String value = charDisplay.getValue();
-
 			String charType = charDisplay.getCharType();
-			charType += ": ";
-			String percent = String.format("%.2f", charDisplay.getPercent());
-
+			String percent = String.format("%.2f", charDisplay.getPercent()) + "% ";
+			String formmatedCharType = formatCharTypePercent(charType, percent);
+			sb.append(formmatedCharType);
 		});
 		
 		return sb.toString();
 	}
 
 	public String buildCharDisplay3(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
-		log.info("CharDisplayBuilderImpl - buildCharDisplay");
 		StringBuilder sb = new StringBuilder();
-		List<CharDisplay> charDisplay3 = charDisplayAnalysis.get(3);
+		List<CharDisplay> charDisplay3;
+		
+		try {
+			charDisplay3 = charDisplayAnalysis.get(3);
+		}
+		catch(Exception e) {
+			sb.append("Invalid submission. No charactor 3 data matches to submission data");
+			return sb.toString();
+		}
 
-		log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay3");
 		int totalDisplay3Chars = 0;
 
 		for (int i = 0; i < charDisplay3.size(); i++) {
@@ -121,211 +121,138 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 		for (int i = 0; i < charDisplay3.size(); i++) {
 			CharDisplay charDisplay = charDisplay3.get(i);
 			charDisplay.setTotalDisplayChars(totalDisplay3Chars);
-			log.info("percent: " + charDisplay.getPercent());
 		}
 
+		sb.append(CHAR3 + System.getProperty(LINE_SEP));
 		
-
 		charDisplay3.forEach(charDisplay -> {
-			// String value = charDisplay.getValue();
 			String charType = charDisplay.getCharType();
-			charType += ": ";
-			String percent = String.format("%.2f", charDisplay.getPercent());
-			sb.append("<li>" + charType + percent + "</li>");
+			String percent = String.format("%.2f", charDisplay.getPercent()) + "% ";
+			String formmatedCharType = formatCharTypePercent(charType, percent);
+			sb.append(formmatedCharType);
 		});
 
-		sb.append("</ol>");
 		return sb.toString();
 	}
 
 	public String buildCharDisplay4(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
-		log.info("CharDisplayBuilderImpl - buildCharDisplay");
 		StringBuilder sb = new StringBuilder();
-		List<CharDisplay> charDisplay4 = charDisplayAnalysis.get(4);
+		List<CharDisplay> charDisplay4;
+		
+		try {
+			charDisplay4 = charDisplayAnalysis.get(4);
+		}
+		catch(Exception e) {
+			sb.append("Invalid submission. No charactor 4 data matches to submission data");
+			return sb.toString();
+		}
 
-		log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay3");
-		int totalDisplay3Chars = 0;
+		int totalDisplay4Chars = 0;
 
 		for (int i = 0; i < charDisplay4.size(); i++) {
-			totalDisplay3Chars += charDisplay4.get(i).getIntValue();
+			totalDisplay4Chars += charDisplay4.get(i).getIntValue();
 		}
 
 		for (int i = 0; i < charDisplay4.size(); i++) {
 			CharDisplay charDisplay = charDisplay4.get(i);
-			charDisplay.setTotalDisplayChars(totalDisplay3Chars);
-			log.info("percent: " + charDisplay.getPercent());
+			charDisplay.setTotalDisplayChars(totalDisplay4Chars);
 		}
 
-		sb.append("<ol>");
+		sb.append(CHAR4 + System.getProperty(LINE_SEP));
 
 		charDisplay4.forEach(charDisplay -> {
-			// String value = charDisplay.getValue();
 			String charType = charDisplay.getCharType();
-			charType += ": ";
-			String percent = String.format("%.2f", charDisplay.getPercent());
-			sb.append("<li>" + charType + percent + "</li>");
+			String percent = String.format("%.2f", charDisplay.getPercent()) + "% ";
+			String formmatedCharType = formatCharTypePercent(charType, percent);
+			sb.append(formmatedCharType);
 		});
-
-		sb.append("</ol>");
+		
 		return sb.toString();
 	}
 
 	public String buildCharDisplay5(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
-		log.info("CharDisplayBuilderImpl - buildCharDisplay");
 		StringBuilder sb = new StringBuilder();
-		List<CharDisplay> charDisplay5 = charDisplayAnalysis.get(5);
+		List<CharDisplay> charDisplay5;
+		
+		try {
+			charDisplay5 = charDisplayAnalysis.get(5);
+		}
+		catch(Exception e) {
+			sb.append("Invalid submission. No charactor 5 data matches to submission data");
+			return sb.toString();
+		}
 
-		log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay5");
-		int totalDisplay3Chars = 0;
+		int totalDisplay5Chars = 0;
 
 		for (int i = 0; i < charDisplay5.size(); i++) {
-			totalDisplay3Chars += charDisplay5.get(i).getIntValue();
+			totalDisplay5Chars += charDisplay5.get(i).getIntValue();
 		}
 
 		for (int i = 0; i < charDisplay5.size(); i++) {
 			CharDisplay charDisplay = charDisplay5.get(i);
-			charDisplay.setTotalDisplayChars(totalDisplay3Chars);
-			log.info("percent: " + charDisplay.getPercent());
+			charDisplay.setTotalDisplayChars(totalDisplay5Chars);
 		}
 
-		sb.append("<ol>");
+		sb.append(CHAR5 + System.getProperty(LINE_SEP));
 
 		charDisplay5.forEach(charDisplay -> {
-			// String value = charDisplay.getValue();
 			String charType = charDisplay.getCharType();
-			charType += ": ";
-			String percent = String.format("%.2f", charDisplay.getPercent());
-			sb.append("<li>" + charType + percent + "</li>");
+			String percent = String.format("%.2f", charDisplay.getPercent()) + "% ";
+			String formmatedCharType = formatCharTypePercent(charType, percent);
+			sb.append(formmatedCharType);
 		});
 
-		sb.append("</ol>");
 		return sb.toString();
 	}
 
-//	public String buildCharDisplay2(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
-//		log.info("CharDisplayBuilderImpl - buildCharDisplay");
-//		StringBuilder sb = new StringBuilder();
-//		List<CharDisplay> charDisplay2 = charDisplayAnalysis.get(1);
-//		
-//		log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay2");
-//		int totalDisplay1Chars = 0;
-//		
-//		for (int i = 0; i < charDisplay1.size(); i++) {
-//			totalDisplay1Chars += charDisplay1.get(i).getIntValue();
-//		}
-//		
-//		for (int i = 0; i < charDisplay1.size(); i++) {
-//			CharDisplay charDisplay = charDisplay1.get(i);
-//			charDisplay.setTotalDisplayChars(totalDisplay1Chars);
-//			log.info("percent: " + charDisplay.getPercent());
-//		}
-//		
-//		sb.append("<ol>");
-//		
-//		charDisplay1.forEach(charDisplay -> {
-//			//String value = charDisplay.getValue();
-//			String charType = charDisplay.getCharType();
-//			charType += ": ";
-//			String percent = String.format("%.2f", charDisplay.getPercent());
-//			sb.append("<li>" + charType + percent + "</li>");
-//		});
-//		
-//		sb.append("</ol>");
-//		return sb.toString();
-//	}
-//
-//		//System.out.println(sb.toString());
-//		//sb.append("</ol>");
-//		//sb.deleteCharAt(sb.length() - 2);
-//		
-//		/*
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append("Character 2 Analysis:");
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append(System.getProperty("line.separator"));
-//		 */
-//		
-//		//log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay2");
-//		//charDisplay2.forEach(charDisplay -> {
-//			//String type = charDisplay.getCharType();
-//			//String value = charDisplay.getValue();
-//			//String percent = charDisplay.getPercent().toString();
-//			//sb.append(" " + type + ": " + value + " - " + percent + ", ");
-//		//});
-//		
-//		//sb.deleteCharAt(sb.length() - 2);
-//		
-//		/*
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append("Character 3 Analysis:");
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append(System.getProperty("line.separator"));
-//		 */
-//		//log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay3");
-//		//charDisplay3.forEach(charDisplay -> {
-//			//String type = charDisplay.getCharType();
-//			//String value = charDisplay.getValue();
-//			//String percent = charDisplay.getPercent().toString();
-//			//sb.append(" " + type + ": " + value + " - " + percent + ", ");
-//		//});
-//		
-//		//sb.deleteCharAt(sb.length() - 2);
-//		
-//		/*
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append("Character 4 Analysis:");
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append(System.getProperty("line.separator"));
-//		 */
-//		//log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay4");
-//		//charDisplay4.forEach(charDisplay -> {
-//			//String type = charDisplay.getCharType();
-//			//String value = charDisplay.getValue();
-//			//String percent = charDisplay.getPercent().toString();
-//			//sb.append(" " + type + ": " + value + " - " + percent + ", ");
-//		//});
-//		
-//		//sb.deleteCharAt(sb.length() - 2);
-//				
-//		/*
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append("Character 5 Analysis:");
-//		 * sb.append(System.getProperty("line.separator"));
-//		 * sb.append(System.getProperty("line.separator"));
-//		 */
-//		//log.info("CharDisplayBuilderImpl - buildCharDisplay - charDisplay5");
-//		//charDisplay5.forEach(charDisplay -> {
-//			//String type = charDisplay.getCharType();
-//			//String value = charDisplay.getValue();
-//			//String percent = charDisplay.getPercent().toString();
-//			//sb.append(" " + type + ": " + value + " - " + percent + ", ");
-//		//});
-//		
-//		//sb.deleteCharAt(sb.length() - 2);
-//		
-//		log.info("** " + sb.toString());
-//		
-//		return sb.toString();
-//	}
+	private String formatCharTypePercent(String charType, String percent) {
+		if (percent.length() ==  PERCENT_LENGTH_6) {
+			if (charType.equals("m") || charType.equals("w")) {
+				charType = charType + FIVE_SPACER;
+			}
+			
+			if (charType.equals("a") || charType.equals("b") || charType.equals("c") 
+				|| charType.equals("d") || charType.equals("e") || charType.equals("g") 
+				|| charType.equals("h") || charType.equals("k") || charType.equals("n") 
+				|| charType.equals("o") || charType.equals("p") || charType.equals("q") 
+				|| charType.equals("r") || charType.equals("s") || charType.equals("u") 
+				|| charType.equals("v") || charType.equals("x") || charType.equals("y") 
+				|| charType.equals("z")) {
+				charType = charType + SIX_SPACER;
+			}
+			
+			if (charType.equals("f") || charType.equals("l") || charType.equals("j")
+					|| charType.equals("i") || charType.equals("t")) {
+				charType = charType + SEVEN_SPACER;	
+			}
+		}
+		
+		if (percent.length() ==  PERCENT_LENGTH_7) {
+			if (charType.equals("a") || charType.equals("b") || charType.equals("c") || charType.equals("d")				
+				|| charType.equals("e") || charType.equals("g") || charType.equals("h")  
+				|| charType.equals("j") || charType.equals("k") || charType.equals("m") || charType.equals("n") 
+				|| charType.equals("o") || charType.equals("p") || charType.equals("q") 
+				|| charType.equals("s") 
+				|| charType.equals("u") || charType.equals("v") 
+				|| charType.equals("x") || charType.equals("y") || charType.equals("z")) {
+				charType = charType + FOUR_SPACER;	
+			}
+			if (charType.equals("f") ||  charType.equals("i") || charType.equals("l") || charType.equals("r") 
+				|| charType.equals("t")) {
+				charType = charType + FIVE_SPACER;	
+			}
+			if (charType.equals("m") || charType.equals("w")) {
+				charType = charType + THREE_SPACER;
+			}
+		}
+		
+		if (percent.length() >  PERCENT_LENGTH_7) {
+			charType = charType + THREE_SPACER;
+		}
+		
+		return charType + percent + System.getProperty(LINE_SEP);
+		
+	}
 
-	/*
-	 * private int getCharTotalValue(List<CharDisplay> charDisplays) { int charValue
-	 * = 0; Integer charTotal = 0;
-	 * 
-	 * for (CharDisplay charDisplay : charDisplays) { charDisplay.getValue();
-	 * 
-	 * 
-	 * }
-	 * 
-	 * // charDisplays.forEach(charDisplay -> { // //String type =
-	 * charDisplay.getCharType(); // //String value = charDisplay.getValue(); //
-	 * //sb.append(" " + type + ": " + value + ", "); // charValue +=
-	 * Integer.parseInt(charDisplay.getValue()); // //charTotal = charTotal + x; //
-	 * //charTotals += charTotals + i; // //charTotals // });
-	 * 
-	 * return 0; }
-	 */}
+
+}

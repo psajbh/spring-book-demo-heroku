@@ -75,44 +75,28 @@ public class WordServiceImpl implements WordService {
 
 		Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis = wordNamesAnalysis(wordNames, wordCount);
 		
-		/*
-		 * List<CharDisplayDto> charAnalysis1 =
-		 * charDisplayBuilder.buildCharDisplayDto1(charDisplayAnalysis);
-		 * log.info("WordServiceImpl - process - charAnalysis - " + charAnalysis1);
-		 * response.put("charAnalysis1", charAnalysis1);
-		 */
-		
-		// below works for textarea build out
 		String charAnalysis1 = charDisplayBuilder.buildCharDisplay1(charDisplayAnalysis);
-		log.info("WordServiceImpl - process - charAnalysis - " + charAnalysis1);
+		log.info("WordServiceImpl - process - charAnalysis1 - " + charAnalysis1);
 		response.put("charAnalysis1", charAnalysis1);
-
-		/*
-		 * String charAnalysis2 =
-		 * charDisplayBuilder.buildCharDisplay2(charDisplayAnalysis);
-		 * log.info("WordServiceImpl - process - charAnalysis - " + charAnalysis2);
-		 * response.put("wordAnalysis2", charAnalysis2);
-		 * 
-		 * String charAnalysis3 =
-		 * charDisplayBuilder.buildCharDisplay3(charDisplayAnalysis);
-		 * log.info("WordServiceImpl - process - charAnalysis - " + charAnalysis3);
-		 * response.put("wordAnalysis3", charAnalysis3);
-		 * 
-		 * String charAnalysis4 =
-		 * charDisplayBuilder.buildCharDisplay4(charDisplayAnalysis);
-		 * log.info("WordServiceImpl - process - charAnalysis - " + charAnalysis4);
-		 * response.put("wordAnalysis4", charAnalysis4);
-		 * 
-		 * String charAnalysis5 =
-		 * charDisplayBuilder.buildCharDisplay5(charDisplayAnalysis);
-		 * log.info("WordServiceImpl - process - charAnalysis - " + charAnalysis5);
-		 * response.put("wordAnalysis5", charAnalysis5);
-		 * 
-		 */
-		// log.info(charAnalysis);
+		
+		String charAnalysis2 = charDisplayBuilder.buildCharDisplay2(charDisplayAnalysis);
+		log.info("WordServiceImpl - process - charAnalysis2 - " + charAnalysis2);
+		response.put("charAnalysis2", charAnalysis2);
+		  
+		String charAnalysis3 = charDisplayBuilder.buildCharDisplay3(charDisplayAnalysis);
+		log.info("WordServiceImpl - process - charAnalysis3 - " + charAnalysis3);
+		response.put("charAnalysis3", charAnalysis3);
+		  
+		String charAnalysis4 = charDisplayBuilder.buildCharDisplay4(charDisplayAnalysis);
+		log.info("WordServiceImpl - process - charAnalysis4 - " + charAnalysis4);
+		response.put("charAnalysis4", charAnalysis4);
+		  
+		String charAnalysis5 = charDisplayBuilder.buildCharDisplay5(charDisplayAnalysis);
+		log.info("WordServiceImpl - process - charAnalysis - " + charAnalysis5);
+		response.put("charAnalysis5", charAnalysis5);
+		 
 		log.info("WordServiceImpl - process - complete");
 
-		// log.trace("returnValue: " + response);
 		return response;
 	}
 
