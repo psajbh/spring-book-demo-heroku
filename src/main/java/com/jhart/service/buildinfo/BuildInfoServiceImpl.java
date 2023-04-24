@@ -117,6 +117,7 @@ public class BuildInfoServiceImpl implements BuildInfoService{
 	                BuildItemDto buildItemDto = buildItemData.next();
 	                sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
 	            }
+	            
 	            response = sb.toString();
 			}
 			return response;

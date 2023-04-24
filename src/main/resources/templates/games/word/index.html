@@ -3,8 +3,9 @@
 
 <head>
 	<th:block th:replace='fragments/header :: head'>
-		<meta charset='UTF-8'>
 		<title id="pageTitle">Word Helper</title>
+		<meta charset='UTF-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</th:block>
 	<link rel="stylesheet" href="/css/word_index.css">
 </head>
@@ -117,12 +118,67 @@
 			<h4>Character Analytics</h4>
 			
 		 	<div>
-				<textarea id='ca1' rows='20' cols='10' th:field='*{wordAnalysis_1}'></textarea>
-				<textarea id='ca2' rows='20' cols='10' th:field='*{wordAnalysis_2}'></textarea>
-				<textarea id='ca3' rows='20' cols='10' th:field='*{wordAnalysis_3}'></textarea>
-				<textarea id='ca4' rows='20' cols='10' th:field='*{wordAnalysis_4}'></textarea>
-				<textarea id='ca5' rows='20' cols='10' th:field='*{wordAnalysis_5}'></textarea>
+				<textarea id='ca1' rows='20' cols='12' th:field='*{wordAnalysis_1}'></textarea>
+				<textarea id='ca2' rows='20' cols='12' th:field='*{wordAnalysis_2}'></textarea>
+				<textarea id='ca3' rows='20' cols='12' th:field='*{wordAnalysis_3}'></textarea>
+				<textarea id='ca4' rows='20' cols='12' th:field='*{wordAnalysis_4}'></textarea>
+				<textarea id='ca5' rows='20' cols='12' th:field='*{wordAnalysis_5}'></textarea>
 			</div>
+			<!-- <div>
+				<table>
+					<tr>
+						<td>char</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+						<td>char</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+						<td>char</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+					</tr>
+					<tr>
+						<td>a:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>b:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>c:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>d:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>e:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>f:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>g:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>h:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>i:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>j:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>k:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>l:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>m:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>n:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>o:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>p:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>q:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>r:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>s:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>t:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>u:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>v:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>w:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>x:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>y:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>z:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+				</table>
+			</div> -->
+			
 		</form>
 	</div>
 	
