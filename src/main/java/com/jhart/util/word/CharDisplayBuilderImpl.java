@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	private static final String THREE_SPACER = "--";
-	private static final String FOUR_SPACER = "---";
-	private static final String FIVE_SPACER = "----";
-	private static final String SIX_SPACER = "-----";
-	private static final String SEVEN_SPACER = "------";
+	private static final String THREE_SPACER = "---";
+	private static final String FOUR_SPACER = "----";
+	private static final String FIVE_SPACER = "-----";
+	private static final String SIX_SPACER = "------";
+	private static final String SEVEN_SPACER = "-------";
 	
 	private static final int PERCENT_LENGTH_6 = 6;
 	private static final int PERCENT_LENGTH_7 = 7;
