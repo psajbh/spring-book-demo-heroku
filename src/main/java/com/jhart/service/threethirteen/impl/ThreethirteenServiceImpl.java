@@ -1,4 +1,4 @@
-package com.jhart.service.threethirteen;
+package com.jhart.service.threethirteen.impl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,6 +11,7 @@ import com.jhart.domain.Threethirteen;
 import com.jhart.dto.ThreethirteenDto;
 import com.jhart.exception.threethirteen.ThreethirteenSaveGameException;
 import com.jhart.repo.threethirteen.ThreethirteenRepository;
+import com.jhart.service.threethirteen.ThreethirteenService;
 
 @Service
 public class ThreethirteenServiceImpl implements ThreethirteenService {

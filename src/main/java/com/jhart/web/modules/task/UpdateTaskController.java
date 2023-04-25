@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jhart.domain.User;
-import com.jhart.dto.MyResponse;
+import com.jhart.dto.GenericResponseDto;
 import com.jhart.dto.TodoBackBean;
 import com.jhart.orchestration.task.TaskConductor;
 import com.jhart.service.user.UserService;
@@ -60,7 +60,7 @@ public class UpdateTaskController {
 	@PostMapping("todo/update")
 	public ResponseEntity<Object> updateTodo(@RequestBody TodoBackBean todoBackBean) {
 		//log.debug("updateTodo- start");
-		MyResponse<List<TodoBackBean>> response = null;
+		GenericResponseDto<List<TodoBackBean>> response = null;
 		
 		try {
 			response = conductor.updateTodo(todoBackBean);
