@@ -57,7 +57,8 @@ public class BuildInfoServiceImpl implements BuildInfoService{
 		BuildInfo mostCurrentBuildInfo = null;
 		
 		List<BuildInfo>  list  = buildInfoRepository.findAll();
-		System.out.println("list: " + list);
+		//System.out.println("list: " + list);
+		log.info("BuildInfoServiceImpl - getLatestBuildInfo list: " + list);
 		
 		for (BuildInfo buildInfo : buildInfoRepository.findAll()) {
 			if (buildInfo.getId() > mostCurrentId) {
@@ -116,6 +117,7 @@ public class BuildInfoServiceImpl implements BuildInfoService{
 	                BuildItemDto buildItemDto = buildItemData.next();
 	                sb.append("  " + buildItemDto.getType() + " : " + buildItemDto.getValue() + System.lineSeparator());
 	            }
+	            
 	            response = sb.toString();
 			}
 			return response;

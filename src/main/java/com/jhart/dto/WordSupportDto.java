@@ -15,6 +15,11 @@ public class WordSupportDto {
 	private String notInChar5;
 	private String words;
 	private String wordCount;
+	private String wordAnalysis_1;
+	private String wordAnalysis_2;
+	private String wordAnalysis_3;
+	private String wordAnalysis_4;
+	private String wordAnalysis_5;
 
 	public String getWordName() {
 		return wordName;
@@ -126,6 +131,46 @@ public class WordSupportDto {
 
 	public void setNotInChar5(String notInChar5) {
 		this.notInChar5 = notInChar5;
+	}
+	
+	public String getWordAnalysis_1() {
+		return wordAnalysis_1;
+	}
+
+	public void setWordAnalysis_1(String wordAnalysis_1) {
+		this.wordAnalysis_1 = wordAnalysis_1;
+	}
+
+	public String getWordAnalysis_2() {
+		return wordAnalysis_2;
+	}
+
+	public void setWordAnalysis_2(String wordAnalysis_2) {
+		this.wordAnalysis_2 = wordAnalysis_2;
+	}
+
+	public String getWordAnalysis_3() {
+		return wordAnalysis_3;
+	}
+
+	public void setWordAnalysis_3(String wordAnalysis_3) {
+		this.wordAnalysis_3 = wordAnalysis_3;
+	}
+
+	public String getWordAnalysis_4() {
+		return wordAnalysis_4;
+	}
+
+	public void setWordAnalysis_4(String wordAnalysis_4) {
+		this.wordAnalysis_4 = wordAnalysis_4;
+	}
+
+	public String getWordAnalysis_5() {
+		return wordAnalysis_5;
+	}
+
+	public void setWordAnalysis_5(String wordAnalysis_5) {
+		this.wordAnalysis_5 = wordAnalysis_5;
 	}
 
 	@Override

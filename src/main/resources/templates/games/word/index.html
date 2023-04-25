@@ -3,8 +3,9 @@
 
 <head>
 	<th:block th:replace='fragments/header :: head'>
-		<meta charset='UTF-8'>
 		<title id="pageTitle">Word Helper</title>
+		<meta charset='UTF-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</th:block>
 	<link rel="stylesheet" href="/css/word_index.css">
 </head>
@@ -14,12 +15,17 @@
 
 	<div class='container-fluid' style='margin-top: 35px'>
 		<h3>Word Helper</h3>
-		<br/>
-		<div class="container" align='right'>
+		<!-- <br/> -->
+		<div class="container" align='center' style='margin-top: -15px'>
 		<!-- <div style='align:right width:500px'> -->
+			<button type="submit" form="reset">Reset</button>
 			<button id="show_button">Notes</button>
  		</div>
-		<br/>
+ 		
+ 		<!-- <div class="container" align='center'> -->
+			<form id="reset" action='#' th:action='@{/games/word/index}' method='get'></form>
+		<!-- </div> -->
+
 		<div class="container" align='center' style='margin-top: -40px'>
 			<!-- <button id="show_button" style="align: right">Application Info</button> -->
 			<dialog id="my_dialog">
@@ -45,8 +51,7 @@
 		</div>
 	</div>
 
-	<div align='center'>
-	
+	<div align='center' style='margin-top: 50px'>
 		<form action='#' th:action='@{/games/word/get}' method='get' th:object='${wordSupportDto}'>
 			<h5>
 				Enter up to 5 character values that <b>ALL EXIST</b> within a word:
@@ -107,21 +112,86 @@
 				Matching Words Results: <input type='text' maxlength='4' size='5'
 					th:field='*{wordCount}' />
 			</h4>
-			<textarea id='textarea' rows='5' cols='80' th:field='*{words}'></textarea>
+			<textarea id='textarea' rows='8' cols='80' th:field='*{words}'></textarea>
+			<br />
+			 
+			<h4>Character Analytics</h4>
+			
+		 	<div>
+				<textarea id='ca1' rows='20' cols='14' th:field='*{wordAnalysis_1}'></textarea>
+				<textarea id='ca2' rows='20' cols='14' th:field='*{wordAnalysis_2}'></textarea>
+				<textarea id='ca3' rows='20' cols='14' th:field='*{wordAnalysis_3}'></textarea>
+				<textarea id='ca4' rows='20' cols='14' th:field='*{wordAnalysis_4}'></textarea>
+				<textarea id='ca5' rows='20' cols='14' th:field='*{wordAnalysis_5}'></textarea>
+			</div>
+			<!-- <div>
+				<table>
+					<tr>
+						<td>char</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+						<td>char</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+						<td>char</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
+					</tr>
+					<tr>
+						<td>a:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>b:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>c:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>d:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>e:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>f:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>g:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>h:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>i:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>j:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>k:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>l:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>m:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>n:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>o:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>p:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>q:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>r:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>s:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>t:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>u:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>v:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>w:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>x:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+					<tr>
+						<td>y:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>z:&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>						
+					</tr>
+				</table>
+			</div> -->
+			
 		</form>
 	</div>
+	
 
-	<div class="container" align='center'>
+<!-- 	<div class="container" align='center'>
 		<br />
 		<form action='#' th:action='@{/games/word/index}' method='get'>
 			<button>Reset</button>
 		</form>
-		<!-- <div style='align:right'>
- 			<button id="show_button">Notes</button>
- 		</div> -->
 		<br />
 	</div>
-
+ -->	
+	
 	<div class='container' th:replace='fragments/footer :: footer'>
 		<p>footer</p>
 	</div>
