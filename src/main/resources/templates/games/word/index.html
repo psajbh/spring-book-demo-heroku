@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 	</th:block>
 	<link rel="stylesheet" href="/css/word_index.css">
+	<script type="text/javascript" src="../../js/word/word_index.js" /></script>
 </head>
 
 <body>
@@ -56,34 +57,36 @@
 			<h5>
 				Enter up to 5 character values that <b>ALL EXIST</b> within a word:
 			</h5>
-			<label>character values:</label> <input type='text' maxlength='5'
-				size='7' th:field='*{wordName}' /><br />
+			<label>character values:</label><input type='text' maxlength='5'
+				size='7' th:field='*{wordName}' 
+				onkeyup='return forceLower(this);'/><br />
 			<br />
 			<h5>
 				Enter up to 22 character values that <b>DO NOT EXIST</b> within a
 				word:
 			</h5>
 			<label>character values:</label> <input type='text' maxlength='22'
-				size='23' th:field='*{noWordName}' /><br />
+				size='23' th:field='*{noWordName}' 
+				onkeyup='return forceLower(this);'/><br />
 			<br />
 			<h5>
 				Enter character value as <b>EXISTING</b> in a specified character
 				position:
 			</h5>
 			<label>1:</label> 
-			<input type='text' maxlength='1' size='2' th:field='*{inChar1}' />
+			<input type='text' maxlength='1' size='2' th:field='*{inChar1}' onkeyup='return forceLower(this);'/>
 			
 			 <label>2:</label> 
-			 <input type='text' maxlength='1' size='2' th:field='*{inChar2}' /> 
+			 <input type='text' maxlength='1' size='2' th:field='*{inChar2}' onkeyup='return forceLower(this);'/> 
 			 
 			 <label>3:</label> 
-			 <input type='text' maxlength='1' size='2' th:field='*{inChar3}' /> 
+			 <input type='text' maxlength='1' size='2' th:field='*{inChar3}' onkeyup='return forceLower(this);'/> 
 			 
 			 <label>4:</label>
-			 <input type='text' maxlength='1' size='2' th:field='*{inChar4}' /> 
+			 <input type='text' maxlength='1' size='2' th:field='*{inChar4}' onkeyup='return forceLower(this);'/> 
 			
 			<label>5:</label>
-			<input type='text' maxlength ='1' size='2' th:field='*{inChar5}' /> 
+			<input type='text' maxlength ='1' size='2' th:field='*{inChar5}' onkeyup='return forceLower(this);'/> 
 			<br />
 			<br />
 			<h5>
@@ -91,19 +94,19 @@
 				character position:
 			</h5>
 			<label>1:</label> 
-			<input type='text' maxlength='5' size='3' th:field='*{notInChar1}' />
+			<input type='text' maxlength='5' size='3' th:field='*{notInChar1}' onkeyup='return forceLower(this);'/>
 			 
 			<label>2:</label> 
-			<input type='text' maxlength='5' size='3' th:field='*{notInChar2}' />
+			<input type='text' maxlength='5' size='3' th:field='*{notInChar2}' onkeyup='return forceLower(this);'/>
 			 
 			<label>3:</label>
-			<input type='text' maxlength='5' size='3' th:field='*{notInChar3}' />
+			<input type='text' maxlength='5' size='3' th:field='*{notInChar3}' onkeyup='return forceLower(this);'/>
 			
 			<label>4:</label> 
-			<input type='text' maxlength='5' size='3' th:field='*{notInChar4}' /> 
+			<input type='text' maxlength='5' size='3' th:field='*{notInChar4}' onkeyup='return forceLower(this);'/> 
 			
 			<label>5:</label> 
-			<input type='text' 	maxlength='5' size='3' th:field='*{notInChar5}' />
+			<input type='text' 	maxlength='5' size='3' th:field='*{notInChar5}' onkeyup='return forceLower(this);'/>
 			 
 			<br /><br />
 			<button type='submit'>Submit</button>
