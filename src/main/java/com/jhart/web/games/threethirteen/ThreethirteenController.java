@@ -1,4 +1,4 @@
-package com.jhart.web.games.three13;
+package com.jhart.web.games.threethirteen;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -21,14 +21,14 @@ import com.jhart.transform.ThreethirteenTransformer;
 import com.jhart.util.DateComparer;
 
 @Controller
-@RequestMapping({"", "/", "/games/313"})
-public class Three13Controller {
+@RequestMapping({"", "/", "/games/threethirteen"})
+public class ThreethirteenController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 	private ThreethirteenService threethirteenService;
 	private ThreethirteenTransformer threethirteenTransformer;
 
-	public Three13Controller(ThreethirteenService threethirteenService, 
+	public ThreethirteenController(ThreethirteenService threethirteenService, 
 			ThreethirteenTransformer threethirteenTransformer) {
 		this.threethirteenService = threethirteenService;	
 		this.threethirteenTransformer = threethirteenTransformer;
@@ -68,7 +68,7 @@ public class Three13Controller {
 		
 		model.addAttribute("threethirteenDto", threethirteenDto);
 		log.info("Three13Controller - index");
-		return "games/313/index";
+		return "games/threethirteen/index";
 	}
 	 	
 	@PostMapping("/save")
@@ -76,13 +76,13 @@ public class Three13Controller {
 		log.info("Three13Controller : saveNewThreethirteen - start");
 		
 		if(!validate(threethirteenDto)) {
-			log.warn("Three12Controller : saveNewThreethirteen - players validation failure");
-			return "redirect:/games/313/index";
+			log.warn("Three13Controller : saveNewThreethirteen - players validation failure");
+			return "redirect:/games/threethirteen/index";
 		}
 		
 		if(StringUtils.isEmpty(threethirteenDto.getDisplayDate())) {
 			log.warn("Three12Controller : saveNewThreethirteen - failed to process, no playDate");
-			return "redirect:/games/313/index";
+			return "redirect:/games/threethirteen/index";
 		}
 		String playDate = threethirteenDto.getDisplayDate().substring(6);
 		LocalDateTime startDate = startDates.get(playDate);
@@ -150,8 +150,8 @@ public class Three13Controller {
 			model.addAttribute("threethirteenDto", threethirteenDto);
 		}
 		
-		log.info("Three13Controller : saveNewThreethirteen - complete -> redirecting to games/313/save");
-		return "games/313/save";
+		log.info("Three13Controller : saveNewThreethirteen - complete -> redirecting to games/threethirteen/save");
+		return "games/threethirteen/save";
 	}
 	
 	private boolean validate(ThreethirteenDto threethirteenDto) {

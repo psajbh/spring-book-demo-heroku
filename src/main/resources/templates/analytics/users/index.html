@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<th:block th:replace='fragments/header :: head'>
+		<meta charset='UTF-8'>
+		<title id="pageTitle">User Analytics</title>
+	</th:block>
+	<script type="text/javascript" src="../../js/analytics/users/user.js" /></script>
+</head>
+
+<body>
+	<div th:insert="navbar :: navbar">  </div>
+	<div class="container-fluid" style="margin-top: 120px">
+		<div id="indexRow" class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="panel panel-primary">
+
+					<div class="panel-heading">
+						<h1 class="panel-title">User Analytics</h1>
+					</div>
+					<div class="panel-body">
+						<!--  display class provides shade to rows -->
+						<table id="userAnalyticsTable" class="table table-hover display" border="2">
+							<thead class="thead-inverse">
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Full Name</th>
+									<th>Phone Number</th>
+									<th>Email Address</th>
+									<!-- <th colspan="2" style="text-align: center">Actions</th> -->
+								</tr>
+							</thead>
+						</table>
+ 						<div>
+							<a href="#" th:href="@{'/user/add'}">
+								<button type="submit">Add New User</button>
+							</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+ 		<div id="updateRow" class="row" style="display: none">
+			<div class="col-md-8 col-md-offset-2">
+				<div id='updatePrimaryId' class='panel panel-primary'>
+					<div class='panel-heading'>
+						<h1 class='panel-title'>Update User Information</h1>
+					</div>
+					<div class='panel-body'>
+						<div id='updateFormDiv'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ 	<div class="container" th:replace="fragments/footer :: footer">
+		<p>footer</p>
+	</div>
+</body>
+
+</html>

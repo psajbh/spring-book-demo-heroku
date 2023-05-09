@@ -1,4 +1,4 @@
-package com.jhart.repo.threethirteen;
+package com.jhart.repo.analytics.threethirteen;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

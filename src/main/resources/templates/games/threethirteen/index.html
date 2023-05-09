@@ -7,14 +7,14 @@
 		<title id="pageTitle">3-13</title>
 	</th:block>
 	<link rel="stylesheet" href="/css/threethirteen_index.css">
-	<script type="text/javascript" src="../../js/313/threethirteen_index.js" /></script>
+	<script type="text/javascript" src="../../js/threethirteen/threethirteen_index.js" /></script>
 </head> 
 
 <body onload="hideElement()">
 	<div th:insert="navbar :: navbar"></div>
 
 	<div class="container-fluid" style="margin-top: 35px">
-		<form action='#' th:action='@{/games/313/save}' method='post'
+		<form action='#' th:action='@{/games/threethirteen/save}' method='post'
 			th:object='${threethirteenDto}'>
 			<h3>Three-Thirteen Score Sheet</h3>
 			<div class="grid-container-element">

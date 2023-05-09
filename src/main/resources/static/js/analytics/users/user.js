@@ -1,9 +1,9 @@
-var myUserTable = "";
+var myAnalyticsUserTable = "";
 
 $(document).ready( function (){
 	console.log("executing ready function");
-	alert("inside js/user/user");
-	myUserTable = $('#userTable')
+	alert("inside js/analytics/users/user.js");
+	myAnalyticsUserTable = $('#userAnalyticsTable')
 	.DataTable(
 		{
 			"autoWidth" : false,
@@ -12,7 +12,7 @@ $(document).ready( function (){
 			"language" : {"emptyTable" : "No results found."},
 			"deferRender" : true,
 	        "ajax" : {
-	        	 "url" : "/userDataTable",
+	        	 "url" : "/userDataTableAnalytics",
 	             "type" : "GET"
 	         },
 	        "sDom": 'B<"H"lfr>t<"F"ip>',

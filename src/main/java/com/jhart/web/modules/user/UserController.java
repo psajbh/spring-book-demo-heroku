@@ -6,8 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class IndexUserController {
-	Logger log = LoggerFactory.getLogger(IndexUserController.class);
+public class UserController {
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@GetMapping({"/users/index"})
 	public String getUsers() {

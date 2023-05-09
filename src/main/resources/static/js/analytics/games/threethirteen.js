@@ -1,8 +1,9 @@
-var player313Metrics = "";
+var myAnalyticsTheethirteenTable = "";
 
 $(document).ready( function (){
 	console.log("executing ready function");
-	player313Metrics = $('#313AnalyticsTable')
+	alert("inside js/analytics/games/threethirteen.js");
+	myAnalyticsTheethirteenTable = $('#313AnalyticsTable')
 	.DataTable(
 		{
 			"autoWidth" : false,

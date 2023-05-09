@@ -1,4 +1,4 @@
-package com.jhart.web.analytics.three13;
+package com.jhart.web.analytics.threethirteen;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Validated
-public class Three13AnalyticsRestController {
+public class ThreethirteenAnalyticsRestController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	public Three13AnalyticsRestController() {}
+	public ThreethirteenAnalyticsRestController() {}
 	
 	@GetMapping({"threeThirteenAnalyticsTable"})
 	public ResponseEntity<Object> getThreeThirteenMetrics(){
