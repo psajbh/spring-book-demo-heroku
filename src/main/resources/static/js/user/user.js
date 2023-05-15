@@ -2,7 +2,7 @@ var myUserTable = "";
 
 $(document).ready( function (){
 	console.log("executing ready function");
-	alert("inside js/user/user");
+	//alert("inside js/user/user");
 	myUserTable = $('#userTable')
 	.DataTable(
 		{

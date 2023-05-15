@@ -11,18 +11,19 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="threethirteen_metrics")
-public class ThreethirteenMetrics implements IEntity, Serializable {
+public class ThreethirteenMetric implements IEntity, Serializable {
 	private static final long serialVersionUID = -580453742954045560L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer id;
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "uuid")
+    private String suuid;
 	
 	@Column(name = "player")
 	private String player;
 	
 	@Column(name = "games")
-	private String games;
+	private int games;
 	
 	@Column(name = "total_score")
 	private int totalScore;
@@ -36,6 +37,14 @@ public class ThreethirteenMetrics implements IEntity, Serializable {
 	@Column(name = "wins")
 	private int wins;
 
+	public String getSuuid() {
+		return suuid;
+	}
+
+	public void setSuuid(String suuid) {
+		this.suuid = suuid;
+	}
+
 	public String getPlayer() {
 		return player;
 	}
@@ -44,11 +53,11 @@ public class ThreethirteenMetrics implements IEntity, Serializable {
 		this.player = player;
 	}
 
-	public String getGames() {
+	public int getGames() {
 		return games;
 	}
 
-	public void setGames(String games) {
+	public void setGames(int games) {
 		this.games = games;
 	}
 
@@ -86,7 +95,7 @@ public class ThreethirteenMetrics implements IEntity, Serializable {
 	
 	@Override
 	public String toString() {
-		return "ThreethirteenMetrics [id=" + id + ", player=" + player + ", games=" + games + ", totalScore="
+		return "ThreethirteenMetrics [suuid=" + suuid + ", player=" + player + ", games=" + games + ", totalScore="
 				+ totalScore + ", avgScore=" + avgScore + ", roundWins=" + roundWins + ", wins=" + wins + "]";
 	}
 
@@ -97,8 +106,8 @@ public class ThreethirteenMetrics implements IEntity, Serializable {
 		long temp;
 		temp = Double.doubleToLongBits(avgScore);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + ((games == null) ? 0 : games.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		//result = prime * result + ((games == null) ? 0 : games.hashCode());
+		result = prime * result + ((suuid == null) ? 0 : suuid.hashCode());
 		result = prime * result + ((player == null) ? 0 : player.hashCode());
 		result = prime * result + roundWins;
 		result = prime * result + totalScore;
@@ -114,18 +123,18 @@ public class ThreethirteenMetrics implements IEntity, Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ThreethirteenMetrics other = (ThreethirteenMetrics) obj;
+		ThreethirteenMetric other = (ThreethirteenMetric) obj;
 		if (Double.doubleToLongBits(avgScore) != Double.doubleToLongBits(other.avgScore))
 			return false;
-		if (games == null) {
-			if (other.games != null)
+//		if (games == null) {
+//			if (other.games != null)
+//				return false;
+//		} else if (!games.equals(other.games))
+//			return false;
+		if (suuid == null) {
+			if (other.suuid != null)
 				return false;
-		} else if (!games.equals(other.games))
-			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		} else if (!suuid.equals(other.suuid))
 			return false;
 		if (player == null) {
 			if (other.player != null)

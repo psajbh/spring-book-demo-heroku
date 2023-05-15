@@ -17,7 +17,7 @@ import com.jhart.orchestration.user.UserConductor;
 @Validated
 public class UserAnalyticsRestController {
 	Logger log = LoggerFactory.getLogger(this.getClass());
-	private UserConductor conductor;
+	private final UserConductor conductor;
 	
 	public UserAnalyticsRestController(UserConductor conductor) {
 		this.conductor = conductor;

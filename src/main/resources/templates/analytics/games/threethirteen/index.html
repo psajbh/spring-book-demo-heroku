@@ -14,23 +14,23 @@
 	<div class="container-fluid" style="margin-top: 120px">
 		<div id="indexRow" class="row">
 			<div class="col-md-8 col-md-offset-2">
-				<div class="panel panel-primary">
+				<div class="panel panel-primary" >
 
-					<div class="panel-heading">
-						<h1 class="panel-title">313 Analytics</h1>
+					<div class="panel-heading" >
+						<h1 class="panel-title">313 Player Statistics</h1>
 					</div>
 					<div class="panel-body">
 						<!--  display class provides shade to rows -->
 						 
-						<table id="313AnalyticsTable" class="table table-hover display" border="2">
+						<table  id="313AnalyticsTable"  class="table table-hover display compact cell-border stripe" border="2">
 							<thead class="thead-inverse">
 								<tr>
 									<th>Player</th>
-									<th>Games</th>
-									<th>Total Score</th>
-									<th>Average Score</th>
-									<th>Round Victories</th>
-									<th>Wins</th>
+									<th style="text-align: center">Games</th>
+									<th style="text-align: center">Total Score</th>
+									<th style="text-align: center">Average Score</th>
+									<th style="text-align: center">Round Victories</th>
+									<th style="text-align: center">Wins</th>
 								</tr>
 							</thead>
 						</table> 
@@ -38,20 +38,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- 
-		<div id="updateRow" class="row" style="display: none">
-			<div class="col-md-8 col-md-offset-2">
-				<div id='updatePrimaryId' class='panel panel-primary'>
-					<div class='panel-heading'>
-						<h1 class='panel-title'>Update User Information</h1>
-					</div>
-					<div class='panel-body'>
-						<div id='updateFormDiv'></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		-->
+
 	</div>
 	<div class="container" th:replace="fragments/footer :: footer">
 		<p>footer</p>
