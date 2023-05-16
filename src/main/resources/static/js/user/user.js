@@ -20,11 +20,11 @@ $(document).ready( function (){
 			"sAjaxDataProp": "",
 			"order": [[ 0, "asc" ]],
 			"columns": [
-			      { "data": "id", "visible" : false, "searchable" : true, "sortable" : true},
-		          { "data": "name", "visible" : true, "searchable" : true, "sortable" : true, "width" : "20%"},
-				  { "data": "fullName", "visible" : true, "searchable" : true, "sortable" : true, "width" : "20%" },
-				  { "data": "phone", "visible" : true, "searchable" : true, "sortable" : true, "width" : "10%"},
-				  { "data": "email", "visible" : true, "searchable" : true, "sortable" : true, "width" : "15%" },
+			      //{ "data": "id", "visible" : false, "searchable" : true, "sortable" : true},
+		          { "data": "name", "visible" : true, "searchable" : true, "sortable" : true, "width" : "20%" },
+				  { "data": "fullName", "visible" : true, "searchable" : true, "sortable" : true, "width" : "20%", "className": "text-center"},
+				  { "data": "phone", "visible" : true, "searchable" : true, "sortable" : true, "width" : "10%", "className": "text-center"},
+				  { "data": "email", "visible" : true, "searchable" : true, "sortable" : true, "width" : "15%", "className": "text-center" },
 				  { "title": "Actions", "data" : "null", "name" : "actions", "visible" : true, "searchable" : false, "sortable" : false, "width" : "15%",
 					  "render" : function(data, type, full, meta) {
 							  return "<div align='center'>" +
