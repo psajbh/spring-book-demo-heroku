@@ -170,4 +170,9 @@
       	  element = document.querySelector('.save');
     	  element.style.visibility = 'hidden';
    	  }
+   	  
+   	  function showAnalytics() {
+   	  	//alert("Show Analytics");
+   	  	window.open('../../analytics/games/threethirteen/index', '_blank');
+   	  }
    
