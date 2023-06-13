@@ -37,9 +37,7 @@ public class ThreethirteenAnalyticsServiceImpl implements ThreethirteenAnalytics
 			metricDto.setRound_victories(metric.getRoundWins());
 			metricDto.setWins(metric.getWins());
 			metricDtos.add(metricDto);
-			
 		}
-		
 		
 		return metricDtos;
 	}

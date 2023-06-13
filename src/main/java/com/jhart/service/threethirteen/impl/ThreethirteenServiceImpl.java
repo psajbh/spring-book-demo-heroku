@@ -3,6 +3,8 @@ package com.jhart.service.threethirteen.impl;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -11,15 +13,25 @@ import com.jhart.domain.Threethirteen;
 import com.jhart.dto.ThreethirteenDto;
 import com.jhart.exception.threethirteen.ThreethirteenSaveGameException;
 import com.jhart.repo.threethirteen.ThreethirteenRepository;
+import com.jhart.repo.user.UserRepository;
 import com.jhart.service.threethirteen.ThreethirteenService;
 
 @Service
 public class ThreethirteenServiceImpl implements ThreethirteenService {
 	Logger log = LoggerFactory.getLogger(this.getClass());
 	private final ThreethirteenRepository threethirteenRepository;
+	private final UserRepository userRepository;
 	
-	public ThreethirteenServiceImpl(ThreethirteenRepository threethirteenRepository) {
+	public ThreethirteenServiceImpl(ThreethirteenRepository threethirteenRepository, 
+			UserRepository userRepository) {
 		this.threethirteenRepository = threethirteenRepository;
+		this.userRepository = userRepository;
+	}
+	
+	@Override
+	public List<String> getUserNames(){
+		List<String> distinctUserNames = userRepository.findDistinctUserNames();
+		return distinctUserNames;
 	}
 	
 	@Override
@@ -99,12 +111,14 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 			threethirteen.setPlayer6(threethirteenDto.getPlayer6());
 			threethirteen.setScore6(threethirteenDto.getScore6());
 			threethirteen.setRoundWins6(threethirteenDto.getRv6());
-			if (threethirteenDto.getScore6() < winningScore) {
-				winningPlayer = threethirteenDto.getPlayer6();
-				winningScore = threethirteenDto.getScore6();
-			}
-			else if (threethirteenDto.getScore6() == winningScore) {
-				winningPlayer = winningPlayer + ", " + threethirteenDto.getPlayer6();
+			if (null != threethirteenDto.getScore7()) {
+				if (threethirteenDto.getScore6() < winningScore) {
+					winningPlayer = threethirteenDto.getPlayer6();
+					winningScore = threethirteenDto.getScore6();
+				}
+				else if (threethirteenDto.getScore6() == winningScore) {
+					winningPlayer = winningPlayer + ", " + threethirteenDto.getPlayer6();
+				}
 			}
 		}
 		
@@ -112,12 +126,15 @@ public class ThreethirteenServiceImpl implements ThreethirteenService {
 			threethirteen.setPlayer7(threethirteenDto.getPlayer7());
 			threethirteen.setScore7(threethirteenDto.getScore7());
 			threethirteen.setRoundWins7(threethirteenDto.getRv7());
-			if (threethirteenDto.getScore7() < winningScore) {
-				winningPlayer = threethirteenDto.getPlayer7();
-				winningScore = threethirteenDto.getScore7();
-			}
-			else if (threethirteenDto.getScore7() == winningScore) {
-				winningPlayer = winningPlayer + ", " + threethirteenDto.getPlayer7();
+			
+			if (null != threethirteenDto.getScore7()) {
+				if (threethirteenDto.getScore7() < winningScore) {
+					winningPlayer = threethirteenDto.getPlayer7();
+					winningScore = threethirteenDto.getScore7();
+				}
+				else if (threethirteenDto.getScore7() == winningScore) {
+					winningPlayer = winningPlayer + ", " + threethirteenDto.getPlayer7();
+				}
 			}
 		}
 		

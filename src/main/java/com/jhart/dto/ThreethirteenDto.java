@@ -1,6 +1,7 @@
 package com.jhart.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 public class ThreethirteenDto {
@@ -9,6 +10,7 @@ public class ThreethirteenDto {
 	private String displayDate;
 	private String playDate;
 	private LocalDateTime startDate;
+	private List<String> users;
 	private LocalDateTime endDate;
 	private String elapsedTime;
 	private String winner;
@@ -258,6 +260,13 @@ public class ThreethirteenDto {
 	}
 	
 	
+	public List<String> getUsers() {
+		return users;
+	}
+	public void setUsers(List<String> users) {
+		this.users = users;
+	}
+
 	@Override
 	public String toString() {
 		return "ThreethirteenDto [playDate=" + playDate + ", player1=" + player1

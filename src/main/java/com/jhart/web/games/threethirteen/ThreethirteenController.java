@@ -2,7 +2,9 @@ package com.jhart.web.games.threethirteen;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -13,6 +15,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jhart.domain.Threethirteen;
 import com.jhart.dto.ThreethirteenDto;
@@ -27,6 +30,13 @@ public class ThreethirteenController {
 	private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 	private ThreethirteenService threethirteenService;
 	private ThreethirteenTransformer threethirteenTransformer;
+	//saveStatus marker1
+	//saveStatus is a tool to enable population of selected values for a player
+	//this is not working, so marking out the HashMap savStatus and use a List for saveStatus
+	//the result is that no players will have an option selected.
+	//private HashMap<String, ThreethirteenDto> saveStatus = new HashMap<String, ThreethirteenDto>();
+	private List<ThreethirteenDto> saveStatus = new ArrayList<>();
+	 
 
 	public ThreethirteenController(ThreethirteenService threethirteenService, 
 			ThreethirteenTransformer threethirteenTransformer) {
@@ -37,10 +47,17 @@ public class ThreethirteenController {
 	private HashMap<String, LocalDateTime> startDates = new HashMap<>();
 	private HashMap<String, String> startStrings = new HashMap<>();
 	private Map<String, String> playersMap = new HashMap<>();
+	private List<String> activeUsers = new ArrayList<>();
+	//private Map<String, String> uniquePlayerNames = new HashMap<>();
 	
+	//@GetMapping("/issue")
+	//public String issue(Model model) {
+		//return "games/threethirteen/issue"; 
+	//}
 	
 	@GetMapping("/index")
 	public String index(Model model) {
+		
 		ThreethirteenDto threethirteenDto = new ThreethirteenDto();
 		LocalDateTime now = LocalDateTime.now();
 		String dateInfo = dtf.format(now);
@@ -52,21 +69,85 @@ public class ThreethirteenController {
 		threethirteenDto.setPlayDate(playDate);
 		threethirteenDto.setDisplayDate(displayDate);
 		
-		if(playersMap.size() > 0) {
-			threethirteenDto.setPlayer1(playersMap.get("player1"));
-			threethirteenDto.setPlayer2(playersMap.get("player2"));
-			threethirteenDto.setPlayer3(playersMap.get("player3"));
-			threethirteenDto.setPlayer4(playersMap.get("player4"));
-			threethirteenDto.setPlayer5(playersMap.get("player5"));
-			threethirteenDto.setPlayer6(playersMap.get("player6"));
-			threethirteenDto.setPlayer7(playersMap.get("player7"));
-			playersMap.clear();
+		//saveStatus marker2
+		//int size = saveStatus.size();
+		int size = 0;
+		if (size == 1) {
+			log.info("ThreethirteenController - index: users - saveStatusDto");
+			ThreethirteenDto saveStatusDto = saveStatus.get(0);
+			activeUsers.clear();
+			
+			String user1 = playersMap.get("player1");
+			if (null != user1) {
+				activeUsers.add(user1);
+			}
+			
+			String user2 = playersMap.get("player2");
+			if (null != user2) {
+				activeUsers.add(user2);
+			}
+			
+			String user3 = playersMap.get("player3");
+			if (null != user3) {
+				activeUsers.add(user3);
+			}
+			
+			String user4 = playersMap.get("player4");
+			if (null != user4) {
+				activeUsers.add(user4);
+			}
+			
+			String user5 = playersMap.get("player5");
+			if (null != user5) {
+				activeUsers.add(user5);
+			}
+			
+			String user6 = playersMap.get("player6");
+			if (null != user6) {
+				activeUsers.add(user6);
+			}
+			
+			String user7 = playersMap.get("player7");
+			if (null != user7) {
+				activeUsers.add(user7);
+			}
+			
+			if(playersMap.size() > 0) {
+				saveStatusDto.setPlayer1(playersMap.get("player1"));
+				saveStatusDto.setPlayer2(playersMap.get("player2"));
+				saveStatusDto.setPlayer3(playersMap.get("player3"));
+				saveStatusDto.setPlayer4(playersMap.get("player4"));
+				saveStatusDto.setPlayer5(playersMap.get("player5"));
+				saveStatusDto.setPlayer6(playersMap.get("player6"));
+				saveStatusDto.setPlayer7(playersMap.get("player7"));
+				playersMap.clear();
+			}
+			model.addAttribute("threethirteenDto", saveStatusDto);
 		}
-		
+		else {
+			log.info("ThreethirteenController - index: users - activeUsers");
+			//saveStatus.clear();
+			activeUsers = threethirteenService.getUserNames();
+			activeUsers.add(0,"");
+			threethirteenDto.setUsers(activeUsers);
+			if(playersMap.size() > 0) {
+				threethirteenDto.setPlayer1(playersMap.get("player1"));
+				threethirteenDto.setPlayer2(playersMap.get("player2"));
+				threethirteenDto.setPlayer3(playersMap.get("player3"));
+				threethirteenDto.setPlayer4(playersMap.get("player4"));
+				threethirteenDto.setPlayer5(playersMap.get("player5"));
+				threethirteenDto.setPlayer6(playersMap.get("player6"));
+				threethirteenDto.setPlayer7(playersMap.get("player7"));
+				playersMap.clear();
+			}
+			model.addAttribute("threethirteenDto", threethirteenDto);
+		}
+		saveStatus.clear();
 		startDates.put(playDate, now);
 		startStrings.put(playDate, playStartText);
 		
-		model.addAttribute("threethirteenDto", threethirteenDto);
+		//model.addAttribute("threethirteenDto", threethirteenDto);
+		model.addAttribute("activeUsers", activeUsers);
 		log.info("Three13Controller - index");
 		return "games/threethirteen/index";
 	}
@@ -74,10 +155,11 @@ public class ThreethirteenController {
 	@PostMapping("/save")
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
 		log.info("Three13Controller : saveNewThreethirteen - start");
+		saveStatus.add(threethirteenDto);
 		
 		if(!validate(threethirteenDto)) {
 			log.warn("Three13Controller : saveNewThreethirteen - players validation failure");
-			return "redirect:/games/threethirteen/index";
+			return "redirect:/games/threethirteen/issue";
 		}
 		
 		if(StringUtils.isEmpty(threethirteenDto.getDisplayDate())) {
@@ -101,6 +183,7 @@ public class ThreethirteenController {
 		String elapsedTime = dateComparer.getElapsedTime(startDateStr, endDateStr);
 		threethirteenDto.setElapsedTime(elapsedTime);
 		log.debug("elapsed time: " + elapsedTime);
+		
 		Threethirteen threethirteen = threethirteenService.process(threethirteenDto);
 		
 		if (null == threethirteen) {
@@ -154,11 +237,14 @@ public class ThreethirteenController {
 		return "games/threethirteen/save";
 	}
 	
+	//validates that the player is not null and with the exception
+	//of player1, all previous players are not null as well.
+	//there cannot be any empty player values between the first and the last.
 	private boolean validate(ThreethirteenDto threethirteenDto) {
 		Map<String, String> uniquePlayerNames = new HashMap<>(); 
 		String player1 = threethirteenDto.getPlayer1();
 		if(isNotNullOrEmpty(player1)) {
-			uniquePlayerNames.put(player1, player1);
+			uniquePlayerNames.put("player1", player1);
 		}
 		else {
 			log.info("Three13Controller : saveNewThreethirteen - Player1 is invalid");
@@ -168,7 +254,7 @@ public class ThreethirteenController {
 		String player2 = threethirteenDto.getPlayer2();
 		if(isNotNullOrEmpty(player2)) {
 			if (null == uniquePlayerNames.get(player2)) {
-				uniquePlayerNames.put(player2, player2);
+				uniquePlayerNames.put("player2", player2);
 			}
 			else {
 				return false;
@@ -179,7 +265,7 @@ public class ThreethirteenController {
 		if(isNotNullOrEmpty(player3)) {
 			if(isNotNullOrEmpty(player2)) {
 				if (null == uniquePlayerNames.get(player3)) {
-					uniquePlayerNames.put(player3, player3);
+					uniquePlayerNames.put("player3", player3);
 				}
 			}
 			else {
@@ -192,7 +278,7 @@ public class ThreethirteenController {
 		if(isNotNullOrEmpty(player4)) {
 			if(isNotNullOrEmpty(player3)) {
 				if (null == uniquePlayerNames.get(player4)) {
-					uniquePlayerNames.put(player4, player4);
+					uniquePlayerNames.put("player4", player4);
 				}
 			}
 			else {
@@ -205,7 +291,7 @@ public class ThreethirteenController {
 		if(isNotNullOrEmpty(player5)) {
 			if(isNotNullOrEmpty(player4)) {
 				if (null == uniquePlayerNames.get(player5)) {
-					uniquePlayerNames.put(player5, player5);
+					uniquePlayerNames.put("player5", player5);
 				}
 			}
 			else {
@@ -218,7 +304,7 @@ public class ThreethirteenController {
 		if(isNotNullOrEmpty(player6)) {
 			if(isNotNullOrEmpty(player5)) {
 				if (null == uniquePlayerNames.get(player6)) {
-					uniquePlayerNames.put(player6, player6);
+					uniquePlayerNames.put("player6", player6);
 				}
 			}
 			else {
@@ -231,7 +317,7 @@ public class ThreethirteenController {
 		if(isNotNullOrEmpty(player7)) {
 			if (isNotNullOrEmpty(player6)) {
 				if (null == uniquePlayerNames.get(player7)) {
-					uniquePlayerNames.put(player7, player7);
+					uniquePlayerNames.put("player7", player7);
 				}
 			}
 			else {
@@ -245,11 +331,24 @@ public class ThreethirteenController {
 	}
 	
 	private boolean isNotNullOrEmpty(String string) {
+		
+		//uniquePlayerNames
+		
+		
 		if (string != null && !string.isEmpty()) {
 			return true;
 		}
 		return false;
 	}
+	
+//	public List<ThreethirteenDto> getSaveStatus() {
+//		return saveStatus;
+//	}
+//
+//	public void setSaveStatus(List<ThreethirteenDto> saveStatus) {
+//		this.saveStatus = saveStatus;
+//	}
+	
 }
 	
 
