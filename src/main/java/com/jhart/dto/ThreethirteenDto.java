@@ -14,27 +14,35 @@ public class ThreethirteenDto {
 	private LocalDateTime endDate;
 	private String elapsedTime;
 	private String winner;
-	private String player1;
-	private String player2;
-	private String player3;
-	private String player4;
-	private String player5;
-	private String player6;
-	private String player7;
-	private Integer score1;
-	private Integer score2;
-	private Integer score3;
-	private Integer score4;
-	private Integer score5;
-	private Integer score6;
-	private Integer score7;
-	private Integer rv1;
-	private Integer rv2;
-	private Integer rv3;
-	private Integer rv4;
-	private Integer rv5;
-	private Integer rv6;
-	private Integer rv7;
+	private String player1 = null;
+	private String player2 = null;
+	private String player3 = null;
+	private String player4 = null;
+	private String player5 = null;
+	private String player6 = null;
+	private String player7 = null;
+	private Integer score1 = null;
+	private Integer score2 = null;
+	private Integer score3 = null;
+	private Integer score4 = null;
+	private Integer score5 = null;
+	private Integer score6 = null;
+	private Integer score7 = null;
+	private Integer rv1 = null;
+	private Integer rv2 = null;
+	private Integer rv3 = null;
+	private Integer rv4 = null;
+	private Integer rv5 = null;
+	private Integer rv6 = null;
+	private Integer rv7 = null;
+	
+	
+	//add dto the score for every round likeL
+	//rnd3Dealer1
+	//player1rnd3Score
+	//player2Rnd3Score
+	//+++
+	//allow to save a partial game and restore.
 	
 	public Integer getId() {
 		return id;
