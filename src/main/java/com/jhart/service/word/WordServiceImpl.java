@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.util.StringUtils;
 
 import com.jhart.domain.Word;
-import com.jhart.dto.CharDisplayDto;
 import com.jhart.dto.WordSupportDto;
 import com.jhart.repo.words.WordRepository;
 import com.jhart.util.word.CharDisplay;

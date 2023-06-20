@@ -17,16 +17,13 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	private static final String FIVE_SPACER = "-----";
 	private static final String SIX_SPACER = "------";
 	private static final String SEVEN_SPACER = "-------";
-	
 	private static final int PERCENT_LENGTH_6 = 6;
 	private static final int PERCENT_LENGTH_7 = 7;
-	
 	private static final String CHAR1 = " Char 1";
 	private static final String CHAR2 = " Char 2";
 	private static final String CHAR3 = " Char 3";
 	private static final String CHAR4 = " Char 4";
 	private static final String CHAR5 = " Char 5";
-	
 	private static final String LINE_SEP = "line.separator";
 
 	public String buildCharDisplay1(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
