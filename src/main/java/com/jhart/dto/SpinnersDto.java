@@ -1,6 +1,7 @@
 package com.jhart.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 public class SpinnersDto {
@@ -9,6 +10,7 @@ public class SpinnersDto {
 	private String displayDate;
 	private String playDate;
 	private LocalDateTime startDate;
+	private List<String> users;
 	private LocalDateTime endDate;
 	private String elapsedTime;
 	private String winner;
@@ -33,6 +35,7 @@ public class SpinnersDto {
 	private Integer rv5;
 	private Integer rv6;
 	private Integer rv7;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -201,6 +204,12 @@ public class SpinnersDto {
 	public void setRv7(Integer rv7) {
 		this.rv7 = rv7;
 	}
+	public List<String> getUsers() {
+		return users;
+	}
+	public void setUsers(List<String> users) {
+		this.users = users;
+	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(displayDate, elapsedTime, endDate, id, playDate, player1, player2, player3, player4,
@@ -226,8 +235,5 @@ public class SpinnersDto {
 				&& Objects.equals(score5, other.score5) && Objects.equals(score6, other.score6) 
 				&& Objects.equals(score7, other.score7);
 			}
-
-
-	
 	
 }

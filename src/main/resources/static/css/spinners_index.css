@@ -19,6 +19,11 @@ strong {
 	background-color: #eaeded;
 }
 
+select {
+	text-align-last:center;
+    padding-right: 29px;
+}
+
 .wrapper1 * {
 	display: flex;
 	justify-content: center;

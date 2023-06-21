@@ -2,7 +2,9 @@ package com.jhart.web.games.spinners;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -25,6 +27,11 @@ import com.jhart.util.DateComparer;
 public class SpinnersController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+	private Map<String, LocalDateTime> startDates = new HashMap<>();
+	private Map<String, String> startStrings = new HashMap<>();
+	private Map<String, String> playersMap = new HashMap<>();
+	private List<String> activeUsers = new ArrayList<>();
+	
 	private SpinnersService spinnersService;
 	private SpinnersTransformer spinnersTransformer;
 	
@@ -33,11 +40,6 @@ public class SpinnersController {
 		this.spinnersService = spinnersService;	
 		this.spinnersTransformer = spinnersTransformer;
 	}
-	
-	private HashMap<String, LocalDateTime> startDates = new HashMap<>();
-	private HashMap<String, String> startStrings = new HashMap<>();
-	private Map<String, String> playersMap = new HashMap<>();
-	
 	
 	@GetMapping("/index")
 	public String index(Model model) {
@@ -51,6 +53,9 @@ public class SpinnersController {
 		String displayDate = "Date: " + playDate;
 		spinnersDto.setPlayDate(playDate);
 		spinnersDto.setDisplayDate(displayDate);
+		activeUsers = spinnersService.getUserNames();
+		activeUsers.add(0,"");
+		spinnersDto.setUsers(activeUsers);
 		
 		if(playersMap.size() > 0) {
 			spinnersDto.setPlayer1(playersMap.get("player1"));
@@ -63,11 +68,12 @@ public class SpinnersController {
 			playersMap.clear();
 		}
 		
+		model.addAttribute("spinnersDto", spinnersDto);
 		startDates.put(playDate, now);
 		startStrings.put(playDate, playStartText);
+		model.addAttribute("activeUsers", activeUsers);
 		
-		model.addAttribute("spinnersDto", spinnersDto);
-		log.info("SpinnersController - index");
+		log.info("SpinnersController - index complete");
 		return "games/spinners/index";
 	}
 	 	

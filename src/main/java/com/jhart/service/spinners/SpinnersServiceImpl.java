@@ -3,6 +3,7 @@ package com.jhart.service.spinners;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,14 +15,24 @@ import com.jhart.dto.SpinnersDto;
 //import com.jhart.dto.ThreethirteenDto;
 import com.jhart.exception.threethirteen.ThreethirteenSaveGameException;
 import com.jhart.repo.spinners.SpinnersRepository;
+import com.jhart.repo.user.UserRepository;
 
 @Service
 public class SpinnersServiceImpl implements SpinnersService{
 	Logger log = LoggerFactory.getLogger(this.getClass());
 	private final SpinnersRepository spinnersRepository;
+	private final UserRepository userRepository;
 	
-	public SpinnersServiceImpl(SpinnersRepository spinnersRepository) {
+	public SpinnersServiceImpl(SpinnersRepository spinnersRepository,
+			UserRepository userRepository) {
 		this.spinnersRepository = spinnersRepository;
+		this.userRepository = userRepository;
+	}
+	
+	@Override
+	public List<String> getUserNames(){
+		List<String> distinctUserNames = userRepository.findDistinctUserNames();
+		return distinctUserNames;
 	}
 	
 	@Override

@@ -55,9 +55,7 @@ public class ThreethirteenController {
 		threethirteenDto.setPlayDate(playDate);
 		threethirteenDto.setDisplayDate(displayDate);
 		
-		log.info("ThreethirteenController - index: users - activeUsers");
 		activeUsers = threethirteenService.getUserNames();
-		log.debug("ThreethirteenController total activeUsers: " + activeUsers.size());
 		activeUsers.add(0,"");
 		threethirteenDto.setUsers(activeUsers);
 		
@@ -72,12 +70,11 @@ public class ThreethirteenController {
 			playersMap.clear();
 		}
 		model.addAttribute("threethirteenDto", threethirteenDto);
-		
 		startDates.put(playDate, now);
 		startStrings.put(playDate, playStartText);
-		
 		model.addAttribute("activeUsers", activeUsers);
-		log.info("Three13Controller - index");
+		
+		log.info("Three13Controller - index complete");
 		return "games/threethirteen/index";
 	}
 	 	

@@ -33,14 +33,6 @@
 						Show Player Analytics
 					</button>
 				</div>
-				<!-- <div class="grid-child-element">  -->
-				<!--  <div class="container" align='center' style='margin-top: -15px'>-->
-					<!-- <div style='align:right width:500px'> -->
-					<!-- <button type="submit" form="reset">Reset</button>-->
-					<!--<button id="show_button">Notes</button> -->
- 				<!-- </div> -->
-				
-				
 			</div>
 			<br />
 
@@ -75,73 +67,43 @@
 					<strong>Player Name:</strong> <input type="image" id="image_2"
 						width="35" height="40" src="../../images/313/gray.png" />
 				</div>
-				<div class="name" >
-					&nbsp;&nbsp;&nbsp;
-				</div>
+				
+				<div class="name" >&nbsp;&nbsp;&nbsp;</div>
 				
 				<!--  players start -->  
 				<div class="name">
-					<!--  save original code -->
-					<!--  <input id="player1" class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" 
-						onkeypress="return event.keyCode != 13;" th:field='*{player1}' />-->
-					
-					<!-- TODO: new code in progress, integrate distinct users into a select -->
-					<!-- <label for="player1">Select a Player</label> -->
-					<!-- https://www.baeldung.com/thymeleaf-select-option  -->
-					<!-- <select class="form-control" > -->
 					<select id="player1" name="player1">
 						<option th:each="user : ${activeUsers}"  th:value="${user}" th:text="${user}"></option> 
 					</select>
 				</div>
 				
 				<div class="name">
-					<!-- <input id="player2" class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" 
-						onkeypress="return event.keyCode != 13;" th:field='*{player2}' /> -->
 					<select id="player2" name="player2">
 						<option th:each="user : ${activeUsers}"  th:value="${user}" th:text="${user}"></option> 
 					</select>
 						
 				</div>
 				<div class="name">
-					<!-- <input id="player3" class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" 
-						onkeypress="return event.keyCode != 13;" th:field='*{player3}' /> -->
 					<select id="player3" name="player3">
 						<option th:each="user : ${activeUsers}"  th:value="${user}" th:text="${user}"></option> 
 					</select>
-					
 				</div>
 				<div class="name">
-					<!-- <input id="player4" class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" 
-						onkeypress="return event.keyCode != 13;" th:field='*{player4}' /> -->
 					<select id="player4" name="player4">
 						<option th:each="user : ${activeUsers}"  th:value="${user}" th:text="${user}"></option> 
 					</select>	
 				</div>
 				<div class="name">
-					<!-- <input id="player5" class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" 
-						onkeypress="return event.keyCode != 13;" th:field='*{player5}' /> -->
 					<select id="player5" name="player5">
 						<option th:each="user : ${activeUsers}"  th:value="${user}" th:text="${user}"></option> 
 					</select>	
-					
 				</div>
 				<div class="name">
-					<!-- <input id="player6" class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" 
-						onkeypress="return event.keyCode != 13;" th:field='*{player6}' /> -->
 					<select id="player6" name="player6">
 						<option th:each="user : ${activeUsers}"  th:value="${user}" th:text="${user}"></option> 
 					</select>	
 				</div>
 				<div class="name">
-					<!-- <input id="player7" class="user-name" type="text" maxlength="10" size="10"
-						onclick="hideElement()" 
-						onkeypress="return event.keyCode != 13;" th:field='*{player7}' /> -->
 					<select id="player7" name="player7">
 						<option th:each="user : ${activeUsers}"  th:value="${user}" th:text="${user}"></option> 
 					</select>	
