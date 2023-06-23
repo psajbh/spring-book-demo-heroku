@@ -189,3 +189,9 @@ const date = new Date();
       	  element = document.querySelector('.save');
     	  element.style.visibility = 'hidden';
    	  }
+   	  
+   	  function showAnalytics() {
+   	  	window.open('../../analytics/games/spinners/index', '_blank');
+   	  }
+
+   	  
