@@ -1,9 +1,9 @@
-var myAnalyticsTheethirteenTable = "";
+var myAnalyticsSpinnersTable = "";
 
 $(document).ready( function (){
 	console.log("executing ready function");
-	//alert("inside js/analytics/games/threethirteen.js");
-	myAnalyticsTheethirteenTable = $('#313AnalyticsTable')
+	//alert("inside js/analytics/games/spinners.js");
+	myAnalyticsSpinnersTable = $('#SpinnersAnalyticsTable')
 	.DataTable(
 		{
 			"autoWidth" : false,
@@ -12,7 +12,7 @@ $(document).ready( function (){
 			"language" : {"emptyTable" : "No results found."},
 			"deferRender" : true,
 	        "ajax" : {
-	        	 "url" : "/threeThirteenAnalyticsTable",
+	        	 "url" : "/spinnersAnalyticsTable",
 	             "type" : "GET"
 	         },
 	        "sDom": 'B<"H"lfr>t<"F"ip>',
@@ -30,6 +30,6 @@ $(document).ready( function (){
 			]
 			
 	 })
-	 <!-- console.log("player313Metrics: " + player313Metrics);-->
+	 <!-- console.log("player313Metrics: " + player313Metrics); -->
 });
 

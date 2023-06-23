@@ -1,4 +1,4 @@
-package com.jhart.web.analytics.threethirteen;
+package com.jhart.web.analytics.spinners;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,14 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-//@RequestMapping({"", "/", "/analytics/games/threethirteen"})
-public class ThreethirteenAnalyticsController {
+public class SpinnersAnalyticsController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	@GetMapping({"/analytics/games/threethirteen/index"})
+	@GetMapping({"/analytics/games/spinners/index"})
 	public String index(Model model) {
-		log.info("Three13AnalyticsController - index");
-		return "analytics/games/threethirteen/index";
+		log.info("SpinnersAnalyticsController - index");
+		return "analytics/games/spinners/index";
 	}
 	
 

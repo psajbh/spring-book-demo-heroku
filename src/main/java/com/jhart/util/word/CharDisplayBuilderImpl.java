@@ -27,6 +27,7 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	private static final String LINE_SEP = "line.separator";
 
 	public String buildCharDisplay1(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
+		log.debug("processing buildCharDisplay1");
 		StringBuilder sb = new StringBuilder();
 		List<CharDisplay> charDisplay1;
 		
@@ -62,6 +63,7 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	}
 
 	public String buildCharDisplay2(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
+		log.debug("processing buildCharDisplay2");
 		StringBuilder sb = new StringBuilder();
 		List<CharDisplay> charDisplay2; 
 		
@@ -97,6 +99,7 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	}
 
 	public String buildCharDisplay3(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
+		log.debug("processing buildCharDisplay3");
 		StringBuilder sb = new StringBuilder();
 		List<CharDisplay> charDisplay3;
 		
@@ -132,6 +135,7 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	}
 
 	public String buildCharDisplay4(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
+		log.debug("processing buildCharDisplay4");
 		StringBuilder sb = new StringBuilder();
 		List<CharDisplay> charDisplay4;
 		
@@ -167,6 +171,7 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	}
 
 	public String buildCharDisplay5(Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis) {
+		log.debug("processing buildCharDisplay5");
 		StringBuilder sb = new StringBuilder();
 		List<CharDisplay> charDisplay5;
 		
@@ -202,6 +207,7 @@ public class CharDisplayBuilderImpl implements CharDisplayBuilder {
 	}
 
 	private String formatCharTypePercent(String charType, String percent) {
+		log.debug("processing formatCharTypePercent");
 		if (percent.length() ==  PERCENT_LENGTH_6) {
 			if (charType.equals("m") || charType.equals("w")) {
 				charType = charType + FIVE_SPACER;
