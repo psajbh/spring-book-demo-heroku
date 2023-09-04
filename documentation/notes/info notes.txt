@@ -1,0 +1,25 @@
+completed testing of word helper code on August  2023
+
+
+	Wordplay (https://wordplay.com/)
+		on spring-book-demo-heroku word proof of capability
+	
+		Games Played:		1856
+		Wins:				1841
+		Win Ratio:			100%	Standard ratio:	83%
+``		
+		Losses:				15
+		Longest Win Streak:	739
+		Level:				100
+		
+		Average # Turns:		3.85	Standard:	4.42
+
+		Guess Distribution:
+		1::	1
+		2:	88
+		3:	606
+		4:	724
+``		5:	336
+		6:	86
+		
+seems to work just fine.

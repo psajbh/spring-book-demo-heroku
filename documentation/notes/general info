@@ -1,0 +1,7 @@
+open terminal
+cd ../..
+
+cd C:\dev\github-projects\spring-book-demo-heroku
+terminal as view in eclipse
+	mvn clean install
+	mvn spring-boot:run --debug

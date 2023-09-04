@@ -1,14 +1,7 @@
 package com.jhart.dto;
 
-//import lombok.Getter;
-//import lombok.NoArgsConstructor;
-//import lombok.Setter;
-//import lombok.ToString;
+import java.util.Objects;
 
-//@ToString
-//@Getter
-//@Setter
-//@NoArgsConstructor
 public class UserBackBean {
 
 	private Long id;
@@ -87,7 +80,33 @@ public class UserBackBean {
 	public void setLdapId(String ldapId) {
 		this.ldapId = ldapId;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "UserBackBean [id=" + id + ", name=" + name + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", phone=" + phone + ", email=" + email + ", hasTasks=" + hasTasks + ", ldapId=" + ldapId + "]";
+	}
+
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(email, firstName, hasTasks, id, lastName, ldapId, name, phone);
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		UserBackBean other = (UserBackBean) obj;
+//		return Objects.equals(email, other.email) && Objects.equals(firstName, other.firstName)
+//				&& Objects.equals(hasTasks, other.hasTasks) && Objects.equals(id, other.id)
+//				&& Objects.equals(lastName, other.lastName) && Objects.equals(ldapId, other.ldapId)
+//				&& Objects.equals(name, other.name) && Objects.equals(phone, other.phone);
+//	}
+//	
 
 	
 }

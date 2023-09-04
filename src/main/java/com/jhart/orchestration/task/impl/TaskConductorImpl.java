@@ -120,7 +120,7 @@ public class TaskConductorImpl extends TaskBaseConductor implements TaskConducto
 	}
 
 	@Override
-	public List<TodoBackBean> getAllTodoBackBeans() throws Exception{
+	public List<TodoBackBean> getAllTodoBackBeans(){
 		log.debug("getAllTodoBackBeans- start");
 		List<TodoBackBean> todoBackBeanAccumlator = new ArrayList<>();
 
@@ -134,7 +134,7 @@ public class TaskConductorImpl extends TaskBaseConductor implements TaskConducto
 		} 
 		catch (Exception e) {
 			log.error("getAllTasks - " + e.getMessage(), e);
-			throw new Exception(e.getMessage());
+			//throw new Exception(e.getMessage());
 		}
 		
 		log.debug("getAllTodoBackBeans- done");

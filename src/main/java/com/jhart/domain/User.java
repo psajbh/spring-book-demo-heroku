@@ -1,6 +1,7 @@
 package com.jhart.domain;
 
 import java.util.Date;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -91,17 +92,33 @@ public class User {
 		this.todos = todos;
 	}
 	
-//	public void setTodos(Set<Todo> todos) {
-//		this.todos.clear();
-//		this.todos.addAll(todos);
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", firstName=" + firstName + ", lastName=" + lastName + ", phone="
+				+ phone + ", email=" + email + ", dateCreated=" + dateCreated + ", ldapId=" + ldapId + ", todos="
+				+ todos + "]";
+	}
+	
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(dateCreated, email, firstName, id, lastName, ldapId, name, phone, todos);
+//	}
+//	
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		User other = (User) obj;
+//		return Objects.equals(dateCreated, other.dateCreated) && Objects.equals(email, other.email)
+//				&& Objects.equals(firstName, other.firstName) && Objects.equals(id, other.id)
+//				&& Objects.equals(lastName, other.lastName) && Objects.equals(ldapId, other.ldapId)
+//				&& Objects.equals(name, other.name) && Objects.equals(phone, other.phone)
+//				&& Objects.equals(todos, other.todos);
 //	}
 	
-//	public Set<Todo> getTodos(){
-//		return todos;
-//	}
-	
-	
-	
-
 	
 }

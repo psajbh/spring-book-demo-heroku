@@ -1,6 +1,7 @@
 package com.jhart.domain;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -89,7 +90,32 @@ public class Todo {
 	public void setCreateDate(Date createDate) {
 		this.createDate = createDate;
 	}
-    
+
+	@Override
+	public String toString() {
+		return "Todo [id=" + id + ", taskName=" + taskName + ", user=" + user + ", complete=" + complete
+				+ ", completeDate=" + completeDate + ", createDate=" + createDate + "]";
+	}
+
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(complete, completeDate, createDate, id, taskName, user);
+//	}
+//
+//	@Override
+//	public boolean equals(Object obj) {
+//		if (this == obj)
+//			return true;
+//		if (obj == null)
+//			return false;
+//		if (getClass() != obj.getClass())
+//			return false;
+//		Todo other = (Todo) obj;
+//		return complete == other.complete && Objects.equals(completeDate, other.completeDate)
+//				&& Objects.equals(createDate, other.createDate) && Objects.equals(id, other.id)
+//				&& Objects.equals(taskName, other.taskName) && Objects.equals(user, other.user);
+//	}
+//    
     
 }
 

@@ -11,5 +11,6 @@ public interface TaskConductor {
 	GenericResponseDto<List<TodoBackBean>> updateTodo(TodoBackBean todoBackBean);
 	Todo save(Todo todo);
 	void deleteTodo(Long id);
-	List<TodoBackBean> getAllTodoBackBeans() throws Exception;
+	//List<TodoBackBean> getAllTodoBackBeans() throws Exception;
+	List<TodoBackBean> getAllTodoBackBeans();
 }
