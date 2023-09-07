@@ -34,8 +34,7 @@ public class TodoServiceImpl implements TodoService {
 		return todoRepository.save(todo);
 	}
 
-	//@Transactional(readOnly = true)
-	@Transactional
+	@Transactional(readOnly = true)
 	@Override
 	public Iterable<Todo> listAll() {
 		log.debug("TodoServiceImpl- calling listAll");
