@@ -32,6 +32,12 @@ public class AddUserController {
 		return "users/newuser";
 	}
 	
+	@RequestMapping(value="/user/add",params="cancel",method=RequestMethod.POST)
+	public String cancelNewUser(User user) {
+		//log.debug("cancelNewTodo- redirect:/index");
+		return "redirect:/users/index";
+	}
+	
 	@RequestMapping(value="/user/add", params="submit", method=RequestMethod.POST)
 	public String saveNewUser(User user) {
 		log.debug("saveNewUser - start");
