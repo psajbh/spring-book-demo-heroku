@@ -1,7 +1,6 @@
 package com.jhart.domain;
 
 import java.util.Date;
-import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.CascadeType;

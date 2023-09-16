@@ -23,7 +23,7 @@ public class DeleteUserController {
 	@PostMapping("user/delete/{id}")
 	public String deleteUser(@PathVariable Long id) {
 		log.debug("deleteUser- start user id: " + id);
-		conductor.deleteUser(id);
+		String result = conductor.deleteUser(id);
 		log.debug("deleteUser- end");
 		return "users/index";
 	}

@@ -1,15 +1,12 @@
 package com.jhart.domain;
 
 import java.util.Date;
-import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-//import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-//import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
@@ -28,6 +25,7 @@ public class Todo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
+	
 	private String taskName;
 	
 	@ManyToOne

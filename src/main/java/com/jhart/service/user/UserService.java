@@ -10,6 +10,7 @@ public interface UserService {
 	void delete(User todo);
 	User findById(Long id);
 	User findByLdapId(String ldapId);
+	Iterable<String> getPlayerNameList();
 	
 
 }

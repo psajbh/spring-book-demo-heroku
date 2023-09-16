@@ -11,7 +11,7 @@ public interface UserConductor {
 	GenericResponseDto<List<UserBackBean>> updateUser(UserBackBean userBackBean);
 	List<User> getAllUsers();
 	User save(User user);
-	void deleteUser(Long id);
+	String deleteUser(Long id);
 	List<UserBackBean> getAllUserBackBeans();
 	
 

@@ -1,0 +1,247 @@
+
+
+drop view playerview_all;
+drop view playerview_distinct;
+drop view player_view;
+
+CREATE VIEW `playerview_all` AS 
+	select distinct `player` from spinners_metrics
+    union all
+    select distinct `player` from threethirteen_metrics;
+    
+CREATE VIEW `playerview_distinct` AS 
+	select distinct `player` from `playerview_all`;
+		
+CREATE VIEW `player_view` AS
+	select distinct uuid() as id , `player` from playerview_distinct order by player;
+    
+select * from playerview_all;
+select * from playerview_distinct;
+select * from player_view;
+ 
+
+================================
+
+CREATE VIEW `spinners_metrics` AS 
+select uuid() AS `uuid`,
+`spinners_stats`.`player` AS `player`,
+count(`spinners_stats`.`g_id`) AS `games`,
+sum(`spinners_stats`.`score`) AS `total_score`,
+format((sum(`spinners_stats`.`score`) / count(`spinners_stats`.`g_id`)),2) AS `avg_score`,
+sum(`spinners_stats`.`rv`) AS `rv`,
+sum(`spinners_stats`.`numResult`) AS `wins` 
+from `spinners_stats` 
+group by `spinners_stats`.`player` 
+order by `wins` desc,`rv` desc,`avg_score` desc;
+
+=========================
+
+CREATE VIEW `threethirteen_metrics` AS 
+	select uuid() AS `uuid`,
+	`threethirteen_stats`.`player` AS `player`,
+	count(`threethirteen_stats`.`g_id`) AS `games`,
+	sum(`threethirteen_stats`.`score`) AS `total_score`,
+	format((sum(`threethirteen_stats`.`score`) / count(`threethirteen_stats`.`g_id`)),2) AS `avg_score`,
+	sum(`threethirteen_stats`.`rv`) AS `rv`,sum(`threethirteen_stats`.`numResult`) AS `wins` 
+	from `threethirteen_stats` group by `threethirteen_stats`.`player` 
+	order by `wins` desc,`rv` desc,`avg_score` desc;
+
+
+=========================
+
+CREATE VIEW `spinners_stats` AS 
+	select concat(1,'_',`spinners`.`id`) AS `v_id`,
+	`spinners`.`id` AS `g_id`,
+	`spinners`.`play_date` AS `play_date`,
+	`spinners`.`player_1` AS `player`,
+	`spinners`.`score_1` AS `score`,
+	if((`spinners`.`rv_1` is null), 0, `spinners`.`rv_1`) AS `rv`,
+	if((`spinners`.`winner` = `spinners`.`player_1`),'W','L') AS `charResult`,
+	if((`spinners`.`winner` = `spinners`.`player_1`),1,0) AS `numResult` 
+	from 
+		`spinners` where ((`spinners`.`player_1` is not null) 
+		and (`spinners`.`player_1` <> ' '))
+	 
+	union all
+	 
+	select concat(2,'_',`spinners`.`id`) AS `v_id`,
+	`spinners`.`id` AS `g_id`,
+	`spinners`.`play_date` AS `play_date`,
+	`spinners`.`player_2` AS `player`,
+	`spinners`.`score_2` AS `score`,
+    if((`spinners`.`rv_2` is null), 0, `spinners`.`rv_2`) AS `rv`,
+	if((`spinners`.`winner` = `spinners`.`player_2`),'W','L') AS `charResult`,
+	if((`spinners`.`winner` = `spinners`.`player_2`),1,0) AS `numResult` 
+	from 
+		`spinners` where ((`spinners`.`player_2` is not null) 
+		and (`spinners`.`player_2` <> ' ')) 
+    
+	union all
+	 
+	select concat(3,'_',`spinners`.`id`) AS `v_id`,
+	`spinners`.`id` AS `g_id`,
+	`spinners`.`play_date` AS `play_date`,
+	`spinners`.`player_3` AS `player`,
+	`spinners`.`score_3` AS `score`,
+	if((`spinners`.`rv_3` is null), 0, `spinners`.`rv_3`) AS `rv`,
+	if((`spinners`.`winner` = `spinners`.`player_3`),'W','L') AS `charResult`,
+	if((`spinners`.`winner` = `spinners`.`player_3`),1,0) AS `numResult` 
+	from 
+		`spinners` where ((`spinners`.`player_3` is not null) 
+		and (`spinners`.`player_3` <> ' ')) 
+    
+	union all
+	 
+	select concat(4,'_',`spinners`.`id`) AS `v_id`,
+	`spinners`.`id` AS `g_id`,
+	`spinners`.`play_date` AS `play_date`,
+	`spinners`.`player_4` AS `player`,
+	`spinners`.`score_4` AS `score`,
+	if((`spinners`.`rv_4` is null), 0, `spinners`.`rv_4`) AS `rv`,
+	if((`spinners`.`winner` = `spinners`.`player_4`),'W','L') AS `charResult`,
+	if((`spinners`.`winner` = `spinners`.`player_4`),1,0) AS `numResult` 
+	from 
+		`spinners` where ((`spinners`.`player_4` is not null) 
+		and (`spinners`.`player_4` <> ' ')) 
+    
+	union all
+	 
+	select concat(5,'_',`spinners`.`id`) AS `v_id`,
+	`spinners`.`id` AS `g_id`,
+	`spinners`.`play_date` AS `play_date`,
+	`spinners`.`player_5` AS `player`,
+	`spinners`.`score_5` AS `score`,
+   	if((`spinners`.`rv_5` is null), 0, `spinners`.`rv_5`) AS `rv`,
+	if((`spinners`.`winner` = `spinners`.`player_5`),'W','L') AS `charResult`,
+	if((`spinners`.`winner` = `spinners`.`player_5`),1,0) AS `numResult` 
+	from 
+		`spinners` where ((`spinners`.`player_5` is not null) 
+		and (`spinners`.`player_5` <> ' ')) 
+	
+    union all
+     
+	select concat(6,'_',`spinners`.`id`) AS `v_id`,
+	`spinners`.`id` AS `g_id`,`spinners`.`play_date` AS `play_date`,
+	`spinners`.`player_6` AS `player`,
+	`spinners`.`score_6` AS `score`,
+   	if((`spinners`.`rv_6` is null), 0, `spinners`.`rv_6`) AS `rv`,
+	if((`spinners`.`winner` = `spinners`.`player_6`),'W','L') AS `charResult`,
+	if((`spinners`.`winner` = `spinners`.`player_6`),1,0) AS `numResult` 
+	from 
+		`spinners` where ((`spinners`.`player_6` is not null) 
+		and (`spinners`.`player_6` <> ' ')) 
+    
+	union all
+	 
+	select concat(7,'_',`spinners`.`id`) AS `v_id`,
+	`spinners`.`id` AS `g_id`,
+	`spinners`.`play_date` AS `play_date`,
+	`spinners`.`player_7` AS `player`,
+	`spinners`.`score_7` AS `score`,
+   	if((`spinners`.`rv_7` is null), 0, `spinners`.`rv_7`) AS `rv`,
+	if((`spinners`.`winner` = `spinners`.`player_7`),'W','L') AS `charResult`,
+	if((`spinners`.`winner` = `spinners`.`player_7`),1,0) AS `numResult` 
+	from 
+		`spinners` where ((`spinners`.`player_7` is not null) 
+		and (`spinners`.`player_7` <> ' '))
+	order by `g_id`,`play_date`,`v_id`;
+	
+=========================
+
+CREATE VIEW `threethirteen_stats` AS 
+	select concat(1,'_',`threethirteen`.`id`) AS `v_id`,
+	`threethirteen`.`id` AS `g_id`,
+	`threethirteen`.`play_date` AS `play_date`,
+	`threethirteen`.`player_1` AS `player`,
+	`threethirteen`.`score_1` AS `score`,
+	`threethirteen`.`rv_1` AS `rv`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_1`),'W','L') AS `charResult`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_1`),1,0) AS `numResult` 
+	from `threethirteen` 
+	where ((`threethirteen`.`player_1` is not null) 
+		and (`threethirteen`.`player_1` <> ' ')) 
+	
+	union all 
+	
+	select concat(2,'_',`threethirteen`.`id`) AS `v_id`,
+	`threethirteen`.`id` AS `g_id`,
+	`threethirteen`.`play_date` AS `play_date`,
+	`threethirteen`.`player_2` AS `player_2`,
+	`threethirteen`.`score_2` AS `score_2`,
+	`threethirteen`.`rv_2` AS `rv_2`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_2`),'W','L') AS `charResult`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_2`),1,0) AS `numResult` 
+	from `threethirteen` 
+	where ((`threethirteen`.`player_2` is not null) 
+	and (`threethirteen`.`player_2` <> ' ')) 
+	
+	union all 
+	
+	select concat(3,'_',`threethirteen`.`id`) AS `v_id`,
+	`threethirteen`.`id` AS `g_id`,
+	`threethirteen`.`play_date` AS `play_date`,
+	`threethirteen`.`player_3` AS `player_3`,
+	`threethirteen`.`score_3` AS `score_3`,
+	`threethirteen`.`rv_3` AS `rv_3`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_3`),'W','L') AS `charResult`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_3`),1,0) AS `numResult` 
+	from `threethirteen` 
+	where ((`threethirteen`.`player_3` is not null) 
+	and (`threethirteen`.`player_3` <> ' ')) 
+	
+	union all 
+	
+	select concat(4,'_',`threethirteen`.`id`) AS `v_id`,
+	`threethirteen`.`id` AS `g_id`,
+	`threethirteen`.`play_date` AS `play_date`,
+	`threethirteen`.`player_4` AS `player_4`,
+	`threethirteen`.`score_4` AS `score_4`,
+	`threethirteen`.`rv_4` AS `rv_4`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_4`),'W','L') AS `charResult`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_4`),1,0) AS `numResult` 
+	from `threethirteen` 
+	where ((`threethirteen`.`player_4` is not null) 
+	and (`threethirteen`.`player_4` <> ' ')) 
+	
+	union all 
+	
+	select concat(5,'_',`threethirteen`.`id`) AS `v_id`,
+	`threethirteen`.`id` AS `g_id`,
+	`threethirteen`.`play_date` AS `play_date`,
+	`threethirteen`.`player_5` AS `player_5`,
+	`threethirteen`.`score_5` AS `score_5`,
+	`threethirteen`.`rv_5` AS `rv_5`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_5`),'W','L') AS `charResult`
+	,if((`threethirteen`.`winner` = `threethirteen`.`player_5`),1,0) AS `numResult` 
+	from `threethirteen` where ((`threethirteen`.`player_5` is not null) 
+	and (`threethirteen`.`player_5` <> ' ')) 
+	
+	union all 
+	
+	select concat(6,'_',`threethirteen`.`id`) AS `v_id`,
+	`threethirteen`.`id` AS `g_id`,
+	`threethirteen`.`play_date` AS `play_date`,
+	`threethirteen`.`player_6` AS `player_6`,
+	`threethirteen`.`score_6` AS `score_6`,
+	`threethirteen`.`rv_6` AS `rv_6`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_6`),'W','L') AS `charResult`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_6`),1,0) AS `numResult` 
+	from `threethirteen` where ((`threethirteen`.`player_6` is not null) 
+	and (`threethirteen`.`player_6` <> ' ')) 
+	
+	union all 
+	
+	select concat(7,'_',`threethirteen`.`id`) AS `v_id`,
+	`threethirteen`.`id` AS `g_id`,
+	`threethirteen`.`play_date` AS `play_date`,
+	`threethirteen`.`player_7` AS `player_7`,
+	`threethirteen`.`score_7` AS `score_7`,
+	`threethirteen`.`rv_7` AS `rv_7`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_7`),'W','L') AS `charResult`,
+	if((`threethirteen`.`winner` = `threethirteen`.`player_7`),1,0) AS `numResult` 
+	from `threethirteen` where ((`threethirteen`.`player_7` is not null) 
+		and (`threethirteen`.`player_7` <> ' ')) 
+	order by `g_id`,`play_date`,`v_id`;
+
+
+	
