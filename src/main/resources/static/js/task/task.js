@@ -8,6 +8,7 @@ $(document).ready( function (){
 	.DataTable(
 		{
 			"autoWidth" : false,
+			/*"autoWidth" : true,*/
 			"serverSide" : false,
 			"stateSave" : true,
 			"language" : {"emptyTable" : "No results found."},
@@ -22,12 +23,12 @@ $(document).ready( function (){
 			"order": [[ 0, "asc" ]],
 			"columns": [
 			      //{ "data": "id", "visible" : false, "searchable" : true, "sortable" : true},
-		          { "data": "taskName", "visible" : true, "searchable" : true, "sortable" : true, "width" : "20%"},
-				  { "data": "user.name", "visible" : true, "searchable" : true, "sortable" : true, "width" : "20%", "className": "text-center"},
-				  { "data": "createDate", "visible" : true, "searchable" : true, "sortable" : true , "width" : "15%", "className": "text-center"},
+		          { "data": "taskName", "visible" : true, "searchable" : true, "sortable" : true, "width" : "40%"},
+				  { "data": "user.name", "visible" : true, "searchable" : true, "sortable" : true, "width" : "10%", "className": "text-center"},
+				  { "data": "createDate", "visible" : true, "searchable" : true, "sortable" : true , "width" : "10%", "className": "text-center"},
 				  { "data": "complete", "visible" : true, "searchable" : true, "sortable" : true, "width" : "10%", "className": "text-center"},
-				  { "data": "completeDate", "visible" : true, "searchable" : true, "sortable" : true, "width" : "15%", "className": "text-center"},
-				  { "title": "Actions", "data" : "null", "name" : "actions", "visible" : true, "searchable" : false, "sortable" : false, "width" : "15%",
+				  { "data": "completeDate", "visible" : true, "searchable" : true, "sortable" : true, "width" : "10%", "className": "text-center"},
+				  { "title": "Actions", "data" : "null", "name" : "actions", "visible" : true, "searchable" : false, "sortable" : false, "width" : "20%",
 					  "render" : function(data, type, full, meta) {
 						  return "<div align='center'>" +
 						  			"<span>" +

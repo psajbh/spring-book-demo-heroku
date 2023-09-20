@@ -11,9 +11,10 @@
 
 <body>
 	<div th:insert="navbar :: navbar">  </div>
-	<div class="container-fluid" style="margin-top: 120px">
+	<div class="container-fluid" style="margin-top: 80px">
 		<div id="indexRow" class="row">
 			<div class="col-md-8 col-md-offset-2">
+			<!--<div class="col-md-8">--> 
 				<div class="panel panel-primary">
 
 					<div class="panel-heading">
@@ -21,6 +22,7 @@
 					</div>
 					<div class="panel-body">
 						<!--  display class provides shade to rows -->
+						<!--style="width:150%"-->
 						<table id="taskTable" class="table table-hover display compact cell-border stripe" border="2">
 							<thead class="thead-inverse">
 								<tr>
@@ -30,7 +32,7 @@
 									<th style="text-align: center">Date Created</th>
 									<th style="text-align: center">Completed</th>
 									<th style="text-align: center">Date Completed</th>
-									<th colspan="2" style="text-align: center">Actions</th>
+									<th style="text-align: center">Actions</th>
 								</tr>
 							</thead>
 						</table>

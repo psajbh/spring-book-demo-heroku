@@ -2,7 +2,6 @@ var myUserTable = "";
 
 $(document).ready( function (){
 	console.log("executing ready function");
-	//alert("inside js/user/user");
 	myUserTable = $('#userTable')
 	.DataTable(
 		{
@@ -21,11 +20,11 @@ $(document).ready( function (){
 			"order": [[ 0, "asc" ]],
 			"columns": [
 			      //{ "data": "id", "visible" : false, "searchable" : true, "sortable" : true},
-		          { "data": "name", "visible" : true, "searchable" : true, "sortable" : true, "width" : "20%" },
-				  { "data": "fullName", "visible" : true, "searchable" : true, "sortable" : true, "width" : "20%", "className": "text-center"},
+		          { "data": "name", "visible" : true, "searchable" : true, "sortable" : true, "width" : "15%" },
+				  { "data": "fullName", "visible" : true, "searchable" : true, "sortable" : true, "width" : "35%", "className": "text-center"},
 				  { "data": "phone", "visible" : true, "searchable" : true, "sortable" : true, "width" : "10%", "className": "text-center"},
-				  { "data": "email", "visible" : true, "searchable" : true, "sortable" : true, "width" : "15%", "className": "text-center" },
-				  { "title": "Actions", "data" : "null", "name" : "actions", "visible" : true, "searchable" : false, "sortable" : false, "width" : "15%",
+				  { "data": "email", "visible" : true, "searchable" : true, "sortable" : true, "width" : "20%", "className": "text-center" },
+				  { "title": "Actions", "data" : "null", "name" : "actions", "visible" : true, "searchable" : false, "sortable" : false, "width" : "20%",
 					  "render" : function(data, type, full, meta) {
 							  return "<div align='center'>" +
 						  			"<span>" +
