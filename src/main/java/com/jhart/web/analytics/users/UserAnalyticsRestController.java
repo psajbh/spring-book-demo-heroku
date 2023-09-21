@@ -25,7 +25,7 @@ public class UserAnalyticsRestController {
 	
 	@GetMapping({"userDataTableAnalytics"})
 	public ResponseEntity<Object> getAllUsers(){
-		log.debug("getAllUsers- start");
+		log.debug("UserAnalyticsRestController - getAllUsers- start");
 		boolean success = false;
 		List<UserBackBean> userBackBeans = conductor.getAllUserBackBeans();
 		if (null != userBackBeans) {

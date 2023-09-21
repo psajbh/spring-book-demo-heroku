@@ -12,7 +12,7 @@ public class UserAnalyticsController {
 
 	@GetMapping({"/analytics/users/index"})
 	public String getUsers() {
-		log.debug("getUsers - start");
+		log.debug("UserAnalyticsController - getUsers - start");
 		return "analytics/users/index";
 	}
 
