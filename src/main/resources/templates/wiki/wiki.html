@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Wiki</title>
+	</th:block>
+	
+	<link rel="stylesheet" href="/css/contacts.css">
+</head>
+
+<body>
+	<div th:insert="navbar :: navbar">  </div>
+
+	<div class="container-fluid" style="margin-top: 35px">
+		<div id="indexRow" class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h3>Wiki Categories</h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" th:replace="fragments/footer :: footer">
+		<p>footer</p>
+	</div>
+</body>
+
+</html>
