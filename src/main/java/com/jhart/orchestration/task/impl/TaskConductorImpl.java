@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 
 import com.jhart.domain.Todo;
 import com.jhart.domain.User;
@@ -80,7 +80,7 @@ public class TaskConductorImpl extends TaskBaseConductor implements TaskConducto
 			}
 
 			// do not allow saving task as complete if there is no user.
-			if (StringUtils.isEmpty(todoBackBean.getUser().getName())) {
+			if (ObjectUtils.isEmpty(todoBackBean.getUser().getName())) {
 				todo.setCompleteDate(null);
 				todo.setComplete(false);
 			} else {

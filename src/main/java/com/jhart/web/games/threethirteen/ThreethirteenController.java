@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -82,7 +82,7 @@ public class ThreethirteenController {
 	public String saveNewThreethirteen(Model model, ThreethirteenDto threethirteenDto) {
 		log.info("Three13Controller : saveNewThreethirteen - start");
 		
-		if(StringUtils.isEmpty(threethirteenDto.getDisplayDate())) {
+		if(ObjectUtils.isEmpty(threethirteenDto.getDisplayDate())) {
 			log.warn("Three12Controller : saveNewThreethirteen - failed to process, no playDate");
 			return "redirect:/games/threethirteen/index";
 		}

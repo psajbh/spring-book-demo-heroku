@@ -27,7 +27,7 @@ public class StringComparerTest {
 		slist.add(sd3);
 		slist.add(sd4);
 		
-		List<String> newList; //= new ArrayList<>();
+		//List<String> newList; //= new ArrayList<>();
 		Collections.sort(slist);
 		System.out.println(slist);
 		System.out.println();

@@ -2,7 +2,7 @@ package com.jhart.web.modules.task;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,7 +38,7 @@ public class AddTaskController {
 	@RequestMapping(value="/todo/add", params="submit", method=RequestMethod.POST)
 	public String saveNewTodo(Todo todo) {
 		
-		if (StringUtils.isEmpty(todo.getTaskName()) || StringUtils.isEmpty(todo.getUser())){
+		if (ObjectUtils.isEmpty(todo.getTaskName()) || ObjectUtils.isEmpty(todo.getUser())){
 			//log.warn("saveNewTodo- cannot persist task without a task name or a task owner (user)");
 			return "redirect:/task/index";
 		}

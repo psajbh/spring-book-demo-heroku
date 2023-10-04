@@ -1,18 +1,5 @@
 package com.jhart.dto;
 
-import java.util.Objects;
-
-//import java.util.Date;
-
-//import lombok.Getter;
-//import lombok.NoArgsConstructor;
-//import lombok.Setter;
-//import lombok.ToString;
-
-//@ToString
-//@Getter
-//@Setter
-//@NoArgsConstructor
 public class TodoBackBean {
 	
 	private Long id;
@@ -75,25 +62,5 @@ public class TodoBackBean {
 		return "TodoBackBean [id=" + id + ", taskName=" + taskName + ", user=" + user + ", createDate=" + createDate
 				+ ", complete=" + complete + ", completeDate=" + completeDate + "]";
 	}
-
-//	@Override
-//	public int hashCode() {
-//		return Objects.hash(complete, completeDate, createDate, id, taskName, user);
-//	}
-//
-//	@Override
-//	public boolean equals(Object obj) {
-//		if (this == obj)
-//			return true;
-//		if (obj == null)
-//			return false;
-//		if (getClass() != obj.getClass())
-//			return false;
-//		TodoBackBean other = (TodoBackBean) obj;
-//		return Objects.equals(complete, other.complete) && Objects.equals(completeDate, other.completeDate)
-//				&& Objects.equals(createDate, other.createDate) && Objects.equals(id, other.id)
-//				&& Objects.equals(taskName, other.taskName) && Objects.equals(user, other.user);
-//	}
-//	
 	
 }

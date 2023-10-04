@@ -12,8 +12,6 @@ import com.jhart.orchestration.user.UserConductor;
 @Controller
 public class DeleteUserController {
 	Logger log = LoggerFactory.getLogger(this.getClass());
-	//UserService userService;
-	//TodoService todoService;
 	private UserConductor conductor;
 	
 	public DeleteUserController(UserConductor conductor) {
@@ -24,7 +22,7 @@ public class DeleteUserController {
 	public String deleteUser(@PathVariable Long id) {
 		log.debug("deleteUser- start user id: " + id);
 		String result = conductor.deleteUser(id);
-		log.debug("deleteUser- end");
+		log.debug("deleteUser - end: " + result);
 		return "users/index";
 	}
 

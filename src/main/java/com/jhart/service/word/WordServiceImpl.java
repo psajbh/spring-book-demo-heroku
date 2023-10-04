@@ -36,9 +36,9 @@ public class WordServiceImpl implements WordService {
 	public Map<String, String> process(WordSupportDto wordSupportDto) {
 		log.info("WordServiceImpl - process - start");
 		List<Word> originalWords = setOriginalWords(wordSupportDto);
-
+	
 		List<Word> availablewords = processUnavailable(wordSupportDto.getNoWordName(), originalWords);
-
+	
 		if (null != availablewords && availablewords.size() > 0) {
 			availablewords = processChar1Unavailable(wordSupportDto, availablewords);
 			availablewords = processChar2Unavailable(wordSupportDto, availablewords);
@@ -46,10 +46,10 @@ public class WordServiceImpl implements WordService {
 			availablewords = processChar4Unavailable(wordSupportDto, availablewords);
 			availablewords = processChar5Unavailable(wordSupportDto, availablewords);
 		}
-
+	
 		StringBuilder sb = new StringBuilder();
 		Integer wordCount = 0;
-
+	
 		for (int i = 0; i < availablewords.size(); i++) {
 			Word w = availablewords.get(i);
 			if (w.isUnavailable()) {
@@ -59,19 +59,19 @@ public class WordServiceImpl implements WordService {
 				wordCount++;
 			}
 		}
-
+	
 		String wordNames = "";
 		if (sb.toString().length() > 6) {
 			wordNames = StringUtils.substring(sb.toString(), 0, sb.toString().length() - 2);
 		}
-
+	
 		Map<String, String> response = new HashMap<>();
 		response.put("wordNames", wordNames);
 		log.info("WordServiceImpl - process - wordNames - " + wordNames.toString());
-
+	
 		response.put("wordCount", wordCount.toString());
 		log.info("WordServiceImpl - process - wordCount - " + wordCount.toString());
-
+	
 		Map<Integer, ArrayList<CharDisplay>> charDisplayAnalysis = wordNamesAnalysis(wordNames, wordCount);
 		
 		String charAnalysis1 = charDisplayBuilder.buildCharDisplay1(charDisplayAnalysis);
@@ -95,7 +95,7 @@ public class WordServiceImpl implements WordService {
 		response.put("charAnalysis5", charAnalysis5);
 		 
 		log.info("WordServiceImpl - process - complete");
-
+	
 		return response;
 	}
 

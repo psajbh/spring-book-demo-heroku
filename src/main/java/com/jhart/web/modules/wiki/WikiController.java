@@ -7,13 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class WikiController {
+	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	
-	Logger log = LoggerFactory.getLogger(this.getClass());
-	
-	@GetMapping({"/wiki/wiki"})
+	@GetMapping({"/wiki/index"})
 	public String wiki() {
 		log.debug("wiki- start");
-		return "wiki/wiki";
+		return "wiki/index";
 	}
 
 }

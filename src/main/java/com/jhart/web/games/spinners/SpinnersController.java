@@ -11,7 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
+import org.springframework.util.ObjectUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -86,7 +86,7 @@ public class SpinnersController {
 //			return "redirect:/spinners/index";
 //		}
 		
-		if(StringUtils.isEmpty(spinnersDto.getDisplayDate())) {
+		if(ObjectUtils.isEmpty(spinnersDto.getDisplayDate())) {
 			log.warn("SpinnersController : saveSpinners - failed to process, no playDate");
 			return "redirect:/spinners/index";
 		}
