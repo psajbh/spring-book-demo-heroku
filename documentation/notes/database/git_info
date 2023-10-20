@@ -1,0 +1,25 @@
+-- developer must manually insert this value into heroku_ee18cb5543a28ce.git_info
+-- the table only holds one record, the most recent commit. 
+
+SELECT * FROM heroku_ee18cb5543a28ce.git_info;
+
+-- delete the previous git_info record as shown below.
+delete from git_info where id = 24;
+
+-- insert sql like this.  Get info from Git like:
+	-- navigate to spring-book-demo-heroku and enter git log as show below.
+	John@DESKTOP-RSS2Q3C MINGW64 /c/dev/github-projects/spring-book-demo-heroku (main)
+	$ git log --name-only
+
+
+insert into `git_info` (`branch`, `build_host`, `build_version`, `commit_time`, 
+		`commit_id_short`, `commit_id_long`, `commit_msg_short`, `remote_origin_url`) 
+	values ('main',
+		'calm-spire-78454',
+		'0.0.1-SNAPSHOT',
+		'Fri Oct 20 16:16:25 2023 -0400', 
+		'e8d40d4', 
+		'e8d40d4746d6c1d07fcb632a91bb12dc052d843f',
+		'asus wiki_upgrade resource remake completed minor changes to word helper and navbar',
+		'git@github.com:psajbh/spring-book-demo-heroku.git');
+            
