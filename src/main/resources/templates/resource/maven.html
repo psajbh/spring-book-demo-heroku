@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Maven Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 600px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Maven Resources</h4>
+				<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://dzone.com/articles/10-effective-tips-on-using-maven" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>10 Effective Tips on Using Maven</a></li>
+					<li><a href="https://dzone.com/articles/simple-ways-to-add-and-work-with-a-jar-file-in-you?edition=334792&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-10-19" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>Adding and Working With JAR Files in Your Local Maven Setup</a></li>
+					<li><a href="https://dzone.com/articles/creating-maven-artifacts-from-a-jar-file?edition=218171&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-28" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>Creating Maven Artifacts From a jar File </a></li>
+					<li><a href="https://dzone.com/articles/maven-multi-module-project-with-versioning?edition=493291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-01" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>Dependency Management and Versioning With a Maven Multi-Module Project </a></li>
+					<li><a href="https://dzone.com/articles/how-to-convert-maven-to-gradle-and-vice-versa?edition=257683&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-19" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>How to Convert Maven to Gradle and Vice Versa</a></li>
+					<li><a href="https://dzone.com/articles/integration-tests-with-maven?edition=347152&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-03" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>Integration Tests With Maven</a></li>
+					<li><a href="https://dzone.com/articles/maven-git-commit-id-plugin" 
+						target="_blank" rel="noopener noreferrer"><small>006: </small>Introducing the Maven git commit id Plugin</a></li>
+					<li><a href="https://www.javacodegeeks.com/2010/11/jaxws-with-spring-and-maven-tutorial.html" 
+						target="_blank" rel="noopener noreferrer"><small>007: </small>JAX–WS with Spring and Maven Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/manually-installing-a-maven-artifact-in-your-local" 
+						target="_blank" rel="noopener noreferrer"><small>008: </small>Manually Installing a Maven Artifact in Your Local Repository</a></li>
+					<li><a href="https://dzone.com/articles/maven-demystified?edition=202665&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-25" 
+						target="_blank" rel="noopener noreferrer"><small>009: </small>Maven Demystified</a></li>
+					<li><a href="https://mvnrepository.com/" 
+						target="_blank" rel="noopener noreferrer"><small>010: </small>Maven Repository</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/maven/maven-settings-xml-example/#server" 
+						target="_blank" rel="noopener noreferrer"><small>011: </small>Maven Settings.xml example</a></li>
+					<li><a href="https://advancedweb.hu/two-ways-of-skipping-tests-in-maven/" 
+						target="_blank" rel="noopener noreferrer"><small>012: </small>Two ways of skipping tests in Maven<a></li>
+					<li><a href="https://mkyong.com/maven/where-is-maven-local-repository/" 
+						target="_blank" rel="noopener noreferrer"><small>013: </small>Where is Maven local repository?</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>		
+</body>
+</html>

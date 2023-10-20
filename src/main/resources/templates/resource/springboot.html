@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Spring Boot Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 700px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Spring Boot Resources</h4>
+				<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://www.javacodegeeks.com/2019/09/springbootconfiguration-annotation-spring-boot.html" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>@SpringBootConfiguraion Annotation in Spring Boot</a></li>
+					<li><a href="https://www.javacodegeeks.com/2016/10/5-practical-tips-building-spring-boot-api.html" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>5 Practical Tips for Building Your Spring Boot API</a></li>
+					<li><a href="https://dzone.com/articles/7-reasons-i-do-not-use-jax-rs-in-spring-boot-web-a?edition=351092&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-08" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>7 Reasons I Do Not Use JAX-RS in Spring Boot Web Applications</a></li>
+					<li><a href="https://dzone.com/articles/7-things-to-know-getting-started-with-spring-boot?edition=351092&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-08" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>7 Things to Know for Getting Started With Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-a-closer-look?edition=408209&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-10-23" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>A Closer Look at Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/adding-quartz-to-spring-boot?edition=501291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-16" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>Adding Quartz to Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/adding-swagger-to-spring-boot?edition=506291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-19" 
+						target="_blank" rel="noopener noreferrer"><small>006: </small>Adding Swagger to Spring Boot</a></li>
+					<li><a href="https://www.javacodegeeks.com/2020/01/advanced-profile-management-in-spring-boot.html" 
+						target="_blank" rel="noopener noreferrer"><small>007: </small>Advanced profile management in Spring Boot</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/05/angular-spring-boot-build-crud-app-today.html" 
+						target="_blank" rel="noopener noreferrer"><small>008: </small>Angular 8 + Spring Boot 2.2: Build a CRUD App Today!</a></li>
+					<li><a href="https://dzone.com/articles/beginners-guide-to-spring-expression-language-with?edition=525317&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-10-10" 
+						target="_blank" rel="noopener noreferrer"><small>009: </small>Begginer's Guide to Spring Expression Language With Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/binding-properties-from-external-sources-in-spring-boot?edition=351104&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-09" 
+						target="_blank" rel="noopener noreferrer"><small>010: </small>Binding Properties From External Sources in Spring Boot Apps</a></li>
+					<li><a href="https://dzone.com/articles/bootiful-development-with-spring-boot-and-angular?edition=367225&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-03-28" 
+						target="_blank" rel="noopener noreferrer"><small>011: </small>Bootiful Development With Spring Boot and Angular</a></li>
+					<li><a href="https://howtodoinjava.com/spring-boot/spring-boot-tutorial-with-hello-world-example/" 
+						target="_blank" rel="noopener noreferrer"><small>012: </small>Bootstrapping a REST API with Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/build-a-basic-crud-app-with-angular-50-and-spring?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202018-01-26" 
+						target="_blank" rel="noopener noreferrer"><small>013: </small>Build a Basic CRUD App With Angular 5.0 and Spring Boot 2.0</a></li>
+					<li><a href="https://dzone.com/articles/build-a-secure-app-using-spring-boot-and-websocket?edition=554309&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-12-24" 
+						target="_blank" rel="noopener noreferrer"><small>014: </small>Build a Secure App Using Spring Boot and WebSockets</a></li>
+					<li><a href="https://dzone.com/articles/build-a-simple-crud-app-using-spring-boot-mysql-an?edition=521353&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202019-10-02" 
+						target="_blank" rel="noopener noreferrer"><small>015: </small>Build a Simple CRUD App Using Spring Boot, MySQL, and JPA/Hibernate</a></li>
+					<li><a href="https://dzone.com/articles/build-an-app-with-spring-boot-and-vuejs?edition=510292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-31" 
+						target="_blank" rel="noopener noreferrer"><small>016: </small>Build a Spring Boot API Using Spring Data JPA and Hibernate</a></li>
+					<li><a href="https://www.javacodegeeks.com/2017/10/building-spring-boot-restful-service-spring-boot-actuator.html" 
+						target="_blank" rel="noopener noreferrer"><small>017: </small>Building Spring Boot RESTful Service + Spring Boot Actuator</a></li>
+					<li><a href="https://dzone.com/articles/simplified-building-web-application-using-spring-b" 
+						target="_blank" rel="noopener noreferrer"><small>018: </small>Building a Web Application Using Spring Boot, Angular, Maven</a></li>
+					<li><a href="https://dzone.com/articles/buiding-microservice-using-springboot-and-docker" 
+						target="_blank" rel="noopener noreferrer"><small>019: </small>Building Microservices Using Spring Boot and Docker</a></li>
+					<li><a href="https://dzone.com/articles/configuring-a-main-class-in-spring-boot?edition=586295&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-03-17" 
+						target="_blank" rel="noopener noreferrer"><small>020: </small>Configuring a Main Class in Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/configuring-logback-with-spring-boot" 
+						target="_blank" rel="noopener noreferrer"><small>021: </small>Configuring Logback With Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/connecting-spring-boot-with-mysql-and-oracle-datab?edition=355134&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202018-02-08" 
+						target="_blank" rel="noopener noreferrer"><small>022: </small>Connecting Spring Boot With MySQL and Oracle Databases</a></li>
+					<li><a href="https://dzone.com/articles/create-and-publish-your-rest-api-using-spring-boot?edition=473195&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202019-04-10" 
+						target="_blank" rel="noopener noreferrer"><small>023: </small>Create and Publish Your REST API Using Spring Boot and Heroku</a></li>
+					<li><a href="https://dzone.com/articles/creating-a-simple-spring-boot-api-from-scratch?edition=364092&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-22" 
+						target="_blank" rel="noopener noreferrer"><small>024: </small>Creating a Simple Spring Boot API From Scratch</a></li>
+					<li><a href="https://dzone.com/articles/creating-a-springboot-configuration-server-using-d?edition=373199&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-11" 
+						target="_blank" rel="noopener noreferrer"><small>025: </small>Creating a Spring Boot Configuration Server Using a Database</a></li>
+					<li><a href="https://dzone.com/articles/creating-custom-annotations-in-java" 
+						target="_blank" rel="noopener noreferrer"><small>026: </small>Creating Annotations in Java</a></li>
+					<li><a href="https://dzone.com/articles/developing-java8-springboot-application-in-docker?edition=213326&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-21" 
+						target="_blank" rel="noopener noreferrer"><small>027: </small>Developing a Java 8 Spring Boot App in Docker</a></li>
+					<li><a href="https://dzone.com/articles/exception-handling-in-spring-boot-rest-web-service?edition=379208&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202018-05-31" 
+						target="_blank" rel="noopener noreferrer"><small>028: </small>Exception Handling in Spring Boot REST Web Services: A Complete Blueprint</a></li>
+					<li><a href="https://dzone.com/articles/extending-spring-boots-zuul-proxy-to-record-reques?edition=513298&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-08" 
+						target="_blank" rel="noopener noreferrer"><small>029: </small>Extending Spring Boot's Zuul Proxy to Record Requests and Responses</a></li>
+					<li><a href="https://dzone.com/articles/graceful-shutdown-spring-boot-applications?edition=385197&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-04" 
+						target="_blank" rel="noopener noreferrer"><small>030: </small>Graceful Shutdown Spring Boot Applications</a></li>
+					<li><a href="https://dzone.com/articles/a-beginners-guide-to-graphql-with-spring-boot?edition=521302&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-09-03" 
+						target="_blank" rel="noopener noreferrer"><small>031: </small>GraphQL Java Example for Beginners [Spring Boot]</a></li>
+					<li><a href="https://dzone.com/articles/infinispan-datagrid-as-a-caching-provider-in-a-spr?edition=268885&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-02" 
+						target="_blank" rel="noopener noreferrer"><small>032: </small>How to Create a Spring Boot App With Caching Enabled</a></li>
+					<li><a href="https://dzone.com/articles/application-using-spring-boot-restful-webservices?edition=385289&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202018-07-26" 
+						target="_blank" rel="noopener noreferrer"><small>033: </small>How to Develoop RESTSful Web Services Using MySQL and Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/how-to-enable-the-https-into-spring-boot-applicati?edition=586298&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202020-03-18" 
+						target="_blank" rel="noopener noreferrer"><small>034: </small>How to Enable HTTPS on a Spring Boot Application</a></li>
+					<li><a href="https://dzone.com/articles/how-to-split-up-a-synchronous-and-asynchronous-of" 
+						target="_blank" rel="noopener noreferrer"><small>035: </small>How to Split Up Synchronous and Asynchronous Parts of Your System in Java</a></li>
+					<li><a href="https://dzone.com/articles/how-to-use-cookies-in-spring-boot?edition=510292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-31" 
+						target="_blank" rel="noopener noreferrer"><small>036: </small>How to Use Cookies in Spring Boot</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/07/profiles-spring-boot-application.html" 
+						target="_blank" rel="noopener noreferrer"><small>037: </small>How to use profiles in Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/implementing-aop-with-spring-boot-and-aspectj" 
+						target="_blank" rel="noopener noreferrer"><small>038: </small>Implementing AOP With Spring Boot and AspectJ</a></li>
+					<li><a href="https://dzone.com/articles/integrate-h2-database-in-your-spring-boot-applicat?edition=261782&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-03" 
+						target="_blank" rel="noopener noreferrer"><small>039: </small>Integrate an H2 Database in your Spring Boot App</a></li>
+					<li><a href="https://dzone.com/articles/integrate-sso-with-spring-boot-and-oauth-20?edition=526301&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-10-19" 
+						target="_blank" rel="noopener noreferrer"><small>040: </small>Integrate SSO With Spring Boot and OAuth 2.0</a></li>
+					<li><a href="https://dzone.com/articles/introducing-spring-boot?edition=367193&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-14" 
+						target="_blank" rel="noopener noreferrer"><small>041: </small>Introducing Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/introduction-to-jpa-using-spring-boot-data-jpa?edition=315392&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-08-10" 
+						target="_blank" rel="noopener noreferrer"><small>042: </small>Introduction to JPA Using Spring Boot Data</a></li>
+					<li><a href="https://dzone.com/articles/introduction-to-lombok?edition=484206&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-05-21" 
+						target="_blank" rel="noopener noreferrer"><small>043: </small>Introduction to Lombok </a></li>
+					<li><a href="https://howtodoinjava.com/spring-boot-tutorials/" 
+						target="_blank" rel="noopener noreferrer"><small>044: </small>Introduction to Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/java-springboot-rest-api-to-uploaddownload-file-on?edition=598299&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-05-05" 
+						target="_blank" rel="noopener noreferrer"><small>045: </small>Java Spring Boot Rest API to Upload/Download File on Server</a></li>
+					<li><a href="https://dzone.com/articles/learn-how-to-use-junit-5-to-test-your-spring-boot?edition=500291&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-07-15" 
+						target="_blank" rel="noopener noreferrer"><small>046: </small>Learn How to Use Junit 5 to Test Your Spring Boot Apps</a></li>
+					<li><a href="https://dzone.com/articles/logging-with-spring-boot-and-elastic-stack?edition=479253&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202019-05-24" 
+						target="_blank" rel="noopener noreferrer"><small>047: </small>Logging With Spring Boot and Elastic Stack</a></li>
+					<li><a href="https://dzone.com/articles/magic-around-spring-boot-auto-configuration?edition=565304&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202020-01-27" 
+						target="_blank" rel="noopener noreferrer"><small>048: </small>Magic Around Spring Boot Auto-Configuration</a></li>
+					<li><a href="https://dzone.com/articles/bountyspring-transactional-management?edition=447195&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-02-03" 
+						target="_blank" rel="noopener noreferrer"><small>049: </small>Magic With the Spring Boot Actuator</a></li>
+					<li><a href="https://dzone.com/articles/migrating-a-legacy-spring-application-to-a-spring?edition=521334&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202019-09-18" 
+						target="_blank" rel="noopener noreferrer"><small>050: </small>Migrating a Legacy Spring Application to Spring Boot 2</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/09/monitor-your-java-apps-spring-boot-actuator.html" 
+						target="_blank" rel="noopener noreferrer"><small>051: </small>Monitor Your Java Apps with Spring Boot Actuator</a></li>
+					<li><a href="https://dzone.com/articles/monitoring-and-profiling-spring-boot-application?edition=554308&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-12-30" 
+						target="_blank" rel="noopener noreferrer"><small>052: </small>Monitoring and Profiling Your Spring Boot Application</a></li>
+					<li><a href="https://dzone.com/articles/new-requestparam-annotations-in-spring-boot-14-spr?edition=261786&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-08" 
+						target="_blank" rel="noopener noreferrer"><small>053: </small>New @RequestMapping Annotations in Spring 4.3</a></li>
+					<li><a href="https://dzone.com/articles/packaging-springboot-application-with-external-dep?edition=258684&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-26" 
+						target="_blank" rel="noopener noreferrer"><small>054: </small>Packaging Spring Boot Apps With External Dependencies Using Maven</a></li>
+					<li><a href="https://dzone.com/articles/safeguard-spring-app-from-cache-failure?edition=267883&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-04" 
+						target="_blank" rel="noopener noreferrer"><small>055: </small>Safeguarding Spring (Boot) App From Cache Failure</a></li>
+					<li><a href="https://dzone.com/articles/secure-rest-services-and-web-applications-with-spr?edition=306207&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-02" 
+						target="_blank" rel="noopener noreferrer"><small>056: </small>Secure REST Services and Web Applications with Spring Boot Security Starter</a></li>
+					<li><a href="https://dzone.com/articles/simple-spring-boot-admin-setup?edition=306238&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-07" 
+						target="_blank" rel="noopener noreferrer"><small>057: </small>Simple Spring Boot Admin Setup</a></li>
+					<li><a href="https://dzone.com/articles/simplified-spring-swagger?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202019-04-12" 
+						target="_blank" rel="noopener noreferrer"><small>058: </small>Simplified Spring Swagger</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/04/spring-boot-jpa-hibernate-oracle.html" 
+						target="_blank" rel="noopener noreferrer"><small>059: </small>Spring Boot & JPA & Hibernate & Oracle</a></li>
+					<li><a href="https://www.javainuse.com/spring/spring-boot-aop" 
+						target="_blank" rel="noopener noreferrer"><small>060: </small>Spring Boot + AOP Simple Example</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-actuator-in-spring-boot-20?edition=374234&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-21" 
+						target="_blank" rel="noopener noreferrer"><small>062: </small>Spring Boot Actuator in Spring Boot 2.0</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-actuator-a-complete-guide?edition=268944&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-14" 
+						target="_blank" rel="noopener noreferrer"><small>063: </small>Spring Boot Actuator: A Complete Guide</a></li>
+					<li><a href="https://examples.javacodegeeks.com/spring-boot-add-filter-example/" 
+						target="_blank" rel="noopener noreferrer"><small>064: </small>Spring Boot add filter Example</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-and-cache-abstraction?edition=262881&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-12" 
+						target="_blank" rel="noopener noreferrer"><small>065: </small>Spring Boot and Cache Abstraction</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-hibernate-tips?edition=423297&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-01-10" 
+						target="_blank" rel="noopener noreferrer"><small>066: </small>Spring Boot and Hibernate Tips</a></li>
+					<li><a href="https://examples.javacodegeeks.com/spring-boot-and-rabbitmq-hello-world-example/" 
+						target="_blank" rel="noopener noreferrer"><small>067: </small>Spring Boot and RabbitMQ Hello World Example</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-and-swagger-documenting-restful-servic?edition=407216&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-10-14" 
+						target="_blank" rel="noopener noreferrer"><small>068: </small>Spring Boot and Swagger: Documenting RESTful Services</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/boot/spring-boot-application-properties-example/" 
+						target="_blank" rel="noopener noreferrer"><small>069: </small>Spring Boot Application Properties Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/spring-boot-bean-validation-example/" 
+						target="_blank" rel="noopener noreferrer"><small>070: </small>Spring Boot Bean Validation Example</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/07/spring-boot-complete-example.html" 
+						target="_blank" rel="noopener noreferrer"><small>071: </small>Spring Boot Complete Example</a></li>
+					<li><a href="https://dzone.com/articles/springboot-database-project-configuration-for-logg?edition=545293&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202019-11-27" 
+						target="_blank" rel="noopener noreferrer"><small>072: </small>Spring Boot Database Project Configuration for Logging Using AOP</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/boot/spring-boot-ehcache-example/" 
+						target="_blank" rel="noopener noreferrer"><small>073: </small>Spring Boot Ehcache</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-error-creating-a-bean-with-datasource?edition=481193&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-04-21" 
+						target="_blank" rel="noopener noreferrer"><small>074: </small>Spring Boot Error: Creating a Bean With 'DataSource' Defined in DataSourceAutoConfiguration</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/boot/spring-boot-hello-world-example/" 
+						target="_blank" rel="noopener noreferrer"><small>075: </small>Spring Boot Hello World Example</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/01/spring-boot-hibernate-tips.html" 
+						target="_blank" rel="noopener noreferrer"><small>076: </small>Spring Boot Hibernate Tips</a></li>
+					<li><a href="https://examples.javacodegeeks.com/spring-boot-interview-questions-and-answers/" 
+						target="_blank" rel="noopener noreferrer"><small>077: </small>Spring Boot Interview Questions and Answers</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/boot/spring-boot-jpa-mysql-example/" 
+						target="_blank" rel="noopener noreferrer"><small>078: </small>Spring Boot JPA MySQL Example</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-jpa-mysql-sample-app-code-example?edition=367211&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-03-21" 
+						target="_blank" rel="noopener noreferrer"><small>079: </small>Spring Boot JPA MySQL Sample App: Code Example</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-profiles-a-strategic-way-to-configure?edition=376306&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-15" 
+						target="_blank" rel="noopener noreferrer"><small>080: </small>Spring Boot Profiles: A Strategic Way to Configure Applications</a></li>
+					<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/" 
+						target="_blank" rel="noopener noreferrer"><small>081: </small>Spring Boot Reference Documentation - 1</a></li>
+					<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.profiles" 
+						target="_blank" rel="noopener noreferrer"><small>081: </small>Spring Boot Reference Documentation - 2</a></li>
+					<li><a href="https://www.javacodegeeks.com/2020/04/spring-boot-remove-embedded-tomcat-server-enable-jetty-server.html" 
+						target="_blank" rel="noopener noreferrer"><small>082: </small>Spring Boot Remove Embedded Tomcat Server, Enable Jetty Server</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-rest-api-projects-with-code-examples?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202018-01-19" 
+						target="_blank" rel="noopener noreferrer"><small>083: </small>Spring Boot REST API Projects With Code Examples</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/boot/spring-boot-rest-api-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>084: </small>Spring Boot REST API Tutorial</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/boot/spring-boot-rest-api-with-swagger-example/" 
+						target="_blank" rel="noopener noreferrer"><small>085: </small>Spring Boot REST API with Swagger Example</a></li>
+					<li><a href="https://dzone.com/articles/springboot-rest-service-download-files?edition=479192&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202019-04-18" 
+						target="_blank" rel="noopener noreferrer"><small>086: </small>Spring Boot REST Service: Download Files</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-restful-web-service-example?edition=371215&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202018-04-05" 
+						target="_blank" rel="noopener noreferrer"><small>087: </small>Spring Boot RESTful Web Service Example</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-starters?edition=261783&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-04" 
+						target="_blank" rel="noopener noreferrer"><small>088: </small>Spring Boot Starters</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-transaction-management-hello-world-exa?edition=510299&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-02" 
+						target="_blank" rel="noopener noreferrer"><small>089: </small>Spring Boot Transaction Management Hello World Example</a></li>
+					<li><a href="https://dzone.com/articles/build-a-spring-boot-app-and-deploy-into-tomcat?edition=521306&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-09-05" 
+						target="_blank" rel="noopener noreferrer"><small>090: </small>Spring Boot Tutorial: Build a Spring Boot App and Deploy Into Tomcat</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-with-external-tomcat?edition=484206&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-05-21" 
+						target="_blank" rel="noopener noreferrer"><small>091: </small>Spring Boot With External Tomcat</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-a-quick-start?edition=271881&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-17" 
+						target="_blank" rel="noopener noreferrer"><small>092: </small>Spring Boot: A Quick Start</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-changingconfiguring-the-default-embedded-server?edition=271895&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-18" 
+						target="_blank" rel="noopener noreferrer"><small>093: </small>Spring Boot: Changing/Configuring the Default Embedded Server</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-passing-parameters?edition=546291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-11-28" 
+						target="_blank" rel="noopener noreferrer"><small>094: </small>Spring Boot: Passing Parameters</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-the-right-boot-for-you-1?utm_source=Top%205&utm_medium=email&utm_campaign=2017-02-10" 
+						target="_blank" rel="noopener noreferrer"><small>095: </small>Spring Boot: The Right Boot For You</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-where-do-the-default-metrics-come-from?edition=508305&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-07-29" 
+						target="_blank" rel="noopener noreferrer"><small>096: </small>Spring Boot: Where Do the Default Metrics Come From?</a></li>
+					<li><a href="https://memorynotfound.com/spring-ldap-spring-boot-embedded-ldap-configuration-example" 
+						target="_blank" rel="noopener noreferrer"><small>097: </small>Spring LDAP + Spring Boot Embedded LDAP Configuration Example</a></li>
+					<li><a href="https://medium.com/@nandaras0103/spring-mvc-and-thymleaf-fa48c000f68a" 
+						target="_blank" rel="noopener noreferrer"><small>098: </small>Spring MVC and Thymeleaf</a></li>
+					<li><a href="https://dzone.com/articles/spring-boot-web-hello-world-with-a-java-amp-pomxml?edition=216172&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-25" 
+						target="_blank" rel="noopener noreferrer"><small>099: </small>Spring(boot) ing to the Web With Java and Pom.xml</a></li>
+					<li><a href="https://dzone.com/articles/streaming-data-with-spring-boot-restful-web-servic?edition=489317&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-04" 
+						target="_blank" rel="noopener noreferrer"><small>100: </small>Streaming Data with Spring Boot RESTful Web Service</a></li>
+					<li><a href="https://dzone.com/articles/testing-spring-boot-conditionals-the-sane-way?edition=508305&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-07-29" 
+						target="_blank" rel="noopener noreferrer"><small>101: </small>Testing Spring Boot Conditionals: The Sane Way</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/11/spring-features-java-developers-know.html" 
+						target="_blank" rel="noopener noreferrer"><small>102: </small>Top 5 Spring Boot Features Java Developers Should Know</a></li>
+					<li><a href="https://dzone.com/articles/top-10-spring-boot-interview-questions?edition=491311&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-06-27" 
+						target="_blank" rel="noopener noreferrer"><small>103: </small>Top 10 Spring Boot Interview Questions and Answers</a></li>
+					<li><a href="https://dzone.com/articles/tutorial-deploy-a-spring-boot-application-to-the-c?edition=566292&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202020-01-22" 
+						target="_blank" rel="noopener noreferrer"><small>104: </small>Tutorial: Deploy a Spring Boot Application to the Cloud</a></li>
+					<li><a href="https://dzone.com/articles/unit-testing-dao-service-and-controller-in-spring?edition=466191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-04-03" 
+						target="_blank" rel="noopener noreferrer"><small>105: </small>Unit Testing in Spring Boot: DAO, Service, and Controller With the JDBC</a></li>
+					<li><a href="https://dzone.com/articles/usage-of-swagger-20-in-spring-boot-applications-to?edition=155255&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=wd%202016-09-28" 
+						target="_blank" rel="noopener noreferrer"><small>106: </small>Usage of Swagger 2.0 in Spring Boot Applications to document APIs</a></li>
+					<li><a href="https://dzone.com/articles/using-cache-in-spring-boot?edition=485324&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202019-06-21" 
+						target="_blank" rel="noopener noreferrer"><small>107: </small>Using Cache in Spring Boot</a></li>
+					<li><a href="https://dimitri.codes/spring-boot-cache-ehcache/" 
+						target="_blank" rel="noopener noreferrer"><small>108: </small>Using EhCache 3 with Spring boot</a></li>
+					<li><a href="https://dzone.com/articles/understanding-the-basics-of-spring-vs-spring-boot?edition=387222&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-08-21" 
+						target="_blank" rel="noopener noreferrer"><small>109: </small>Understanding the Basics of Spring vs. Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/key-java-annotations-to-build-full-spring-boot-res?edition=524300&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-09-26" 
+						target="_blank" rel="noopener noreferrer"><small>110: </small>Using Java @Annotations to Build Full Spring Boot REST API</a></li>
+					<li><a href="https://dzone.com/articles/using-mysql-jdbc-driver-with-spring-boot?edition=337895&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-21" 
+						target="_blank" rel="noopener noreferrer"><small>111: </small>Using MySQL JDBC Driver With Spring Boot</a></li>
+					<li><a href="https://dzone.com/articles/what-is-spring-boot-auto-configuration?edition=299096&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-05-23" 
+						target="_blank" rel="noopener noreferrer"><small>112: </small>What is Spring Boot Auto Configuration</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>		
+</body>
+</html>

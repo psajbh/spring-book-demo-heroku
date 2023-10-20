@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">JSON Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 500px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;JSON Resources</h4>
+				<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://dzone.com/articles/why-you-cloud-be-using-json-vs-xml?edition=263911&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-22" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>Choosing JSON Over XML</a></li>
+					<li><a href="https://dzone.com/articles/efficiently-transforming-jdbc-query-results-to-jso?edition=385208&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-06" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>Efficiently Transforming JDBC Query Results to JSON</a></li>
+					<li><a href="https://dzone.com/articles/getting-to-know-json-p-11-part-1?edition=375220&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-04-24" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>Getting to Know JSON-P 1.1 (Part 1)</a></li>
+					<li><a href="https://dzone.com/articles/how-json-web-token-jwt-secures-your-api?edition=479229&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-05-02" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>How JSON Web Token (JWT) Secures Your API</a></li>
+					<li><a href="https://jwt.io" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>JSON Web Tokens</a></li>
+					<li><a href="https://dzone.com/articles/jwt-token-lightweight-token-based-authentication?edition=485307&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-05-31" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>JWT Token: Lightweight Token-Based Authentication</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>		
+</body>
+</html>

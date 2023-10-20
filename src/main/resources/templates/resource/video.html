@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Videos Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 300px;
+			width: 500px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Videos Resources</h4>
+		<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://www.makeuseof.com/how-to-permanently-delete-files-on-pc-before-selling/" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>How to Permanently Delete Files on Your PC Before Selling It</a></li>
+					<li><a href="https://www.youtube.com/channel/UCxoUc7Rar2q90Gu0nT2ffuQ" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>Java Code Geeks (training videos)</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>		
+</body>
+</html>

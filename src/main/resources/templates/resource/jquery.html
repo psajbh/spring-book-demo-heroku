@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">JQuery Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 300px;
+			width: 500px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;JQuery Resources</h4>
+				<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://dzone.com/articles/4-steps-to-learn-jquery-for-beginners?edition=416199&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-04" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>Four Steps for Beginning to Learn JQuery </a></li>
+					<li><a href="https://www.edureka.co/blog/jquery-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>JQuery Tutorial – What is jQuery and How to Learn it?</a></li>
+					<li><a href="https://www.webcodegeeks.com/javascript/jquery/jquery-append-example/" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>JQuery append() Example</a></li>
+					<li><a href="https://www.webcodegeeks.com/javascript/jquery/jquery-css-method-example/" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>JQuery css() Method Example</a></li>
+					<li><a href="https://www.webcodegeeks.com/javascript/jquery/jquery-dimension-methods-example/" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>JQuery Dimension Methods Example</a></li>
+					<li><a href="https://www.webcodegeeks.com/javascript/jquery/jquery-each-example/" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>JQuery each() Example</a></li>
+					<li><a href="https://blogs.sap.com/2018/06/05/the-big-bang-of-web-development-jquery-what-is-it/" 
+						target="_blank" rel="noopener noreferrer"><small>006: </small>The Big Bang of Web Development: JQuery – what is it?</a></li>
+					</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>		
+</body>
+</html>

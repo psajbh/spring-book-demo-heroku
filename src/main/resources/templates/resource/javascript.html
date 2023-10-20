@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Javascript Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 700px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Javascript Resources</h4>
+				<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://www.webcodegeeks.com/javascript/tips-become-better-javascript-much-much-better/" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>21 Tips To Become Better In JavaScript, Much Much Better!</a></li>
+					<li><a href="https://dzone.com/articles/making-apps-with-javafx?edition=262787&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-11" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>A Brief Overview of Popular JS Frameworks: React, Angular, Bootstrap, and Polymer</a></li>
+					<li><a href="https://dzone.com/articles/asynchronous-javascript-1?edition=457259&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-12" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>Asynchronous JavaScript</a></li>
+					<li><a href="https://bootstrapious.com/p/bootstrap-navbar" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>Bootstrap NAVBAR</a></li>
+					<li><a href="https://www.webcodegeeks.com/css/bootstrap/bootstrap-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>Bootstrap Tutorial - The Ultimate Guide</a></li>
+					<li><a href="https://bootstrapious.com/p/bootstrap-navbar" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>Debugging JavaScript</a></li>
+					<li><a href="https://dzone.com/articles/easy-javascript-part-7-object-property-descriptors?edition=334864&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-10" 
+						target="_blank" rel="noopener noreferrer"><small>006: </small>Easy JavaScript Part 7 : Object Property Descriptors</a></li>
+					<li><a href="https://dzone.com/articles/githubs-top-10-javascript-projects-for-2017?edition=364092&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-22" 
+						target="_blank" rel="noopener noreferrer"><small>007: </small>GitHub's Top 10 JavaScript Projects</a></li>
+					<li><a href="https://dzone.com/articles/glossary-of-modern-javascript-concepts-part-1?edition=271881&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-17" 
+						target="_blank" rel="noopener noreferrer"><small>008: </small>Glossary of Modern JavaScript Concepts: Part 1</a></li>
+					<li><a href="https://dzone.com/articles/how-to-create-stunning-interactive-bar-charts-usin?edition=459224&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-25" 
+						target="_blank" rel="noopener noreferrer"><small>009: </small>How to Create Stunning, Interactive Bar Charts Using JavaScript</a></li>
+					<li><a href="https://dzone.com/articles/how-to-javascript-in-2018?edition=364095&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-24" 
+						target="_blank" rel="noopener noreferrer"><small>010: </small>How to JavaScript in 2018 </a></li>
+					<li><a href="https://dzone.com/articles/imperative-vs-declarative-javascript?edition=451258&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-02-17" 
+						target="_blank" rel="noopener noreferrer"><small>011: </small>Imperative vs. Declarative JavaScript </a><br /></li>
+					<li><a href="https://dzone.com/articles/javascript-frameworks-how-to-make-your-choice?edition=386202&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-14" 
+						target="_blank" rel="noopener noreferrer"><small>012: </small>JavaScript Frameworks: How To Make Your Choice</a></li>
+					<li><a href="https://dzone.com/articles/javascript-objects-in-depth-part-2-inheritance?edition=488295&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-06-15" 
+						target="_blank" rel="noopener noreferrer"><small>013: </small>JavaScript Objects in Depth, Part 2: Inheritance </a></li>
+					<li><a href="https://dzone.com/articles/javascript-promises-the-definitive-guide?edition=457221&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-06" 
+						target="_blank" rel="noopener noreferrer"><small>014: </small>JavaScript Promises: The Definitive Guide, Part 1</a></li>
+					<li><a href="https://dzone.com/articles/list-of-dos-and-donts-in-javascript-development?edition=312392&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-08-02" 
+						target="_blank" rel="noopener noreferrer"><small>015: </small>List of Dos and Don'ts in JavaScript Development</a></li>
+					<li><a href="https://examples.javacodegeeks.com/null-in-javascript/" 
+						target="_blank" rel="noopener noreferrer"><small>016: </small>Null in JavaScript</a></li>
+					<li><a href="https://dzone.com/articles/object-oriented-javascript-objects-encapsulation-a?edition=267882&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-03"
+						target="_blank" rel="noopener noreferrer"><small>017: </small>Object-Oriented JavaScript: Objects, Encapsulation, and Abstraction (With Examples)</a></li>
+					<li><a href="https://javascript.info" 
+						target="_blank" rel="noopener noreferrer"><small>018: </small>The Modern Javascript Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/three-different-ways-to-create-objects-in-javascri?edition=526296&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-10-16" 
+						target="_blank" rel="noopener noreferrer"><small>019: </small>Three Ways to Create Objects in JavaScript</a></li>
+					<li><a href="https://betterprogramming.pub/three-ways-to-define-functions-in-javascript-750a908e51d9" 
+						target="_blank" rel="noopener noreferrer"><small>020: </small>Three Ways to Define Functions in JavaScript</a></li>
+					<li><a href="https://dzone.com/articles/what-are-closures-in-javascript?edition=210871&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-30" 
+						target="_blank" rel="noopener noreferrer"><small>021: </small>What Are Closures in JavaScript?</a></li>
+					<li><a href="https://dzone.com/articles/why-is-javascript-the-programming-language-of-the?edition=213223&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-12" 
+						target="_blank" rel="noopener noreferrer"><small>022: </small>Why Is JavaScript the Programming Language of the Future?</a></li>
+					<li><a href="https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript"
+						 target="_blank" rel="noopener noreferrer"><small>023: </small>How do I make the first letter of a string uppercase in Javascript</a></li>
+					<li><a href="https://dzone.com/articles/writing-a-very-simple-js-editor?edition=248583&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-06"
+						 target="_blank" rel="noopener noreferrer"><small>024: </small>Writing a Very Simple JS Editor</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>	
+</body>
+</html>

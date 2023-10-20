@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Web Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 300px;
+			width: 650px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Web Resources</h4>
+		<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://html-color-codes.info/colors-from-image" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>thesitewizard.com - Website design, promotion, programming and revenue making </a><br /></li>
+					<li><a href="https://dzone.com/articles/web-performance-101-tuning-tips-for-images?edition=213279&utm_source=Spotlight&utm_medium=email&utm_campaign=performance%202016-09-16" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>Web Performance 101: Tuning Tips for Images</a><br /></li>
+					<li><a href="https://getbootstrap.com" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>Bootstrap - Build fast, responsive sites with Bootstrap</a><br /></li>
+					<li><a href="https://dzone.com/articles/how-to-create-a-visually-appealing-homepage-using?edition=238381&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-04" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>>Create a Homepage Using Bootstrap Framework and jQuery: Part I </a><br /></li>
+					<li><a href="https://dzone.com/articles/5-exciting-new-html-and-css-features-to-look-forwa?edition=355112&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-20" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>5 Exciting New HTML and CSS Features to Look Forward to in 2018</a><br /></li>
+					<li><a href="https://dzone.com/articles/css-box-model-for-beginners?edition=383240&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-06-21" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>CSS Box Model for Beginners </a><br /></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>		
+</body>
+</html>

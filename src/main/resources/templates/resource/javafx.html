@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">JavaFX Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 300px;
+			width: 500px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;JavaFX Resources</h4>
+				<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://dzone.com/articles/javafx-charts-look-pretty-good?edition=267881&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-01" target="_blank" rel="noopener noreferrer"><small>000: </small>JavaFX Charts Look Pretty Good! </a></li>
+					<li><a href="https://examples.javacodegeeks.com/desktop-java/javafx/scene/javafx-scene-example-2/" target="_blank" rel="noopener noreferrer"><small>002: </small>JavaFX Scene Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/desktop-java/javafx/javafx-stage-example/" target="_blank" rel="noopener noreferrer"><small>003: </small>JavaFX Stage Example</a></li>
+					<li><a href="https://dzone.com/articles/making-apps-with-javafx?edition=262787&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-11" target="_blank" rel="noopener noreferrer"><small>004: </small>Making Apps With JavaFX</a></li>
+					<li><a href="https://dzone.com/articles/one-guys-perspective-on-javafx?edition=371191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-29" target="_blank" rel="noopener noreferrer"><small>005: </small>One Guy's Perspective on JavaFX </a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>	
+</body>
+</html>

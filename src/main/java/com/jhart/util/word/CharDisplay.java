@@ -1,14 +1,10 @@
 package com.jhart.util.word;
-//apparently not used.  comment out on 6/30/2023
-//import java.math.BigDecimal;
-//import java.math.MathContext;
-//import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Objects;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@SuppressWarnings({"unused"})
 public class CharDisplay {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 	DecimalFormat formatter = new DecimalFormat("#0.00");
@@ -18,15 +14,14 @@ public class CharDisplay {
 	private int totalDisplayChars;
 	private double percent;
 	private String name;
-
 	
 	public CharDisplay(String data) {
+		log.trace("CharDisplay - processing: " + data);
 		process(data);
 	}
 	
-	public void process(String data) {
+	private void process(String data) {
 		setName(data);
-		log.info("CharDisplay - process");
 		String[] input = getName().split("-");
 		level = input[0];
 		charType = input[1];
@@ -65,18 +60,18 @@ public class CharDisplay {
 	}
 
 	public void setTotalDisplayChars(int totalDisplayChars) {
-		log.info("CharDisplay - setTotalDisplayChars");
+		//log.info("CharDisplay - setTotalDisplayChars");
 		this.totalDisplayChars = totalDisplayChars;
 		setPercent();
 	}
 
 	public double getPercent() {
-		log.info("CharDisplay - getPercent");
+		//log.info("CharDisplay - getPercent");
 		return percent;
 	}
 
 	private void setPercent() {
-		log.info("CharDisplay - setPercent");
+		//log.info("CharDisplay - setPercent");
 		int top = getIntValue();
 		int bottom = getTotalDisplayChars();
 		if (0 == top || 0 == bottom) {
@@ -91,20 +86,6 @@ public class CharDisplay {
 		return top * 100 / bottom;
 	}
 
-	//not used.  hold this temporarily start: 6/20/2023
-//	private Double getBigDecimal() {
-//		log.info("CharDisplay - getBigDecimal");
-//		MathContext mathContext = getMathContext();
-//		BigDecimal bd = new BigDecimal(percent, mathContext);
-//		return bd.doubleValue();
-//	}
-
-	//not used.  hold this temporarily start: 6/20/2023
-//	private MathContext getMathContext() {
-//		log.info("CharDisplay - getMathContext");
-//		return new MathContext(1, RoundingMode.DOWN);
-//	}
-
 	public String getName() {
 		return name;
 	}
@@ -112,5 +93,33 @@ public class CharDisplay {
 	public void setName(String name) {
 		this.name = name;
 	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(charType, formatter, level, name, percent, totalDisplayChars, value);
+	}
+	
+	@Override
+	public String toString() {
+		return "CharDisplay [formatter=" + formatter + ", level=" + level + ", charType=" + charType + ", value="
+				+ value + ", totalDisplayChars=" + totalDisplayChars + ", percent=" + percent + ", name=" + name + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		CharDisplay other = (CharDisplay) obj;
+		return Objects.equals(charType, other.charType) && Objects.equals(formatter, other.formatter)
+				&& Objects.equals(level, other.level) && Objects.equals(name, other.name)
+				&& Double.doubleToLongBits(percent) == Double.doubleToLongBits(other.percent)
+				&& totalDisplayChars == other.totalDisplayChars && Objects.equals(value, other.value);
+	}
+	
+	
 	
 }

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Spring Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 800px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Spring Resources</h4>
+				<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://dzone.com/articles/5-spring-annotations-every-java-developer-should-k?edition=491320&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-02" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>4 Spring Annotations Every Java Developer Should Know</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/01/7-reasons-use-spring-develop-restful-web-services-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>7 Reasons to Use Spring to develop RESTful Web Services in Java</a></li>
+					<li><a href="https://dzone.com/articles/spring-transactional-amp-exceptions?edition=267882&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-03" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>A Word on Spring @Transactional and Exceptions</a></li>
+					<li><a href="https://activemq.apache.org/spring-support.html" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>Active MQ</a></li>
+					<li><a href="https://www.tutorialspoint.com/spring/aop_with_spring.htm" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>AOP with Spring Framework</a></li>
+					<li><a href="https://dzone.com/articles/spring-transactional-amp-exceptions?edition=267882&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-03" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>Authenticating a User with LDAP</a></li>
+					<li><a href="https://dzone.com/articles/autowiring-in-spring?edition=523294&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-09-09" 
+						target="_blank" rel="noopener noreferrer"><small>006: </small>Autowiring in Spring</a></li>
+					<li><a href="https://springframework.guru/best-practices-for-dependency-injection-with-spring/?utm_medium=1935322&utm_content=educational&utm_campaign=2019-12-18&utm_source=email-sendgrid&utm_term=14788334" 
+						target="_blank" rel="noopener noreferrer"><small>007: </small>Best Practices for Dependency Injection with Spring</a></li>
+					<li><a href="https://www.baeldung.com/spring-security-session?utm_source=email&utm_medium=email&utm_content=lss_session&utm_campaign=campaign_lss" 
+						target="_blank" rel="noopener noreferrer"><small>008: </small>Control the Session with Spring Security</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/01/create-secure-spring-rest-api.html" 
+						target="_blank" rel="noopener noreferrer"><small>009: </small>Create a Secure Spring REST API</a></li>
+					<li><a href="https://www.baeldung.com/bootstraping-a-web-application-with-spring-and-java-based-configuration?utm_source=email-newsletter&utm_medium=email&utm_campaign=auto_16_spring_mvc&tl_inbound=1&tl_target_all=1&tl_period_type=3" 
+						target="_blank" rel="noopener noreferrer"><small>010: </small>Creating a Web Application with Spring 5</a></li>
+					<li><a href="https://dzone.com/articles/defining-bean-dependencies-with-java-config-in-spring-framework?edition=310393&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-21" 
+						target="_blank" rel="noopener noreferrer"><small>011: </small>Defining Bean Dependencies With Java Config in Spring Framework</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/02/difference-spring-boot-integration-test.html" 
+						target="_blank" rel="noopener noreferrer"><small>012: </small>Difference between @ContextConfiguration and @SpringApplicationConfiguration in Spring Boot Integration Test</a></li>
+					<li><a href="https://dzone.com/articles/effective-advice-on-spring-async-final-part-1?edition=484206&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-05-21" 
+						target="_blank" rel="noopener noreferrer"><small>013: </small>Effective Advice on Spring @Async: Final Part</a></li>
+					<li><a href="https://dzone.com/articles/effective-advice-on-spring-async-part-1?edition=459191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-15" 
+						target="_blank" rel="noopener noreferrer"><small>014: </small>Effective Advice on Spring Async: Part 1</a></li>
+					<li><a href="https://dzone.com/articles/bounty-how-to-configure-passwords-with-spring-secu?edition=438195&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-01-09" 
+						target="_blank" rel="noopener noreferrer"><small>015: </small>How to Configure Passwords With Spring Security</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/04/how-to-setup-jndi-database-connection-pool-in-tomcat-spring-tutorial-example.html" 
+						target="_blank" rel="noopener noreferrer"><small>016: </small>How to setup JNDI Database Connection pool in Tomcat - Spring Tutorial Example</a></li>
+					<li><a href="https://dzone.com/articles/how-use-spring-resttemplate-0?edition=515297&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-12#xsid=a62e_ffn2" 
+						target="_blank" rel="noopener noreferrer"><small>017: </small>How to Use Spring RESTTemplate to Post Data to a Web Service</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/write-transactional-unit-tests-spring/"
+						target="_blank" rel="noopener noreferrer"><small>018: </small>How to write Transactional Unit Tests with Spring</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/10/http-cache-spring-examples.html" 
+						target="_blank" rel="noopener noreferrer"><small>019: </small>HTTP cache with Spring Examples</a></li>
+					<li><a href="https://www.javacodegeeks.com/2016/09/injecting-authenticated-user-spring-mvc-controllers.html" 
+						target="_blank" rel="noopener noreferrer"><small>020: </small>Injecting authenticated user into Spring MVC @Controllers</a></li>
+					<li><a href="https://www.baeldung.com/java-config-spring-security" 
+						target="_blank" rel="noopener noreferrer"><small>021: </small>Introduction to Java Config for Spring Security</a></li>
+					<li><a href="https://www.javacodegeeks.com/2012/09/introduction-to-spring-tutorial-series.html" 
+						target="_blank" rel="noopener noreferrer"><small>022: </small>Introduction to Spring - Tutorial Series</a></li>
+					<li><a href="https://www.baeldung.com/spring-aop" 
+						target="_blank" rel="noopener noreferrer"><small>023: </small>Introduction to Spring AOP</a></li>
+					<li><a href="https://examples.javacodegeeks.com/ioc-spring-example/" 
+						target="_blank" rel="noopener noreferrer"><small>024: </small>IOC in Spring Example</a></li>
+					<li><a href="https://www.infoworld.com/article/2078034/spring-framework-mastering-spring-mvc.html?page=2" 
+						target="_blank" rel="noopener noreferrer"><small>025: </small>Mastering Spring framework 5, Part 1: Spring MVC</a></li>
+					<li><a href="https://dzone.com/articles/4-modules-of-spring-architecture?edition=408231&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-10-26" 
+						target="_blank" rel="noopener noreferrer"><small>026: </small>Modules of the Spring Architecture</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/02/package-layer-spring-project-obsolete.html" 
+						target="_blank" rel="noopener noreferrer"><small>027: </small>Package by layer for Spring project is obsolete</a></li>
+					<li><a href="https://dzone.com/articles/spring-framework-tutorials?edition=521337&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-09-19" 
+						target="_blank" rel="noopener noreferrer"><small>028: </small>Put a Spring in Your Step: Spring Framework Tutorials</a></li>
+					<li><a href="https://www.baeldung.com/security-spring" 
+						target="_blank" rel="noopener noreferrer"><small>029: </small>Security with Spring</a></li>
+					<li><a href="https://springframework.guru/should-i-use-spring-rest-docs-or-openapi/?utm_content=educational&utm_campaign=2019-11-27&utm_source=email-sendgrid&utm_term=14788334&utm_medium=2043700" 
+						target="_blank" rel="noopener noreferrer"><small>030: </small>Should I Use Spring REST Docs or OpenAPI?</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/07/simple-authentication-spring-security.html" 
+						target="_blank" rel="noopener noreferrer"><small>031: </small>Simple Authentication with Spring Security</a></li>
+					<li><a href="https://spring.io/" 
+						target="_blank" rel="noopener noreferrer"><small>032: </small>Spring</a></li>
+					<li><a href="https://examples.javacodegeeks.com/spring-aliasfor-annotation-example/" 
+						target="_blank" rel="noopener noreferrer"><small>033: </small>Spring @AliasFor Annotation Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/spring-conditional-annotation-example/" 
+						target="_blank" rel="noopener noreferrer"><small>034: </small>Spring @Conditional Annotation Example</a></li>
+					<li><a href="https://dzone.com/articles/spring-hibernate-ehcache-caching?edition=358095&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-26" 
+						target="_blank" rel="noopener noreferrer"><small>035: </small>Spring + Hibernate + EhCache Caching </a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/spring-5?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails#deprecated-support-and-removed-packages" 
+						target="_blank" rel="noopener noreferrer"><small>036: </small>Spring 5 Features</a></li>
+					<li><a href="https://mkyong.com/spring/spring-aop-examples-advice/" 
+						target="_blank" rel="noopener noreferrer"><small>037: </small>Spring AOP Example - Advice</a></li>
+					<li><a href="https://www.javatpoint.com/spring-aop-tutorial" 
+						target="_blank" rel="noopener noreferrer"><small>038: </small>Spring AOP Tutorial</a></li>
+					<li><a href="https://examples.javacodegeeks.com/spring-bean-life-cycle-example/" 
+						target="_blank" rel="noopener noreferrer"><small>039: </small>Spring Bean Life Cycle Example</a></li>
+					<li><a href="https://dzone.com/articles/spring-cache-and-integration-testing?edition=459241&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202019-03-29" 
+						target="_blank" rel="noopener noreferrer"><small>040: </small>Spring Cache and Integration Testing</a></li>
+					<li><a href="https://dzone.com/articles/spring-core-dependency-injection?edition=269881&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-15" 
+						target="_blank" rel="noopener noreferrer"><small>041: </small>Spring Core: Dependency Injection</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/01/spring-custom-serializers-jsonidentityinfo.html" 
+						target="_blank" rel="noopener noreferrer"><small>042: </small>Spring Custom Seriallizers with @JsonIdentityInfo</a></li>
+					<li><a href="https://www.baeldung.com/spring-data-jpa-query" 
+						target="_blank" rel="noopener noreferrer"><small>043: </small>Spring Data JPA @Query</a></li>
+					<li><a href="https://dzone.com/articles/spring-data-series-spring-data-in-nutshell?edition=220225&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-07" 
+						target="_blank" rel="noopener noreferrer"><small>044: </small>Spring Data Series: Spring Data in a Nutshell</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/02/spring-dependency-injection-inversion-control.html" 
+						target="_blank" rel="noopener noreferrer"><small>045: </small>Spring Dependency Injection and Inversion of Control</a></li>
+					<li><a href="https://examples.javacodegeeks.com/spring-form-validation-example/" 
+						target="_blank" rel="noopener noreferrer"><small>046: </small>Spring Form Validation Example</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/spring-framework?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>047: </small>Spring Framework (Tutorial)</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/02/spring-framework-architecture.html" 
+						target="_blank" rel="noopener noreferrer"><small>048: </small>Spring Framework Architecture</a></li>
+					<li><a href="https://dzone.com/articles/spring-framework-basics-what-is-inversion-of-contr?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202019-04-193" 
+						target="_blank" rel="noopener noreferrer"><small>049: </small>Spring Framework Basics: What is Inversion of Control?</a></li>
+					<li><a href="https://dzone.com/articles/spring-framework-restcontroller-vs-controller?edition=237194&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-02" 
+						target="_blank" rel="noopener noreferrer"><small>050: </small>Spring Framework: @RestController vs. @Controller</a></li>
+					<li><a href="https://spring.io/guides" 
+						target="_blank" rel="noopener noreferrer"><small>051: </small>Spring Guides</a></li>
+					<li><a href="https://www.javapedia.net" 
+						target="_blank" rel="noopener noreferrer"><small>052: </small>Spring interview questions</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/spring-jdbc-storedprocedure-class-example/" 
+						target="_blank" rel="noopener noreferrer"><small>053: </small>Spring JDBC StoredProcedure Class Example</a></li>
+					<li><a href="https://www.briansdevblog.com/2012/09/spring-jms-tutorial-with-activemq/" 
+						target="_blank" rel="noopener noreferrer"><small>054: </small>Spring JMS Tutorial with ActiveMQ (Brians Dev Blog)</a></li>
+					<li><a href="https://dzone.com/articles/spring-mvc-and-java-based-configuration-1?edition=262905&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-20" 
+						target="_blank" rel="noopener noreferrer"><small>055: </small>Spring MVC and Java-Based Configuration</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/mvc/spring-mvc-functional-programming-example/" 
+						target="_blank" rel="noopener noreferrer"><small>056: </small>Spring MVC Functional Programming - Introduction</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/spring/mvc/spring-mvc-hibernate-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>057: </small>Spring MVC Hibernate Tutorial</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/04/spring-mvc-tutorial-2.html" 
+						target="_blank" rel="noopener noreferrer"><small>058: </small>Spring MVC Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/spring-rest-service-exception-handling-1" 
+						target="_blank" rel="noopener noreferrer"><small>069: </small>Spring REST Service Exception</a></li>
+					<li><a href="https://howtodoinjava.com/spring-security/spring-3-security-siteminder-pre-authentication-example/" 
+						target="_blank" rel="noopener noreferrer"><small>060: </small>Spring Security Siteminder</a></li>
+					<li><a href="https://dzone.com/articles/spring-security-and-passwordnbspencoding?edition=155252&utm_source=Weekly%20Digest&utm_source=Weekly%20Digest&utm_medium=email&utm_medium=email&utm_campaign=wd%202016-10-12&utm_campaign=wd%202016-10-12" 
+						target="_blank" rel="noopener noreferrer"><small>061: </small>Spring Security and Password and Encoding</a></li>
+					<li><a href="https://www.baeldung.com/spring-security-with-maven" 
+						target="_blank" rel="noopener noreferrer"><small>062: </small>Spring Security with Maven</a></li>
+					<li><a href="https://dzone.com/articles/spring-security-basic-authentication-example-1?edition=299096&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-05-23" 
+						target="_blank" rel="noopener noreferrer"><small>063: </small>Spring Security: Basic Authentication Example</a></li>
+					<li><a href="https://dzone.com/articles/bountyspring-transactional-management?edition=447195&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-02-03" 
+						target="_blank" rel="noopener noreferrer"><small>064: </small>Spring Transactional Management</a></li>
+					<li><a href="https://dzone.com/articles/spring-tutorials-and-guides?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202018-11-303" 
+						target="_blank" rel="noopener noreferrer"><small>065: </small>Spring Tutorials and Guides [Links]</a></li>
+					<li><a href="https://dzone.com/articles/spring-vs-spring-boot?edition=385348&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-08-08" 
+						target="_blank" rel="noopener noreferrer"><small>066: </small>Spring vs. Spring Boot: A Comparison of These Java Frameworks</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/spring-webflux-reactive-programming?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>067: </small>Spring WebFlux - Spring Reactive Programming</a></li>
+					<li><a href="https://dzone.com/articles/spring-webflux-getting-started?edition=365236&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-10" 
+						target="_blank" rel="noopener noreferrer"><small>068: </small>Spring Webflux: Getting started</a></li>
+					<li><a href="https://dzone.com/articles/spring-aware-beans?edition=238381&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-04" 
+						target="_blank" rel="noopener noreferrer"><small>069: </small>Spring-Aware Beans</a></li>
+					<li><a href="https://dzone.com/articles/friend-or-foe-springs-applicationproperties?edition=546291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-11-28" 
+						target="_blank" rel="noopener noreferrer"><small>070: </small>Spring's Application.Properties: Friend or Foe?</a></li>
+					<li><a href="https://dzone.com/articles/ssl-based-rest-web-service-in-java-with-spring?edition=367219&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-25" 
+						target="_blank" rel="noopener noreferrer"><small>071: </small>SSL-Based REST Web Service in Java JAX-RS With Spring</a></li>
+					<li><a href="https://dzone.com/articles/magic-of-spring-data?edition=388196&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-08-06" 
+						target="_blank" rel="noopener noreferrer"><small>072: </small>The Magic of Spring Data</a></li>
+					<li><a href="https://dzone.com/articles/top-20-spring-mvc-interview-questions-answers?edition=385302&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-28" 
+						target="_blank" rel="noopener noreferrer"><small>073: </small>Top 20 REST and Spring MVC Interview Questions for Java Developers </a></li>
+					<li><a href="https://dzone.com/articles/using-spring-mvc%E2%80%99s?edition=518296&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-16" 
+						target="_blank" rel="noopener noreferrer"><small>074: </small>Using Spring MVC's ModelAttribute Annotation</a></li>
+					<li><a href="https://dzone.com/articles/spring-data-jpa?edition=393191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-09-04" 
+						target="_blank" rel="noopener noreferrer"><small>075: </small>Using the Spring Data JPA</a></li>
+					<li><a href="https://tanzu.vmware.com/developer/guides" 
+						target="_blank" rel="noopener noreferrer"><small>076: </small>VMWare Tanzu Developer Center - Guides</a></li>
+					<li><a href="https://springframework.guru/reactive-streams-in-java/" 
+						target="_blank" rel="noopener noreferrer"><small>077: </small>What are Reactive Streams in Java?</a></li>
+					<li><a href="https://dzone.com/articles/what-is-spring-data-jpa?edition=417251&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-22" 
+						target="_blank" rel="noopener noreferrer"><small>078: </small>What is Spring Data JPA</a></li>
+					<li><a href="https://dzone.com/articles/why-spring-framework-is-popular?edition=407226&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-10-16" 
+						target="_blank" rel="noopener noreferrer"><small>079: </small>Why is the Spring Framework so Popular?</a></li>
+					<li><a href="https://dzone.com/articles/working-with-resources-in-spring?edition=521297&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-30" 
+						target="_blank" rel="noopener noreferrer"><small>080: </small>Working With Resources in Spring</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>		
+</body>
+</html>

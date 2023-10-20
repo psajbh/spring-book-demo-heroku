@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">IDE Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 300px;
+			width: 500px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;IDE Resources</h4>
+				<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://examples.javacodegeeks.com/desktop-java/ide/eclipse/eclipse-checkstyle-plugin-example/" target="_blank" rel="noopener noreferrer"><small>001: </small>Eclipse Checkstyle Plugin Example</a></li>
+					<li><a href="https://code.visualstudio.com/docs/?dv=win" target="_blank" rel="noopener noreferrer"><small>002: </small>Visual Studio Code - Full Tutorial</a><br /></li>
+					<li><a href="https://academind.com/tutorials/visual-studio-code-introduction/" target="_blank" rel="noopener noreferrer"><small>003: </small>Visual Studio Code Introduction</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories" />
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>	
+</body>
+</html>

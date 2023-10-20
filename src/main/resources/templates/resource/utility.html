@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Utility Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 550px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Utility Resources</h4>
+		<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://www.javaguides.net/p/thymeleaf-tutorial.html" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>10 Common VPN Mistakes People Make</a><br /></li>
+					<li><a href="https://www.makeuseof.com/tag/6-ways-to-watch-youtube-without-going-to-youtube/?utm_source=MUO-NL-RP&utm_medium=newsletter&user_id=jhart.naples@gmail.com" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>5 Ways to Watch YouTube Without Going to YouTube</a><br /></li>
+					<li><a href="https://www.adobe.com/acrobat/online/jpg-to-pdf.html" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>Adobe Acrobat - Convert JPG to PDF</a><br /></li>
+					<li><a href="https://projects.apache.org/projects.html?language" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>Apache Projects Directory</a><br /></li>
+					<li><a href="https://www.simplilearn.com/tutorials/aws-tutorial" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>AWS Tutorial: A Step-by-Step Tutorial for Beginners</a><br /></li>
+					<li><a href="https://coolors.co" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>Color Palettes Generator</a><br /></li>
+					<li><a href="https://devdocs.io" 
+						target="_blank" rel="noopener noreferrer"><small>006: </small>DevDocs API Documentation</a><br /></li>
+					<li><a href="https://app.diagrams.net" 
+						target="_blank" rel="noopener noreferrer"><small>007: </small>Diagram Creation IDE</a><br /></li>
+					<li><a href="https://www.diffchecker.com" 
+						target="_blank" rel="noopener noreferrer"><small>008: </small>Diffchecker - Compare Text</a><br /></li>
+					<li><a href="https://blog.back4app.com/digitalocean-vs-heroku" 
+						target="_blank" rel="noopener noreferrer"><small>009: </small>DigitalOcean vs Heroku | Which is better?</a><br /></li>
+					<li><a href="https://doggoipsum.com" 
+						target="_blank" rel="noopener noreferrer"><small>010: </small>Doggo Ipsum</a><br /></li>
+					<li><a href="https://drive.google.com/drive/u/0/my-drive?ths=true" 
+						target="_blank" rel="noopener noreferrer"><small>011: </small>Google Drive</a><br /></li>
+					<li><a href="https://fonts.google.com" 
+						target="_blank" rel="noopener noreferrer"><small>012: </small>Google Fonts</a><br /></li>
+					<li><a href="https://translate.google.com" 
+						target="_blank" rel="noopener noreferrer"><small>013: </small>Google Translate</a><br /></li>
+					<li><a href="https://translate.google.com" 
+						target="_blank" rel="noopener noreferrer"><small>014: </small>How to Choose the Best Domain Registrar in 2023</a><br /></li>
+					<li><a href="https://dzone.com/articles/keytool-commandutility-to-generate-a-keystorecerti?edition=478191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-04-12" 
+						target="_blank" rel="noopener noreferrer"><small>015: </small>How to Generate a Keystore and CSR Using the Keytool Command</a><br /></li>
+					<li><a href="https://htmlcolorcodes.com" 
+						target="_blank" rel="noopener noreferrer"><small>016: </small>HTML Color Codes</a><br /></li>
+					<li><a href="https://dzone.com/articles/introduction-to-security-and-tls?edition=374234&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-21" 
+						target="_blank" rel="noopener noreferrer"><small>017: </small>Introduction to Security and TLS</a><br /></li>
+					<li><a href="https://bluecatnetworks.com/glossary/what-is-ipv4" 
+						target="_blank" rel="noopener noreferrer"><small>018: </small>IPV4</a><br /></li>
+					<li><a href="http://www.whatismyipv6.com" 
+						target="_blank" rel="noopener noreferrer"><small>019: </small>IPV6</a><br /></li>
+					<li><a href="https://www.codejava.net/coding/file-encryption-and-decryption-simple-example" 
+						target="_blank" rel="noopener noreferrer"><small>020: </small>Java File Encryption and Decryption Simple Example</a><br /></li>
+					<li><a href="https://loremipsum.io" 
+						target="_blank" rel="noopener noreferrer"><small>021: </small>Lorem Ipsum</a><br /></li>
+					<li><a href="https://dzone.com/articles/need-an-ssh-client-on-windows-dont-use-putty-or-cy?edition=226192&utm_source=Spotlight&utm_medium=email&utm_campaign=performance%202016-10-14" 
+						target="_blank" rel="noopener noreferrer"><small>022: </small>Need an SSH Client on Windows? Don't Use Putty or Cygwin... Use Git</a><br /></li>
+					<li><a href="https://www.codeproject.com/Articles/704865/Salted-Password-Hashing-Doing-it-Right" 
+						target="_blank" rel="noopener noreferrer"><small>023: </small>Salted Password Hashing - Doing it Right</a><br /></li>
+					<li><a href="https://savemp3.app/en39/download?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DPUOFj0ztpSU%26list%3DPLH5NXK5RMACWx_L0hsXevjlwps0USecnj%26index%3D26" 
+						target="_blank" rel="noopener noreferrer"><small>024: </small>Save any Video to MP3</a><br /></li>
+					<li><a href="https://www.codeproject.com/Articles/704865/Salted-Password-Hashing-Doing-it-Right" 
+						target="_blank" rel="noopener noreferrer"><small>025: </small>Should You Opt for an Open-Source Password Manager?</a><br /></li>
+					<li><a href="https://examples.javacodegeeks.com/sql-constraints-example/" 
+						target="_blank" rel="noopener noreferrer"><small>026: </small>SQL Constraints Example</a><br /></li>
+					<li><a href="https://www.javacodegeeks.com/2012/11/sql-injection-in-java-application.html" 
+						target="_blank" rel="noopener noreferrer"><small>027: </small>SQL Injection in Java Application</a><br /></li>
+					<li><a href="https://www.freeconvert.com/txt-to-pdf" 
+						target="_blank" rel="noopener noreferrer"><small>028: </small>Text to PDF Converter</a><br /></li>
+					<li><a href="https://www.howtogeek.com/devops/what-is-ssh-agent-forwarding-and-how-do-you-use-it/" 
+						target="_blank" rel="noopener noreferrer"><small>029: </small>What is SSH Agent Forwarding and How Do You Use It?</a><br /></li>
+					<li><a href="https://dzone.com/articles/what-is-ssl-how-do-ssl-certificates-work?edition=417241&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-11-21" 
+						target="_blank" rel="noopener noreferrer"><small>030: </small>What is SSL? How do SSL Certificates Work?</a><br /></li>
+					<li><a href="https://copy.r74n.com/ascii-art" 
+						target="_blank" rel="noopener noreferrer"><small>031: </small>ASCII Art</a><br /></li>
+					<li><a href="https://www.base64encode.org" 
+						target="_blank" rel="noopener noreferrer"><small>032: </small>Base64 Decode and Encode</a><br /></li>
+					<li><a href="https://dzone.com/articles/creating-self-signed-certificate?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202018-05-18" 
+						target="_blank" rel="noopener noreferrer"><small>033: </small>Creating Self-Signed Certificate</a><br /></li>
+					<li><a href="https://dzone.com/articles/encrypt-your-defaults-file?edition=228184&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-15" 
+						target="_blank" rel="noopener noreferrer"><small>034: </small>Encrypt Your - Defaults - File</a><br /></li>
+					<li><a href="https://dzone.com/articles/encryption-part-2-public-key-private-key-encryptio?edition=479225&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202019-05-01" 
+						target="_blank" rel="noopener noreferrer"><small>035: </small>Encryption, Part 2: Public Key/Private Key Encryption</a><br /></li>
+					<li><a href="https://dzone.com/articles/example-of-multiple-login-pages-with-spring-securi?edition=308192&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-13" 
+						target="_blank" rel="noopener noreferrer"><small>036: </small>Example of Multiple Login Pages With Spring Security and Spring Boot</a><br /></li>
+					<li><a href="https://dzone.com/articles/how-to-locate-security-issues-in-your-api?edition=451256&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-02-15" 
+						target="_blank" rel="noopener noreferrer"><small>037: </small>How to Locate Security Issues in Your API</a><br /></li>
+					<li><a href="https://html-color-codes.info/colors-from-image" 
+						target="_blank" rel="noopener noreferrer"><small>038: </small>HTML Color Codes - Colors From Image</a><br /></li>
+					<li><a href="https://timjansen.github.io/jarfiller/javabasics/jar/viewextract.xhtml" 
+						target="_blank" rel="noopener noreferrer"><small>039: </small>Java Basics: JAR Files</a><br /></li>
+					<li><a href="https://checkshorturl.com/" 
+						target="_blank" rel="noopener noreferrer"><small>040: </small>Expand and verify all your shortened links </a><br /></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>		
+</body>
+</html>

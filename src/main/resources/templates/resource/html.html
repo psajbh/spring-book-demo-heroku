@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">HTML Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 600px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;HTML Resources</h4>
+		<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://dzone.com/articles/10-html5-hacks-every-web-developer-should-know?edition=542292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-11-20" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>10 HTML5 Hacks Every Web Developer Should Know </a></li>
+					<li><a href="https://codepen.io/pen" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>Code Pen</a></li>
+					<li><a href="https://www.w3schools.com/cssref/css_selectors.php" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>CSS Selector Reference</a></li>
+					<li><a href="https://codepen.io/pen" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>Emmet cheat-sheat / documentation</a></li>
+					<li><a href="https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>How do I create an HTML button that acts like a link?</a></li>
+					<li><a href="https://www.webcodegeeks.com/html5/create-cross-browser-compatible-html-progress-bar/" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>How To Create A Cross Browser Compatible HTML Progress Bar?</a></li>
+					<li><a href="https://docs.emmet.io/cheat-sheet" 
+						target="_blank" rel="noopener noreferrer"><small>006: </small>How to Make a Cross-Brosesr Compatible Website</a></li>
+					<li><a href="https://www.webcodegeeks.com/javascript/jquery/jquery-chaining-example/" 
+						target="_blank" rel="noopener noreferrer"><small>007: </small>JQuery Chaining Example</a></li>
+					<li><a href="https://developer.mozilla.org/en-US" 
+						target="_blank" rel="noopener noreferrer"><small>008: </small>MDN - Resources for Developers</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories" />
+			</form>
+		</div>
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>	
+</body>
+</html>

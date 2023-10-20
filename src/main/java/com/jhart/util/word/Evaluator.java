@@ -16,7 +16,7 @@ public class Evaluator {
 	}
 	
 	private void evaluate(String word) {
-		log.info("Evaluator - evaluate - word: " + word);
+		log.trace("Evaluator - evaluate - word: " + word);
 		if (validate(word)) {
 			process(word);
 		}
@@ -26,7 +26,6 @@ public class Evaluator {
 	}
 	
 	public void evaluate(String[] wordArray) {
-		log.info("Evaluator - evaluate - wordArray size: " + wordArray.length);
 		for (String word : wordArray) {
 			evaluate(word);
 		}
@@ -37,21 +36,14 @@ public class Evaluator {
 	}
 	
 	private void process(String word) {
-		log.info("Evaluator - process - process Key 1");
 		processKey1(word);
-		log.info("Evaluator - process - process Key 2");
 		processKey2(word);
-		log.info("Evaluator - process - process Key 3");
 		processKey3(word);
-		log.info("Evaluator - process - process Key 4");
 		processKey4(word);
-		log.info("Evaluator - process - process Key 5");
 		processKey5(word);
-		log.info("Evaluator - process - complete");
 	}
 	
 	private void processKey1(String word) {
-		log.info("Evaluator - processKey1 - word: " + word);
 		Character ch  = word.charAt(0);
 		String s = ch.toString();
 		String keyContent = "1-"+s;
@@ -64,12 +56,10 @@ public class Evaluator {
 			Integer a = wordMapper.get(keyContent);
 			Integer update = a + 1;
 			wordMapper.put(keyContent, update);
-			
 		}
 	}
 	
 	private void processKey2(String word) {
-		log.info("Evaluator - processKey2 - word: " + word);
 		Character ch  = word.charAt(1);
 		String s = ch.toString();
 		String keyContent = "2-"+s;
@@ -86,7 +76,6 @@ public class Evaluator {
 	}
 	
 	private void processKey3(String word) {
-		log.info("Evaluator - processKey3 - word: " + word);
 		Character ch  = word.charAt(2);
 		String s = ch.toString();
 		String keyContent = "3-"+s;
@@ -103,7 +92,6 @@ public class Evaluator {
 	}
 	
 	private void processKey4(String word) {
-		log.info("Evaluator - processKey4 - word: " + word);
 		Character ch  = word.charAt(3);
 		String s = ch.toString();
 		String keyContent = "4-"+s;
@@ -120,7 +108,6 @@ public class Evaluator {
 	}
 
 	private void processKey5(String word) {
-		log.info("Evaluator - processKey5 - word: " + word);
 		Character ch  = word.charAt(4);
 		String s = ch.toString();
 		String keyContent = "5-"+s;
@@ -141,14 +128,13 @@ public class Evaluator {
 	}
 	
 	private boolean validate(String word) {
-	log.info("Evaluator - validate - word: " + word);
 		if (null == word) {
-			log.info("Evaluator - validate - invalid as null: " + word);
+			log.info("Evaluator - validate -> invalid (i.e. as in null: " + word);
 			return false;
 		}
 		
 		if (word.length() != 5) {
-			log.info("Evaluator - validate - invalid by size: " + word);
+			log.info("Evaluator - validate -> invalid by word length greater than 5 characters, word: " + word);
 			return false;
 		}
 		return true;

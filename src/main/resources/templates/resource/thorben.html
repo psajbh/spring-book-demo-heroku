@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Thorben Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 700px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Thorben Resources</h4>
+				<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://thorben-janssen.com/primary-key-mappings-jpa-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>5 Primary Key Mappings for JPA and Hibernate Every Developer Should Know</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-best-practices-for-readable-and-maintainable-code/" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>6 Hibernate Best Practices for Readable and Maintainable Code</a></li>
+					<li><a href="https://thorben-janssen.com/6-hibernate-mappings-you-should-avoid-for-high-performance-applications/" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>6 Hibernate Mappings You Should Avoid for High-Performance Applications</a></li>
+					<li><a href="https://thorben-janssen.com/jpa-persistence-xml/" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>A Beginner's Guide to JPA's persistence.xml</a></li>
+					<li><a href="https://thorben-janssen.com/access-strategies-in-jpa-and-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>Access Strategies in JPA and Hibernate - Which is better, field or property access?</a></li>
+					<li><a href="https://thorben-janssen.com/best-practices-for-many-to-many-associations-with-hibernate-and-jpa/" 
+						target="_blank" rel="noopener noreferrer"><small>006: </small>Best Practices for Many-to-Many Associations with Hibernate and JPA</a></li>
+					<li><a href="https://thorben-janssen.com/can-you-use-hibernate-eclipselink-jpa-for-your-microservice/" 
+						target="_blank" rel="noopener noreferrer"><small>007: </small>Can you use Hibernate/EclipseLink/JPA for your microservice?</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tip-entitygraph-multiple-subgraphs/" 
+						target="_blank" rel="noopener noreferrer"><small>008: </small>Create an EntityGraph with multiple SubGraphs</a></li>
+					<li><a href="https://thorben-janssen.com/spring-data-jpa-query-annotation/" 
+						target="_blank" rel="noopener noreferrer"><small>009: </small>Custom Queries with Spring Data JPA's Query Annotation</a></li>
+					<li><a href="https://thorben-janssen.com/ultimate-guide-derived-queries-with-spring-data-jpa/" 
+						target="_blank" rel="noopener noreferrer"><small>010: </small>Derived Queries with Spring Data JPA</a></li>
+					<li><a href="https://thorben-janssen.com/dont-expose-entities-in-api/" 
+						target="_blank" rel="noopener noreferrer"><small>011: </small>Don't Expose JPA entities in your REST API</a></li>
+					<li><a href="https://thorben-janssen.com/blaze-persistence-entity-views/" 
+						target="_blank" rel="noopener noreferrer"><small>012: </small>Entity Views with Blaze Persistence - The better DTO projections?</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-enum-mappings/" 
+						target="_blank" rel="noopener noreferrer"><small>013: </small>Enum Mapping with Hibernate - The Complete Guide</a></li>
+					<li><a href="https://thorben-janssen.com/fluent-entities-with-hibernate-and-jpa/" 
+						target="_blank" rel="noopener noreferrer"><small>014: </small>Fluent Entities with Hibernate and JPA</a></li>
+					<li><a href="https://thorben-janssen.com/getting-started-with-jooq/" 
+						target="_blank" rel="noopener noreferrer"><small>015: </small>Getting Started with jOOQ - Building SQL Queries in Java</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-best-practices/?utm_source=mail1&utm_medium=email&utm_campaign=advanced_evergreen" 
+						target="_blank" rel="noopener noreferrer"><small>016: </small>Hibernate Best Practices</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-how-to-activate-an-entity-listener-for-all-entities/" 
+						target="_blank" rel="noopener noreferrer"><small>017: </small>How to activate an entity listener for all entities</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-apply-distinct-to-jpql-but-not-sql-query/" 
+						target="_blank" rel="noopener noreferrer"><small>018: </small>How to Apply DISTINCT to Your JPQL But Not Your SQL Query</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-cache-dto/" 
+						target="_blank" rel="noopener noreferrer"><small>019: </small>How to Cache DTO Projections with Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-how-to-customize-a-constructor-expression-for-different-subclasses/" 
+						target="_blank" rel="noopener noreferrer"><small>020: </small>How to Customize a Constructor Expression for Different Subclasses</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-exclude-deactivated-elements-from-association/" 
+						target="_blank" rel="noopener noreferrer"><small>021: </small>How to exclude Deativated Elements from an Association</a></li>
+					<li><a href="https://thorben-janssen.com/generate-uuids-primary-keys-hibernate/?utm_source=mail2&utm_medium=email&utm_campaign=advanced_evergreen" 
+						target="_blank" rel="noopener noreferrer"><small>022: </small>How to generate UUIDs as primary keys with Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-order-null-criteriaquery/" 
+						target="_blank" rel="noopener noreferrer"><small>023: </small>How to Handle NULL Values while Ordering Query Results in a CriteriaQuery</a></li>
+					<li><a href="https://thorben-janssen.com/implement-soft-delete-hibernate/?utm_source=mail5&utm_medium=email&utm_campaign=advanced_evergreen" 
+						target="_blank" rel="noopener noreferrer"><small>024: </small>How to implement a soft delete with Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tip-lazy-loading-one-to-one/" 
+						target="_blank" rel="noopener noreferrer"><small>025: </small>How to lazily load one-to-one associations</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-how-to-map-a-boolean-to-y-n/" 
+						target="_blank" rel="noopener noreferrer"><small>026: </small>How to map a Booean to Y/N</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-map-view-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>027: </small>How to map a view with Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-how-to-map-an-entity-to-multiple-tables/" 
+						target="_blank" rel="noopener noreferrer"><small>028: </small>How to map an entity to multiple tables</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-how-to-map-java-time-year-with-jpa-and-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>029: </small>How to Map java.time.Year with JPA and Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-how-to-map-the-latest-element-of-an-association/" 
+						target="_blank" rel="noopener noreferrer"><small>030: </small>How to map the latest element of an association</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-how-to-override-column-mappings-of-a-superclass/" 
+						target="_blank" rel="noopener noreferrer"><small>031: </small>How to override column mappings of a superclass</a></li>
+					<li><a href="https://thorben-janssen.com/parse-string-into-entitygraph/" 
+						target="_blank" rel="noopener noreferrer"><small>032: </small>How to parse a String into an EntityGraph with Hibernate 5.4</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-how-to-perform-different-validations-for-persist-and-update/" 
+						target="_blank" rel="noopener noreferrer"><small>033: </small>How to perform different validations for persist and update</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-prevent-removal-parent-entity-children/" 
+						target="_blank" rel="noopener noreferrer"><small>034: </small>How to Prevent the Removal of a Parent Entity with Children</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-query-elementcollection/" 
+						target="_blank" rel="noopener noreferrer"><small>035: </small>How to use @ElementCollection entries in a query</a></li>
+					<li><a href="https://thorben-janssen.com/implementing-the-repository-pattern-with-jpa-and-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>036: </small>Implementing the Repository pattern with JPA and Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/key-jpa-hibernate-annotations/?ck_subscriber_id=176041158" 
+						target="_blank" rel="noopener noreferrer"><small>037: </small>Key annotations you need to know when working with JPA and Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/lazyinitializationexception/?ck_subscriber_id=176041158" 
+						target="_blank" rel="noopener noreferrer"><small>038: </small>LazyInitialization Exception: What is is & How to fix it</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-logging-guide/" 
+						target="_blank" rel="noopener noreferrer"><small>039: </small>Logging Guide for Hibernate 4,5 & 6 - Use the right config for dev and prod</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tip-bidirectional-one-to-one-with-shared-composite-primary-key/" 
+						target="_blank" rel="noopener noreferrer"><small>040: </small>Map a bidirectional one-to-one association with shared composite primary key</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-unidirectional-one-to-many-association-without-junction-table/" 
+						target="_blank" rel="noopener noreferrer"><small>041: </small>Map an Unidirectional One-to-Many Association Without a Junction Table</a></li>
+					<li><a href="https://thorben-janssen.com/naming-strategies-in-hibernate-5/?ck_subscriber_id=176041158" 
+						target="_blank" rel="noopener noreferrer"><small>042: </small>Naming Strategies in Hibernate 5</a></li>
+					<li><a href="https://thorben-janssen.com/projections-with-jpa-and-hibernate/?ck_subscriber_id=176041158" 
+						target="_blank" rel="noopener noreferrer"><small>043: </small>Projections with JPA and Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/transactions-spring-data-jpa/?ck_subscriber_id=176041158" 
+						target="_blank" rel="noopener noreferrer"><small>044: </small>Spring: Managing Transactions with Spring</a></li>
+					<li><a href="https://thorben-janssen.com/builder-pattern-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>045: </small>The Builder Pattern - How to use it with Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/tutorials/" 
+						target="_blank" rel="noopener noreferrer"><small>046: </small>Thorben Janssen Blog</a></li>
+					<li><a href="https://thorben-janssen.com/ultimate-guide-to-implementing-equals-and-hashcode-with-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>047: </small>Ultimate Guide to Implementing equals() and hashCode() with Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/optimal-query-and-projection-jpa-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>048: </small>Using the Optimal Query Approach and Projection for JPA and Hibernate</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-whats-the-best-way-to-persist-a-zoneddatetime/" 
+						target="_blank" rel="noopener noreferrer"><small>049: </small>What's the best way to persist a ZonedDateTime</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-whats-the-difference-between-columnlength50-and-sizemax50/" 
+						target="_blank" rel="noopener noreferrer"><small>050: </small>What's the Difference Between @Column(length=50) and @Size(max=50)</a></li>
+					<li><a href="https://thorben-janssen.com/hibernate-tips-whats-the-difference-between-column-nullable-false-and-notnull/" 
+						target="_blank" rel="noopener noreferrer"><small>051: </small>What's the difference between @Column(nullable=false) and @NotNull</a></li>
+					<li><a href="https://thorben-janssen.com/dto-projections/" 
+						target="_blank" rel="noopener noreferrer"><small>052: </small>Why, When and Hot to Use DTO Projections with JPA and Hibernate</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories"/>
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>
+	</div>		
+</body>
+</html>

@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Java Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 675px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Java Resources</h4>
+		<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+		
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://dzone.com/articles/ten-commandments-of-object-oriented-design?utm_source=Top%205&utm_medium=email&utm_campaign=top5%202016-09-30" 
+						target="_blank" rel="noopener noreferrer"><small>000: </small>10 Commandments of Object-Oriented Design</a></li>
+					<li><a href="https://dzone.com/articles/10-java-interview-questions-from-investment-banks?edition=367215&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-23" 
+						target="_blank" rel="noopener noreferrer"><small>001: </small>10 Java Interview Questions From Investment Banks</a></li>
+					<li><a href="https://dzone.com/articles/12-factors-and-beyond-in-java?edition=219185&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-05" 
+						target="_blank" rel="noopener noreferrer"><small>002: </small>12 Factors and Beyond in Java</a></li>
+					<li><a href="https://dzone.com/articles/20-books-java-programmers-should-read-in-2018?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202018-02-093" 
+						target="_blank" rel="noopener noreferrer"><small>003: </small>20 Books Java Programmers Should Read in 2018</a></li>
+					<li><a href="https://dzone.com/articles/20-useful-open-source-libraries-for-java-programme?edition=385299&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-27" 
+						target="_blank" rel="noopener noreferrer"><small>004: </small>20 Useful Libraries Java Programmers Should Know</a></li>
+					<li><a href="https://dzone.com/articles/using-optional-correctly-is-not-optional?edition=423192&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-12-02" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>26 Reasons Why Using Optional Correctly is Not Optional</a></li>
+					<li><a href="https://dzone.com/articles/3-best-practices-java-programmers-can-learn-from-s?edition=383257&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-06-27" 
+						target="_blank" rel="noopener noreferrer"><small>006: </small>3 Best Practices Java Programmers Can Learn From Spring Framework</a></li>
+					<li><a href="https://dzone.com/articles/3-things-every-java-developer-should-stop-doing?edition=362108&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-16" 
+						target="_blank" rel="noopener noreferrer"><small>007: </small>3 Things Every Java Developer Should Stop Doing</a></li>
+					<li><a href="https://dzone.com/articles/3-ways-to-optimize-regression-testing-1?edition=272883&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-23" 
+						target="_blank" rel="noopener noreferrer"><small>008: </small>3 Ways to Optimize Regression Testing</a></li>
+					<li><a href="https://dzone.com/articles/4-techniques-for-writing-better-java?edition=309196&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-19" 
+						target="_blank" rel="noopener noreferrer"><small>009: </small>Techniques for Writing Better Java</a></li>
+					<li><a href="https://dzone.com/articles/5-annotations-every-java-developer-should-know?edition=367199&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-15" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>5 Annotations Every Java Developer Should Know</a></li>
+					<li><a href="https://dzone.com/articles/5-basic-rest-api-design-guidelines?edition=220209&utm_source=Spotlight&utm_medium=email&utm_campaign=integration%202016-10-06" 
+						target="_blank" rel="noopener noreferrer"><small>010: </small>5 Basic REST API Design Guidelines </a></li>
+					<li><a href="https://dzone.com/articles/5-guidelines-for-designing-restful-apis-effectivel?edition=368214&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-21" 
+						target="_blank" rel="noopener noreferrer"><small>011: </small>5 Guidelines for Designing RESTful APIs Effectively</a></li>
+					<li><a href="https://dzone.com/articles/5-hidden-secrets-in-java?edition=364091&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-21" 
+						target="_blank" rel="noopener noreferrer"><small>012: </small>5 Hidden Secrets in Java</a></li>
+					<li><a href="https://dzone.com/articles/5-more-hidden-secrets-in-java?edition=369206&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-28" 
+						target="_blank" rel="noopener noreferrer"><small>013: </small>5 More Hidden Secrets in Java</a></li>
+					<li><a href="https://dzone.com/articles/5-more-hidden-secrets-in-java?edition=371199&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-04-04" 
+						target="_blank" rel="noopener noreferrer"><small>014: </small>5 More Hidden Secrets in Java - Albano</a></li>
+					<li><a href="https://dzone.com/articles/5-things-only-experienced-devs-can-teach-you-about-Java?edition=243485&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-22" 
+						target="_blank" rel="noopener noreferrer"><small>015: </small>5 Things Only Experienced Devs Can Teach You About Java</a></li>
+					<li><a href="https://dzone.com/articles/5-tips-for-high-performance-thread-safe-java-from?edition=357100&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-23" 
+						target="_blank" rel="noopener noreferrer"><small>016: </small>5 Tips for Performant, Thread-Safe Java from ConcurrentHashMap</a></li>
+					<li><a href="https://dzone.com/articles/7-tips-about-concurrency?edition=323392&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-09-04" 
+						target="_blank" rel="noopener noreferrer"><small>017: </small>5 Tips on Concurrency</a></li>
+					<li><a href="https://dzone.com/articles/5-websites-to-learn-java-programming-for-free?edition=423350&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-01-25" 
+						target="_blank" rel="noopener noreferrer"><small>018: </small>5 Websites to Learn Java for FREE</a></li>
+					<li><a href="https://dzone.com/articles/50-common-java-errors-and-how-to-avoid-them-part-1?edition=305135&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-06-24" 
+						target="_blank" rel="noopener noreferrer"><small>019: </small>50 Common Java Errors and How to Avoid Them</a></li>
+					<li><a href="https://dzone.com/articles/50-java-interview-questions-for-programmers?edition=457221&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-06" 
+						target="_blank" rel="noopener noreferrer"><small>020: </small>50+ Java Interview Questions for Programmers</a></li>
+					<li><a href="https://dzone.com/articles/7-tips-for-writing-better-unit-tests-in-java?edition=243484&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-21" 
+						target="_blank" rel="noopener noreferrer"><small>021: </small>7 Tips for Writing Better Unit Tests in Java </a></li>
+					<li><a href="https://dzone.com/articles/9-best-practices-to-handle-exceptions-in-java?edition=317395&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-08-17" 
+						target="_blank" rel="noopener noreferrer"><small>022: </small>9 Best Practices to Handle Exceptions in Java</a></li>
+					<li><a href="https://dzone.com/articles/why-wouldnt-you-write-unit-tests?edition=253685&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-13" 
+						target="_blank" rel="noopener noreferrer"><small>023: </small>9 Reasons Why a Developer Wouldn't Write Unit Tests</a></li>
+					<li><a href="https://dzone.com/articles/5-things-java-programmer-should-learn-in-2018?edition=355109&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-19" 
+						target="_blank" rel="noopener noreferrer"><small>024: </small>9 Things Java Programmers Should Learn in 2018</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/12/a-beginners-guide-to-java-agents.html" 
+						target="_blank" rel="noopener noreferrer"><small>025: </small>A beginner's guide to Java agents</a></li>
+					<li><a href="https://dzone.com/articles/javas-quotmetroquot-theme-recap-and-new-version?edition=383282&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-01" 
+						target="_blank" rel="noopener noreferrer"><small>025: </small>A Better Java UI Theme</a></li>
+					<li><a href="https://dzone.com/articles/a-birds-eye-view-on-java-concurrency-frameworks-1?edition=451241&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-02-13" 
+						target="_blank" rel="noopener noreferrer"><small>026: </small>A Bird's-Eye View on Java Concurrency Frameworks</a></li>
+					<li><a href="https://dzone.com/articles/how-to-format-a-string-clarified?edition=325555&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202017-09-26" 
+						target="_blank" rel="noopener noreferrer"><small>027: </small>A Clarified String Formatting Cheatsheet</a></li>
+					<li><a href="https://dzone.com/articles/deep-dive-into-java-management-extensions-jmx?edition=334722&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202017-10-24" 
+						target="_blank" rel="noopener noreferrer"><small>028: </small>A Deep Dive Into JMX</a></li>
+					<li><a href="https://dzone.com/articles/a-deep-dive-into-the-java-executor-service?edition=347141&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-01-02" 
+						target="_blank" rel="noopener noreferrer"><small>029: </small>A Deep Dive Into the Java ExecutorService</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/12/a-disk-backed-arraylist.html" 
+						target="_blank" rel="noopener noreferrer"><small>030: </small>A Disk-Backed arraylist</a></li>
+					<li><a href="https://dzone.com/articles/a-guide-to-streams-in-java-8-in-depth-tutorial-wit?edition=366235&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-03-13" 
+						target="_blank" rel="noopener noreferrer"><small>031: </small>A Guide to Streams: In-Depth Tutorial With Examples</a></li>
+					<li><a href="https://dzone.com/articles/a-java-8-streams-cookbook?edition=268945&utm_source=Spotlight&utm_medium=email&utm_campaign=java%202017-02-14" 
+						target="_blank" rel="noopener noreferrer"><small>032: </small>A Java 8 Streams Cookbook</a></li>
+					<li><a href="https://dzone.com/articles/java-collections?edition=271922&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-28" 
+						target="_blank" rel="noopener noreferrer"><small>033: </small>A Look at Java Collections</a></li>
+					<li><a href="https://dzone.com/articles/java-optional?edition=499292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-15" 
+						target="_blank" rel="noopener noreferrer"><small>034: </small>A Look at Java Optionals</a></li>
+					<li><a href="https://dzone.com/articles/a-new-high-throughput-java-executor-service?edition=216187&utm_source=Spotlight&utm_medium=email&utm_campaign=java%202016-09-27" 
+						target="_blank" rel="noopener noreferrer"><small>035: </small>A New High Throughput Java Executor Service</a></li>
+					<li><a href="https://dzone.com/articles/a-new-way-to-detect-deadlocks-during-tests?edition=334741&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202017-10-27" 
+						target="_blank" rel="noopener noreferrer"><small>036: </small>>A New Way to Detect Deadlocks During Tests </a></li>
+					<li><a href="https://dzone.com/articles/template-engines-at-one-spring-boot-and-engines-se?edition=248483&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-03" 
+						target="_blank" rel="noopener noreferrer"><small>037: </small>A Review of Java Template Engines</a></li>
+					<li><a href="https://dzone.com/articles/scalable-java-thread-pool-executor?edition=262906&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-21" 
+						target="_blank" rel="noopener noreferrer"><small>038: </small>A Scalable Java Thread Pool Executor</a></li>
+					<li><a href="https://dzone.com/articles/a-tale-of-two-iterators?edition=341091&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-12-01" 
+						target="_blank" rel="noopener noreferrer"><small>039: </small>A Tale of Two Iterators</a></li>
+					<li><a href="https://dzone.com/articles/abstraction-in-java?edition=461205&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-29" 
+						target="_blank" rel="noopener noreferrer"><small>040: </small>Abstraction in Java</a></li>
+					<li><a href="https://dzone.com/articles/add-secure-token-authentication-to-your-java-app?edition=479217&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-04-26" 
+						target="_blank" rel="noopener noreferrer"><small>041: </small>Add Secure Token Authentication to Your Java App</a></li>
+					<li><a href="https://www.javacodegeeks.com/2015/09/advanced-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>042: </small>Advanced Java Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/all-about-object?edition=387204&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-08-08" 
+						target="_blank" rel="noopener noreferrer"><small>043: </small>All About Object in Java</a></li>
+					<li><a href="https://dzone.com/articles/all-jpa-annotations-mapping-annotations?edition=420205&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-29" 
+						target="_blank" rel="noopener noreferrer"><small>044: </small>All JPA Annotations: Mapping Annotations</a></li>
+					<li><a href="https://dzone.com/articles/all-things-java-8?edition=521345&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202019-09-25" 
+						target="_blank" rel="noopener noreferrer"><small>045: </small>All Things Java 8 [Tutorials]</a></li>
+					<li><a href="https://dzone.com/articles/an-interview-question-on-spring-singletons?edition=272881&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-20" 
+						target="_blank" rel="noopener noreferrer"><small>046: </small>An Interview Question on Spring Singletons</a></li>
+					<li><a href="https://dzone.com/articles/an-introduction-to-junit?edition=520326&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-25" 
+						target="_blank" rel="noopener noreferrer"><small>047: </small>An Introduction to Junit</a></li>
+					<li><a href="https://dzone.com/articles/an-introduction-to-reactive-programming-with-sprin?edition=611292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-06-20" 
+						target="_blank" rel="noopener noreferrer"><small>048: </small>An Introduction to Reactive Programming With Spring</a></li>
+					<li><a href="https://dzone.com/articles/an-introduction-to-working-with-jaxb-2?edition=202663&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-23" 
+						target="_blank" rel="noopener noreferrer"><small>049: </small>An Introduction to Working With JAXB</a></li>
+					<li><a href="https://dzone.com/articles/methodreference?edition=265886&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-27" 
+						target="_blank" rel="noopener noreferrer"><small>050: </small>An Overview of Method References</a></li>
+					<li><a href="https://examples.javacodegeeks.com/apache-cxf-web-service-example/" 
+						target="_blank" rel="noopener noreferrer"><small>051: </small>Apache CXF Web Service Example</a></li>
+					<li><a href="https://dzone.com/articles/api-security-ways-to-authenticate-and-authorize?edition=200661&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-17" 
+						target="_blank" rel="noopener noreferrer"><small>052: </small>API Security: Ways to Authenticate and Authorize</a></li>
+					<li><a href="https://dzone.com/articles/demystifying-volatile-and-synchronized-again?edition=461205&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-29" 
+						target="_blank" rel="noopener noreferrer"><small>053: </small>Approaching Volatile and Synchronized with Singleton Examples</a></li>
+					<li><a href="https://dzone.com/articles/async-await-in-java?edition=365208&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-01" 
+						target="_blank" rel="noopener noreferrer"><small>054: </small>Async Await in Java</a></li>
+					<li><a href="https://dzone.com/articles/atomicreference-a-sometimes-easier-alternative-to?edition=376294&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-14" 
+						target="_blank" rel="noopener noreferrer"><small>055: </small>AtomicReference: A (Sometimes Easier) Alternative to Synchronized Blocks</a></li>
+					<li><a href="https://dzone.com/articles/authentication-cluster?edition=554299&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202020-01-01" 
+						target="_blank" rel="noopener noreferrer"><small>056: </small>Authentication and Authorization: Mastering Security</a></li>
+					<li><a href="https://www.baeldung.com/how-to-use-resttemplate-with-basic-authentication-in-spring" 
+						target="_blank" rel="noopener noreferrer"><small>057: </small>Basic Authentication with the RestTemplate</a></li>
+					<li><a href="https://dzone.com/articles/be-the-best-api-you-can-be?edition=379191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-25" 
+						target="_blank" rel="noopener noreferrer"><small>058: </small>Be the BEST at Your REST API!</a></li>
+					<li><a href="https://dzone.com/articles/behavioral-design-patterns-observer?edition=423201&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-12-10" 
+						target="_blank" rel="noopener noreferrer"><small>059: </small>Behavioral Design Patterns: Observer</a></li>
+					<li><a href="https://www.springboottutorial.com/java-unit-testing-frameworks-with-examples-junit-mockito" 
+						target="_blank" rel="noopener noreferrer"><small>060: </small>Best Java Unit Testing Frameworks - With Examples of JUnit, Mockito and More...</a></li>
+					<li><a href="https://dzone.com/articles/best-performance-practices-for-hibernate-5-and-spr-2?edition=601295&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-05-21" 
+						target="_blank" rel="noopener noreferrer"><small>061: </small>Best Performance Practices for Hibernate 5 and Spring Boot 2 </a></li>
+					<li><a href="https://dzone.com/articles/best-practices-of-code-documentation-in-java?edition=210871&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-30" 
+						target="_blank" rel="noopener noreferrer"><small>062: </small>Best Practices for Code Documentation in Java</a></li>
+					<li><a href="https://www.javacodegeeks.com/learn-java-programming-online.html#prerequisites" 
+						target="_blank" rel="noopener noreferrer"><small>063: </small>Best Way to Learn Java Programming Online</a></li>
+					<li><a href="https://dzone.com/articles/uses-of-spring-aop-aspect-oriented-programming?edition=489315&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-03" 
+						target="_blank" rel="noopener noreferrer"><small>064: </small>Building Applications With Spring AOP</a></li>
+					<li><a href="https://dzone.com/articles/building-java-applications-with-maven?edition=553299&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-12-16" 
+						target="_blank" rel="noopener noreferrer"><small>065: </small>Building Java Applications With Maven</a></li>
+					<li><a href="https://dzone.com/articles/caching-for-faster-apis?edition=229208&utm_source=Spotlight&utm_medium=email&utm_campaign=integration%202016-10-20" 
+						target="_blank" rel="noopener noreferrer"><small>066: </small>Caching for Faster APIs</a></li>
+					<li><a href="https://dzone.com/articles/java-how-to-calculate-size-of-objects-amp-arrays-b?utm_source=Top%205&utm_medium=email&utm_campaign=2016-11-11" 
+						target="_blank" rel="noopener noreferrer"><small>067: </small>Calculating the Memory Usage of Objects and Arrays</a></li>
+					<li><a href="https://dzone.com/articles/cheatsheet-java-functional-interfaces?edition=365238&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-12" 
+						target="_blank" rel="noopener noreferrer"><small>068: </small>Cheatsheet: Java Functional Interfaces</a></li>
+					<li><a href="https://dzone.com/articles/java-cloning-with-example?edition=216178&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-26" 
+						target="_blank" rel="noopener noreferrer"><small>069: </small>Cloning With Examples</a></li>
+					<li><a href="https://www.codejava.net/misc-java-tutorials"
+						target="_blank" rel="noopener noreferrer"><small>070: </small>CodeJava Miscellaneous Java Coding Tutorials</a></li>
+					<li><a href="https://dzone.com/articles/coding-best-practices-and-solutions?edition=238404&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-12" 
+						target="_blank" rel="noopener noreferrer"><small>071: </small>Coding Best Practices and Solutions</a></li>
+					<li><a href="https://dzone.com/articles/common-mistakes-in-rest-api-design?edition=367211&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-03-21" 
+						target="_blank" rel="noopener noreferrer"><small>072: </small>Common Mistakes in REST API Design </a></li>
+					<li><a href="https://dzone.com/articles/comparing-files-in-java?edition=359106&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-01" 
+						target="_blank" rel="noopener noreferrer"><small>073: </small>Comparing Files in Java</a></li>
+					<li><a href="https://dzone.com/articles/joining-strings-in-java-8?edition=315391&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-08-09" 
+						target="_blank" rel="noopener noreferrer"><small>074: </small>Concatenating Strings in Java 8</a></li>
+					<li><a href="https://dzone.com/articles/configuring-https-for-use-with-servlets?edition=364091&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-21" 
+						target="_blank" rel="noopener noreferrer"><small>075: </small>Configure HTTPS for Use With Servlets [Snippet]</a></li>
+					<li><a href="https://dzone.com/articles/configuring-a-custom-objectmapper-for-spring-restt?edition=550306&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-12-08" 
+						target="_blank" rel="noopener noreferrer"><small>076: </small>Configuring a Custom ObjectMapper for Spring RestTemplate</a></li>
+					<li><a href="https://dzone.com/articles/constructors-or-static-factory-methods?edition=335891&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-11-17" 
+						target="_blank" rel="noopener noreferrer"><small>077: </small>Constructors or Static Factory Methods?</a></li>
+					<li><a href="https://dzone.com/articles/convert-map-to-list-in-java-8?edition=207771&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-29" 
+						target="_blank" rel="noopener noreferrer"><small>078: </small>Convert Map to List in Java 8</a></li>
+					<li><a href="https://dzone.com/articles/converting-collections-to-maps-with-jdk-8?edition=354097&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-01-16" 
+						target="_blank" rel="noopener noreferrer"><small>079: </small>Converting Collections to Maps With JDK8</a></li>
+					<li><a href="https://dzone.com/articles/converting-java-maps-to-lists?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202018-05-18" 
+						target="_blank" rel="noopener noreferrer"><small>080: </small>Converting Java Maps to Lists</a></li>
+					<li><a href="https://dzone.com/articles/converting-java-maps-to-lists?edition=376294&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-14" 
+						target="_blank" rel="noopener noreferrer"><small>081: </small>Converting Java Maps to Lists - John Thompson</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/core-java-tutorial?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>082: </small>Core Java Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/java-8-how-to-create-executable-fatjar-without-ide?edition=237190&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-28" 
+						target="_blank" rel="noopener noreferrer"><small>083: </small>Create an Executable Fat JAR With Your Command Line</a></li>
+					<li><a href="https://dzone.com/articles/creating-a-simple-java-rest-service-usingnbsphttp?edition=214172&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-09" 
+						target="_blank" rel="noopener noreferrer"><small>084: </small>Creating a Simple Java REST Service Using HTTP-RPC</a></li>
+					<li><a href="https://examples.javacodegeeks.com/creating-and-starting-java-threads/" 
+						target="_blank" rel="noopener noreferrer"><small>085: </small>Creating and Starting Java Threads</a></li>
+					<li><a href="https://dzone.com/articles/to-mock-to-stub-or-to-lambda?edition=358095&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-26" 
+						target="_blank" rel="noopener noreferrer"><small>086: </small>Creating Stubs Using Java 8 Lambdas</a></li>
+					<li><a href="https://dzone.com/articles/custom-annotation-in-java-for-sql-injection-safe-p?edition=206672&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-28" 
+						target="_blank" rel="noopener noreferrer"><small>087: </small>Custom Annotation in Java for SQL Injection Safe Parameters</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/07/data-classes-considered-harmful.html" 
+						target="_blank" rel="noopener noreferrer"><small>088: </small>Data Classes Considered Harmful</a></li>
+					<li><a href="https://dzone.com/articles/database-crud-operations-in-java-8-streams?edition=237283&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-27" 
+						target="_blank" rel="noopener noreferrer"><small>089: </small>Database CRUD Operations in Java 8 Streams</a></li>
+					<li><a href="https://dzone.com/articles/dealing-with-similar-tests-in-junit-5?edition=268937&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-10" 
+						target="_blank" rel="noopener noreferrer"><small>090: </small>Dealing With Similar Tests in JUnit 5</a></li>
+					<li><a href="https://dzone.com/articles/deferred-execution-with-javas-supplier?edition=380202&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-31" 
+						target="_blank" rel="noopener noreferrer"><small>091: </small>Deferred Execution With Java's Supplier</a></li>
+					<li><a href="https://dzone.com/articles/java-fluent-api-design?edition=202664&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-24" 
+						target="_blank" rel="noopener noreferrer"><small>092: </small>Design a Fluent API in Java</a></li>
+					<li><a href="https://dzone.com/articles/design-patterns-explained-adapter-pattern-with-cod?edition=379196&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-27" 
+						target="_blank" rel="noopener noreferrer"><small>093: </small>Design Patterns Explained: Adapter Pattern with Code Examples</a></li>
+					<li><a href="https://dzone.com/articles/designing-rest-api-what-is-code-first-approach?edition=545293&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202019-11-27" 
+						target="_blank" rel="noopener noreferrer"><small>094: </small>Designing a REST API — What Is a Code-First Approach?</a></li>
+					<li><a href="https://dzone.com/articles/designing-a-bulletproof-code?edition=479217&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-04-26" 
+						target="_blank" rel="noopener noreferrer"><small>095: </small>Designing Bulletprofe Code</a></li>
+					<li><a href="https://dzone.com/articles/designing-rest-api-best-practices-you-should-be-fo?edition=248583&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-06" 
+						target="_blank" rel="noopener noreferrer"><small>096: </small>Designing REST APIs Best Practices</a></li>
+					<li><a href="https://dzone.com/articles/finding-java-memory-leaks-from-a-heap-dump?edition=416206&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-06" 
+						target="_blank" rel="noopener noreferrer"><small>097: </small>Detecting Memory Leaks From a JVM Heap Dump</a></li>
+					<li><a href="https://dzone.com/articles/develop-a-rest-api-using-java-and-jetty?edition=553297&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-12-16" 
+						target="_blank" rel="noopener noreferrer"><small>098: </small>Develop a REST API Using Java and Jetty </a></li>
+					<li><a href="https://dzone.com/articles/developing-rest-apis?edition=447191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-01-30" 
+						target="_blank" rel="noopener noreferrer"><small>099: </small>Developing REST APIs</a></li>
+					<li><a href="https://dzone.com/articles/difference-between-beanfactory-and-applicationcont?edition=385293&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-26" 
+						target="_blank" rel="noopener noreferrer"><small>100: </small>Difference Between BeanFactory and ApplicationContext in Spring</a></li>
+					<li><a href="https://dzone.com/articles/difference-between-jdk-vs-jre-vs-jvm?edition=417254&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-25" 
+						target="_blank" rel="noopener noreferrer"><small>101: </small>Difference Between JDK vs JRE vs JVM</a></li>
+					<li><a href="https://dzone.com/articles/difference-between-volatile-and-synchronized-keywo?edition=387230&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-08-26" 
+						target="_blank" rel="noopener noreferrer"><small>102: </small>Difference Between Volatile and Synchronized Keywords in Java</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/differences-between-rest-soap-apis/" 
+						target="_blank" rel="noopener noreferrer"><small>103: </small>Differences Between REST and SOAP APIs</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/01/different-states-java-threads.html" 
+						target="_blank" rel="noopener noreferrer"><small>104: </small>Different States of Java Threads</a></li>
+					<li><a href="https://dzone.com/articles/java-different-types-of-references?edition=212185&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-02" 
+						target="_blank" rel="noopener noreferrer"><small>105: </small>Different Types of References in Java</a></li>
+					<!--<li><a href="https://dimitri.codes" target="_blank" rel="noopener noreferrer"><small>005: </small>Dimitri Blog</a></li>-->
+					<li><a href="https://dzone.com/articles/distributed-tasks-execution-and-scheduling-in-java?edition=213251&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-14" 
+						target="_blank" rel="noopener noreferrer"><small>106: </small>Distributed Tasks Execution and Scheduling in Java, Powered by Redis</a></li>
+					<li><a href="https://dzone.com/articles/dont-fear-the-lambda?edition=335902&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202017-11-21" 
+						target="_blank" rel="noopener noreferrer"><small>107: </small>Don't Fear the Lambda</a></li>
+					<li><a href="https://examples.javacodegeeks.com/doubly-linked-list-java-example/" 
+						target="_blank" rel="noopener noreferrer"><small>108: </small>Doubly Linked List Java Example</a></li>
+					<li><a href="https://blog.frankel.ch//dynamic-casting-java" 
+						target="_blank" rel="noopener noreferrer"><small>109: </small>Dynamic casting in Java</a></li>
+					<li><a href="https://dzone.com/articles/easy-fine-grained-sorting-with-jdk-8?edition=357103&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-25" 
+						target="_blank" rel="noopener noreferrer"><small>110: </small>Easy Fine-Grained Sorting With JDK 8</a></li>
+					<li><a href="https://dzone.com/articles/eight-tools-every-java-developer-should-know-and-l?edition=202661&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-22" 
+						target="_blank" rel="noopener noreferrer"><small>111: </small>Eight Tools Every Java Developer Should Know (and Love)</a></li>
+					<li><a href="https://www.baeldung.com/java-cipher-input-output-stream" 
+						target="_blank" rel="noopener noreferrer"><small>112: </small>Encrypting and Decrypting Files in Java</a></li>
+					<li><a href="https://dzone.com/articles/ssl-in-java?edition=423326&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-01-18" 
+						target="_blank" rel="noopener noreferrer"><small>113: </small>Everything About HTTPS and SSL (Java)</a></li>
+					<li><a href="https://dzone.com/articles/what-is-serialization-everything-about-java-serial?edition=518295&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-15#xsid=a62e_ffn2" 
+						target="_blank" rel="noopener noreferrer"><small>114: </small>Everything You Need to Know About Java Serialization Explained</a></li>
+					<li><a href="https://dzone.com/articles/all-you-need-to-know-about-systemgc?edition=521328&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-09-14" 
+						target="_blank" rel="noopener noreferrer"><small>115: </small>Everything You Need to Know About System.gc()</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/exception-handling-in-java?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails#exception-best-practices" 
+						target="_blank" rel="noopener noreferrer"><small>116: </small>Exception Handling in Java</a></li>
+					<li><a href="https://dzone.com/articles/exception-handling-with-chain-of-responsibility?edition=359106&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-01" 
+						target="_blank" rel="noopener noreferrer"><small>117: </small>Exception Handling With the Chain Of Responsibility</a></li>
+					<li><a href="https://dzone.com/articles/exceptional-exception-handling-in-jdk-8-streams?edition=213322&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-20" 
+						target="_blank" rel="noopener noreferrer"><small>118: </small>Exceptional Exception Handling in JDK 8 Streams</a></li>
+					<li><a href="https://dzone.com/articles/executor-framework-in-java-take-control-over-your-1?edition=399220&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-09-24" 
+						target="_blank" rel="noopener noreferrer"><small>119: </small>Executor Framework in Java: Take Control Over Your Tasks</a></li>
+					<li><a href="https://dzone.com/articles/explore-annotations-in-java-8?edition=524321&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-10-24" 
+						target="_blank" rel="noopener noreferrer"><small>120: </small>Explore Annotations in Java 8</a></li>
+					<li><a href="https://dzone.com/articles/extracting-javadoc-documentation-from-source-files?edition=263882&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-15" 
+						target="_blank" rel="noopener noreferrer"><small>121: </small>Extracting Javadoc Documentation From Source Files Using JavaParser</a></li>
+					<li><a href="https://dzone.com/articles/factory-method-design-pattern?edition=424192&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-12-04" 
+						target="_blank" rel="noopener noreferrer"><small>122: </small>Factory Method Design Pattern</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/03/featured-enum-instead-switch.html" 
+						target="_blank" rel="noopener noreferrer"><small>123 </small>Featured enum instead of switch</a></li>
+					<li><a href="https://dzone.com/articles/five-steps-to-determine-whether-an-app-can-be-containerized?edition=299094&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-05-22" 
+						target="_blank" rel="noopener noreferrer"><small>124: </small>Five Steps to Determin Whether an App Can Be Containerized</a></li>
+					<li><a href="https://dzone.com/articles/functional-default-arguments-part-two?edition=202664&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-24" 
+						target="_blank" rel="noopener noreferrer"><small>125: </small>Functional Default Arguments, Part Two</a></li>
+					<li><a href="https://dzone.com/articles/functional-interface-and-lambda-expression?edition=385244&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-07-17" 
+						target="_blank" rel="noopener noreferrer"><small>126: </small>Functional Interface and Lambda Expression</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/11/functional-java-example-move-outside.html" 
+						target="_blank" rel="noopener noreferrer"><small>127: </small>Functional Java By Example | Part 5 - Move I/O to the Outside</a></li>
+					<li><a href="https://dzone.com/articles/functional-java-traversing-a-list-in-a-functional?edition=513293&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-07" 
+						target="_blank" rel="noopener noreferrer"><small>128: </small>Functional Java: Traversing a List in a Functioanal Way</a></li>
+					<li><a href="https://dzone.com/articles/fp-for-the-unitiated?edition=306241&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-08" 
+						target="_blank" rel="noopener noreferrer"><small>129: </small>Functional Programming for the Unitiated</a></li>
+					<li><a href="https://dzone.com/articles/functional-programming-in-java-8-part-2-optionals?edition=268916&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-08" 
+						target="_blank" rel="noopener noreferrer"><small>130: </small>Functional Programming in Java 8 (Part 2) : Optionals</a></li>
+					<li><a href="https://dzone.com/articles/functional-style-lambda-functions-and-map?edition=391217&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-09-11" 
+						target="_blank" rel="noopener noreferrer"><small>131: </small>Functional Style: Lambda Functions and Map</a></li>
+					<li><a href="https://www.javacodegeeks.com/2015/09/general-programming-guidelines.html" 
+						target="_blank" rel="noopener noreferrer"><small>132: </small>General programming guidelines</a></li>
+					<li><a href="https://dzone.com/articles/rest-api-tutorials?edition=526299&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-10-17" 
+						target="_blank" rel="noopener noreferrer"><small>134: </small>Get Plenty of REST: REST API Tutorials </a></li>
+					<li><a href="https://dzone.com/articles/getters-and-setters-considered-harmful?edition=370191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-27" 
+						target="_blank" rel="noopener noreferrer"><small>135: </small>Getters and Setters </a></li>
+					<li><a href="https://dzone.com/articles/getting-started-with-jmeter-a-basic-tutorial?edition=256682&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-17" 
+						target="_blank" rel="noopener noreferrer"><small>136: </small>Getting Started With JMeter: A Basic Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/getting-the-most-out-of-your-hashmaps?edition=261788&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-10" 
+						target="_blank" rel="noopener noreferrer"><small>137: </small>Getting the Most Out of Your HashMaps</a></li>
+					<li><a href="https://dzone.com/articles/global-exception-handling-using-spring-restcontrol?edition=567291&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202020-01-23" 
+						target="_blank" rel="noopener noreferrer"><small>138: </small>Global Exception Handling Using Spring @RestControllerAdvice in REST Services</a></li>
+					<li><a href="https://dzone.com/articles/global-exception-handling-with-controlleradvice" 
+						target="_blank" rel="noopener noreferrer"><small>139: </small>Global Exception Handling With @ControllerAdvice</a></li>
+					<li><a href="https://dzone.com/articles/gradients-of-immutability?edition=213236&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-13" 
+						target="_blank" rel="noopener noreferrer"><small>140: </small>Gradients of Immutability</a></li>
+					<li><a href="https://www.baeldung.com/java-optional" 
+						target="_blank" rel="noopener noreferrer"><small>141: </small>Guide To Java 8 Optional</a></li>
+					<li><a href="https://dzone.com/articles/a-guide-to-java-versions-and-features?edition=542301&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-11-22" 
+						target="_blank" rel="noopener noreferrer"><small>142: </small>Guide to Java Versions and Features</a></li>
+					<li><a href="https://www.javacodegeeks.com/2016/08/guide-time-date-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>143: </small>Guide to time and date in Java</a></li>
+					<li><a href="https://dzone.com/articles/guide-to-time-and-date-in-java-part-1?edition=197642&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-09" 
+						target="_blank" rel="noopener noreferrer"><small>144: </small>Guide to Time and Date in Java (Part 1)</a></li>
+					<li><a href="https://dzone.com/articles/handling-weeks-in-java-7-2?edition=242509&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-25" 
+						target="_blank" rel="noopener noreferrer"><small>145: </small>Handling Weeks in Java 7</a></li>
+					<li><a href="https://dzone.com/articles/hibernate-5-java-configuration-example?edition=423198&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-12-07" 
+						target="_blank" rel="noopener noreferrer"><small>146: </small>Hibernate 5 Java Configuration Example</a></li>
+					<li><a href="https://www.javacodegeeks.com/2012/02/hibernate-cache-levels-tutorial.html" 
+						target="_blank" rel="noopener noreferrer"><small>147: </small>Hibernate cache levels tutorial</a></li>
+					<li><a href="https://examples.javacodegeeks.com/hibernate-configuration-exmple/" 
+						target="_blank" rel="noopener noreferrer"><small>148: </small>Hibernate Configuration Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-criteria-restrictions-example/" 
+						target="_blank" rel="noopener noreferrer"><small>149: </small>Hibernate Criteria using Restricions Example</a></li>
+					<li><a href="https://www.javacodegeeks.com/hibernate-interview-questions-answers-ultimate-list.html" 
+						target="_blank" rel="noopener noreferrer"><small>150: </small>Hibernate Interview Questions and Answers - The Ultimate List</a></li>
+					<li><a href="https://www.javacodegeeks.com/2011/02/hibernate-mapped-collections.html" 
+						target="_blank" rel="noopener noreferrer"><small>151: </small>Hibernate mapped collections performance problems</a></li>
+					<li><a href="https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html" 
+						target="_blank" rel="noopener noreferrer"><small>152: </small>Hibernate ORM 5.2.18.Final User Guide</a></li>
+					<li><a href="https://www.javacodegeeks.com/2012/03/hibernate-performance-tips-dirty.html" 
+						target="_blank" rel="noopener noreferrer"><small>153: </small>Hibernate Performance Tips: Dirty Collection Effect</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/hibernate/hibernate-projections-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>154: </small>Hibernate Projections Tutorial</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/hibernate-tutorial" 
+						target="_blank" rel="noopener noreferrer"><small>155: </small>Hibernate Tutorial ***</a></li>
+					<li><a href="https://www.javacodegeeks.com/2014/01/hibernate-ddl-schema-generation.html" 
+						target="_blank" rel="noopener noreferrer"><small>156: </small>Hibernate: DDL Schema generation</a></li>
+					<li><a href="https://dzone.com/articles/how-atomicreference-works-in-java?edition=376329&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-18" 
+						target="_blank" rel="noopener noreferrer"><small>157: </small>How AtomicReference Works in Java</a></li>
+					<li><a href="https://dzone.com/articles/how-concurrenthashmap-works-internally-in-java?edition=213173&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-07" 
+						target="_blank" rel="noopener noreferrer"><small>158: </small>How ConcurrentHashMap Works Internally in Java</a></li>
+					<li><a href="https://dzone.com/articles/how-annotations-work-java?edition=520324&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-23" 
+						target="_blank" rel="noopener noreferrer"><small>159: </small>How Do Annotations Work in Java?</a></li>
+					<li><a href="https://dzone.com/articles/how-hashmap-works-in-java?edition=213223&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-12" 
+						target="_blank" rel="noopener noreferrer"><small>160: </small>How HashMap Works in Java</a></li>
+					<li><a href="https://dzone.com/articles/how-i-test-my-java-classes-for-thread-safety?edition=371205&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-03" 
+						target="_blank" rel="noopener noreferrer"><small>161: </small>How I Test My Java Classes for Thread Safety</a></li>
+					<li><a href="https://dzone.com/articles/how-i-used-beanutils-for-editing-a-jpa-entity?edition=375220&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-04-24" 
+						target="_blank" rel="noopener noreferrer"><small>162: </small>How I Used BeanUtils for Editing JPA Entity</a></li>
+					<li><a href="https://www.javacodegeeks.com/2017/02/javas-built-garbage-collection-will-make-life-better-time.html" 
+						target="_blank" rel="noopener noreferrer"><small>163: </small>How Java's Built-In Garbage Collection Will Make Your Lif Better (Most of the Time)</a></li>
+					<li><a href="https://dzone.com/articles/how-lambdas-and-anonymous-inner-classesaic-work?edition=268945&utm_source=Spotlight&utm_medium=email&utm_campaign=java%202017-02-14" 
+						target="_blank" rel="noopener noreferrer"><small>164: </small>How Lambdas And Anoymous Inner Classes Work</a></li>
+					<li><a href="https://dzone.com/articles/how-synchronization-works-in-java-part-1?edition=365195&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-27" 
+						target="_blank" rel="noopener noreferrer"><small>165: </small>How Synchronization Works in Java (Part 1)</a></li>
+					<li><a href="https://dzone.com/articles/how-to-avoid-deadlock-in-java-threads-1?edition=387209&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-08-14" 
+						target="_blank" rel="noopener noreferrer"><small>166: </small>How to Avoid Deadlock in Java Threads</a></li>
+					<li><a href="https://dzone.com/articles/creational-design-patterns-singleton-pattern?edition=386202&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-14" 
+						target="_blank" rel="noopener noreferrer"><small>167: </small>How to Build Creational Design Patterns: Singleton Pattern</a></li>
+					<li><a href="https://dzone.com/articles/how-to-choose-between-interface-and-abstract-class-1?edition=423196&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-12-06" 
+						target="_blank" rel="noopener noreferrer"><small>168: </small>How to Choose Between Interface and Abstract Classes in Java</a></li>
+					<li><a href="https://dzone.com/articles/how-to-convert-list-to-map-in-java?edition=386199&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-12" 
+						target="_blank" rel="noopener noreferrer"><small>169: </small>How to Convert List to Map in Java</a></li>
+					<li><a href="https://www.javacodegeeks.com/2020/08/how-to-create-a-thread-without-implementing-the-runnable-interface-in-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>170: </small>How to create a thread without implementing the Runnable interface in Java</a></li>
+					<li><a href="https://www.javacodegeeks.com/2020/03/how-to-create-immutabe-map-in-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>171: </small>How to create immutable Map in Java</a></li>
+					<li><a href="https://dzone.com/articles/how-to-deal-with-exceptions?edition=358095&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-26" 
+						target="_blank" rel="noopener noreferrer"><small>172: </small>How to Deal With Exceptions</a></li>
+					<li><a href="https://examples.javacodegeeks.com/how-to-deal-with-java-lang-outofmemoryerror-java-heap-space/" 
+						target="_blank" rel="noopener noreferrer"><small>173: </small>How to deal with java.lang.outofmemoryerror: java heap space</a></li>
+					<li><a href="https://dzone.com/articles/how-to-define-constants-in-java?edition=520314&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-22" 
+						target="_blank" rel="noopener noreferrer"><small>174: </small>How to Define Constants in Java</a></li>
+					<li><a href="https://dzone.com/articles/how-to-diagnose-memory-leaks?edition=374194&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202018-04-13" 
+						target="_blank" rel="noopener noreferrer"><small>175: </small>How to Diagnose Memory Leaks</a></li>
+					<li><a href="https://dzone.com/articles/how-to-improve-the-performance-of-a-java-applicati?edition=355098&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202018-01-19" 
+						target="_blank" rel="noopener noreferrer"><small>176: </small>How to Improve the Performance of a Java Application</a></li>
+					<li><a href="https://vladmihalcea.com/map-jpa-entity-to-view-or-sql-query-with-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>177: </small>How to map a JPA entity to a View or SQL query using Hibernate</a></li>
+					<li><a href="https://dzone.com/articles/how-to-read-a-big-csv-file-with-java-8-and-stream?edition=220209&utm_source=Spotlight&utm_medium=email&utm_campaign=integration%202016-10-06" 
+						target="_blank" rel="noopener noreferrer"><small>178: </small>How to Read a Large CSV File With Java 8 and Stream API</a></li>
+					<li><a href="https://www.baeldung.com/java-read-lines-large-file" 
+						target="_blank" rel="noopener noreferrer"><small>179: </small>How to Read a Large File Efficiently with Java</a></li>
+					<li><a href="https://dzone.com/articles/how-to-read-a-thread-dump?edition=383256&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-06-25" 
+						target="_blank" rel="noopener noreferrer"><small>180: </small>How to Read a Thread Dump</a></li>
+					<li><a href="https://dzone.com/articles/code-analysis-part-3-sonarqube-alternatives?edition=358095&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-26" 
+						target="_blank" rel="noopener noreferrer"><small>181: </small>How to Run a Code Analysis From Maven or an IDE</a></li>
+					<li><a href="https://dzone.com/articles/how-to-run-a-stress-test-in-jmeter?edition=262881&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-12" 
+						target="_blank" rel="noopener noreferrer"><small>182: </small>How to Run a Stress Test in JMeter</a></li>
+					<li><a href="https://examples.javacodegeeks.com/how-to-run-application-blocked-by-java-security/" 
+						target="_blank" rel="noopener noreferrer"><small>183: </small>How to run application blocked by Java security</a></li>
+					<li><a href="https://dzone.com/articles/how-to-sort-objects-in-java?edition=365216&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-02" 
+						target="_blank" rel="noopener noreferrer"><small>184: </small>How to Sort Objects in Java</a></li>
+					<li><a href="https://vladmihalcea.com/jpa-hibernate-synchronize-bidirectional-entity-associations/" 
+						target="_blank" rel="noopener noreferrer"><small>185: </small>How to synchronize bidirectional entity associations with JPA/Hibernate</a></li>
+					<li><a href="https://dzone.com/articles/how-to-test-if-a-class-is-thread-safe-in-java?edition=554307&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-12-23" 
+						target="_blank" rel="noopener noreferrer"><small>186: </small>How to Test If a Class Is Thread-Save in Java</a></li>
+					<li><a href="https://dzone.com/articles/using-mockito-to-test-classes-with-new-keyword?edition=57229[[utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202020-02-14" 
+						target="_blank" rel="noopener noreferrer"><small>187: </small>How to Unit Test Classes Which Create New Object</a></li>
+					<li><a href="https://dzone.com/articles/using-asynchronous-timeouts-in-the-java-websocketn?edition=255681&utm_source=Spotlight&utm_medium=email&utm_campaign=integration%202016-12-15" 
+						target="_blank" rel="noopener noreferrer"><small>188: </small>How to Use Asynchronous Timeouts in the Java Websocket API</a></li>
+					<li><a href="https://dzone.com/articles/how-to-use-java-hashmap-effectively?edition=421203&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-11-28" 
+						target="_blank" rel="noopener noreferrer"><small>189: </small>How to Use Java HashMap Effectively</a></li>
+					<li><a href="https://dzone.com/articles/optional-in-java?edition=613291&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202020-06-24" 
+						target="_blank" rel="noopener noreferrer"><small>190: </small>How to use Optionals In Java</a></li>
+					<li><a href="https://dzone.com/articles/singleton-in-java?edition=385272&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-23" 
+						target="_blank" rel="noopener noreferrer"><small>191: </small>How to Use Singleton Design Pattern in Java</a></li>
+					<li><a href="https://examples.javacodegeeks.com/how-to-write-java-doc/" 
+						target="_blank" rel="noopener noreferrer"><small>192: </small>How to write Java Doc</a></li>
+					<li><a href="https://dzone.com/articles/mutual-problems?edition=239390&utm_source=Spotlight&utm_medium=email&utm_campaign=performance%202016-11-11" 
+						target="_blank" rel="noopener noreferrer"><small>193: </small>HTTPS and Java: Mutual Problems</a></li>
+					<li><a href="https://dzone.com/articles/if-youre-using-javas-scanner-class-for-keyboard-in?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202018-09-07" 
+						target="_blank" rel="noopener noreferrer"><small>194: </small>If You're Using Java's Scanner Class for Keyboard Input, You're Doing it Wrong</a></li>
+					<li><a href="https://dzone.com/articles/if-then-else-is-a-code-smell?edition=198610&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-15" 
+						target="_blank" rel="noopener noreferrer"><small>195: </small>If-Then-Else Is a Code Smell</a></li>
+					<li><a href="https://dzone.com/articles/ignore-exceptions-in-java?edition=376359&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-23" 
+						target="_blank" rel="noopener noreferrer"><small>196: </small>Ignoring Exceptions in Java</a></li>
+					<li><a href="https://dzone.com/articles/immutability-in-java?edition=365238&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-12" 
+						target="_blank" rel="noopener noreferrer"><small>197: </small>Immutability in Java</a></li>
+					<li><a href="https://dzone.com/articles/if-then-else-is-a-code-smell?edition=198610&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-15" 
+						target="_blank" rel="noopener noreferrer"><small>198: </small>Immutable ArrayList in Java</a></li>
+					<li><a href="https://dzone.com/articles/immutable-data-structures-in-java-2?edition=459224&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-25" 
+						target="_blank" rel="noopener noreferrer"><small>199: </small>Immutable Data Structures in Java</a></li>
+					<li><a href="https://dzone.com/articles/implementing-or-overriding-equals-the-right-way?edition=254681&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-14"
+						target="_blank" rel="noopener noreferrer"><small>200: </small>Implementing or Overrideing Equals the Right Way</a></li>
+					
+					<li><a href="https://dzone.com/articles/how-to-implement-values-with-immutable-classes?edition=365231&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-09" 
+						target="_blank" rel="noopener noreferrer"><small>201: </small>Implementing Values With Immutable Classes</a></li>
+					<li><a href="https://dzone.com/articles/important-java-keywords-that-you-must-know" 
+						target="_blank" rel="noopener noreferrer"><small>202: </small>Important Java Keywords That You Must Know</a></li>
+					<li><a href="https://dzone.com/articles/improve-the-quality-of-your-software-in-6-steps?edition=408197&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-10-19" 
+						target="_blank" rel="noopener noreferrer"><small>203: </small>Improve the Quality of Your Software in 6 Steps</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/10/ineffective-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>204: </small>Ineffective Java</a></li>
+					<li><a href="https://dzone.com/articles/infinite-streams-in-java-8-and-9?edition=364100&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-26" 
+						target="_blank" rel="noopener noreferrer"><small>205: </small>Infinite Streams in Java 8 and 9</a></li>
+					<li><a href="https://dzone.com/articles/inheritance-is-a-procedural-technique-for-code-reu?edition=213322&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-20" 
+						target="_blank" rel="noopener noreferrer"><small>206: </small>Inheritance Is a Procedural Technique for Code Reuse</a></li>
+					<li><a href="https://dzone.com/articles/inheriting-javadoc-method-comments?edition=244481&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-24" 
+						target="_blank" rel="noopener noreferrer"><small>207: </small>Inheriting Javadoc Method Comments</a></li>
+					<li><a href="https://dzone.com/articles/inject-datetimenow-to-aid-unit-tests?edition=399219&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-09-23" 
+						target="_blank" rel="noopener noreferrer"><small>208: </small>Inject Date Time.Now to Aid Unit Tests</a></li>
+					<li><a href="https://dzone.com/articles/interactive-console-applications-in-java?utm_source=Top%205&utm_medium=email&utm_campaign=2016-12-02" 
+						target="_blank" rel="noopener noreferrer"><small>209: </small>Interactive Console Applications in Java</a></li>
+					<li><a href="https://dzone.com/articles/introduction-to-jpa-architecture?edition=423236&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-12-21" 
+						target="_blank" rel="noopener noreferrer"><small>210: </small>Introduction to JPA Architecture</a></li>
+					<li><a href="https://dzone.com/articles/project-lombok-boilerplate-code-reducer?edition=423236&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-12-21" 
+						target="_blank" rel="noopener noreferrer"><small>211: </small>Introduction to Project Lombok</a></li>
+					<li><a href="https://dzone.com/articles/is-standard-java-logging-dead?edition=261692&utm_source=Spotlight&utm_medium=email&utm_campaign=java%202017-01-03" 
+						target="_blank" rel="noopener noreferrer"><small>212: </small>Is Standard Java Logging Dead?</a></li>
+					<li><a href="https://dzone.com/articles/its-not-too-late?edition=423331&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-01-20" 
+						target="_blank" rel="noopener noreferrer"><small>213: </small>It's Not Too Late!!: How to Write Quality Code</a></li>
+					<li><a href="https://examples.javacodegeeks.com/how-to-download-and-install-java-plugin-in-a-browser/" 
+						target="_blank" rel="noopener noreferrer"><small>214: </small>Java Applet - How to download and install Java plugin in a browser</a></li>
+					<li><a href="https://mkyong.com/java/java-how-to-change-date-format-in-a-string/" 
+						target="_blank" rel="noopener noreferrer"><small>215: </small>Java - How to change date format in a String</a></li>
+					<li><a href="https://mkyong.com/java/java-read-a-file-from-resources-folder/" 
+						target="_blank" rel="noopener noreferrer"><small>216: </small>Java - Read a file from resources folder</a></li>
+					<li><a href="https://mkyong.com/java8/java-8-convert-map-to-list/" 
+						target="_blank" rel="noopener noreferrer"><small>217: </small>Java 8 - Convert Map to List</a></li>
+					<li><a href="https://www.tutorialspoint.com/java8/java8_lambda_expressions.htm" 
+						target="_blank" rel="noopener noreferrer"><small>218: </small>Java 8 - Lambda Expressions</a></li>
+					<li><a href="https://www.baeldung.com/java-8-sort-lambda?utm_source=email-newsletter&utm_medium=email&utm_campaign=auto_33_java&tl_inbound=1&tl_target_all=1&tl_period_type=3" 
+						target="_blank" rel="noopener noreferrer"><small>219: </small>Java 8 - Powerful Comparison with Lambdas</a></li>
+					<li><a href="https://www.tutorialspoint.com/java8/java8_lambda_expressions.htm" 
+						target="_blank" rel="noopener noreferrer"><small>220: </small>Java 8 Anonymous Function Example</a></li>
+					<li><a href="https://dzone.com/articles/java-8-comparator-how-to-sort-a-list?edition=242509&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-25" 
+						target="_blank" rel="noopener noreferrer"><small>221: </small>Java 8 Comparator: How to Sort a List</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/util/concurrent/java-8-concurrency-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>222: </small>Java 8 Concurrency Tutorial</a></li>
+					<li><a href="https://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/" 
+						target="_blank" rel="noopener noreferrer"><small>223: </small>Java 8 Concurrency Tutorial: Threads and Executors</a></li>
+					<li><a href="https://dzone.com/articles/java-8-date-and-time?edition=377196&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-30" 
+						target="_blank" rel="noopener noreferrer"><small>224: </small>Java 8 Date and Time</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/time/java-8-date-time-api-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>225: </small>Java 8 Date and Time Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/java-8-features-supported-by-spring-4?utm_source=Top%205&utm_medium=email&utm_campaign=2016-11-25" 
+						target="_blank" rel="noopener noreferrer"><small>226: </small>Java 8 Features Supported by Spring 4</a></li>
+					<li><a href="https://www.javacodegeeks.com/java-8-features-tutorial.html" 
+						target="_blank" rel="noopener noreferrer"><small>227: </small>Java 8 Features Tutorial - The ULTIMATE Guide (PDF Download & video)</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/java-8-functional-programming-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>228: </small>Java 8 Functional Programming Tutorial</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/lamba-expressions-introduction-example/" 
+						target="_blank" rel="noopener noreferrer"><small>229: </small>Java 8 Lambda Expressions Introduction Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-basics/lambdas/java-8-lambda-expressions-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>230: </small>Java 8 Lambda Expressions Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/java-8-lambas-limitations-closures?edition=272881&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-20" 
+						target="_blank" rel="noopener noreferrer"><small>231: </small>Java 8 Lambda Limitations: Closures</a></li>
+					<li><a href="https://dzone.com/articles/how-to-use-map-filter-collect-of-stream-in-java-8?edition=383252&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-06-24" 
+						target="_blank" rel="noopener noreferrer"><small>232: </small>Java 8 Map, Filter, and Collect Example</a></li>
+					<li><a href="https://dzone.com/articles/java-8-optional-usage-and-best-practices?edition=489315&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-03" 
+						target="_blank" rel="noopener noreferrer"><small>233: </small>Java 8 Optional Usage and Best Practices</a></li>
+					<li><a href="https://docs.oracle.com/javase/8/docs/api" 
+						target="_blank" rel="noopener noreferrer"><small>234: </small>Java 8 Overview (JavaDoc)</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/07/java-8-stream-api-examples.html" 
+						target="_blank" rel="noopener noreferrer"><small>235: </small>Java 8 Stream API Examples</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/07/java-8-stream-examples.html" 
+						target="_blank" rel="noopener noreferrer"><small>236: </small>Java 8 Streams examples</a></li>
+					<li><a href="https://dzone.com/articles/java-8-top-tips?edition=155254&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=wd%202016-07-27" 
+						target="_blank" rel="noopener noreferrer"><small>237: </small>Java 8 Top Tips</a></li>
+					<li><a href="https://mkyong.com/tutorials/java-8-tutorials/" 
+						target="_blank" rel="noopener noreferrer"><small>238: </small>Java 8 Tutorials - Mkyong</a></li>
+					<li><a href="https://dzone.com/articles/java-8-concurrenthashmap-atomic-updates?edition=374234&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-21" 
+						target="_blank" rel="noopener noreferrer"><small>239: </small>Java 8: ConcurrentlyHashMap Atomic Updates</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/java-actionevent-example/" 
+						target="_blank" rel="noopener noreferrer"><small>240: </small>Java ActionEvent Example</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/java-annotations?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>241: </small>Java Annotations (Tutorial)</a></li>
+					<li><a href="https://dzone.com/articles/java-application-security-frameworks?edition=324411&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-09-12" 
+						target="_blank" rel="noopener noreferrer"><small>242: </small>Java Application Security Frameworks</a></li>
+					<li><a href="https://dzone.com/articles/java-application-troubleshooting-in-sherlock-holme?edition=565302&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-01-25" 
+						target="_blank" rel="noopener noreferrer"><small>243: </small>Java Application Troubleshooting the Sherlock Holmes Way</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/java-arraylist-vs-linkedlist-example/" 
+						target="_blank" rel="noopener noreferrer"><small>244: </small>Java ArrayList vs LinkedList Example</a></li>
+					<li><a href="https://javabeat.net/" 
+						target="_blank" rel="noopener noreferrer"><small>245: </small>Java Beat</a></li>
+					<li><a href="https://dzone.com/articles/java-cloning-copy-constructor-vs-cloning?edition=306229&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-05" 
+						target="_blank" rel="noopener noreferrer"><small>246: </small>Java Cloning: Copy Constructors vs. Cloning</a></li>
+					<li><a href="https://dzone.com/articles/java-code-bytes-be-resourceful-with-try-with-resou?edition=387206&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-08-09" 
+						target="_blank" rel="noopener noreferrer"><small>247: </small>Java Code Bytes: Be Resourceful With Try-With-Resources</a></li>
+					<li><a href="https://dzone.com/articles/java-comparable-interface-in-five-minutes?edition=214171&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-08" 
+						target="_blank" rel="noopener noreferrer"><small>248: </small>Java Comparable Interface in Five Minutes</a></li>
+					<li><a href="https://dzone.com/articles/comparators-in-more-functional-way?edition=382195&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-06-14" 
+						target="_blank" rel="noopener noreferrer"><small>249: </small>Java Comparators in a More Declarative Way</a></li>
+					<li><a href="https://www.javacodegeeks.com/2015/09/java-concurrency-essentials.html" 
+						target="_blank" rel="noopener noreferrer"><small>250: </small>Java Concurrency Essentials Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/java-concurrency-part-2-manipulating-threads?edition=526299&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-10-17" 
+						target="_blank" rel="noopener noreferrer"><small>251: </small>Java Concurrency, Part 2: Manipulating Threads</a></li>
+					<li><a href="https://dzone.com/articles/java-concurrency-atomicinteger?edition=510292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-31" 
+						target="_blank" rel="noopener noreferrer"><small>252: </small>Java Concurrency: AtomicInteger</a></li>
+					<li><a href="https://dzone.com/articles/java-concurrency-copy-on-write?edition=521315&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-09-07" 
+						target="_blank" rel="noopener noreferrer"><small>253: </small>Java Concurrency: CopyOnWrite</a></li>
+					<li><a href="https://dzone.com/articles/java-concurrency-count-down-latches?edition=494292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-05" 
+						target="_blank" rel="noopener noreferrer"><small>254: </small>Java Concurrency: Count Down Latches</a></li>
+					<li><a href="https://dzone.com/articles/java-concurrency-the-basics?edition=569297&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-02-04" 
+						target="_blank" rel="noopener noreferrer"><small>256: </small>Java Concurrency: The Basics</a></li>
+					<li><a href="https://dzone.com/articles/java-concurrency-thread-confinement?edition=493291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-01" 
+						target="_blank" rel="noopener noreferrer"><small>257: </small>Java Concurrency: Thread Confinement</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-constant-example/" 
+						target="_blank" rel="noopener noreferrer"><small>258: </small>Java Constant Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-data-structures-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>259: </small>Java Data Structures Tutorial</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-data-types-example/" 
+						target="_blank" rel="noopener noreferrer"><small>260: </small>Java Data Types Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-date-format-example/" 
+						target="_blank" rel="noopener noreferrer"><small>261: </small>Java Date Format Example</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/java-design-patterns-example-tutorial?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>262: </small>Java Design Patterns - Example Tutorial</a></li>
+					<li><a href="https://javacodegeeks.tradepub.com/?p=w_jour01&w=d&email=jhart.naples@gmail.com&key=JWuIe6O3rmZcqlX8Dipx&ts=75293&u=1080182492151459021613&e=amhhcnQubmFwbGVzQGdtYWlsLmNvbQ==" 
+						target="_blank" rel="noopener noreferrer"><small>263: </small>Java Design Patterns (A Programmer's Approach)</a></li>
+					<li><a href="https://www.javacodegeeks.com/2015/09/java-design-patterns.html" 
+						target="_blank" rel="noopener noreferrer"><small>264: </small>Java Design Patterns Tutorial</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/java-equals-hashcode?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>265: </small>Java equals() and hashCode()</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-escape-characters-list/" 
+						target="_blank" rel="noopener noreferrer"><small>266: </small>Java Escape characters list</a></li>
+					<li><a href="https://dzone.com/articles/java-exception-handling-interview-questions-and-an-1?edition=419194&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-18" 
+						target="_blank" rel="noopener noreferrer"><small>267: </small>Java Exceptions Handling Interview Questions and Answers</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-exceptions-list-example/" 
+						target="_blank" rel="noopener noreferrer"><small>268: </small>Java Exceptions List Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-exercises/" 
+						target="_blank" rel="noopener noreferrer"><small>269: </small>Java Exercises</a></li>
+					<li><a href="https://dzone.com/articles/java-garbage-collection-2?edition=459208&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-21" 
+						target="_blank" rel="noopener noreferrer"><small>270: </small>Java Garbage Collection Basics</a></li>
+					<li><a href="https://dzone.com/articles/java-garbage-collector-and-reference-objects?utm_source=Top%205&utm_medium=email&utm_campaign=2017-02-03" 
+						target="_blank" rel="noopener noreferrer"><small>271: </small>Java Garbage Collector and Reference Objects</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/java-generics-example-method-class-interface" 
+						target="_blank" rel="noopener noreferrer"><small>272: </small>Java Generics Example Tutorial - Generic Method, Class, Interface</a></li>
+					<li><a href="https://dzone.com/articles/java-getter-and-setter-basics-common-mistakes-and?edition=521352&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-10-02" 
+						target="_blank" rel="noopener noreferrer"><small>273: </small>Java Getter and Setter: Basics, Common Mistakes, and Best Practices</a></li>
+					<li><a href="https://dzone.com/articles/java-holiday-calendar-2016-day-16-hacking-the-exis?edition=256682&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-17" 
+						target="_blank" rel="noopener noreferrer"><small>274: </small>Java Holiday Calendar 2016 (Day 16): Hacking the Exisiting Java Classes</a></li>
+					<li><a href="https://dzone.com/articles/java-joy-combining-predicates?edition=521328&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-09-14" 
+						target="_blank" rel="noopener noreferrer"><small>275: </small>Java Joy: Combining Predicates</a></li>
+					<li><a href="https://dzone.com/articles/java-lambda-expressions-functions-as-first-class-c?edition=399220&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-09-24" 
+						target="_blank" rel="noopener noreferrer"><small>276: </small>Java Lambda Expressions: Functions as First-Class Citizens</a></li>
+					<li><a href="https://dzone.com/articles/java-lambda-method-reference?edition=407217&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-10-15" 
+						target="_blank" rel="noopener noreferrer"><small>277: </small>Java Lambda: Method Reference</a></li>
+					<li><a href="https://dzone.com/articles/java-logging-frameworks-and-tools?edition=330496&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-10-13" 
+						target="_blank" rel="noopener noreferrer"><small>278: </small>Java Logging Frameworks and Tools</a></li>
+					<li><a href="https://stackify.com/compare-java-logging-frameworks/" 
+						target="_blank" rel="noopener noreferrer"><small>279: </small>Java Logging Frameworks: log4j vs logback vs log4j2</a></li>
+					<li><a href="https://dzone.com/articles/java-logs-4-types-of-logs-you-need-to-know?edition=419194&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-18" 
+						target="_blank" rel="noopener noreferrer"><small>280: </small>Java Logs: 4 Types of Logs You Need to Know</a></li>
+					<li><a href="https://dzone.com/articles/java-may-use-utf-8-as-its-default-charset?edition=365217&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-03" 
+						target="_blank" rel="noopener noreferrer"><small>281: </small>Java May Use UTF-8 as its Default Charset</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/java-nio-read-file-example/" 
+						target="_blank" rel="noopener noreferrer"><small>282: </small>Java Nio Read Example</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/07/java-nio-tutorial.html" 
+						target="_blank" rel="noopener noreferrer"><small>283: </small>Java NIO Tutorial</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/nio/file-nio/java-nio-write-file-example/" 
+						target="_blank" rel="noopener noreferrer"><small>284: </small>Java Nio Write Example</a></li>
+					<li><a href="https://dzone.com/articles/java-nio2-file-attributes?edition=310400&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-26" 
+						target="_blank" rel="noopener noreferrer"><small>285: </small>Java NIO.2 File Attributes</a></li>
+					<li><a href="https://dzone.com/articles/java-nullpointerexception-how-to-write-diagnostic?edition=214172&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-09" 
+						target="_blank" rel="noopener noreferrer"><small>005: </small>Java NullPointerException: How to Write Diagnostic Code</a></li>
+					<li><a href="https://www.javacodegeeks.com/2016/08/java-steroids-5-super-useful-jit-optimization-techniques.html" 
+						target="_blank" rel="noopener noreferrer"><small>286: </small>Java on Steroids: 5 Super Useful JIT Optimization Techniques</a></li>
+					<li><a href="https://dzone.com/articles/java-optionals-for-more-expressive-code?edition=379230&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-06-05" 
+						target="_blank" rel="noopener noreferrer"><small>287: </small>Java Optionals for More Expressive Code</a></li>
+					<li><a href="https://dzone.com/articles/java-optionals-to-the-rescue?edition=521304&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-09-04" 
+						target="_blank" rel="noopener noreferrer"><small>288: </small>Java Optionals to the Rescue</a></li>
+					<li><a href="https://dzone.com/articles/java-out-of-memory-heap-analysis?edition=367211&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-03-21" 
+						target="_blank" rel="noopener noreferrer"><small>289: </small>Java Out of Memory Heap Analysis</a></li>
+					<li><a href="https://dzone.com/articles/java-patterns-for-concurrency?edition=416199&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-04" 
+						target="_blank" rel="noopener noreferrer"><small>290: </small>Java Patterns for Concurrency</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/java-proxy-design-pattern-example/" 
+						target="_blank" rel="noopener noreferrer"><small>291: </small>Java Proxy Design Pattern Example</a></li>
+					<li><a href="https://dzone.com/articles/java-quiz-18-multidimensional-array?edition=379195&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-26" 
+						target="_blank" rel="noopener noreferrer"><small>292: </small>Java Quiz 18: Multidimensional Arrays</a></li>
+					<li><a href="https://dzone.com/articles/java-scanner-text-parsing-made-easy?edition=271915&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-22" 
+						target="_blank" rel="noopener noreferrer"><small>293: </small>Java Scanner: Text Parsing Made Easy</a></li>
+					<li><a href="https://dzone.com/articles/java-serialization-magic-methods-and-use-cases?edition=523310&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-09-23" 
+						target="_blank" rel="noopener noreferrer"><small>294: </small>Java Serialization Magic Methods and Use Cases</a></li>
+					<li><a href="https://dzone.com/articles/java-simpledateformat-is-not-simple?edition=507300&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-27" 
+						target="_blank" rel="noopener noreferrer"><small>295: </small>Java SimpleDateFormat Is Not Simple</a></li>
+					<li><a href="https://dzone.com/articles/java-singletons-using-enum?edition=310396&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-24" 
+						target="_blank" rel="noopener noreferrer"><small>296: </small>Java Singletons Using Enum</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-static-keyword-example/" 
+						target="_blank" rel="noopener noreferrer"><small>297: </small>Java Static Keyword Example</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/05/java-stream-orm-now-with-joins.html" 
+						target="_blank" rel="noopener noreferrer"><small>298: </small>Java Stream ORM Now with JOINs</a></li>
+					<li><a href="https://dzone.com/articles/java-stream-is-a-count-always-a-count?edition=478192&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-04-13" 
+						target="_blank" rel="noopener noreferrer"><small>299: </small>Java Stream: Is a Count Always a Count?</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/java-string?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>300: </small>Java String</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-string-contains-with-example/" 
+						target="_blank" rel="noopener noreferrer"><small>301: </small>Java String contains() method with Example</a></li>
+					<li><a href="https://dzone.com/articles/java-string-format-examples?utm_source=Top%205&utm_medium=email&utm_campaign=2017-02-24" 
+						target="_blank" rel="noopener noreferrer"><small>302: </small>Java String Format Examples</a></li>
+					<li><a href="https://dzone.com/articles/java-string-tutorials?edition=531291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-10-26" 
+						target="_blank" rel="noopener noreferrer"><small>303: </small>Java String Tutorials: Become a Java Strings Virtuoso</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-thread-example/" 
+						target="_blank" rel="noopener noreferrer"><small>304: </small>Java Thread Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/java-thread-sleep-example/" 
+						target="_blank" rel="noopener noreferrer"><small>305: </small>Java Thread sleep Example</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/java-tutorial-java-ee-tutorials" 
+						target="_blank" rel="noopener noreferrer"><small>306: </small>Java Tutorial, Java EE Tutorials</a></li>
+					<li><a href="https://examples.javacodegeeks.com/java-unit-testing-tutorial/" 
+						target="_blank" rel="noopener noreferrer"><small>307: </small>Java Unit Testing Tutorial</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/java-util-concurrentmodificationexception?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>308: </small>java.util.ConcurrentModificationException</a></li>
+					<li><a href="https://dzone.com/articles/java-predefined-map-keys?edition=568292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-01-29" 
+						target="_blank" rel="noopener noreferrer"><small>309: </small>Java: Create a Map With Predefined Keys</a></li>
+					<li><a href="https://dzone.com/articles/java-using-immutable-classes-for-concurrent-programming?edition=362108&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-16" 
+						target="_blank" rel="noopener noreferrer"><small>310: </small>Java: Using Immutable Classes for Concurrent Programming</a></li>
+					<li><a href="https://www.java67.com/" 
+						target="_blank" rel="noopener noreferrer"><small>311: </small>Java67 - Learn Java and Programming</a></li>
+					<li><a href="https://www.javaguides.net" 
+						target="_blank" rel="noopener noreferrer"><small>312: </small>JavaGuides - Blog</a></li>
+					<li><a href="https://www.javaprogramto.com" 
+						target="_blank" rel="noopener noreferrer"><small>313: </small>JavaProgramTo - Blog</a></li>
+					<li><a href="https://javaranch.com" 
+						target="_blank" rel="noopener noreferrer"><small>314: </small>JavaRanch - A Friendly Place to Learn Java Programming</a></li>
+					<li><a href="https://dzone.com/articles/javas-stringformat-can-be-statically-imported?edition=380204&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-06-01" 
+						target="_blank" rel="noopener noreferrer"><small>315: </small>Java's String.format Can Be Statically Imported</a></li>
+					<li><a href="https://dzone.com/articles/lets-compare-jax-rs-vs-spring-for-rest-endpoints?edition=315394&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-08-11" 
+						target="_blank" rel="noopener noreferrer"><small>316: </small>JAX-RS vs. Spring for REST Endpoints</a></li>
+					<li><a href="https://dzone.com/articles/jax-ws-hello-world?edition=515296&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-11#xsid=a62e_ffn2" 
+						target="_blank" rel="noopener noreferrer"><small>317: </small>JAX-WS Five-Minute Tutorial</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/jws/jax-ws-hibernate-example/" 
+						target="_blank" rel="noopener noreferrer"><small>318: </small>JAX-WS Hibernate Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/jws/jax-ws-jaxb-example/" 
+						target="_blank" rel="noopener noreferrer"><small>319: </small>JAX-WS JAXB Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/jws/jax-ws-tutorial-beginners/" 
+						target="_blank" rel="noopener noreferrer"><small>320: </small>JAX-WS Tutorial for Beginners</a></li>
+					<li><a href="https://docs.oracle.com/en/java/javase/11" 
+						target="_blank" rel="noopener noreferrer"><small>321: </small>JDK 11 Documentation</a></li>
+					<li><a href="https://dzone.com/articles/jdk-9-notnullorelse-methods-added-to-objects-class?edition=363104&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-19" 
+						target="_blank" rel="noopener noreferrer"><small>322: </small>JDK 9: NotNullOrElse Methods Added to Objects Class</a></li>
+					<li><a href="https://dzone.com/articles/jms-a-quick-amp-complete-guide-with-example?edition=155255&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=wd%202016-09-21" 
+						target="_blank" rel="noopener noreferrer"><small>323: </small>JMS: A Quick and Complete Guide</a></li>
+					<li><a href="https://www.javacodegeeks.com/2013/04/jpa-2-0-criteria-query-with-hibernate.html" 
+						target="_blank" rel="noopener noreferrer"><small>324: </small>JPA 2.0 Criteria Query with Hibernate</a></li>
+					<li><a href="https://www.javacodegeeks.com/2015/02/jpa-tutorial.html" 
+						target="_blank" rel="noopener noreferrer"><small>325: </small>JPA Tutorial - The ULTIMATE Guide (PDF Download)</a></li>
+					<li><a href="https://www.jsonschema2pojo.org" 
+						target="_blank" rel="noopener noreferrer"><small>326: </small>jsonschema2pojo - Generate Plain Old Java Objects from JSON or JSON-Schema</a></li>
+					<li><a href="https://junit.org/junit5" 
+						target="_blank" rel="noopener noreferrer"><small>327: </small>Junit 5 website</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/junit/junit-hello-world-example/" 
+						target="_blank" rel="noopener noreferrer"><small>328: </small>JUnit Hello World Example</a></li>
+					<li><a href="https://dzone.com/articles/junit-tutorial-setting-up-writing-and-running-java-1?edition=388197&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-08-07" 
+						target="_blank" rel="noopener noreferrer"><small>329: </small>JUnit Tutorial: Setting Up, Writing, and Running Java Unit Tests </a></li>
+					<li><a href="https://dzone.com/articles/junit4-junit5-and-spock-framework-comparison?edition=356092&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-16" 
+						target="_blank" rel="noopener noreferrer"><small>330: </small>JUnit4, JUnit5, and Spock: A Comparison</a></li>
+					<li><a href="https://dzone.com/articles/killing-boilerplate-with-lombok-annotations?edition=377199&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-02" 
+						target="_blank" rel="noopener noreferrer"><small>331: </small>Killing Boilerplate With Lombok Annotations</a></li>
+					<li><a href="https://www.kindsonthegenius.com/java" 
+						target="_blank" rel="noopener noreferrer"><small>332: </small>Kindson the genious - Java Tutorials</a></li>
+					<li><a href="https://www.javacodegeeks.com/2020/05/lambda-expressions-before-and-afterjava-8.html" 
+						target="_blank" rel="noopener noreferrer"><small>333: </small>Lambda Expressions Before and After Java 8</a></li>
+					<li><a href="https://dzone.com/articles/lambdas-and-clean-code?edition=327501&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-09-28" 
+						target="_blank" rel="noopener noreferrer"><small>334: </small>Lambdas and Clean Code</a></li>
+					<li><a href="https://dzone.com/articles/lazy-loading-is-a-code-smell?edition=262787&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-11" 
+						target="_blank" rel="noopener noreferrer"><small>335: </small>Lazy Loading Is a Code Smell</a></li>
+					<li><a href="https://dzone.com/articles/levels-of-abstraction?edition=334722&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202017-10-24" 
+						target="_blank" rel="noopener noreferrer"><small>336: </small>Levels of Abstraction</a></li>
+					<li><a href="https://dzone.com/articles/load-balancing-how-to-quickly-boost-the-performanc?edition=202664&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-24" 
+						target="_blank" rel="noopener noreferrer"><small>337: </small>Load Balancing: Boost the Performance of Your Apps</a></li>
+					<li><a href="https://dzone.com/articles/load-testing-and-stress-testing?edition=242512&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-26" 
+						target="_blank" rel="noopener noreferrer"><small>338: </small>Load Testing and Stress Testing </a></li>
+					<li><a href="https://www.tutorialspoint.com/log4j/log4j_patternlayout.htm" 
+						target="_blank" rel="noopener noreferrer"><small>339: </small>log4j - PatternLayout</a></li>
+					<li><a href="https://www.tutorialspoint.com/log4j/log4j_patternlayout.htm" 
+						target="_blank" rel="noopener noreferrer"><small>340: </small>log4j - PatternLayout</a></li>
+					<li><a href="https://www.codejava.net/coding/common-conversion-patterns-for-log4js-patternlayout" 
+						target="_blank" rel="noopener noreferrer"><small>341: </small>Log4j Common Conversion Patterns Example</a></li>
+					<li><a href="https://examples.javacodegeeks.com/enterprise-java/log4j/log4j-immediateflush-property-example/" 
+						target="_blank" rel="noopener noreferrer"><small>342: </small>Log4j ImmediateFlush Property Example</a></li>
+					<li><a href="https://logback.qos.ch/manual/introduction.html" 
+						target="_blank" rel="noopener noreferrer"><small>343: </small>Logback - Home Page</a></li>
+					<li><a href="https://dzone.com/articles/logging-spring-rest-apis?edition=368217&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202018-03-22" 
+						target="_blank" rel="noopener noreferrer"><small>344: </small>Logging Spring REST APIs</a></li>
+					<li><a href="https://dzone.com/articles/make-your-domain-notify-you-instead-of-throwing-an-exception?edition=213214&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-11" 
+						target="_blank" rel="noopener noreferrer"><small>345: </small>Make Your Domain Notify You Instead of Throwing and Exception</a></li>
+					<li><a href="https://dzone.com/articles/java-exceptions-handling-mechanism?edition=232181&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-21" 
+						target="_blank" rel="noopener noreferrer"><small>346: </small>Making an Exception- Handling Mechanism</a></li>
+					<li><a href="https://dzone.com/articles/managing-randomness-in-java?edition=347141&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-01-02" 
+						target="_blank" rel="noopener noreferrer"><small>347: </small>Managing Randomness in Java</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/12/matching-patterns-with-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>348: </small>Matching patterns with Java</a></li>
+					<li><a href="http://javaonfly.blogspot.com/2016/08/memory-leak-and-java-code.html" 
+						target="_blank" rel="noopener noreferrer"><small>349: </small>Memory Leak and JAVA Code</a></li>
+					<li><a href="https://dzone.com/articles/memory-leak-andjava-code?edition=210871&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-30" 
+						target="_blank" rel="noopener noreferrer"><small>350: </small>Memory Leaks and Java Code</a></li>
+					<!--<li><a href="https://mkyong.com/" target="_blank" rel="noopener noreferrer"><small>351: </small>Mkyong </a></li> moved to blog.html-->
+					<li><a href="https://www.javadoc.io/doc/org.mockito/mockito-core/1.10.19/org/mockito/Matchers.html" 
+						target="_blank" rel="noopener noreferrer"><small>352: </small>Mockit Matchers</a></li>
+					<li><a href="https://examples.javacodegeeks.com/core-java/mockito/mockito-mock-database-connection-example/" 
+						target="_blank" rel="noopener noreferrer"><small>353: </small>Mockito Mock Database Connection Example</a></li>
+					<li><a href="https://www.javacodegeeks.com/2015/11/testing-with-mockito.html" 
+						target="_blank" rel="noopener noreferrer"><small>356: </small>Mockito Tutorial: Testing and Mocking with Mockito</a></li>
+					<li><a href="https://dzone.com/articles/moving-away-from-mvc?edition=219181&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-01" 
+						target="_blank" rel="noopener noreferrer"><small>357: </small>Moving Away From MVC</a></li>
+					<li><a href="https://dzone.com/articles/multidimensional-arrays-vs-method-references?edition=352102&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-01-11" 
+						target="_blank" rel="noopener noreferrer"><small>358: </small>Multidimensional Arrays vs. Method References</a></li>
+					<li><a href="https://www.udemy.com/home/my-courses/learning" 
+						target="_blank" rel="noopener noreferrer"><small>359: </small>My Learning (Udemy)</a></li>
+					<li><a href="https://howtodoinjava.com/java/multi-threading/object-vs-class-level-locking/" 
+						target="_blank" rel="noopener noreferrer"><small>360: </small>Object level lock vs Class level lock in Java</a></li>
+					<li><a href="https://dzone.com/articles/object-oriented-analysis-and-design-part-1?edition=364096&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-25" 
+						target="_blank" rel="noopener noreferrer"><small>361: </small>Object-Oriented Analysis and Design (Part 1)</a></li>
+					<li><a href="https://dzone.com/articles/observer-design-pattern-in-a-nutshell?edition=407246&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-10-30" 
+						target="_blank" rel="noopener noreferrer"><small>362: </small>Observer Design Pattern in a Nutshell</a></li>
+					<li><a href="https://dzone.com/articles/on-properly-using-volatile-and-synchronized-1?edition=253681&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-12" 
+						target="_blank" rel="noopener noreferrer"><small>363: </small>On Properly Using Volatile and Synchronized</a></li>
+					<li><a href="https://dzone.com/articles/one-method-to-rule-them-all-mapmerge?edition=457246&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-11" 
+						target="_blank" rel="noopener noreferrer"><small>364: </small>One Method to Rule Them All: Map.merge()</a></li>
+					<li><a href="https://dzone.com/articles/optional-ispresent-is-bad-for-you?edition=219183&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-03" 
+						target="_blank" rel="noopener noreferrer"><small>365: </small>Optional isPresent() Is Bad for You</a></li>
+					<li><a href="https://dzone.com/articles/optionalorelse-vs-optionalorelseget?edition=524302&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-10-01" 
+						target="_blank" rel="noopener noreferrer"><small>366: </small>Optional.orElse() vs. Optional.orElseGet()</a></li>
+					<li><a href="https://www.oracle.com/in/java/technologies/downloads" 
+						target="_blank" rel="noopener noreferrer"><small>367: </small>Oracle Java Downloads</a></li>
+					<li><a href="https://dzone.com/articles/pass-by-value-vs-reference-in-java?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202017-10-27" 
+						target="_blank" rel="noopener noreferrer"><small>368: </small>Passing by Value vs. Passing by Reference in Java</a></li>
+					<li><a href="https://dzone.com/articles/pdf-creation-with-java?edition=309192&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-16" 
+						target="_blank" rel="noopener noreferrer"><small>369: </small>PDF Creation with Java</a></li>
+					<li><a href="https://dzone.com/articles/peeking-inside-java-streams-with-streampeek?edition=382199&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-06-16" 
+						target="_blank" rel="noopener noreferrer"><small>370: </small>Peeking Inside Java Streams With Stream.peek</a></li>
+					<li><a href="https://dzone.com/articles/performing-integration-tests-on-rest-services-usin?edition=417251&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-22" 
+						target="_blank" rel="noopener noreferrer"><small>371: </small>Performing Integration Tests on REST Services </a></li>
+					<li><a href="https://dzone.com/articles/prefer-systemlineseparator-for-writing-system-depe?edition=366235&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-03-13" 
+						target="_blank" rel="noopener noreferrer"><small>372: </small>Prefer System.lineSeparator() for Writing System-Dependent Line Separator Strings in Java</a></li>
+					<li><a href="https://blog.joda.org/2016/09/private-methods-in-interfaces-in-java-9.html" 
+						target="_blank" rel="noopener noreferrer"><small>373: </small>Private methods in interfaces in Java 9</a></li>
+					<li><a href="https://dzone.com/articles/process-collections-easily-with-stream-in-java-8?edition=489315&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-03" 
+						target="_blank" rel="noopener noreferrer"><small>374: </small>Process Collections Easily With Stream in Java 8</a></li>
+					<li><a href="https://dzone.com/articles/programming-to-an-interface?edition=212201&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-05" 
+						target="_blank" rel="noopener noreferrer"><small>375: </small>Programming to an Interface</a></li>
+					<li><a href="https://dzone.com/articles/project-lombok-reduce-boilerplate-code?edition=377213&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-05-05" 
+						target="_blank" rel="noopener noreferrer"><small>376: </small>Project Lombok: Reduce Boilerplate Code </a></li>
+					<li><a href="https://dzone.com/articles/process-collections-easily-with-stream-in-java-8?edition=489315&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-03" 
+						target="_blank" rel="noopener noreferrer"><small>377: </small>Put Your Java 8 Method References to Work</a></li>
+					<li><a href="https://examples.javacodegeeks.com/queue-java/" 
+						target="_blank" rel="noopener noreferrer"><small>378: </small>Queue Java Example</a></li>
+					<li><a href="https://dzone.com/articles/removing-items-from-arraylist-in-javanbsp8?edition=221182&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-10" 
+						target="_blank" rel="noopener noreferrer"><small>379: </small>Removing Items From ArrayLists in Java 8</a></li>
+					<li><a href="https://www.javacodegeeks.com/2020/02/rest-http-methods-post-vs-put-vs-patch.html" 
+						target="_blank" rel="noopener noreferrer"><small>380: </small>REST / HTTP methods: POST vs. PUT vs. PATCH</a></li>
+					<li><a href="https://dzone.com/articles/rest-api-what-is-hateoas?edition=545292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-11-27" 
+						target="_blank" rel="noopener noreferrer"><small>381: </small>REST API — What Is HATEOAS? </a></li>
+					<li><a href="https://dzone.com/articles/rest-api-basic-guidelines-design-it-right-1?edition=214171&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-08" 
+						target="_blank" rel="noopener noreferrer"><small>382: </small>REST API Basic Guidelines: Design It Right - 1</a></li>
+					<li><a href="https://dzone.com/articles/rest-api-basic-guidelines-design-it-right-2?edition=241493&utm_source=Spotlight&utm_medium=email&utm_campaign=integration%202016-11-17" 
+						target="_blank" rel="noopener noreferrer"><small>383: </small>REST API Basic Guidelines: Design It Right - 2</a></li>
+					<li><a href="https://dzone.com/articles/rest-api-best-practices-with-design-examples-from?edition=549300&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202019-12-12" 
+						target="_blank" rel="noopener noreferrer"><small>384: </small>REST API Best Practices — Design Examples From Java and Spring Web Services </a></li>
+					<li><a href="https://dzone.com/articles/rest-api-path-vs-request-body-parameters?edition=459235&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-27" 
+						target="_blank" rel="noopener noreferrer"><small>385: </small>REST API: Path vs. Request Body Parameters </a></li>
+					<li><a href="https://dzone.com/articles/rest-api-your-guide-to-getting-started-quickly?edition=392201&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-09-11" 
+						target="_blank" rel="noopener noreferrer"><small>386: </small>REST API: Your Guide to Getting Started Quickly </a></li>
+					<li><a href="https://dzone.com/articles/rest-endpoint-testing-with-mockmvc?edition=486334&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202019-06-13" 
+						target="_blank" rel="noopener noreferrer"><small>387: </small>REST Endpoint Testing with MockMvc</a></li>
+					<li><a href="https://dzone.com/articles/rest-with-java-8?edition=243486&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-23" 
+						target="_blank" rel="noopener noreferrer"><small>388: </small>REST With Java 8</a></li>
+					<li><a href="https://dzone.com/articles/restful-api-authentication-basics-1?edition=244485&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-29" 
+						target="_blank" rel="noopener noreferrer"><small>389: </small>RESTful API Authentication Basics - 1</a></li>
+					<li><a href="https://dzone.com/articles/restful-api-authentication-basics-1?utm_source=Top%205&utm_medium=email&utm_campaign=2016-12-02" 
+						target="_blank" rel="noopener noreferrer"><small>390: </small>RESTful API Authentication Basics - 2</a></li>
+					<li><a href="https://dzone.com/articles/restful-api-design-an-opinionated-guide?edition=213214&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-11" 
+						target="_blank" rel="noopener noreferrer"><small>391: </small>Restful API Design: An Opinionated Guide</a></li>
+					<li><a href="https://dzone.com/articles/restful-api-technology-overview?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202018-01-26" 
+						target="_blank" rel="noopener noreferrer"><small>392: </small>RESTful API Technology Overview</a></li>
+					<li><a href="https://dzone.com/articles/restful-api-versioning-insights-1?edition=214172&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-09" 
+						target="_blank" rel="noopener noreferrer"><small>393: </small>Restful API Versioning Insights</a></li>
+					<li><a href="https://www.javacodegeeks.com/restful-services-with-hateoas-hypermedia-the-secret-ingredient-of-rest.html" 
+						target="_blank" rel="noopener noreferrer"><small>394: </small>RESTful services with HATEOAS. Hypermedia: The Secret Ingredient of REST</a></li>
+					<li><a href="https://dzone.com/articles/restful-web-service-1?edition=154268&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=wd%202016-09-28" 
+						target="_blank" rel="noopener noreferrer"><small>395: </small>RESTful Web Service With Example</a></li>
+					<li><a href="https://dzone.com/articles/restful-web-services-design?edition=374219&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202018-04-19" 
+						target="_blank" rel="noopener noreferrer"><small>396: </small>RESTful Web Services Design</a></li>
+					<li><a href="https://dzone.com/articles/resttemplate-vs-webclient?edition=597297&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-05-09" 
+						target="_blank" rel="noopener noreferrer"><small>397: </small>RESTTemplate vs. WebClient</a></li>
+					<li><a href="https://dzone.com/articles/rotating-garbage-collection-logs?edition=244482&utm_source=Spotlight&utm_medium=email&utm_campaign=performance%202016-11-25" 
+						target="_blank" rel="noopener noreferrer"><small>398: </small>Rotating Garbage Collection Logs</a></li>
+					<li><a href="https://dzone.com/articles/rulebook-a-simple-rules-engine-that-leverages-java?edition=272883&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-23" 
+						target="_blank" rel="noopener noreferrer"><small>399: </small>RuleBook: A Simple Rules Engine That Leverages Java 8</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/11/running-code-spring-boot-startup.html" 
+						target="_blank" rel="noopener noreferrer"><small>400: </small>Running code on Spring Boot startup</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/07/save-lambdas-rainy-day-save-file.html"
+						target="_blank" rel="noopener noreferrer"><small>401: </small>Save your lambdas for a rainy day - save to file</a></li>
+					<li><a href="http://dolszewski.com/java/save-enum-database-jpa/" 
+						target="_blank" rel="noopener noreferrer"><small>402: </small>Saving Java enum in database as String</a></li>
+					<li><a href="https://dzone.com/articles/securing-a-rest-service?edition=397197&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-09-16" 
+						target="_blank" rel="noopener noreferrer"><small>403: </small>Securing a REST Service </a></li>
+					<li><a href="https://dzone.com/articles/securing-jax-rs-endpoints-withnbspjwt?edition=220225&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-07" 
+						target="_blank" rel="noopener noreferrer"><small>404: </small>Securing JAX-RS Endpoints with JWT</a></li>
+					<li><a href="https://dzone.com/articles/securing-rest-apis-with-client-certificates?edition=407227&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-10-17" 
+						target="_blank" rel="noopener noreferrer"><small>405: </small>Securing REST APIs With Client Certificates</a></li>
+					<li><a href="https://dzone.com/articles/test-test-test-7?edition=268940&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-13" 
+						target="_blank" rel="noopener noreferrer"><small>406: </small>Security with Java In 2017</a></li>
+					<li><a href="https://dzone.com/articles/serialization-amp-de-serialization-in-java?edition=420204&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-28" 
+						target="_blank" rel="noopener noreferrer"><small>407: </small>Serialization and De-Serialization in Java</a></li>
+					<li><a href="https://examples.javacodegeeks.com/setting-up-ehcache-without-the-xml-hassle/" 
+						target="_blank" rel="noopener noreferrer"><small>408: </small>Setting Up EhCache Without the XML Hassle</a></li>
+					<li><a href="https://dzone.com/articles/java-copy-shallow-vs-deep-in-which-you-will-swim?edition=237190&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-28" 
+						target="_blank" rel="noopener noreferrer"><small>409: </small>Shallow vs. Deep Copy in Java</a></li>
+					<li><a href="https://dzone.com/articles/shared-variable-optimization-within-a-loop?edition=376368&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202018-05-25" 
+						target="_blank" rel="noopener noreferrer"><small>410: </small>Shared Variable Optimization </a></li>
+					<li><a href="https://dzone.com/articles/should-i-go-eager-or-lazy-with-jpa-mappings?edition=240484&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-16" 
+						target="_blank" rel="noopener noreferrer"><small>411: </small>Should I Go Eager or Lazy With JPA Mappings?</a></li>
+					<li><a href="https://dzone.com/articles/signing-java-code-with-certum-open-source-certific?edition=196594&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-07-29" 
+						target="_blank" rel="noopener noreferrer"><small>412: </small>Signing Java Code With Certum Open Source Certificates</a></li>
+					<li><a href="https://dzone.com/articles/simple-attribute-based-access-control-with-spring?edition=212184&utm_source=Spotlight&utm_medium=email&utm_campaign=performance%202016-09-02" 
+						target="_blank" rel="noopener noreferrer"><small>413: </small>Simple Attribute- Based Access Control with Spring Security</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/10/simple-token-authentication-java-apps.html" 
+						target="_blank" rel="noopener noreferrer"><small>414: </small>Simple Token Authentication for Java Apps</a></li>
+					<li><a href="https://dzone.com/articles/validations-using-enum?utm_source=Top%205&utm_medium=email&utm_campaign=2016-10-28" 
+						target="_blank" rel="noopener noreferrer"><small>415: </small>Simplifying Validations Using the Strategy(Enum) Pattern</a></li>
+					<li><a href="https://www.javacodegeeks.com/2016/10/single-sign-java-20-minutes-spring-boot-heroku.html" 
+						target="_blank" rel="noopener noreferrer"><small>416: </small>Single Sign-on for Java in 20 Minutes with Spring Boot and Heroku</a></li>
+					<li><a href="https://examples.javacodegeeks.com/singleton-class-in-java/" 
+						target="_blank" rel="noopener noreferrer"><small>417: </small>Singleton Class in Java Design Pattern - Best Practices with Examples</a></li>
+					<li><a href="https://dzone.com/articles/singleton-design-pattern-what-when-why-how?edition=478192&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-04-13" 
+						target="_blank" rel="noopener noreferrer"><small>418: </small>Singleton Design Pattern: What, Why, How</a></li>
+					<li><a href="https://dzone.com/articles/singleton-list-showdown-collectionssingletonlist-v?edition=525292&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-09-28" 
+						target="_blank" rel="noopener noreferrer"><small>419: </small>Singleton List Showdown: Collections::singletonList Vs. List::of</a></li>
+					<li><a href="https://dzone.com/articles/singleton-pattern-a-deep-dive?utm_source=Top%205&utm_medium=email&utm_campaign=Top%205%202017-08-11" 
+						target="_blank" rel="noopener noreferrer"><small>420: </small>Singleton Pattern: A Deep Dive</a></li>
+					<li><a href="https://dzone.com/articles/smells-in-java-code-do-you-recognize-them?edition=201703&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-20SPAhttps:%2F%2Fen.wikipedia.org%2Fwiki%2FSingle-page_application" 
+						target="_blank" rel="noopener noreferrer"><small>421: </small>Smells in Java Code: Do You Recognize Them?</a></li>
+					<li><a href="https://dzone.com/articles/software-design-principles?edition=358124&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-07" 
+						target="_blank" rel="noopener noreferrer"><small>422: </small>Software Design Principles</a></li>
+					<li><a href="https://dzone.com/articles/software-design-principles-dry-and-kiss?edition=374230&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-20" 
+						target="_blank" rel="noopener noreferrer"><small>423: </small>Software Design Principles DRY and KISS</a></li>
+					<li><a href="https://dzone.com/articles/software-simplicity?edition=383214&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202018-06-20" 
+						target="_blank" rel="noopener noreferrer"><small>424: </small>Software Simplicity and Security</a></li>
+					<li><a href="https://dzone.com/articles/solid-design-principles-explained-the-liskov-subst?edition=374212&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-17" 
+						target="_blank" rel="noopener noreferrer"><small>425: </small>SOLID Design Principles Explained - The Liskov Substitution Principle With Code Examples</a></li>
+					<li><a href="https://dzone.com/articles/solid-design-principles-explained-dependency-inver?edition=376342&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-05-22" 
+						target="_blank" rel="noopener noreferrer"><small>426: </small>SOLID Design Principles Explained: Dependency Inversion</a></li>
+					<li><a href="https://dzone.com/articles/solid-grasp-and-other-basic-principles-of-object-o?edition=598297&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-05-06" 
+						target="_blank" rel="noopener noreferrer"><small>427: </small>SOLID, GRASP, and Other Basic Principles of Object-Oriented Design</a></li>
+					<li><a href="https://dzone.com/articles/split-a-file-as-stream?edition=341091&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-12-01" 
+						target="_blank" rel="noopener noreferrer"><small>428: </small>Split a File as a Stream</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/spring-aop-example-tutorial-aspect-advice-pointcut-joinpoint-annotations" 
+						target="_blank" rel="noopener noreferrer"><small>429: </small>Spring AOP Example Tutorial - Aspect, Advice, Pointcut, JoinPoint, etc.</a></li>
+					<li><a href="https://dzone.com/articles/spring-aop-tutorial-with-examples?edition=556296&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202019-12-30" 
+						target="_blank" rel="noopener noreferrer"><small>430: </small>Spring AOP Tutorial With Examples</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/05/spring-data-jpa-tutorial.html" 
+						target="_blank" rel="noopener noreferrer"><small>431: </small>Spring Data Tutorial</a></li>
+					<li><a href="https://start.spring.io" 
+						target="_blank" rel="noopener noreferrer"><small>432: </small>Spring Initializer</a></li>
+					<li><a href="https://dzone.com/articles/sql-like-operations-with-java-using-streams?edition=308192&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-07-13" 
+						target="_blank" rel="noopener noreferrer"><small>433: </small>SQL -Like Operations With Java Using Streams</a></li>
+					<li><a href="https://dzone.com/articles/stack-vs-heap-understanding-java-memory-allocation?edition=317393&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-08-14" 
+						target="_blank" rel="noopener noreferrer"><small>434: </small>Stack vs. Heap: Understanding Java Memory Allocation</a></li>
+					<li><a href="https://dzone.com/articles/stackoverflow-7-of-the-best-java-answers-that-you?edition=196574&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-07-28" 
+						target="_blank" rel="noopener noreferrer"><small>435: </small>StackOverflow: Seven of the Best Java Answers That You Haven't Seen</a></li>
+					<li><a href="https://dzone.com/articles/steps-to-building-authentication-and-authorization?edition=267885&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-07" 
+						target="_blank" rel="noopener noreferrer"><small>436: </small>Steps to Building Authentication and Authorization for RESTful APIs </a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/string-programs-in-java?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>437: </small>String Programs in Java</a></li>
+					<li><a href="https://dzone.com/articles/stringvalueofobject-versus-objectstostringobject?edition=391217&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-09-11" 
+						target="_blank" rel="noopener noreferrer"><small>438: </small>String.valueOf(Object) Vs. Objects.toString(Object)</a></li>
+					<li><a href="https://dzone.com/articles/string-why-it-is-immutable?edition=416191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-01" 
+						target="_blank" rel="noopener noreferrer"><small>439: </small>String: Why it Is Immutable?</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/11/supporting-java-8.html" 
+						target="_blank" rel="noopener noreferrer"><small>440: </small>Supporting Java 8</a></li>
+					<li><a href="https://dzone.com/articles/synchronous-or-asynchronous-and-why-wrestle-with-wrappers?edition=377192&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-26" 
+						target="_blank" rel="noopener noreferrer"><small>441: </small>Synchronous or Asynchronous, and Why Wrestle With Wrappers</a></li>
+					<li><a href="https://dzone.com/articles/tdd-strategy-in-real-life?edition=256682&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-17" 
+						target="_blank" rel="noopener noreferrer"><small>442: </small>TDD Strategy in Real Life </a></li>
+					<li><a href="https://dzone.com/articles/testing-rest-api-file-uploads-in-jmeter?edition=213336&utm_source=Spotlight&utm_medium=email&utm_campaign=integration%202016-09-22" 
+						target="_blank" rel="noopener noreferrer"><small>443: </small>Testing REST API File Uploads in JMeter</a></li>
+					<li><a href="https://vladmihalcea.com/the-best-way-to-map-an-enum-type-with-jpa-and-hibernate/" 
+						target="_blank" rel="noopener noreferrer"><small>444: </small>The best way to map an Enum Type with JPA/Hibernate</a></li>
+					<li><a href="https://dzone.com/articles/the-complete-unit-testing-collection?edition=569295&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-02-01" 
+						target="_blank" rel="noopener noreferrer"><small>445: </small>The Complete Unit Testing Collection [Tutorials and Framewords]</a></li>
+					<li><a href="https://dzone.com/articles/a-deep-dive-into-collections?edition=362092&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-13" 
+						target="_blank" rel="noopener noreferrer"><small>456: </small>The Developer's Guide to Collections</a></li>
+					<li><a href="https://dzone.com/articles/the-developers-guide-to-collections-queues?edition=366213&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-03-07" 
+						target="_blank" rel="noopener noreferrer"><small>457: </small>The Developer's Guide to Collections: Queues </a></li>
+					<li><a href="https://dzone.com/articles/the-developers-guide-to-collections-sets?edition=363107&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-20" 
+						target="_blank" rel="noopener noreferrer"><small>458: </small>The Developer's Guide to Collections: Sets</a></li>
+					<li><a href="https://www.baeldung.com/rest-template" 
+						target="_blank" rel="noopener noreferrer"><small>459: </small>The Guide to RestTemplate</a></li>
+					<li><a href="https://dzone.com/articles/the-hidden-contract-between-equals-and-comparable?edition=213281&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-16" 
+						target="_blank" rel="noopener noreferrer"><small>460: </small>The Hidden Contract Between equals and Comparable</a></li>
+					<li><a href="https://dzone.com/articles/the-hypermedia-apis-support-in-jax-rs-and-openapi?edition=457221&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-06" 
+							target="_blank" rel="noopener noreferrer"><small>461: </small>The Hypermedia APIs Support in JAX-RS and OpenAPI: a Long Way to Go</a></li>
+					<li><a href="https://dzone.com/articles/instanceof-considered-harmful?edition=237190&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-28" 
+						target="_blank" rel="noopener noreferrer"><small>462: </small>The Instanceof Code Smell and One Way to Get Around It</a></li>
+					<li><a href="https://dzone.com/articles/the-java-synchronizers?edition=206672&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-28" 
+						target="_blank" rel="noopener noreferrer"><small>463: </small>The Java Synchronizers</a></li>
+					<li><a href="https://dzone.com/articles/the-java-web-app-journey-soap-services?edition=216188&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-27" 
+						target="_blank" rel="noopener noreferrer"><small>464: </small>The Java Web App Journey... SOAP Services (Part 1) </a></li>
+					<li><a href="https://dzone.com/articles/java-and-the-jdks-which-one-to-use?edition=423202&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-12-11" 
+						target="_blank" rel="noopener noreferrer"><small>465: </small>The JDKs: Which One to Use?</a></li>
+					<li><a href="https://dzone.com/articles/jpa-entity-lifecycle?edition=324493&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-09-08" 
+						target="_blank" rel="noopener noreferrer"><small>466: </small>The JPA Entity Lifecycle</a></li>
+					<li><a href="https://dzone.com/articles/research-most-popular-java-tools-for-every-phase-o?edition=198610&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-15" 
+						target="_blank" rel="noopener noreferrer"><small>467: </small>The Most Popular Java Tools for Every Phase of Development</a></li>
+					<li><a href="https://dzone.com/articles/the-power-of-openclosed-principle?edition=257683&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-19" 
+						target="_blank" rel="noopener noreferrer"><small>468: </small>The Power of Open/Closed Principle</a></li>
+					<li><a href="https://dzone.com/articles/the-reactive-universe-for-java-devs?edition=385227&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-07-12" 
+						target="_blank" rel="noopener noreferrer"><small>469: </small>The Reactive Universe for Java Devs</a></li>
+					<li><a href="https://dzone.com/articles/the-right-way-to-reverse-a-string-in-java?edition=429192&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-12-18" 
+						target="_blank" rel="noopener noreferrer"><small>470: </small>The Right Way to Reverse a String in Java</a></li>
+					<li><a href="https://dzone.com/articles/three-modes-of-tdd?edition=219185&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-05" 
+						target="_blank" rel="noopener noreferrer"><small>471: </small>The Three Modes of TDD</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/06/transient-keyword-in-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>472: </small>The Transient Keyword in Java and Its Use</a></li>
+					<li><a href="https://dzone.com/articles/the-way-of-the-lambda-and-removeif?edition=240484&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-11-16" 
+						target="_blank" rel="noopener noreferrer"><small>473: </small>The Way of the Lambda and removeIf()</a></li>
+					<li><a href="https://www.javacodegeeks.com/2010/12/things-every-programmer-should-know.html?ar=2" 
+						target="_blank" rel="noopener noreferrer"><small>474: </small>Things Every Programmer Should Know</a></li>
+					<li><a href="https://dzone.com/articles/think-twice-using-java-8?edition=518291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-08-14#xsid=a62e_ffn2" 
+						target="_blank" rel="noopener noreferrer"><small>475: </small>Think Twice Before Using Java 8 Parallel Streams</a></li>
+					<li><a href="https://dzone.com/articles/thread-pool-self-induced-deadlocks?edition=397192&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-09-14" 
+						target="_blank" rel="noopener noreferrer"><small>476: </small>Thread Pool Self-Induced Deadlocks</a></li>
+					<li><a href="https://examples.javacodegeeks.com/timestamp-java-example/" 
+						target="_blank" rel="noopener noreferrer"><small>477: </small>Timestamp Java Example</a></li>
+					<li><a href="https://dzone.com/articles/a-look-at-tls-transport-layer-security?edition=268938&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-11" 
+						target="_blank" rel="noopener noreferrer"><small>478: </small>TLS and Web Certificates Explained</a></li>
+					<li><a href="https://www.javacodegeeks.com/2016/07/token-authentication-java-applications.html" 
+						target="_blank" rel="noopener noreferrer"><small>479: </small>Token Authentication for Java Applications</a></li>
+					<li><a href="https://dzone.com/articles/tokenization-vs-encryption-understanding-the-diffe?edition=268937&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-10" 
+						target="_blank" rel="noopener noreferrer"><small>480: </small>Tokenization vs. Encryption: Understanding the Difference</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials/core-java-interview-questions-and-answers?utm_source=newsletter&utm_medium=sendy&utm_campaign=emails" 
+						target="_blank" rel="noopener noreferrer"><small>481: </small>Top 100+ Core Java Interview Questions</a></li>
+					<li><a href="https://dzone.com/articles/5-courses-to-learn-hibernate-in-2019?edition=455200&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202019-02-27" 
+						target="_blank" rel="noopener noreferrer"><small>482: </small>Top 5 Courses to Learn Hibernate in Depth</a></li>
+					<li><a href="https://dzone.com/articles/towards-more-functional-java-using-generators-and?edition=228185&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-16" 
+						target="_blank" rel="noopener noreferrer"><small>483: </small>Toward More Functional Java using Generators and Filters</a></li>
+					<li><a href="https://dzone.com/articles/Towards-More-Functional-Java-Using-Streams-and-Lambdas?edition=202665&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-25" 
+						target="_blank" rel="noopener noreferrer"><small>484: </small>Toward More Functional Java using Streams and Lambdas</a></li>
+					<li><a href="https://www.concretepage.com/java/jdk7/traverse-directory-structure-using-files-walkfiletree-java-nio2" 
+						target="_blank" rel="noopener noreferrer"><small>485: </small>Traverse a Directory Structure Using Files.walkFileTree in Java NIO 2</a></li>
+					<li><a href="https://www.javacodegeeks.com/2012/05/tutorial-hibernate-jpa-part-1.html" 
+						target="_blank" rel="noopener noreferrer"><small>486: </small>Tutorial: Hibernate, JPA - Part 1</a></li>
+					<li><a href="https://www.javacodegeeks.com/2020/01/two-common-concurrency-bugs.html" 
+						target="_blank" rel="noopener noreferrer"><small>487: </small>Two Common Concurrency Bugs</a></li>
+					<li><a href="https://dzone.com/articles/two-ways-to-join-string-in-java-8-stringjoiner-and?edition=479269&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-05-15" 
+						target="_blank" rel="noopener noreferrer"><small>489: </small>Two Ways to Join String in Java 8: StringJoiner and String.join Examples</a></li>
+					<li><a href="https://dzone.com/articles/java-callable-future-understanding?edition=207771&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-29" 
+						target="_blank" rel="noopener noreferrer"><small>490: </small>Understand Java Callable and Future</a></li>
+					<li><a href="https://dzone.com/articles/understanding-and-leveraging-the-java-stack-trace?edition=376255&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-05-08" 
+						target="_blank" rel="noopener noreferrer"><small>491: </small>Understanding and Leveraging the Java Stack Trace</a></li>
+					<li><a href="https://dzone.com/articles/understand-java-keytool-keystore-commands?edition=377191&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-24" 
+						target="_blank" rel="noopener noreferrer"><small>492: </small>Understanding Java Keytool Keystore Commands</a></li>
+					<li><a href="https://dzone.com/articles/understanding-reactor-pattern-thread-based-and-eve?edition=212172&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-01" 
+						target="_blank" rel="noopener noreferrer"><small>493: </small>Understanding Reactor Pattern: Thread-Based and Event-Driven</a></li>
+					<li><a href="https://www.fusion-reactor.com/blog/technical-blogs/understanding-stacktraces-in-java/?utm_source=DZone&utm_medium=Email&utm_campaign=StackTrace" 
+						target="_blank" rel="noopener noreferrer"><small>494: </small>Understanding StackTraces in Java</a></li>
+					<li><a href="https://dzone.com/articles/understanding-the-java-memory-model-and-the-garbag?edition=201704&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-08-21" 
+						target="_blank" rel="noopener noreferrer"><small>495: </small>Understanding the Java Memory Model and Garbage Collection</a></li>
+					<li><a href="https://dzone.com/articles/unit-testing-log-messages-made-easy?edition=583305&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-03-15" 
+						target="_blank" rel="noopener noreferrer"><small>496: </small>Unit Testing Log Messages Made Easy</a></li>
+					<li><a href="https://dzone.com/articles/unit-testing-patterns-common-patterns-to-follow-fo?edition=271920&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-02-24" 
+						target="_blank" rel="noopener noreferrer"><small>497: </small>Unit Testing Patterns: Common Patterns to Follow for Error Free Applications </a></li>
+					<li><a href="https://dzone.com/articles/unit-testing-with-mockito?edition=385302&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-07-28" 
+						target="_blank" rel="noopener noreferrer"><small>498: </small>Unit Testing With Mockito</a></li>
+					<li><a href="https://dzone.com/articles/unit-testing-java-streams-and-lambdas?edition=385227&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=java%202018-07-12" 
+						target="_blank" rel="noopener noreferrer"><small>499: </small>Unit Testing: Java Streams and Lambdas</a></li>
+					<li><a href="https://dzone.com/articles/unit-testing-the-good-bad-amp-ugly?edition=393202&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-09-08" 
+						target="_blank" rel="noopener noreferrer"><small>500: </small>Unit Testing: The Good, Bad, and Ugly </a></li>
+					<li><a href="https://dzone.com/articles/unit-tests-vs-integration-tests-battle-continues?edition=455200&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=Weekly%20Digest%202019-02-27" 
+						target="_blank" rel="noopener noreferrer"><small>501: </small>Unit Tests Vs. Integration Tests: Battle Continues</a></li>
+					<li><a href="https://dzone.com/articles/use-client-certificate-authentication-with-java-an?edition=484293&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-05-17" 
+						target="_blank" rel="noopener noreferrer"><small>502: </small>Use Client Certificate Auathentication With Java and RestTemplate</a></li>
+					<li><a href="https://dzone.com/articles/basics-of-using-java-future-and-executor-service?edition=373192&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-10" 
+						target="_blank" rel="noopener noreferrer"><small>503: </small>Using Java's Future and ExecutorService</a></li>
+					<li><a href="https://dzone.com/articles/using-jaxb-for-xml-with-java?edition=362097&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-14" 
+						target="_blank" rel="noopener noreferrer"><small>504: </small>Using JAXB for XML with Java</a></li>
+					<li><a href="https://dzone.com/articles/using-jcache-event-listeners-loaders-amp-writers?edition=228185&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-16" 
+						target="_blank" rel="noopener noreferrer"><small>505: </small>Using JCache Event Listeners, Loaders, and Writers</a></li>
+					<li><a href="https://www.javacodegeeks.com/2018/10/validation-java-applications.html" 
+						target="_blank" rel="noopener noreferrer"><small>506: </small>Validation in Java applications</a></li>
+					<li><a href="https://dzone.com/articles/variable-shadowing-and-hiding-in-java?edition=363104&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-02-19" 
+						target="_blank" rel="noopener noreferrer"><small>507: </small>Variable Shadowing and Hiding in Java</a></li>
+					<li><a href="https://dzone.com/articles/viewing-junit-xml-files-locally?edition=329559&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-10-11" 
+						target="_blank" rel="noopener noreferrer"><small>508: </small>Viewing JUnit XML Files Locally </a></li>
+					<li><a href="https://dzone.com/articles/visual-studio-code-for-java-the-ultimate-guide-201?edition=423326&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-01-18" 
+						target="_blank" rel="noopener noreferrer"><small>509: </small>Visual Studio Code for Java: The Ultimate Guide</a></li>
+					<li><a href="https://www.vogella.com/tutorials/JavaPersistenceAPI/article.html" 
+						target="_blank" rel="noopener noreferrer"><small>510: </small>Vogella Java Persistence API</a></li>
+					<li><a href="https://dzone.com/articles/viewing-junit-xml-files-locally?edition=329559&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-10-11" 
+						target="_blank" rel="noopener noreferrer"><small>511: </small>Vogella Lombok Tutorial</a></li>
+					<!--<li><a href="https://dzone.com/articles/visual-studio-code-for-java-the-ultimate-guide-201?edition=423326&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-01-18" target="_blank" rel="noopener noreferrer"><small>512: </small>Volvo How To</a></li>-->
+					<li><a href="https://www.vogella.com/tutorials/JavaPersistenceAPI/article.html" 
+						target="_blank" rel="noopener noreferrer"><small>513: </small>Weak, Soft, and Phantom References in Java (and Why They Matter)</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/05/weakhashmap-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>514: </small>WeakHashMap In Java</a></li>
+					<li><a href="https://www.webjars.org" 
+						target="_blank" rel="noopener noreferrer"><small>515: </small>Web Jars</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/05/weakhashmap-java.html" 
+						target="_blank" rel="noopener noreferrer"><small>516: </small>Welcoming the New Era of Java</a></li>
+					<li><a href="https://dzone.com/articles/what-are-meta-annotations-in-java?edition=457211&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-05" 
+						target="_blank" rel="noopener noreferrer"><small>517: </small>What are Meta-Annotations in Java?</a></li>
+					<li><a href="https://dzone.com/articles/what-developers-need-to-know-about-java-security?edition=550304&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-12-09" 
+						target="_blank" rel="noopener noreferrer"><small>518: </small>What Developers Need to Know About Java Security</a></li>
+					<li><a href="https://dzone.com/articles/what-do-you-mean-by-event-driven?edition=271918&utm_source=Spotlight&utm_medium=email&utm_campaign=integration%202017-02-23" 
+						target="_blank" rel="noopener noreferrer"><small>519: </small>What Do You Mean by Event-Driven?</a></li>
+					<li><a href="https://vmlens.com/articles/cp/java_thread_safety/" 
+						target="_blank" rel="noopener noreferrer"><small>520: </small>What does thread safety mean in Java?</a></li>
+					<li><a href="https://dzone.com/articles/what-is-nodejs-for-java-developers?edition=259688&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-23" 
+						target="_blank" rel="noopener noreferrer"><small>521: </small>What Is Node.js for Java Developers?</a></li>
+					<li><a href="https://dzone.com/articles/what-is-serialversionuid?edition=330496&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-10-13" 
+						target="_blank" rel="noopener noreferrer"><small>522: </small>What Is serialVersionUID?</a></li>
+					<li><a href="https://dzone.com/articles/java-message-service-1?edition=507291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-07-22" 
+						target="_blank" rel="noopener noreferrer"><small>523: </small>What is the Java Message Service?</a></li>
+					<li><a href="https://dzone.com/articles/what-you-need-to-know-about-serialization?edition=230182&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-10-20" 
+						target="_blank" rel="noopener noreferrer"><small>524: </small>What You Need to Know About Serialization</a></li>
+					<li><a href="https://dzone.com/articles/whats-so-evil-about-singletons?edition=0&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-08-04" 
+						target="_blank" rel="noopener noreferrer"><small>525: </small>What's So Evil About Singletons?</a></li>
+					<li><a href="https://dzone.com/articles/whats-wrong-with-java-boxed-numbers?edition=402233&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-10-07" 
+						target="_blank" rel="noopener noreferrer"><small>526: </small>What's Wrong With Java Boxed Numbers?</a></li>
+					<li><a href="https://dzone.com/articles/whats-wrong-with-small-objects-in-java?edition=423324&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-01-17" 
+						target="_blank" rel="noopener noreferrer"><small>527: </small>What's Wrong With Small Objects in Java?</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/05/using-jaxb.html" 
+						target="_blank" rel="noopener noreferrer"><small>528: </small>When using JAXB</a></li>
+					<li><a href="https://dzone.com/articles/when-will-java-11-replace-java-8-as-the-default-ja?edition=420205&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-11-29" 
+						target="_blank" rel="noopener noreferrer"><small>529: </small>When Will Java 11 Replace Java 8 as the Default Java?</a></li>
+					<li><a href="https://dzone.com/articles/which-for-loop?edition=265881&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202017-01-24" 
+						target="_blank" rel="noopener noreferrer"><small>530: </small>Which For Loop?</a></li>
+					<li><a href="https://dzone.com/articles/why-and-when-to-use-java-for-developing-your-appli?edition=457196&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-03-03" 
+						target="_blank" rel="noopener noreferrer"><small>531: </small>Why and When to Use Java for Developing Your Application</a></li>
+					<li><a href="https://www.javacodegeeks.com/2019/08/declarative-coding-makes-better-programmer.html" 
+						target="_blank" rel="noopener noreferrer"><small>532: </small>Why Declarative Coding Makes You a Better Programmer</a></li>
+					<li><a href="https://dzone.com/articles/why-do-programmers-fail-to-write-good-unit-tests?edition=347147&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202017-12-31" 
+						target="_blank" rel="noopener noreferrer"><small>533: </small>Why Do Programmers Fail to Write Good Unit Tests?</a></li>
+					<li><a href="https://dzone.com/articles/why-do-we-need-4-classes-for-atomic-updates-in-java?edition=377195&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-04-28" 
+						target="_blank" rel="noopener noreferrer"><small>534: </small>Why Do We Need 4 Classes for Atomic Updates in Java?</a></li>
+					<li><a href="https://dzone.com/articles/why-im-using-java-ee?edition=155254&utm_source=Weekly%20Digest&utm_medium=email&utm_campaign=wd%202016-11-02" 
+						target="_blank" rel="noopener noreferrer"><small>535: </small>Why I'm Using Java EE (Instead of Spring)</a></li>
+					<li><a href="https://dzone.com/articles/why-is-combining-thread-safe-methods-an-error?edition=491306&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-06-25" 
+						target="_blank" rel="noopener noreferrer"><small>536: </small>Why is Combining Thread-Safe Methods an Errors?</a></li>
+					<li><a href="https://dzone.com/articles/why-its-better-to-trust-in-java-ee?edition=213173&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-09-07" 
+						target="_blank" rel="noopener noreferrer"><small>537: </small>Why It's Better to Trust in Java EE</a></li>
+					<li><a href="https://dzone.com/articles/why-should-you-care-about-equals-and-hashcode?edition=258683&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=dd%202016-12-24" 
+						target="_blank" rel="noopener noreferrer"><small>538: </small>Why You Should Care About Equals and Hashcode</a></li>
+					<li><a href="https://dzone.com/articles/working-with-localdate-localtime-and-localdatetime?edition=402193&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202018-10-01" 
+						target="_blank" rel="noopener noreferrer"><small>539: </small>Working With LocalDate, LocalTime, and LocalDateTime</a></li>
+					<li><a href="https://dzone.com/articles/writing-functional-interfaces?edition=604291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-05-27" 
+						target="_blank" rel="noopener noreferrer"><small>540: </small>Writing Functional Interfaces with Java</a></li>
+					<li><a href="https://dzone.com/articles/write-testable-code?edition=485330&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202019-06-10" 
+						target="_blank" rel="noopener noreferrer"><small>541: </small>Writing Testable Code</a></li>
+					<li><a href="https://dzone.com/articles/wtf-is-a-thread?edition=334741&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202017-10-27" 
+						target="_blank" rel="noopener noreferrer"><small>542: </small>WTF Is a Thread?</a></li>
+					<li><a href="https://www.w3schools.com/xml/xpath_intro.asp" 
+						target="_blank" rel="noopener noreferrer"><small>543: </small>XPath Tutorial</a></li>
+					<li><a href="https://dzone.com/articles/wtf-is-a-thread?edition=334741&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=performance%202017-10-27" 
+						target="_blank" rel="noopener noreferrer"><small>544: </small>XQuery Tutorial</a></li>
+					<li><a href="https://www.w3schools.com/xml/xpath_intro.asp" 
+						target="_blank" rel="noopener noreferrer"><small>545: </small>Yet 4 More Techniques for Writing Better Java</a></li>
+					<li><a href="https://dzone.com/articles/java-8-optional-1?edition=574291&utm_source=Daily%20Digest&utm_medium=email&utm_campaign=Daily%20Digest%202020-02-10" 
+						target="_blank" rel="noopener noreferrer"><small>546: </small>Your Guide to Java 8 Optional</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<span style="float:left;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories"/>
+				</form>
+			</span>	
+				
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>	
+</body>
+</html>

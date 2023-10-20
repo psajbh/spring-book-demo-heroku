@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Resource</title>
+	</th:block>
+	
+	<link rel="stylesheet" href="/css/wiki.css">
+</head>
+
+<body>
+	<div th:insert="navbar :: navbar">  </div>
+
+	<div class="container-fluid" style="margin-top: 35px">
+		<div id="indexRow" class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<h3>Resource Categories</h3>
+			</div>
+		</div>
+		<div>
+			<br/><br/>
+			<table border="1" align="center"  style="width:80%">
+			<tr style="text-align: center">
+				<td style="text-align: center"><a href="/angular">&nbsp;Angular&nbsp;</a></td>
+				<td style="text-align: center"><a href="/baseball">&nbsp;Baseball&nbsp;</a></td>
+				<td style="text-align: center"><a href="/blog">&nbsp;Blog&nbsp;</a></td>
+				<td style="text-align: center"><a href="/git">&nbsp;Git&nbsp;</a></td>
+			</tr>
+			<tr style="text-align: center">
+				<td style="text-align: center"><a href="/heroku">&nbsp;Heroku&nbsp;</a></td>
+				<td style="text-align: center"><a href="/html">&nbsp;HTML&nbsp;</a></td>
+				<td style="text-align: center"><a href="/httpclient">&nbsp;HttpClient&nbsp;</a></td>
+				<td style="text-align: center"><a href="/ide">&nbsp;IDE&nbsp;</a></td>
+			</tr>
+			<tr style="text-align: center">
+				<td style="text-align: center"><a href="/java">&nbsp;Java&nbsp;</a></td>
+				<td style="text-align: center"><a href="/javafx">&nbsp;JavaFX&nbsp;</a></td>
+				<td style="text-align: center"><a href="/javascript">&nbsp;Javascript&nbsp;</a></t>
+				<td style="text-align: center"><a href="/jquery">&nbsp;JQuery&nbsp;</a></td>
+			</tr>
+			<tr style="text-align: center">
+				<td style="text-align: center"><a href="/json"> &nbsp;JSON&nbsp;</a></td>
+				<td style="text-align: center"><a href="/maven"> &nbsp;Maven&nbsp;</a></td>
+				<td style="text-align: center"><a href="/overflow"> &nbsp;Overflow&nbsp;</a></td>
+				<td style="text-align: center"><a href="/spring"> &nbsp;Spring&nbsp;</a></td>
+			</tr>
+			
+			<trstyle="text-align: center">
+				<td style="text-align: center"><a href="/springboot"> &nbsp;Spring Boot&nbsp;</a></td>
+				<td style="text-align: center"><a href="/thorben"> &nbsp;Thorben&nbsp;</a></td>
+				<td style="text-align: center"><a href="/thymeleaf"> &nbsp;Thymeleaf&nbsp;</a></td>
+				<td style="text-align: center"><a href="/utility"> &nbsp;Utility&nbsp;</a></td>
+
+			</tr>
+				<td style="text-align: center"><a href="/web"> &nbsp;Web&nbsp;</a></td>
+				<td style="text-align: center"><a href="/windows"> &nbsp;Windows&nbsp;</a></td>
+				<td style="text-align: center"><a href="/video"> &nbsp;Videos&nbsp;</a></td>
+				<td style="text-align: center">&nbsp;&nbsp;&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="container" th:replace="fragments/footer :: footer">
+		<p>footer</p>
+	</div>
+</body>
+
+</html>

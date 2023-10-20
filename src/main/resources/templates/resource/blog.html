@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Blog Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 500px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+
+<body>
+	<div th:insert="navbar :: navbar"></div>
+	
+	<div class="container-fluid">
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Blog Resources</h4>
+		<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://alvinalexander.com/" target="_blank" rel="noopener noreferrer"><small>000: </small>Alvin Alexander</a></li>
+					<li><a href="https://www.geeksforgeeks.org/asynchronous-synchronous-callbacks-java/" target="_blank" rel="noopener noreferrer"><small>001: </small>Asynchronous and Synchronous Callbacks in Java</a></li>
+					<li><a href="https://www.baeldung.com/author/baeldung" target="_blank" rel="noopener noreferrer"><small>002: </small>Baeldung on Java</a></li>
+					<li><a href="https://www.bezkoder.com/" target="_blank" rel="noopener noreferrer"><small>003: </small>BezKoder</a></li>
+					<li><a href="https://www.briansdevblog.com" target="_blank" rel="noopener noreferrer"><small>004: </small>Brians Dev Blog</a></li>
+					<li><a href="https://codejava.net/" target="_blank" rel="noopener noreferrer"><small>005: </small>Code Java</a></li>
+					<li><a href="https://www.codeproject.com/" target="_blank" rel="noopener noreferrer"><small>006: </small>CodeProject</a></li>
+					<li><a href="https://www.concretepage.com" target="_blank" rel="noopener noreferrer"><small>007: </small>Concrete</a></li>
+					<li><a href="https://www.danvega.dev/" target="_blank" rel="noopener noreferrer"><small>008: </small>Dan Vega: Learn to Code</a></li>
+					<li><a href="https://dimitri.codes" target="_blank" rel="noopener noreferrer"><small>009: </small>Dimitri Blog</a></li>
+					<li><a href="https://www.digitalocean.com/community/tutorials" target="_blank" rel="noopener noreferrer"><small>010: </small>DigitalOcean - Tutorials</a></li>
+					<li><a href="https://dzone.com" target="_blank" rel="noopener noreferrer"><small>011: </small>DZone</a></li>
+					<li><a href="https://www.guru99.com" target="_blank" rel="noopener noreferrer"><small>012: </small>Guru 99 Blog</a></li>
+					<li><a href="https://hackr.io" target="_blank" rel="noopener noreferrer"><small>013: </small>Hackr Blog</a></li>
+					<li><a href="http://www.infybuzz.com" target="_blank" rel="noopener noreferrer"><small>014: </small>Information Buzz: Blog</a></li>
+					<li><a href="https://javarevisited.blogspot.com/p/about-me.html" target="_blank" rel="noopener noreferrer"><small>015: </small>Java Revisited</a></li>
+					<li><a href="https://www.javainuse.com" target="_blank" rel="noopener noreferrer"><small>016: </small>Java In Use Tutorials</a></li>
+					<li><a href="https://jenkov.com/" target="_blank" rel="noopener noreferrer"><small>017: </small>Jenkov Tutorials</a></li>
+					<li><a href="https://www.kindsonthegenius.com/" target="_blank" rel="noopener noreferrer"><small>018: </small>Kindson the genious - blog</a></li>
+					<li><a href="https://lemnik.wordpress.com/2018/02/05/fun-with-string-intern/" target="_blank" rel="noopener noreferrer"><small>019: </small>Lemnik Technology Blog</a></li>
+					<li><a href="https://www.scottohara.me" target="_blank" rel="noopener noreferrer"><small>020: </small>Scott O'Hara - web development blog</a></li>
+					<li><a href="https://springframework.guru" target="_blank" rel="noopener noreferrer"><small>021: </small>Spring Framework Guru - Blog</a></li>
+					<li><a href="https://www.thesitewizard.com/" target="_blank" rel="noopener noreferrer"><small>022: </small>The Site Wizard</a></li>
+					<li><a href="https://thorben-janssen.com" target="_blank" rel="noopener noreferrer"><small>023: </small>Thorben Janssen - blogs</a></li>
+					<li><a href="https://vladmihalcea.com/" target="_blank" rel="noopener noreferrer"><small>024: </small>Vlad Mihalcea</a></li>
+					<li><a href="https://www.vogella.com/tutorials/" target="_blank" rel="noopener noreferrer"><small>025: </small>Vogella Tutorials</a></li>
+					<li><a href="https://www.vogella.com/tutorials/java.html" target="_blank" rel="noopener noreferrer"><small>026: </small>Vogella Java Tutorials</a></li>
+					<li><a href="https://www.vogella.com/tutorials/eclipseide.html" target="_blank" rel="noopener noreferrer"><small>027: </small>Vogella Eclipse IDE</a></li>
+					<li><a href="https://zetcode.com/all/#java/" target="_blank" rel="noopener noreferrer"><small>028: </small>ZetCode Tutorials</a></li>
+					<li><a href="https://mkyong.com/" target="_blank" rel="noopener noreferrer"><small>029: </small>Mkyong Tutorials</a></li>
+					
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories" />
+			</form>
+		</div>
+		
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>	
+</body>
+</html>

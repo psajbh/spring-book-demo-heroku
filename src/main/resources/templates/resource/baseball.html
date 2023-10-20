@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head>
+	<th:block th:replace="fragments/header :: head">
+		<meta charset='UTF-8'>
+		<title id="pageTitle">Baseball Resources</title>
+	</th:block>
+	<link rel="stylesheet" href="/css/wiki.css">
+	<style>
+		#htmldocs {
+			height: 500px;
+			width: 300px;
+			overflow: scroll; /* This is the key!! */
+			border: 1px #aabbcc solid;
+			padding: 10px;}
+  	</style>
+</head>
+
+<body>
+	<div th:insert="navbar :: navbar"></div>
+		
+	<div class="container-fluid" >
+		<br/><br/><br/>
+		<h4>&nbsp;&nbsp;&nbsp;Baseball Resources</h4>
+		<div style="text-align:left;">
+			<span style="float:right;">
+				<form action="/resource/index">
+    				<input type="submit" value="Return to Resource Categories" />
+				</form>
+			</span>
+		</div>
+	
+		<div id="htmldocs">
+			<div>
+				<ul>
+					<li><a href="https://https://www.baseball-almanac.com/" target="_blank" rel="noopener noreferrer"><small>000: </small>Baseball Almanac</a></li>
+					<li><a href="https://www.baseball-reference.com" target="_blank" rel="noopener noreferrer"><small>001: </small>Baseball Reference</a></li>
+					<li><a href="https://www.billjamesonline.com/" target="_blank" rel="noopener noreferrer"><small>002: </small>Bill James Online</a></li>
+					<li><a href="https://www.espn.com/mlb/scoreboard/" target="_blank" rel="noopener noreferrer"><small>003: </small>ESPN Baseball</a></li>
+					<li><a href="https://www.fangraphs.com/" target="_blank" rel="noopener noreferrer"><small>004: </small>Fan Graphs</a></li>
+					<li><a href="https://www.mlb.com" target="_blank" rel="noopener noreferrer"><small>005: </small>Major League Baseball</a></li>
+					<li><a href="http://www.rapidstatsbaseball.com" target="_blank" rel="noopener noreferrer"><small>006: </small>Rapid Stats Baseball</a></li>
+					<li><a href="https://www.retrosheet.org" target="_blank" rel="noopener noreferrer"><small>007: </small>Retrosheet</a></li>
+				</ul>
+			</div>
+		</div>
+		<br/>
+		<div>
+			<form action="/resource/index">
+    			<input type="submit" value="Return to Resource Categories" />
+			</form>
+		</div>
+
+		<div class="container" th:replace="fragments/footer :: footer">
+			<p>footer</p>
+		</div>	
+	</div>
+</body>
+</html>

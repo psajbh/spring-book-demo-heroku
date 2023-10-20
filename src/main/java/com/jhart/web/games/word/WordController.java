@@ -24,10 +24,8 @@ public class WordController {
 	
 	@GetMapping({"/index"})
 	public String index(Model model) {
-		log.info("WordController = index");
 		WordSupportDto wordSupportDto = new WordSupportDto();
 		model.addAttribute("wordSupportDto", wordSupportDto);
-		log.info("WordController - index");
 		return "games/word/index";
 	}
 
@@ -37,7 +35,7 @@ public class WordController {
 			String inChar3, String inChar4, String inChar5,
 			String notInChar1, String notInChar2, String notInChar3,
 			String notInChar4, String notInChar5) {
-		log.info("WordController - get - start");
+		log.info("WordController - get -> start");
 		
 		wordName = wordName.toLowerCase();
 		noWordName = noWordName.toLowerCase();
@@ -123,20 +121,17 @@ public class WordController {
 		}
 		
 		model.addAttribute("wordSupportDto", wordSupportDto);
-		log.info("WordController - get - complete");
+		log.info("WordController - get -> complete");
 		return "games/word/index";
 	}
 	
 	private Map<String, String> executeWordSearch(WordSupportDto wordSupportDto) {
-		log.info("WordController executeWordSearch - ");
 		Map<String, String> response = wordService.process(wordSupportDto);
+		log.trace("WordController executeWordSearch -> response: " + response);
 		return response;
 	}
 	
 	private boolean process(WordSupportDto wordSupportDto) {
-		log.info("WordController process - ");
-		
-		
 		if (null != wordSupportDto.getWordName() && 
 				wordSupportDto.getWordName().length() > 0 &&
 				wordSupportDto.getWordName().length() < 6) {
@@ -152,15 +147,19 @@ public class WordController {
 		if (!wordSupportDto.getInChar1().isEmpty()) {
 			return true;
 		}
+		
 		if (!wordSupportDto.getInChar2().isEmpty()) {
 			return true;
 		}
+		
 		if (!wordSupportDto.getInChar3().isEmpty()) {
 			return true;
 		}
+		
 		if (!wordSupportDto.getInChar4().isEmpty()) {
 			return true;
 		}
+		
 		if (!wordSupportDto.getInChar5().isEmpty()) {
 			return true;
 		}
