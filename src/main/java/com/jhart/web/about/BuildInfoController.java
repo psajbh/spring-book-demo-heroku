@@ -8,14 +8,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.jhart.service.buildinfo.BuildInfoService;
-import com.jhart.util.BuildModelUtil;
+//import com.jhart.util.BuildModelUtil;
 
 @Controller
 public class BuildInfoController {
 	Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@SuppressWarnings("unused")
-	private BuildModelUtil buildModel;
 	private BuildInfoService buildInfoService;
 	
 	public BuildInfoController(BuildInfoService buildInfoService) {

@@ -9,12 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class WikiController {
 	private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-	@GetMapping({"/resource/main"})
-	public String main() {
-		log.debug("resource - start");
-		return "resource/main";
-	}
-	
 	@GetMapping({"/resource/index"})
 	public String wiki() {
 		log.debug("resource - start");
