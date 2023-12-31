@@ -5,17 +5,17 @@
 	<th:block th:replace='fragments/header :: head'>
 		<meta charset='UTF-8'>
 		<title id="pageTitle">Task Manager</title>
+		<script type="text/javascript" src="../js/task/task.js"></script>
 	</th:block>
-	<script type="text/javascript" src="../js/task/task.js" /></script>
+	<script type="text/javascript" src="../js/task/task.js"></script>
 </head>
 
 <body>
-	<div th:insert="navbar :: navbar">  </div>
+	
+	<div th:insert="navbar :: navbar"/>  
 	
 	<div class="container-fluid" style="margin-top : 80px">
-		
 		<div id="indexRow" class="row">
-			
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-primary">
 					<div class="panel-heading">

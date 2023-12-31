@@ -3,7 +3,7 @@
 var myTaskTable = "";
 
 $(document).ready( function (){
-	console.log("executing ready function");
+	console.log("executing ready function - taskTable");
 	myTaskTable = $('#taskTable')
 	.DataTable(
 		{
