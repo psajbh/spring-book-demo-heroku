@@ -19,7 +19,7 @@ public class Word {
 	private String char3;
 	private String char4;
 	private String char5;
-	private String common;
+	private String active;
 	private boolean unavailable;  //consider removing this field. value never persisted
 	
 	public Integer getId() {
@@ -78,16 +78,19 @@ public class Word {
 		this.char5 = char5;
 	}
 	
-	public String getCommon() {
-		return common;
+	public String getActive() {
+		return active;
 	}
 	
-	public void setCommon(String common) {
-		this.common = common;
+	public void setActive(String active) {
+		this.active = active;
 	}
 
 	public boolean isUnavailable() {
-		return unavailable;
+		//unavailabe not supported
+		//all data is available.
+		//return unavailable;
+		return false;
 	}
 
 	public void setUnavailable(boolean unavailable) {
