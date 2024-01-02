@@ -1,3 +1,4 @@
-	function forceLower(strInput){
+	<!-- function forceLower(strInput){
 		strInput.value=strInput.value.toLowerCase();
 	}
+	-->
