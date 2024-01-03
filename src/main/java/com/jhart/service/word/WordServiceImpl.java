@@ -415,7 +415,7 @@ public class WordServiceImpl implements WordService {
 
 			for (int i = 0; i < size; i++) {
 				Word word = allWords.get(i);
-				if (word.getActive().equals("1")) {
+				if (word.getCommon().equals("1")) {
 					wordHolder.add(word);
 				}
 			}
