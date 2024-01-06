@@ -1,6 +1,8 @@
 package com.jhart.web.modules.user;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,23 +20,25 @@ import com.jhart.orchestration.user.UserConductor;
 public class AddUserController {
 	Logger log = LoggerFactory.getLogger(this.getClass());
 	private UserConductor conductor;
+	private List<User> users = new ArrayList<>();;
 	
 	public AddUserController(UserConductor conductor) {
 		this.conductor = conductor;
 	}
 	
+	
 	@GetMapping("user/add")
 	public String addNewUser(Model model) {
 		log.debug("addNewUser- start");
-		model.addAttribute("users", conductor.getAllUsers());
+		setUsers(conductor.getAllUsers());
 		model.addAttribute("user", new User());
 		log.debug("addNewUser- finished");
 		return "users/newuser";
 	}
 	
-	@RequestMapping(value="/user/add",params="cancel",method=RequestMethod.POST)
+	@RequestMapping(value="/user/add", params="cancel", method=RequestMethod.POST)
 	public String cancelNewUser(User user) {
-		//log.debug("cancelNewTodo- redirect:/index");
+		log.debug("cancelNewTodo- redirect:/index user: " + user);
 		return "redirect:/users/index";
 	}
 	
@@ -46,8 +50,8 @@ public class AddUserController {
 			log.warn("saveNewUser - cannot persist user name");
 			return "redirect:/users/index";
 		}
-
-		for (User existingUser : conductor.getAllUsers()){
+		
+		for (User existingUser : getUsers()) {
 			if (existingUser.getName().equals(user.getName())) {
 				if (existingUser.getName().contentEquals(user.getName())) {
 					log.warn("saveNewUser - attempting to add a duplicate user: " + user.getName());
@@ -60,6 +64,14 @@ public class AddUserController {
 		User persistedUser = conductor.save(user);
 		log.debug("saveNewUser - saved user: " + persistedUser.getName());
 		return "redirect:/users/index";		
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+  
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 
 }

@@ -15,9 +15,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name="User")
 public class User {
-	
+	//switched to IDENTITY from AUTO. AUTO would generate
+	//PRIMARY KEY issue when adding new user.  IDENTITY fixed
+	//this problem. see: https://stackoverflow.com/questions/54153076/could-not-execute-statement-sql-n-a-constraint-primary-nested-exception-i
+	//Gender is no longer supported. Current User table will always generate 'M' for all new users.
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	@Column(unique=true)
@@ -36,57 +40,74 @@ public class User {
 	//@OneToMany(cascade = CascadeType.ALL, orphanRemoval= true, mappedBy="user")
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="user")
 	private Set<Todo> todos;
+	
 	public Long getId() {
 		return id;
 	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	public String getFirstName() {
 		return firstName;
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
 	public String getLastName() {
 		return lastName;
 	}
+	
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
 	public String getPhone() {
 		return phone;
 	}
+	
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
 	public Date getDateCreated() {
 		return dateCreated;
 	}
+	
 	public void setDateCreated(Date dateCreated) {
 		this.dateCreated = dateCreated;
 	}
+	
 	public String getLdapId() {
 		return ldapId;
 	}
+	
 	public void setLdapId(String ldapId) {
 		this.ldapId = ldapId;
 	}
+	
 	public Set<Todo> getTodos() {
 		return todos;
 	}
+	
 	public void setTodos(Set<Todo> todos) {
 		this.todos = todos;
 	}
@@ -102,7 +123,7 @@ public class User {
 //	public int hashCode() {
 //		return Objects.hash(dateCreated, email, firstName, id, lastName, ldapId, name, phone, todos);
 //	}
-//	
+	
 //	@Override
 //	public boolean equals(Object obj) {
 //		if (this == obj)
