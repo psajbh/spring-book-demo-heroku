@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Word {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 	private String word;
 	private String char1;

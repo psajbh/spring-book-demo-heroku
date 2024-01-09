@@ -16,7 +16,7 @@ public class BuildInfo implements IEntity, Serializable{
 	private static final long serialVersionUID = -5948181498794633533L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 	
 	@Column(name = "branch", nullable = false, columnDefinition = "varchar(20)")
