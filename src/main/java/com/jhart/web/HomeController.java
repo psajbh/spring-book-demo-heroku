@@ -11,7 +11,7 @@ public class HomeController {
 	
 	@GetMapping({"", "/", "/home"})
 	public String home() {
-		log.debug("this is a test");
+		//log.debug("this is a test");
 		return "home";
 	}
 
