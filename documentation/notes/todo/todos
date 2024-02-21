@@ -1,0 +1,11 @@
+
+
+add capability to view data by games. Specifically round victories and wins. Average Score is already done. This will be for both Spinners and Threethirteen.
+
+add capability to send an email to all game participants on the results of a spinners or threethirteen game
+
+add capability to display spinners and threethirteen table data user interface, most likely an option to view the info from the Analytics table
+
+update table git_info with information from the commit: 7b6b3b05972f772e69ce5bb1a2b0b399075c5429 
+	completed 02062024
+	
