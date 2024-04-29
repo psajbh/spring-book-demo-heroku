@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 //Spring REST + Spring Security Example|https://www.mkyong.com/spring-boot/spring-rest-spring-security-example/]]
 //Spring Boot: How to specify the PasswordEncoder?|https://stackoverflow.com/questions/46999940/spring-boot-how-to-specify-the-passwordencoder]]
+@SuppressWarnings("deprecation")
 @Configuration
 @EnableWebSecurity
 public class SecurityJavaConfig extends WebSecurityConfigurerAdapter {

@@ -1,1 +1,0 @@
-package com.jhart.service.analytics.user;

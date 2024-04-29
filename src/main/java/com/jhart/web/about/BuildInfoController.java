@@ -6,9 +6,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PutMapping;
 
 import com.jhart.service.buildinfo.BuildInfoService;
-//import com.jhart.util.BuildModelUtil;
 
 @Controller
 public class BuildInfoController {
@@ -29,5 +29,10 @@ public class BuildInfoController {
 		model.addAttribute("data", buildModel);
 		return "about/buildInfo";
 	}
+	
+//	@PutMapping("updateInfo")
+//	public void updateBuildInfo() {
+//		log.info("BuildInfoController - buildInfo()");
+//	}
 
 }
